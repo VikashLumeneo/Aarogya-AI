@@ -7,6 +7,8 @@ background:#fff;
 .outcome-container{
 max-width:1200px;
 margin:auto;
+display:flex;
+flex-direction:column;
 }
 
 
@@ -16,7 +18,7 @@ margin:auto;
 font-size:46px;
 font-weight:700;
 color:#222831;
-margin-bottom:60px;
+margin-bottom:40px;
 }
 
 .highlight{
@@ -29,6 +31,20 @@ color:#00ADB5;
 .slides-container{
 display:flex;
 flex-direction:column;
+
+height:calc(100vh - 120px);
+
+overflow-y:scroll;
+
+scroll-snap-type:y mandatory;
+scroll-behavior:smooth;
+}
+
+
+/* HIDE SCROLLBAR */
+
+.slides-container::-webkit-scrollbar{
+display:none;
 }
 
 
@@ -37,12 +53,15 @@ flex-direction:column;
 .slide{
 display:flex;
 justify-content:space-between;
-align-items:flex-start;
+align-items:center;
 
-min-height:650px;
+height:100vh;
+
 padding:60px 0;
 
 border-top:1px solid #D1DEE5;
+
+scroll-snap-align:start;
 }
 
 
@@ -50,7 +69,6 @@ border-top:1px solid #D1DEE5;
 
 .slide-text{
 max-width:420px;
-margin-top:20px;
 }
 
 .slide-text h3{
