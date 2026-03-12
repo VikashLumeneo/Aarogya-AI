@@ -103,17 +103,35 @@ export default function Footer() {
 
         <div className="footer-social">
 
-          <div className="social-circle">
-            <img src={twitter} alt="twitter" />
-          </div>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="social-circle">
+              <img src={twitter} alt="twitter" />
+            </div>
+          </a>
 
-          <div className="social-circle">
-            <img src={linkedin} alt="linkedin" />
-          </div>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="social-circle">
+              <img src={linkedin} alt="linkedin" />
+            </div>
+          </a>
 
-          <div className="social-circle">
-            <img src={facebook} alt="facebook" />
-          </div>
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="social-circle">
+              <img src={facebook} alt="facebook" />
+            </div>
+          </a>
 
         </div>
 

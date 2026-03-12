@@ -7,9 +7,10 @@
 /* ===================== TOP SECTION ===================== */
 
 .about-top{
-  display:flex;
-  justify-content:space-between;
+  
+   display:flex;
   align-items:flex-start;
+  gap:200px;   /* yaha se gap control hoga */
   margin-bottom:100px;
 }
 
@@ -44,7 +45,8 @@
   font-weight:400;
   color:#393E46;
   font-size:18px;
-  letter-spacing:0.72px;
+  /* margin-left:100px; */
+  letter-spacing:4%;
   line-height:26px;
   margin:0;
 }
