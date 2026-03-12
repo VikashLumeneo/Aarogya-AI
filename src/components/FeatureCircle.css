@@ -1,0 +1,34 @@
+.feature-circle{
+  width:100%;
+
+  display:flex;
+  flex-direction:column;   /* image ke niche text */
+  justify-content:center;
+  align-items:center;      /* horizontal center */
+
+  margin-top:-40px;
+}
+
+/* image size */
+
+.feature-img{
+  width:709px;
+  height:729px;
+
+  display:block;
+}
+
+/* trusted text */
+
+.trusted-text{
+  margin-top:60px;
+
+  font-family:"Mulish", sans-serif;
+  font-size:30px;
+  font-weight:500;
+
+  color:#000;
+  text-align:center;
+
+  letter-spacing:0.02em;
+}

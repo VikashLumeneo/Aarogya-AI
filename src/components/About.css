@@ -1,0 +1,152 @@
+.about{
+  padding:120px 130px;
+  font-family:"Mulish", sans-serif;
+}
+
+
+/* ===================== TOP SECTION ===================== */
+
+.about-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  margin-bottom:100px;
+}
+
+/* LEFT HEADING */
+
+.about-left{
+  width:342px;
+}
+
+.about-left h1{
+  font-family:"Mulish", sans-serif;
+  font-weight:700;
+  color:#222831;
+  font-size:46px;
+  line-height:50px;
+  margin:0;
+}
+
+.about-left .highlight{
+  color:#00ADB5;
+}
+
+
+/* RIGHT DESCRIPTION */
+
+.about-right{
+  width:512px;
+}
+
+.about-right p{
+  font-family:"Mulish", sans-serif;
+  font-weight:400;
+  color:#393E46;
+  font-size:18px;
+  letter-spacing:0.72px;
+  line-height:26px;
+  margin:0;
+}
+
+
+/* ===================== BOTTOM SECTION ===================== */
+
+.about-bottom{
+  display:flex;
+  gap:101px;
+}
+
+
+/* ===================== LEFT FEATURES ===================== */
+
+.features{
+  width:420px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  border-right:1px solid #EEE;
+  padding-right:50px;
+}
+
+.feature-item{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:22px 20px;
+  font-size:20px;
+  color:#979797;
+  border-radius:10px;
+  cursor:pointer;
+  transition:all 0.2s ease;
+}
+
+.feature-item img{
+  width:26px;
+  height:26px;
+}
+
+.feature-item span{
+  font-family:"Mulish", sans-serif;
+  font-weight:400;
+}
+
+.feature-item.active{
+  background:#EEEEEE;
+  color:#222831;
+  font-weight:600;
+}
+
+
+/* ===================== RIGHT DETAILS ===================== */
+
+.details{
+  max-width:540px;
+}
+
+.tag{
+  font-size:16px;
+  color:#979797;
+  margin-bottom:10px;
+}
+
+.details h2{
+  font-size:28px;
+  font-weight:700;
+  color:#222831;
+  margin-bottom:18px;
+}
+
+.small{
+  font-size:14px;
+  color:#6B6B6B;
+  margin-bottom:18px;
+}
+
+.details p{
+  font-size:14px;
+  line-height:24px;
+  color:#4A4A4A;
+  margin-bottom:16px;
+}
+
+
+/* ===================== TAG BUTTONS ===================== */
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-top:20px;
+}
+
+.tags button{
+  background:#EEE;
+  border:none;
+  padding:12px 18px;
+  border-radius:6px;
+  font-size:14px;
+  font-family:"Mulish", sans-serif;
+  color:#222831;
+  cursor:pointer;
+}
