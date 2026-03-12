@@ -1,62 +1,99 @@
 .outcome{
-  width:1180px;
-  margin:0 auto;
-  padding:120px 0;
-
-  display:flex;
-  align-items:flex-start;
-
-  font-family:"Mulish", sans-serif;
+padding:120px 130px;
+font-family:"Mulish", sans-serif;
+background:#fff;
 }
 
-
-/* CONTENT */
-
-.outcome-content{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
+.outcome-container{
+max-width:1180px;
+margin:auto;
 }
 
+/* HEADER */
 
-/* BADGE */
+.outcome-header{
+margin-bottom:50px;
+}
 
 .outcome-badge{
-  padding:0 16px;
-  height:36px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  border:none;
-  border-radius:120px;
-  background:#E6F6FF;
-
-  font-size:14px;
-  letter-spacing:0.04em;
-  color:#222831;
-
-  cursor:pointer;
-  width:fit-content;
+background:#E6F6FF;
+border:none;
+padding:8px 18px;
+border-radius:120px;
+font-size:14px;
+color:#222831;
+margin-bottom:15px;
 }
-
-
-/* HEADING */
 
 .outcome-heading{
-  font-size:46px;
-  font-weight:700;
-  line-height:60px;
+font-size:46px;
+font-weight:700;
+color:#222831;
+line-height:60px;
+/* max-width:900px; */
+}
 
-  color:#222831;
-
-  width:1000px;   /* yaha width badhayi hai */
+.highlight{
+color:#00ADB5;
 }
 
 
-/* Arogya AI highlight */
+/* ROW */
 
-.highlight-ai{
-  color:#00ADB5;
+.outcome-row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:40px 0;
+border-top:1px solid #D1DEE5;
+}
+
+.outcome-row:last-child{
+border-bottom:1px solid #D1DEE5;
+}
+
+/* TEXT */
+
+.outcome-text{
+max-width:450px;
+}
+
+.outcome-text h3{
+font-size:24px;
+font-weight:700;
+color:#222831;
+margin-bottom:15px;
+}
+
+.outcome-text h3.light{
+color:#C7D6DE;
+}
+
+.outcome-text p{
+font-size:14px;
+line-height:24px;
+color:#393E46;
+}
+
+/* IMAGE */
+
+.outcome-image{
+display:flex;
+justify-content:center;
+}
+
+.image-placeholder{
+width:724px;
+height:550px;
+background:#C7D6DE;
+border-radius:10px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:rgba(0,0,0,0.2);
+font-size:28px;
+}
+
+.light-bg{
+background:#E9F3F8;
 }

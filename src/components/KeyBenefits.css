@@ -21,12 +21,15 @@
   font-size:46px;
   font-weight:700;
   color:#222831;
+  font-family:"Mulish", sans-serif;
+  font-weight: bold;
 }
 
 .benefits-header p{
   width:780px;
   font-size:18px;
   line-height:26px;
+  letter-spacing: 4%;
   color:#393E46;
   margin-top:20px;
 }
@@ -61,6 +64,9 @@
 .benefit-card p{
   font-size:14px;
   line-height:24px;
+  letter-spacing: 4%;
+  font-family:"Mulish", sans-serif;
+  font-weight: regular;
   color:#393E46;
 }
 
