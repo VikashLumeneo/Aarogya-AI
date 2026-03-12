@@ -97,8 +97,8 @@ export default function Footer() {
         </p>
 
         <div className="footer-links">
-          <a href="#">Terms</a>
-          <a href="#">Privacy</a>
+          <a href="/terms">Terms</a>
+          <a href="/privacy">Privacy</a>
         </div>
 
         <div className="footer-social">
