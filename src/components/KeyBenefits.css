@@ -4,6 +4,7 @@
   background:#F4F4F4;
   display:flex;
   justify-content:center;
+  font-family:"Mulish", sans-serif;
 }
 
 .benefits-container{
@@ -21,18 +22,17 @@
   font-size:46px;
   font-weight:700;
   color:#222831;
-  font-family:"Mulish", sans-serif;
-  font-weight: bold;
 }
 
 .benefits-header p{
   width:780px;
   font-size:18px;
   line-height:26px;
-  letter-spacing: 4%;
+  letter-spacing:4%;
   color:#393E46;
   margin-top:20px;
 }
+
 
 /* GRID */
 
@@ -41,13 +41,15 @@
   grid-template-columns:repeat(3,1fr);
 }
 
+
 /* CARD */
 
 .benefit-card{
   padding:40px;
   display:flex;
   flex-direction:column;
-  gap:15px;
+  gap:18px;
+  max-width:340px;
 }
 
 .benefit-card img{
@@ -59,16 +61,18 @@
   font-size:22px;
   font-weight:700;
   color:#222831;
+  line-height:30px;
+  max-width:220px;   /* heading 2 lines */
 }
 
 .benefit-card p{
   font-size:14px;
-  line-height:24px;
-  letter-spacing: 4%;
-  font-family:"Mulish", sans-serif;
-  font-weight: regular;
+  line-height:22px;
+  letter-spacing:4%;
   color:#393E46;
+  max-width:260px;   /* paragraph 4 lines */
 }
+
 
 /* GRID LINES */
 

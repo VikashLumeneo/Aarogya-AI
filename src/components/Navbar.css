@@ -3,8 +3,9 @@
 }
 
 body{
-  margin:0;
+   margin:0;
   font-family:"Mulish", sans-serif;
+  padding-top:100px;  
 }
 
 .navbar{
@@ -19,6 +20,12 @@ body{
   padding:0 130px;
 
   background:#ffffff;
+
+  position:fixed;   /* important */
+  top:0;
+  left:0;
+
+  z-index:1000; 
 }
 
 /* LOGO */

@@ -1,5 +1,4 @@
 import "./Outcome.css";
-// import product from "../assets/images/product.png"; 
 
 function Outcome() {
   return (
@@ -7,78 +6,80 @@ function Outcome() {
 
       <div className="outcome-container">
 
-        {/* TOP */}
+        <h2 className="outcome-heading">
+          <span className="highlight">Arogya AI</span> to deliver faster care & better outcomes.
+        </h2>
 
-        <div className="outcome-header">
+        <div className="slides-container">
 
-          <button className="outcome-badge">
-            The Outcome-Driven Angle
-          </button>
+          {/* SLIDE 1 */}
 
-          <h2 className="outcome-heading">
-            Your entire healthcare organization can run on
-            <span className="highlight"> Arogya AI </span>
-            to deliver faster care & better outcomes.
-          </h2>
+          <div className="slide">
 
-        </div>
+            <div className="slide-text">
+              <h3>Handles patient calls</h3>
 
+              <p>
+                Handles patient calls, schedules appointments, and manages
+                front office communications with natural conversation
+                capabilities.
+              </p>
+            </div>
 
-        {/* FIRST ROW */}
-
-        <div className="outcome-row">
-
-          <div className="outcome-text">
-
-            <h3>Before the consultation even begins.</h3>
-
-            <p>
-              Arogya AI prepares the doctor before the patient walks in
-              analyzing vitals trends, flagging chronic conditions,
-              verifying family history, and sending automated appointment
-              confirmations. Your care team arrives ready.
-            </p>
+            <div className="slide-image">
+              <div className="image-placeholder">
+                Product Photo
+              </div>
+            </div>
 
           </div>
 
-          <div className="outcome-image">
 
-            <div className="image-placeholder">
-              Product Photo
+          {/* SLIDE 2 */}
+
+          <div className="slide">
+
+            <div className="slide-text">
+              <h3>AI Scribe</h3>
+
+              <p>
+                Automatically transcribes and structures patient conversations
+                into clean clinical notes, eliminating burnout from manual
+                documentation.
+              </p>
+            </div>
+
+            <div className="slide-image">
+              <div className="image-placeholder">
+                Product Photo
+              </div>
+            </div>
+
+          </div>
+
+
+          {/* SLIDE 3 */}
+
+          <div className="slide">
+
+            <div className="slide-text">
+              <h3>Radiology Insights</h3>
+
+              <p>
+                Automated analysis highlights abnormalities and assists
+                radiologists in faster scan interpretation.
+              </p>
+            </div>
+
+            <div className="slide-image">
+              <div className="image-placeholder">
+                Product Photo
+              </div>
             </div>
 
           </div>
 
         </div>
-
-
-        {/* SECOND ROW */}
-
-        {/* <div className="outcome-row">
-
-          <div className="outcome-text">
-
-            <h3 className="light">
-              From consultation to report, automatically.
-            </h3>
-
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and
-              typesetting industry. Lorem Ipsum has been the industry's
-              standard dummy.
-            </p>
-
-          </div>
-
-          <div className="outcome-image">
-
-            <div className="image-placeholder light-bg">
-              Product Photo
-            </div>
-
-          </div>
-
-        </div> */}
 
       </div>
 

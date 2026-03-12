@@ -38,7 +38,7 @@ function KeyBenefits() {
 
           <div className="benefit-card middle">
             <img src={icon2} alt="icon"/>
-            <h3>Multilingual <br/> Healthcare</h3>
+            <h3>Multilingual Healthcare</h3>
             <p>
               Supports consultations in English and regional Indian languages
               making healthcare accessible to more patients.
@@ -47,7 +47,7 @@ function KeyBenefits() {
 
           <div className="benefit-card">
             <img src={icon3} alt="icon"/>
-            <h3>Consistent <br/>Clinical Quality</h3>
+            <h3>Consistent Clinical Quality</h3>
             <p>
               Standardised analysis and documentation improve consistency
               across clinicians, hospitals and care teams.
@@ -74,7 +74,7 @@ function KeyBenefits() {
 
           <div className="benefit-card top">
             <img src={icon6} alt="icon"/>
-            <h3>EHR / PACS <br/>Integration</h3>
+            <h3>EHR / PACS Integration</h3>
             <p>
               Works with EHR/HIMS and PACS radiology systems. No workflow
               change required. Arogya AI fits into how your team already works.
