@@ -1,7 +1,7 @@
 import React from "react";
 import "./HeroSection.css";
 import heroBg from "../assets/images/Herobg.svg";
-import HeroAI from "../assets/images/Hero.svg";
+// import HeroAI from "../assets/images/Hero.svg";
 
 export default function HeroSection() {
   return (
