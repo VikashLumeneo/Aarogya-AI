@@ -54,7 +54,7 @@ function Outcome() {
 
         {/* SECOND ROW */}
 
-        <div className="outcome-row">
+        {/* <div className="outcome-row">
 
           <div className="outcome-text">
 
@@ -78,7 +78,7 @@ function Outcome() {
 
           </div>
 
-        </div>
+        </div> */}
 
       </div>
 
