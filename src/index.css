@@ -1,3 +1,18 @@
+/* RESET */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,body{
+  width:100%;
+  overflow-x:hidden;
+}
+
+/* FONTS */
+
 @font-face {
   font-family: "Mulish";
   src: url("./assets/fonts/Mulish-Regular.ttf") format("truetype");
@@ -17,6 +32,116 @@
 }
 
 body{
-  margin:0;
   font-family:"Mulish", sans-serif;
+  background:#ffffff;
+  line-height:1.5;
+}
+
+/* GLOBAL CONTAINER */
+
+.container{
+  width:100%;
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px;
+}
+
+/* IMAGES */
+
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+/* BUTTON */
+
+button{
+  border:none;
+  outline:none;
+  cursor:pointer;
+}
+
+/* LINKS */
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* FLEX HELPERS */
+
+.flex{
+  display:flex;
+}
+
+.flex-center{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* GRID */
+
+.grid{
+  display:grid;
+}
+
+/* SECTION SPACING */
+
+section{
+  padding:80px 0;
+}
+
+/* ========================= */
+/* MOBILE RESPONSIVE */
+/* ========================= */
+
+@media (max-width:768px){
+
+  section{
+    padding:60px 20px;
+  }
+
+  h1{
+    font-size:32px !important;
+    line-height:1.2;
+  }
+
+  h2{
+    font-size:26px !important;
+  }
+
+  h3{
+    font-size:20px !important;
+  }
+
+  p{
+    font-size:15px !important;
+  }
+
+}
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+
+@media (max-width:1024px){
+
+  section{
+    padding:70px 40px;
+  }
+
+}
+
+/* ========================= */
+/* LARGE SCREEN */
+/* ========================= */
+
+@media (min-width:1400px){
+
+  .container{
+    max-width:1300px;
+  }
+
 }

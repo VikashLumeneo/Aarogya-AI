@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 function Navbar() {
 
   const [showDropdown, setShowDropdown] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
+
   const dropdownRef = useRef(null);
 
   // click outside close
@@ -26,13 +28,21 @@ function Navbar() {
   return (
     <nav className="navbar">
 
-      {/* Logo → Home link */}
+      {/* Logo */}
       <Link to="/" className="logo-button">
         <img src={Logo} alt="Logo" />
       </Link>
 
+      {/* Hamburger */}
+      <div
+        className="hamburger"
+        onClick={() => setMobileMenu(!mobileMenu)}
+      >
+        ☰
+      </div>
+
       {/* Right Menu */}
-      <div className="nav-right">
+      <div className={`nav-right ${mobileMenu ? "open" : ""}`}>
 
         <div className="product-wrapper" ref={dropdownRef}>
 
@@ -70,13 +80,18 @@ function Navbar() {
         <button className="nav-item">Intelligence</button>
         <button className="nav-item">Solutions</button>
 
-        <button className="demo-button">
-          Book a Demo
-        </button>
+        {/* Buttons row */}
+        <div className="nav-buttons">
 
-        <button className="login-button">
-          Login
-        </button>
+          <button className="demo-button">
+            Book a Demo
+          </button>
+
+          <button className="login-button">
+            Login
+          </button>
+
+        </div>
 
       </div>
 

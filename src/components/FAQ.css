@@ -79,3 +79,55 @@
 .faq-icon{
   font-size:14px;
 }
+/* ============================= */
+/* PHONE RESPONSIVE */
+/* ============================= */
+
+@media (max-width:768px){
+
+.faq-section{
+  padding:60px 20px;
+}
+
+.faq-container{
+  flex-direction:column;
+  gap:40px;
+}
+
+/* LEFT */
+
+.faq-left{
+  width:100%;
+}
+
+.faq-title{
+  font-size:32px;
+  line-height:42px;
+}
+
+.faq-desc{
+  font-size:14px;
+}
+
+/* RIGHT */
+
+.faq-right{
+  width:100%;
+}
+
+/* FAQ ITEM */
+
+.faq-item{
+  padding:16px;
+}
+
+.faq-question{
+  font-size:15px;
+}
+
+.faq-answer{
+  font-size:13px;
+  line-height:20px;
+}
+
+}

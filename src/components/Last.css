@@ -33,9 +33,73 @@ cursor:pointer;
 display:inline-flex;
 align-items:center;
 gap:10px;
+transition:0.2s ease;
 }
 
 .last-btn img{
 width:18px;
 height:18px;
+}
+
+/* hover */
+
+.last-btn:hover{
+background:#00979e;
+}
+
+
+/* ========================= */
+/* TABLET VIEW */
+/* ========================= */
+
+@media (max-width:1024px){
+
+.last{
+padding:70px 30px;
+}
+
+.last-title{
+font-size:32px;
+}
+
+.last-text{
+font-size:15px;
+}
+
+}
+
+
+/* ========================= */
+/* PHONE VIEW */
+/* ========================= */
+
+@media (max-width:768px){
+
+.last{
+padding:60px 20px;
+}
+
+.last-title{
+font-size:26px;
+line-height:34px;
+}
+
+.last-text{
+font-size:14px;
+line-height:22px;
+max-width:100%;
+margin-bottom:25px;
+}
+
+.last-btn{
+padding:14px 24px;
+font-size:14px;
+gap:8px;
+}
+
+.last-btn img{
+width:16px;
+height:16px;
+}
+
 }

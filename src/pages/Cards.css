@@ -1,23 +1,28 @@
 .cards{
+width:100%;
 padding:80px 130px;
 background:#F4F4F4;
+font-family:"Mulish", sans-serif;
 
 display:flex;
 flex-direction:column;
-gap:40px;
-
-overflow-x:hidden;
+align-items:center;
+gap:60px;
 }
 
 
 /* HEADER */
 
 .cards-header{
+max-width:780px;
+
 display:flex;
 flex-direction:column;
+align-items:center;
 gap:20px;
-}
 
+text-align:center;
+}
 
 .cards-tag{
 background:#EBFEFF;
@@ -27,9 +32,7 @@ padding:8px 16px;
 border-radius:120px;
 font-size:14px;
 font-weight:600;
-width:fit-content;
 }
-
 
 .cards-title{
 font-size:46px;
@@ -37,12 +40,10 @@ font-weight:700;
 color:#222831;
 }
 
-
 .cards-subtitle{
 font-size:18px;
 line-height:26px;
 color:#393E46;
-max-width:780px;
 letter-spacing:0.04em;
 }
 
@@ -50,18 +51,25 @@ letter-spacing:0.04em;
 /* CARDS CONTAINER */
 
 .cards-container{
+width:100%;
+max-width:1200px;
+
 display:flex;
-align-items:center;
+justify-content:center;
+align-items:stretch;
 gap:10px;
-/* flex-wrap:wrap; */
+
+/* important */
+flex-wrap:nowrap;
 }
 
 
 /* SINGLE CARD */
 
 .card{
-width:250px;
-height:350px;
+flex:1;   /* sab cards equal width lenge */
+
+min-height:350px;
 
 padding:30px;
 
@@ -101,7 +109,7 @@ letter-spacing:0.02em;
 .card-content{
 display:flex;
 flex-direction:column;
-width:230px;
+gap:10px;
 }
 
 

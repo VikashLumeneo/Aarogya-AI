@@ -1,9 +1,6 @@
-import { useState } from "react";
 import "./WhatAxionicDoes.css";
 
 function WhatAxionicDoes() {
-
-  const [active, setActive] = useState(2);
 
   const steps = [
     {
@@ -32,48 +29,49 @@ function WhatAxionicDoes() {
 
     <section className="works">
 
-      <div className="works-header">
+      <div className="works-container">
 
-        <div className="works-tag">
-          How It Works
-        </div>
+        <div className="works-header">
 
-        <h2>
-          From first word to final note
-        </h2>
-
-        <p>
-          AI Scribe works silently in the background no training, no setup,<br/> no workflow change required.
-        </p>
-
-      </div>
-
-
-      <div className="works-cards">
-
-        {steps.map((item, index) => (
-
-          <div
-            key={index}
-            onClick={() => setActive(index)}
-            className={`works-card ${active === index ? "active" : ""}`}
-          >
-
-            <span className="step">
-              {item.step}
-            </span>
-
-            <h3>
-              {item.title}
-            </h3>
-
-            <p>
-              {item.desc}
-            </p>
-
+          <div className="works-tag">
+            How It Works
           </div>
 
-        ))}
+          <h2>
+            From first word to final note
+          </h2>
+
+          <p>
+            AI Scribe works silently in the background no training, no setup,
+            no workflow change required.
+          </p>
+
+        </div>
+
+
+        <div className="works-cards">
+
+          {steps.map((item, index) => (
+
+            <div key={index} className="works-card">
+
+              <span className="step">
+                {item.step}
+              </span>
+
+              <h3>
+                {item.title}
+              </h3>
+
+              <p>
+                {item.desc}
+              </p>
+
+            </div>
+
+          ))}
+
+        </div>
 
       </div>
 

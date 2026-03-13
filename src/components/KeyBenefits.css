@@ -84,3 +84,69 @@
 .top{
   border-top:1px solid rgba(7,104,159,0.25);
 }
+/* ============================= */
+/* PHONE RESPONSIVE */
+/* ============================= */
+
+@media (max-width:768px){
+
+.key-benefits{
+  padding:60px 20px;
+}
+
+/* HEADER */
+
+.benefits-header{
+  margin-bottom:40px;
+}
+
+.benefits-header h2{
+  font-size:32px;
+}
+
+.benefits-header p{
+  width:100%;
+  font-size:14px;
+  line-height:22px;
+  letter-spacing:0;
+}
+
+/* GRID */
+
+.benefits-grid{
+  grid-template-columns:1fr;
+  gap:10px;
+}
+
+/* CARD */
+
+.benefit-card{
+  max-width:100%;
+  padding:20px 0;
+  border:none;
+}
+
+.benefit-card h3{
+  font-size:18px;
+  line-height:26px;
+  max-width:100%;
+}
+
+.benefit-card p{
+  max-width:100%;
+  font-size:13px;
+  line-height:20px;
+}
+
+/* REMOVE GRID LINES ON MOBILE */
+
+.middle{
+  border-left:none;
+  border-right:none;
+}
+
+.top{
+  border-top:none;
+}
+
+}

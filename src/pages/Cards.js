@@ -39,7 +39,7 @@ export default function Cards() {
         </div>
 
 
-        <div className="card active">
+        <div className="card">
           <span className="step">Step 2</span>
 
           <div className="card-content">
