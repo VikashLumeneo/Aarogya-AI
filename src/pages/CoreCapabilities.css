@@ -1,0 +1,173 @@
+.corecap{
+background:#ffffff;
+padding:120px 130px;
+font-family:"Mulish",sans-serif;
+}
+
+/* CONTAINER */
+
+.corecap-container{
+max-width:1180px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:80px;
+}
+
+/* HEADER */
+
+.corecap-header{
+display:flex;
+flex-direction:column;
+gap:20px;
+/* max-width:780px; */
+}
+
+.corecap-tag{
+background:#EBFEFF;
+color:#00ADB5;
+padding:8px 16px;
+border-radius:120px;
+font-size:14px;
+font-weight:600;
+width:fit-content;
+}
+
+.corecap-title{
+font-size:46px;
+font-weight:700;
+color:#222831;
+}
+
+.corecap-desc{
+font-size:18px;
+line-height:26px;
+color:#393E46;
+max-width:780px;
+}
+
+
+/* ROW */
+
+.corecap-row{
+display:flex;
+flex-direction:row;
+align-items:flex-start;
+justify-content:space-between;
+gap:50px;
+width:100%;
+}
+
+.corecap-row.reverse{
+flex-direction:row-reverse;
+}
+
+
+/* TEXT */
+
+.corecap-text{
+width:590px;
+display:flex;
+flex-direction:column;
+/* gap:18px; */
+}
+
+.corecap-text h3{
+font-size:24px;
+font-weight:700;
+color:#222831;
+}
+
+.corecap-text h4{
+font-size:20px;
+font-weight:500;
+color:#333;
+}
+
+.corecap-text p{
+font-size:14px;
+line-height:24px;
+color:#393E46;
+}
+
+
+/* LIST */
+
+.corecap-text ul{
+display:flex;
+flex-direction:column;
+gap:14px;
+padding:0;
+margin-top:10px;
+}
+
+.corecap-text li{
+list-style:none;
+display:flex;
+align-items:center;
+gap:10px;
+font-size:18px;
+font-weight:500;
+}
+
+.corecap-text li img{
+width:20px;
+}
+
+
+/* TAG BUTTONS */
+
+.corecap-tags{
+display:flex;
+gap:20px;
+margin-top:10px;
+}
+
+.corecap-tags span{
+background:#EEE;
+padding:12px 20px;
+border-radius:6px;
+font-size:15px;
+font-weight:500;
+color:#222831;
+}
+
+
+/* IMAGE */
+
+.corecap-image{
+width:540px;
+height:373px;
+border-radius:12px;
+overflow:hidden;
+}
+
+.corecap-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width:900px){
+
+.corecap{
+padding:80px 30px;
+}
+
+.corecap-row{
+flex-direction:column;
+}
+
+.corecap-row.reverse{
+flex-direction:column;
+}
+
+.corecap-text,
+.corecap-image{
+width:100%;
+}
+
+}

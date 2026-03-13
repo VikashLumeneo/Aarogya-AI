@@ -14,6 +14,7 @@ import Last from "./components/Last";
 import Footer from "./components/Footer";
 
 import AiScribe from "./pages/AiScribe";
+import AiRadiologist from "./pages/AiRadiologist";
 
 function HomePage(){
 
@@ -47,6 +48,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
 
         <Route path="/ai-scribe" element={<AiScribe />} />
+        <Route path="/ai-radiologist" element={<AiRadiologist />} />
 
       </Routes>
 
