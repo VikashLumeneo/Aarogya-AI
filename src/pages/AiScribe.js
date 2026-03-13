@@ -9,6 +9,9 @@ import WhatAxionicDoes from "./WhatAxionicDoes";
 import Core from "./Core";
 import Safety from "./Safety";
 import AiScribeFAQ from "./AiScribeFAQ";
+import AiSLast from "./AiSLast";
+import Footer from "../components/Footer";
+
 function AiScribe() {
 
   return (
@@ -132,6 +135,8 @@ function AiScribe() {
 <Core />
 <Safety />
 <AiScribeFAQ />
+<AiSLast />
+<Footer />
     </>
   );
 

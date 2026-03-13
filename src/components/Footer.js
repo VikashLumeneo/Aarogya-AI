@@ -1,7 +1,6 @@
 import React from "react";
 import "./Footer.css";
 
-import demoIcon from "../assets/images/demo.svg";
 import linkedin from "../assets/images/linkedin.svg";
 import twitter from "../assets/images/twitter.svg";
 import facebook from "../assets/images/facebook.svg";
@@ -9,29 +8,6 @@ import facebook from "../assets/images/facebook.svg";
 export default function Footer() {
   return (
     <footer className="footer">
-
-      {/* CTA SECTION */}
-
-      <div className="footer-cta">
-
-        <h2 className="cta-title">
-          The future of clinical intelligence is here
-        </h2>
-
-        <p className="cta-text">
-          Doctors should spend their time on patients not documentation,
-          not scan queues, not paperwork.
-        </p>
-
-        <button className="cta-btn">
-          Request A Demo
-          <img src={demoIcon} alt="demo" />
-        </button>
-
-      </div>
-
-
-      {/* MAIN FOOTER */}
 
       <div className="footer-main">
 
@@ -103,33 +79,21 @@ export default function Footer() {
 
         <div className="footer-social">
 
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
             <div className="social-circle">
-              <img src={twitter} alt="twitter" />
+              <img src={twitter} alt="twitter"/>
             </div>
           </a>
 
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
             <div className="social-circle">
-              <img src={linkedin} alt="linkedin" />
+              <img src={linkedin} alt="linkedin"/>
             </div>
           </a>
 
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
             <div className="social-circle">
-              <img src={facebook} alt="facebook" />
+              <img src={facebook} alt="facebook"/>
             </div>
           </a>
 

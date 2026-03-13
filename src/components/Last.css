@@ -1,0 +1,41 @@
+.last{
+background:#081819;
+padding:80px 20px;
+text-align:center;
+font-family:"Mulish", sans-serif;
+}
+
+.last-title{
+color:#fff;
+font-size:36px;
+font-weight:700;
+margin-bottom:10px;
+}
+
+.last-text{
+color:#ffffff;
+opacity:0.7;
+font-size:16px;
+max-width:600px;
+margin:auto;
+margin-bottom:30px;
+line-height:24px;
+}
+
+.last-btn{
+background:#00ADB5;
+color:#fff;
+border:none;
+padding:16px 30px;
+font-size:16px;
+border-radius:8px;
+cursor:pointer;
+display:inline-flex;
+align-items:center;
+gap:10px;
+}
+
+.last-btn img{
+width:18px;
+height:18px;
+}

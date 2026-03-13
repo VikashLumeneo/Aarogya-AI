@@ -3,49 +3,6 @@ width:100%;
 font-family:"Mulish", sans-serif;
 }
 
-/* CTA SECTION */
-
-.footer-cta{
-background:#081819;
-padding:80px 20px;
-text-align:center;
-}
-
-.cta-title{
-color:#fff;
-font-size:36px;
-font-weight:700;
-margin-bottom:10px;
-}
-
-.cta-text{
-color:#ffffff;
-opacity:0.7;
-font-size:16px;
-max-width:600px;
-margin:auto;
-margin-bottom:30px;
-line-height:24px;
-}
-
-.cta-btn{
-background:#00ADB5;
-color:#fff;
-border:none;
-padding:16px 30px;
-font-size:16px;
-border-radius:8px;
-cursor:pointer;
-display:inline-flex;
-align-items:center;
-gap:10px;
-}
-
-.cta-btn img{
-width:18px;
-height:18px;
-}
-
 /* MAIN FOOTER */
 
 .footer-main{

@@ -10,6 +10,7 @@ import KeyBenefits from "./components/KeyBenefits";
 import Outcome from "./components/Outcome";
 import Feature from "./components/Feature";
 import FAQ from "./components/FAQ";
+import Last from "./components/Last";
 import Footer from "./components/Footer";
 
 import AiScribe from "./pages/AiScribe";
@@ -26,6 +27,7 @@ function HomePage(){
       <Outcome />
       <Feature />
       <FAQ />
+      <Last />
       <Footer />
     </>
 
