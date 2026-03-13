@@ -3,13 +3,13 @@
 .ai-scribe{
 position:relative;
 width:100%;
-min-height:620px;
+/* min-height:620px; */
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
 font-family:"Mulish", sans-serif;
-padding:120px 20px;
+padding:40px 20px;
 overflow:hidden;
 }
 

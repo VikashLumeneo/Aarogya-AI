@@ -1,27 +1,25 @@
-import React from "react";
 import "./AiSLast.css";
-
 import demoIcon from "../assets/images/demo.svg";
 
-export default function AiSLast() {
+function AiSLast() {
   return (
-    <section className="aislast" id="aislast">
+    <section className="ais-last">
 
-      <div className="aislast-content">
+      <div className="ais-last-container">
 
-        <h2 className="aislast-title">
+        <h2 className="ais-last-title">
           Give your doctors their time back.
         </h2>
 
-        <p className="aislast-text">
+        <p className="ais-last-desc">
           Documentation shouldn't take hours. With AI Scribe, every
           consultation ends with a complete clinical note - ready to review,
           ready to submit.
         </p>
 
-        <button className="aislast-btn">
+        <button className="ais-last-btn">
           Request a demo
-          <img src={demoIcon} alt="demo" />
+          <img src={demoIcon} alt="icon" />
         </button>
 
       </div>
@@ -29,3 +27,5 @@ export default function AiSLast() {
     </section>
   );
 }
+
+export default AiSLast;

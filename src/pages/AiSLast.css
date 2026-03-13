@@ -1,73 +1,57 @@
-.aislast{
+.ais-last{
 width:100%;
-padding:100px 20px;
+padding:60px 130px;
 background:#081819;
 display:flex;
 justify-content:center;
 align-items:center;
+text-align:center;
 font-family:"Mulish", sans-serif;
 }
 
-/* CONTENT */
-
-.aislast-content{
-max-width:720px;
+.ais-last-container{
+max-width:900px;
 display:flex;
 flex-direction:column;
 align-items:center;
 gap:20px;
-text-align:center;
 }
 
-/* TITLE */
-
-.aislast-title{
-color:#ffffff;
+.ais-last-title{
+color:#FFF;
 font-size:36px;
 font-weight:700;
 letter-spacing:0.02em;
-line-height:46px;
 }
 
-/* TEXT */
-
-.aislast-text{
-color:#ffffff;
-opacity:0.75;
+.ais-last-desc{
+color:#FFF;
+opacity:0.7;
 font-size:16px;
 line-height:26px;
-max-width:620px;
+max-width:700px;
 }
 
-/* BUTTON */
-
-.aislast-btn{
+.ais-last-btn{
+margin-top:10px;
 display:flex;
 align-items:center;
-justify-content:center;
 gap:10px;
-padding:16px 26px;
 background:#00ADB5;
+color:#FFF;
 border:none;
-border-radius:8px;
-cursor:pointer;
-color:#ffffff;
+padding:16px 28px;
+border-radius:10px;
 font-size:16px;
-font-weight:600;
-letter-spacing:0.04em;
-transition:all .25s ease;
+cursor:pointer;
+transition:all .2s ease;
 }
 
-/* BUTTON HOVER */
-
-.aislast-btn:hover{
-background:#019aa1;
-transform:translateY(-2px);
+.ais-last-btn:hover{
+background:#00979e;
 }
 
-/* ICON */
-
-.aislast-btn img{
+.ais-last-btn img{
 width:18px;
 height:18px;
 }
