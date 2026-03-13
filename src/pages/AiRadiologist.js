@@ -8,10 +8,12 @@ import AiR3 from "../assets/images/AiR3.svg";
 
 import Cards from "./Cards";
 import CoreCapabilities from "./CoreCapabilities";
-// import Core from "./Core";
+import Trust from "./Trust";
+import FAQR from "./FAQR";
+import AiRLast from "./AiRLast";
 // import Safety from "./Safety";
 // import AiSLast from "./AiSLast";
-// import Footer from "../components/Footer";
+import Footer from "../components/Footer";
 
 function AiRadiologist() {
 
@@ -136,11 +138,14 @@ function AiRadiologist() {
 
 <Cards />
 <CoreCapabilities />
+<Trust />
+<FAQR />
+<AiRLast />
 {/* <WhatAxionicDoes /> */}
 {/* <Core /> */}
 {/* <Safety /> */}
 {/* <AiSLast /> */}
-{/* <Footer /> */}
+<Footer />
 
     </>
   );

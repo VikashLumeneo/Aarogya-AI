@@ -4,6 +4,7 @@ padding:120px 130px;
 font-family:"Mulish",sans-serif;
 }
 
+
 /* CONTAINER */
 
 .corecap-container{
@@ -14,13 +15,13 @@ flex-direction:column;
 gap:80px;
 }
 
+
 /* HEADER */
 
 .corecap-header{
 display:flex;
 flex-direction:column;
 gap:20px;
-/* max-width:780px; */
 }
 
 .corecap-tag{
@@ -37,6 +38,7 @@ width:fit-content;
 font-size:46px;
 font-weight:700;
 color:#222831;
+line-height:56px;
 }
 
 .corecap-desc{
@@ -51,8 +53,7 @@ max-width:780px;
 
 .corecap-row{
 display:flex;
-flex-direction:row;
-align-items:flex-start;
+align-items:flex-start;   /* text image ke top se start */
 justify-content:space-between;
 gap:50px;
 width:100%;
@@ -69,25 +70,30 @@ flex-direction:row-reverse;
 width:590px;
 display:flex;
 flex-direction:column;
-/* gap:18px; */
+justify-content:flex-start; /* important */
 }
 
 .corecap-text h3{
 font-size:24px;
 font-weight:700;
 color:#222831;
+margin:0;
+margin-bottom:10px;
 }
 
 .corecap-text h4{
 font-size:20px;
 font-weight:500;
 color:#333;
+margin:0;
+margin-bottom:14px;
 }
 
 .corecap-text p{
 font-size:14px;
 line-height:24px;
 color:#393E46;
+margin-bottom:14px;
 }
 
 
@@ -99,6 +105,7 @@ flex-direction:column;
 gap:14px;
 padding:0;
 margin-top:10px;
+margin-bottom:16px;
 }
 
 .corecap-text li{
@@ -108,10 +115,12 @@ align-items:center;
 gap:10px;
 font-size:18px;
 font-weight:500;
+color:#000;
 }
 
 .corecap-text li img{
 width:20px;
+height:20px;
 }
 
 
@@ -121,6 +130,7 @@ width:20px;
 display:flex;
 gap:20px;
 margin-top:10px;
+flex-wrap:wrap;
 }
 
 .corecap-tags span{
@@ -140,25 +150,30 @@ width:540px;
 height:373px;
 border-radius:12px;
 overflow:hidden;
+display:flex;
+align-items:flex-start;
+justify-content:center;
 }
 
 .corecap-image img{
 width:100%;
 height:100%;
 object-fit:cover;
+border-radius:12px;
 }
 
 
 /* RESPONSIVE */
 
-@media (max-width:900px){
+@media (max-width:1000px){
 
 .corecap{
-padding:80px 30px;
+padding:80px 40px;
 }
 
 .corecap-row{
 flex-direction:column;
+gap:40px;
 }
 
 .corecap-row.reverse{
@@ -168,6 +183,19 @@ flex-direction:column;
 .corecap-text,
 .corecap-image{
 width:100%;
+}
+
+.corecap-image{
+height:auto;
+}
+
+.corecap-image img{
+height:auto;
+}
+
+.corecap-title{
+font-size:34px;
+line-height:44px;
 }
 
 }
