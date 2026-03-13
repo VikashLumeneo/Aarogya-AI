@@ -3,13 +3,12 @@
 }
 
 body{
-   margin:0;
+  margin:0;
   font-family:"Mulish", sans-serif;
-  padding-top:100px;  
+  padding-top:100px;
 }
 
 .navbar{
-
   width:100%;
   height:100px;
 
@@ -21,41 +20,30 @@ body{
 
   background:#ffffff;
 
-  position:fixed;   /* important */
+  position:fixed;
   top:0;
   left:0;
 
-  z-index:1000; 
+  z-index:1000;
 }
 
 /* LOGO */
 
 .logo-button{
-
   border:none;
   background:none;
   cursor:pointer;
 }
 
-.logo-text{
-
-  font-size:24px;
-  color:#222831;
-  letter-spacing:0.01em;
-  margin:0;
-}
-
 /* RIGHT MENU */
 
 .nav-right{
-
   display:flex;
   align-items:center;
   gap:20px;
 }
 
 .nav-item{
-
   width:100px;
   height:50px;
 
@@ -69,8 +57,65 @@ body{
   cursor:pointer;
 }
 
-.demo-button{
+/* ACTIVE COLOR */
 
+.nav-item.active{
+  color:#00ADB5;
+}
+
+/* PRODUCT DROPDOWN */
+
+.product-wrapper{
+  position:relative;
+}
+.dropdown-item{
+
+  display:block;
+  text-decoration:none;
+  color:#222831;
+  font-size:15px;
+
+}
+
+.dropdown-item:hover{
+
+  color:#00ADB5;
+
+}
+.dropdown{
+  position:absolute;
+  top:60px;
+  left:0;
+
+  background:white;
+
+  border-radius:10px;
+
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+
+  padding:20px;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:10px;
+
+  min-width:200px;
+}
+
+.dropdown p{
+  margin:0;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.dropdown p:hover{
+  color:#00ADB5;
+}
+
+/* BUTTONS */
+
+.demo-button{
   width:140px;
   height:50px;
 
@@ -86,7 +131,6 @@ body{
 }
 
 .login-button{
-
   width:100px;
   height:50px;
 
