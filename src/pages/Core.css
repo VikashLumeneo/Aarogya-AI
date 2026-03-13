@@ -18,29 +18,39 @@
 /* HEADER */
 
 .core-header{
-  max-width:900px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:20px;
+  max-width:720px;
 }
 
 .core-tag{
-  display:inline-block;
-  padding:6px 14px;
-  border-radius:20px;
-  background:#F3F7FF;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  height:36px;
+  padding:0 16px;
+
+  border-radius:120px;
+  background:#EBFEFF;
+
   color:#00ADB5;
   font-size:14px;
   font-weight:600;
-  margin-bottom:20px;
+  letter-spacing:0.04em;
 }
 
-.core-header h2{
+.core-title{
   font-size:46px;
   font-weight:700;
   color:#222831;
-  margin-bottom:20px;
+  line-height:56px;
   white-space:nowrap;
 }
 
-.core-header p{
+.core-desc{
   font-size:18px;
   color:#393E46;
   line-height:28px;
@@ -51,7 +61,7 @@
 
 .core-row{
   display:flex;
-  align-items:center;
+  align-items:stretch; /* IMPORTANT */
   justify-content:space-between;
   gap:80px;
 }
@@ -64,10 +74,11 @@
 /* TEXT */
 
 .core-text{
-  width:580px;
+  width:50%;
   display:flex;
   flex-direction:column;
-  justify-content:center;
+  justify-content:center; /* center vertically */
+  max-height:420px; /* same visual height as image */
 }
 
 .core-text h3{
@@ -119,7 +130,7 @@
 /* IMAGE */
 
 .core-image{
-  width:540px;
+  width:50%;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -127,7 +138,8 @@
 
 .core-image img{
   width:100%;
-  height:auto;
+  height:420px; /* FIXED HEIGHT */
+  object-fit:cover;
   border-radius:12px;
 }
 
@@ -149,17 +161,20 @@
     flex-direction:column;
   }
 
-  .core-header h2{
+  .core-title{
     white-space:normal;
     font-size:34px;
+    line-height:42px;
   }
 
-  .core-text{
-    width:100%;
-  }
-
+  .core-text,
   .core-image{
     width:100%;
+    max-height:none;
+  }
+
+  .core-image img{
+    height:auto;
   }
 
 }

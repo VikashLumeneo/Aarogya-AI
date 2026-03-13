@@ -21,11 +21,11 @@ function Core() {
             Core Capabilities
           </div>
 
-          <h2>
-            Every word. Every field. <br/> Every time.
+          <h2 className="core-title">
+            Every word. Every field. Every time.
           </h2>
 
-          <p>
+          <p className="core-desc">
             AI Scribe captures what matters, structures it correctly, and delivers it where it needs
             to go automatically, every consultation.
           </p>
@@ -114,7 +114,7 @@ function Core() {
             </p>
 
             <ul>
-              <li><img src={arrow} alt="" /> Real-teme prompts</li>
+              <li><img src={arrow} alt="" /> Real-time prompts</li>
               <li><img src={arrow} alt="" /> Gap detection</li>
               <li><img src={arrow} alt="" /> Non-intrusive alerts</li>
               <li><img src={arrow} alt="" /> Clinician-controlled</li>
@@ -143,8 +143,9 @@ function Core() {
               AI Scribe supports English and regional Indian languages natively so every patient
               can be understood, and every doctor can document in their language of choice.
             </p>
+
             <p>
-              The clinical note is always generated in the physician s preferred language,
+              The clinical note is always generated in the physician's preferred language,
               regardless of which language the consultation was conducted in.
             </p>
 
