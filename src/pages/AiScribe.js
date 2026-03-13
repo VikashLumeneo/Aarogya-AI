@@ -7,7 +7,8 @@ import AiScribe2 from "../assets/images/AiScribe2.svg";
 import AiScribe3 from "../assets/images/AiScribe3.svg";
 import WhatAxionicDoes from "./WhatAxionicDoes";
 import Core from "./Core";
-
+import Safety from "./Safety";
+import AiScribeFAQ from "./AiScribeFAQ";
 function AiScribe() {
 
   return (
@@ -129,6 +130,8 @@ function AiScribe() {
     </section>
 <WhatAxionicDoes />
 <Core />
+<Safety />
+<AiScribeFAQ />
     </>
   );
 

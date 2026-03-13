@@ -1,0 +1,162 @@
+.safety{
+  width:100%;
+  background:#F4F4F4;
+  padding:100px 0;
+  font-family:"Mulish", sans-serif;
+}
+
+/* CONTAINER */
+
+.safety-container{
+  max-width:1200px;
+  margin:auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:80px;
+  padding:0 40px;
+}
+
+
+/* LEFT SIDE */
+
+.safety-left{
+  width:520px;
+
+  display:flex;
+  flex-direction:column;
+  gap:14px;   /* 👈 reduced from 24px */
+}
+
+
+/* TAG */
+
+.safety-tag{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  width:max-content;
+  height:34px;
+  padding:0 14px;
+
+  border-radius:120px;
+  background:#EBFEFF;
+
+  color:#00ADB5;
+  font-size:13px;
+  font-weight:600;
+}
+
+
+/* TITLE */
+
+.safety-title{
+  font-size:46px;
+  font-weight:700;
+  line-height:50px;   /* 👈 reduced */
+  color:#222831;
+}
+
+
+/* DESCRIPTION */
+
+.safety-desc{
+  font-size:17px;
+  line-height:24px;   /* 👈 tighter */
+  color:#393E46;
+}
+
+
+/* PARAGRAPH */
+
+.safety-text{
+  font-size:17px;
+  line-height:24px;
+  color:#393E46;
+}
+
+
+/* HIGHLIGHT */
+
+.safety-highlight{
+  font-size:20px;
+  font-weight:700;
+  color:#222831;
+  margin-top:6px;   /* 👈 reduced */
+}
+
+
+/* BUTTONS */
+
+.safety-buttons{
+  display:flex;
+  gap:14px;
+  margin-top:4px;
+}
+
+.safety-btn{
+  height:42px;
+  padding:0 18px;
+
+  border:none;
+  border-radius:6px;
+
+  background:rgba(0,173,181,0.10);
+
+  font-size:15px;
+  font-weight:500;
+  color:#222831;
+
+  cursor:pointer;
+}
+
+
+/* IMAGE */
+
+.safety-image{
+  width:568px;
+  height:420px;   /* 👈 reference height */
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.image-placeholder{
+  width:100%;
+  height:100%;
+
+  background:#C7D6DE;
+  border-radius:12px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:26px;
+  color:rgba(0,0,0,0.25);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width:900px){
+
+  .safety-container{
+    flex-direction:column;
+    gap:50px;
+  }
+
+  .safety-left{
+    width:100%;
+  }
+
+  .safety-image{
+    width:100%;
+    height:320px;
+  }
+
+}
