@@ -7,28 +7,28 @@ export default function AiScribeFAQ() {
 
   const faqs = [
     {
-      q: "Does AI Scribe replace the doctor's notes entirely?",
-      a: "No. AI Scribe generates a draft note for physician review. Every note requires explicit clinician review and approval before it enters the patient record. The doctor is always in control."
+      q: "Does AI Scribe replace the doctor’s notes entirely?",
+      a: "No. AI Scribe generates a draft note for physician review. Every note requires explicit clinician review and approval before it enters the patient record."
     },
     {
       q: "Does it work across specialties?",
-      a: "Yes. AI Scribe adapts across multiple clinical specialties including general practice, cardiology, dermatology and more."
+      a: "Yes. AI Scribe adapts across multiple clinical specialties."
     },
     {
       q: "Which languages are supported?",
-      a: "AI Scribe supports multiple languages and dialects for accurate transcription."
+      a: "AI Scribe supports multiple languages and dialects."
     },
     {
       q: "How does it handle patient privacy?",
-      a: "All data is encrypted and processed securely following healthcare compliance standards."
+      a: "All patient data is encrypted and processed securely."
     },
     {
       q: "Does it integrate with our existing EHR?",
-      a: "Yes. AI Scribe integrates with major EHR systems to streamline documentation."
+      a: "Yes. AI Scribe integrates with major EHR systems."
     },
     {
       q: "How long does setup take?",
-      a: "Setup is quick and usually completed within a few days depending on integration requirements."
+      a: "Setup usually takes only a few days."
     }
   ];
 
@@ -41,24 +41,26 @@ export default function AiScribeFAQ() {
 
       <div className="faq-container">
 
-        {/* LEFT SIDE */}
+        {/* LEFT */}
 
         <div className="faq-left">
 
-          <div className="faq-tag">FAQ</div>
+          <div className="faq-tag">
+            QUESTIONS
+          </div>
 
           <h2 className="faq-title">
-            Frequently asked questions
+            The Details.
           </h2>
 
           <p className="faq-desc">
-            Everything you need to know before talking to our team about Arogya AI.
+            Everything you need to know about AI Scribe before talking to our team.
           </p>
 
         </div>
 
 
-        {/* RIGHT SIDE */}
+        {/* RIGHT */}
 
         <div className="faq-right">
 

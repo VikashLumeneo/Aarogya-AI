@@ -1,5 +1,5 @@
 .core{
-background:#ffffff;
+background:#fff;
 padding:140px 130px;
 font-family:"Mulish",sans-serif;
 }
@@ -8,7 +8,7 @@ font-family:"Mulish",sans-serif;
 /* CONTAINER */
 
 .core-container{
-max-width:1200px;
+max-width:1180px;
 margin:auto;
 display:flex;
 flex-direction:column;
@@ -53,7 +53,7 @@ color:#00ADB5;
 display:flex;
 align-items:center;
 justify-content:space-between;
-gap:80px;
+gap:50px;
 }
 
 .core-row.reverse{
@@ -65,14 +65,14 @@ flex-direction:row-reverse;
 
 .core-content{
 flex:1;
+max-width:498px;
 display:flex;
 flex-direction:column;
-gap:16px;
-max-width:560px;
+gap:18px;
 }
 
 
-/* SMALL PILL */
+/* PILL */
 
 .core-pill{
 background:#EBFEFF;
@@ -87,36 +87,33 @@ width:max-content;
 /* TEXT */
 
 .core-content h3{
-font-size:28px;
+font-size:26px;
 font-weight:700;
 color:#222831;
-line-height:36px;
+line-height:34px;
 }
 
 .core-content p{
-max-width:498px;
 font-size:15px;
 line-height:26px;
 color:#393E46;
 }
 
 
-/* BUTTON FEATURES */
+/* BUTTONS */
 
 .core-buttons{
 display:flex;
 gap:16px;
 margin-top:10px;
-flex-wrap:nowrap;
 }
 
 .core-buttons span{
 background:#C2FCFF;
 padding:12px 20px;
 border-radius:8px;
-font-size:15px;
+font-size:14px;
 font-weight:500;
-white-space:nowrap;
 }
 
 .core-buttons .light{
@@ -124,7 +121,7 @@ background:#C7D6DE;
 }
 
 
-/* ROW 2 BUTTONS */
+/* ROW2 */
 
 .row2-buttons{
 display:flex;
@@ -142,17 +139,14 @@ gap:16px;
 background:#C2FCFF;
 padding:12px 20px;
 border-radius:8px;
-font-size:15px;
-font-weight:500;
-white-space:nowrap;
+font-size:14px;
 }
 
 .row2-light{
 background:#C7D6DE;
 padding:12px 20px;
 border-radius:8px;
-font-size:15px;
-font-weight:500;
+font-size:14px;
 width:max-content;
 }
 
@@ -166,12 +160,12 @@ justify-content:center;
 }
 
 .core-image img{
-width:100%;
-max-width:520px;
+width:551px;
+max-width:100%;
 }
 
 
-/* RESPONSIVE */
+/* MOBILE */
 
 @media (max-width:900px){
 
@@ -194,7 +188,7 @@ line-height:42px;
 }
 
 .core-image img{
-max-width:100%;
+width:100%;
 }
 
 .row2-top{

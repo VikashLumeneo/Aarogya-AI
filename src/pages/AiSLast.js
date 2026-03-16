@@ -1,20 +1,19 @@
 import "./AiSLast.css";
 import demoIcon from "../assets/images/demo.svg";
 
-function AiSLast() {
+export default function AiSLast() {
   return (
     <section className="ais-last">
 
       <div className="ais-last-container">
 
         <h2 className="ais-last-title">
-          Give your doctors their time back.
+          The future of clinical intelligence is here
         </h2>
 
         <p className="ais-last-desc">
-          Documentation shouldn't take hours. With AI Scribe, every
-          consultation ends with a complete clinical note - ready to review,
-          ready to submit.
+          Doctors should spend their time on patients not documentation,
+          not scan queues, not paperwork.
         </p>
 
         <button className="ais-last-btn">
@@ -27,5 +26,3 @@ function AiSLast() {
     </section>
   );
 }
-
-export default AiSLast;

@@ -1,35 +1,32 @@
 .faq{
   width:100%;
   padding:120px 0;
-  background:#ffffff;
-  font-family:"Mulish", sans-serif;
+  background:#fff;
 }
 
 .faq-container{
-  max-width:1200px;
+  max-width:1180px;
   margin:auto;
 
   display:flex;
-  justify-content:space-between;
   align-items:flex-start;
-
-  gap:120px;
-  padding:0 40px;
+  gap:154px;
 }
 
 
 /* LEFT SIDE */
 
 .faq-left{
-  width:420px;
-
+  width:426px;
   display:flex;
   flex-direction:column;
   gap:20px;
 }
 
 .faq-tag{
-  width:max-content;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
 
   padding:6px 16px;
   border-radius:120px;
@@ -37,21 +34,27 @@
   background:#E6F6FF;
 
   font-size:14px;
-  font-weight:600;
+  font-family:Mulish;
+  letter-spacing:0.04em;
   color:#222831;
+
+  width:fit-content;
 }
 
 .faq-title{
   font-size:46px;
   font-weight:700;
-  line-height:56px;
+  font-family:Mulish;
+  line-height:60px;
   color:#222831;
 }
 
 .faq-desc{
-  font-size:15px;
+  font-size:14px;
+  font-family:Mulish;
   line-height:24px;
-  color:#393E46;
+  letter-spacing:0.02em;
+  color:#222831;
 }
 
 
@@ -59,58 +62,45 @@
 
 .faq-right{
   width:600px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+
+  align-self:stretch;
 }
 
 
 /* FAQ ITEM */
 
 .faq-item{
+  width:100%;
   border:1px solid #EEF9FF;
-  background:#ffffff;
-
-  padding:20px;
-
+  background:#fff;
   cursor:pointer;
-  transition:all .3s ease;
-}
 
-.faq-item + .faq-item{
-  border-top:none;
-}
-
-
-/* ACTIVE */
-
-.faq-item.active{
-  background:#EDFEFF;
+  margin-top:-1px; /* gap:-1px effect */
 }
 
 
 /* QUESTION */
 
 .faq-question{
+  height:70px;
+
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
+
+  padding:0 20px;
 
   font-size:16px;
+  font-family:Mulish;
   font-weight:700;
   color:#212429;
+
+  letter-spacing:0.04em;
 }
-
-
-/* ANSWER */
-
-.faq-answer{
-  margin-top:12px;
-
-  font-size:14px;
-  line-height:22px;
-  color:#393E46;
-}
-
-
-/* ICON */
 
 .faq-icon{
   font-size:14px;
@@ -118,21 +108,18 @@
 }
 
 
-/* RESPONSIVE */
+/* OPEN ITEM */
 
-@media (max-width:900px){
+.faq-item.active{
+  background:#EDFEFF;
+}
 
-  .faq-container{
-    flex-direction:column;
-    gap:50px;
-  }
+.faq-answer{
+  padding:0 20px 20px 20px;
 
-  .faq-left{
-    width:100%;
-  }
-
-  .faq-right{
-    width:100%;
-  }
-
+  font-size:14px;
+  font-family:Mulish;
+  color:#393E46;
+  line-height:22px;
+  letter-spacing:0.02em;
 }

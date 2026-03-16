@@ -3,7 +3,7 @@ import "./Core.css";
 import img1 from "../assets/images/SGraphic1.svg";
 import img2 from "../assets/images/SGraphic2.svg";
 import img3 from "../assets/images/SGraphic3.svg";
-import img4 from "../assets/images/Multilingual.svg";
+import img4 from "../assets/images/SGraphic4.svg";
 
 function Core() {
   return (
@@ -105,64 +105,76 @@ function Core() {
         </div>
 
 
-        {/* ROW 3 */}
+       {/* ROW 3 */}
 
-        <div className="core-row">
+<div className="core-row">
 
-          <div className="core-content">
+  <div className="core-content">
 
-            <div className="core-pill">
-              Context aware prompts
-            </div>
+    <div className="core-pill">
+      Context-Aware Clinical Prompts
+    </div>
 
-            <h3>
-              The question you almost
-              forgot to ask.
-            </h3>
+    <h3>
+      The question you almost
+      forgot to ask.
+    </h3>
 
-            <p>
-              When something important seems absent from the conversation,
-              AI Scribe prompts the doctor with the right follow-up
-              question instantly.
-            </p>
+    <p>
+      When something important seems absent from the conversation,
+      AI Scribe prompts the doctor with the right follow-up
+      question in the moment, not after the patient has left.
+    </p>
 
-          </div>
+    <div className="core-buttons">
+      <span>Real-Time Prompts</span>
+      <span>Gap Detection</span>
+      <span className="light">Non-Intrusive</span>
+    </div>
 
-          <div className="core-image">
-            <img src={img3} alt="" />
-          </div>
+  </div>
 
-        </div>
+  <div className="core-image">
+    <img src={img3} alt="" />
+  </div>
 
+</div>
 
-        {/* ROW 4 */}
+{/* ROW 4 */}
 
-        <div className="core-row reverse">
+<div className="core-row reverse">
 
-          <div className="core-content">
+  <div className="core-content">
 
-            <div className="core-pill">
-              Multilingual Support
-            </div>
+    <div className="core-pill">
+      Multilingual By Design
+    </div>
 
-            <h3>
-              Every patient understood.
-            </h3>
+    <h3>
+      Every patient understood.
+      <br/>
+      Every note complete.
+    </h3>
 
-            <p>
-              AI Scribe supports English and regional Indian languages
-              so every patient can be understood and every doctor can
-              document in their preferred language.
-            </p>
+    <p>
+      Supports English and regional Indian languages natively.
+      Note always generated in the physician's preferred language.
+    </p>
 
-          </div>
+    <div className="core-buttons">
+      <span>English</span>
+      <span>Hindi</span>
+      <span>Tamil</span>
+      <span className="light">+ More</span>
+    </div>
 
-          <div className="core-image">
-            <img src={img4} alt="" />
-          </div>
+  </div>
 
-        </div>
+  <div className="core-image">
+    <img src={img4} alt="Multilingual Support"/>
+  </div>
 
+</div>
       </div>
 
     </section>

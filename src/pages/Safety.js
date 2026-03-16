@@ -6,57 +6,57 @@ export default function Safety() {
 
       <div className="safety-container">
 
-        {/* LEFT CONTENT */}
+        {/* TAG */}
+        <div className="safety-tag">
+          Safety & Trust
+        </div>
 
-        <div className="safety-left">
+        {/* TITLE */}
+        <h2 className="safety-title">
+          AI proposes. <br />
+          humans decide.
+        </h2>
 
-          <div className="safety-tag">
-            Safety & Trust
+        {/* DESCRIPTION */}
+        <p className="safety-desc">
+          A rigorous human-in-the-loop architecture ensures every <br/>output is
+          clinician-authorised. Adversarial AI continuously <br/>audits outputs,
+          achieving hallucination rates below 1 in 100,000.
+        </p>
+
+        {/* FLOW */}
+        <div className="safety-flow">
+
+          <div className="flow-box">
+            AI Proposal
           </div>
 
-          <h2 className="safety-title">
-            AI proposes.<br/>
-            humans decide.
-          </h2>
+          <div className="flow-arrow" />
 
-          <p className="safety-desc">
-            A rigorous human-in-the-loop architecture ensures every output
-            is clinician-authorised.
-          </p>
+          <div className="flow-box blue">
+            Adversarial AI Check
+          </div>
 
-          <p className="safety-text">
-            Adversarial AI continuously audits outputs for clinical errors,
-            achieving hallucination rates below 1 in 100,000. Every automated
-            summary, diagnosis, or note requires explicit physician review
-            before it enters the record.
-          </p>
+          <div className="flow-arrow" />
 
-          <h4 className="safety-highlight">
-            The doctor decides. Always.
-          </h4>
-
-          <div className="safety-buttons">
-
-            <button className="safety-btn">
-              Human-in-the-Loop
-            </button>
-
-            <button className="safety-btn">
-              Adversarial AI audit
-            </button>
-
+          <div className="flow-box primary">
+            Human Expert Authorisation
           </div>
 
         </div>
 
+        {/* FOOT TEXT */}
+        <h4 className="safety-highlight">
+          The doctor decides. Always.
+        </h4>
 
-        {/* RIGHT IMAGE */}
+        {/* TAGS */}
+        <div className="safety-tags">
 
-        <div className="safety-image">
-
-          <div className="image-placeholder">
-            Product Photo
-          </div>
+          <span>Human-in-the-Loop</span>
+          <span>Adversarial AI Audit</span>
+          <span>{"<1 in 100,000 Hallucination Rate"}</span>
+          <span>Physician Authorisation Required</span>
 
         </div>
 
