@@ -1,82 +1,191 @@
+import { useEffect, useRef } from "react";
 import "./Outcome.css";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-function Outcome() {
+gsap.registerPlugin(ScrollTrigger);
+
+export default function Outcome() {
+
+  const sectionRef = useRef();
+
+  useEffect(() => {
+
+    const rows = gsap.utils.toArray(".outcome-row");
+
+    function setActive(index) {
+      rows.forEach((row, i) => {
+        if (i === index) {
+          row.classList.add("active");
+        } else {
+          row.classList.remove("active");
+        }
+      });
+    }
+
+    rows.forEach((row, i) => {
+
+      ScrollTrigger.create({
+        trigger: row,
+        start: "top center",
+        end: "bottom center",
+        onEnter: () => setActive(i),
+        onEnterBack: () => setActive(i)
+      });
+
+    });
+
+    ScrollTrigger.create({
+      trigger: sectionRef.current,
+      start: "top top",
+      end: "+=" + rows.length * 100 + "%",
+      pin: true,
+      scrub: true
+    });
+
+  }, []);
+
   return (
-    <section className="outcome">
+
+    <section className="outcome" ref={sectionRef}>
 
       <div className="outcome-container">
 
-        <h2 className="outcome-heading">
-          <span className="highlight">Arogya AI</span> to deliver faster care & better outcomes.
-        </h2>
+        <div className="outcome-header">
 
-        <div className="slides-container">
+          <button className="outcome-tag">
+            The Outcome-Driven Angle
+          </button>
 
-          {/* SLIDE 1 */}
+          <h2 className="outcome-title">
+            Arogya AI to deliver faster care & better outcomes.
+          </h2>
 
-          <div className="slide">
-
-            <div className="slide-text">
-              <h3>Handles patient calls</h3>
-
-              <p>
-                Handles patient calls, schedules appointments, and manages
-                front office communications with natural conversation
-                capabilities.
-              </p>
-            </div>
-
-            <div className="slide-image">
-              <div className="image-placeholder">
-                Product Photo
-              </div>
-            </div>
-
-          </div>
+        </div>
 
 
-          {/* SLIDE 2 */}
+        {/* Slide 1 */}
 
-          <div className="slide">
+        <div className="outcome-row active">
 
-            <div className="slide-text">
-              <h3>AI Scribe</h3>
+          <div className="outcome-text">
 
-              <p>
-                Automatically transcribes and structures patient conversations
-                into clean clinical notes, eliminating burnout from manual
-                documentation.
-              </p>
-            </div>
+            <h3>The encounter starts before the patient arrives.</h3>
 
-            <div className="slide-image">
-              <div className="image-placeholder">
-                Product Photo
-              </div>
-            </div>
+            <p>
+              AI Intake manages appointment confirmations, captures patient history,
+              analyses vitals trends and flags chronic conditions so the clinician walks in already informed.
+            </p>
 
           </div>
 
+          <div className="outcome-image">
+            <div className="image-box">Product Photo</div>
+          </div>
 
-          {/* SLIDE 3 */}
+        </div>
 
-          <div className="slide">
 
-            <div className="slide-text">
-              <h3>Radiology Insights</h3>
+        {/* Slide 2 */}
 
-              <p>
-                Automated analysis highlights abnormalities and assists
-                radiologists in faster scan interpretation.
-              </p>
-            </div>
+        <div className="outcome-row">
 
-            <div className="slide-image">
-              <div className="image-placeholder">
-                Product Photo
-              </div>
-            </div>
+          <div className="outcome-text">
 
+            <h3>Every word captured. Every field complete.</h3>
+
+            <p>
+              AI Scribe listens to the consultation in real time and converts it into structured clinical notes automatically.
+            </p>
+
+          </div>
+
+          <div className="outcome-image">
+            <div className="image-box light">Product Photo</div>
+          </div>
+
+        </div>
+
+
+        {/* Slide 3 */}
+
+        <div className="outcome-row">
+
+          <div className="outcome-text">
+
+            <h3>The right diagnosis. Surfaced faster.</h3>
+
+            <p>
+              AI Diagnostics synthesises symptoms, history, lab results and live notes into ranked differential diagnoses.
+            </p>
+
+          </div>
+
+          <div className="outcome-image">
+            <div className="image-box light">Product Photo</div>
+          </div>
+
+        </div>
+
+
+        {/* Slide 4 */}
+
+        <div className="outcome-row">
+
+          <div className="outcome-text">
+
+            <h3>Scans read. Findings highlighted. Reports ready.</h3>
+
+            <p>
+              AI Radiology retrieves CT and MRI studies and generates structured reports.
+            </p>
+
+          </div>
+
+          <div className="outcome-image">
+            <div className="image-box light">Product Photo</div>
+          </div>
+
+        </div>
+
+
+        {/* Slide 5 */}
+
+        <div className="outcome-row">
+
+          <div className="outcome-text">
+
+            <h3>Safer prescribing. At the moment of decision.</h3>
+
+            <p>
+              AI Medication analyses consultation transcripts for drug interactions and dosage concerns.
+            </p>
+
+          </div>
+
+          <div className="outcome-image">
+            <div className="image-box light">Product Photo</div>
+          </div>
+
+        </div>
+
+
+        {/* Slide 6 */}
+
+        <div className="outcome-row">
+
+          <div className="outcome-text">
+
+            <h3>The loop closed. Nothing left outstanding.</h3>
+
+            <p>
+              AI Care Coordinator handles coding, medication adherence check-ins and schedules follow-ups automatically.
+            </p>
+
+          </div>
+
+          <div className="outcome-image">
+            <div className="image-box light">Product Photo</div>
           </div>
 
         </div>
@@ -84,7 +193,6 @@ function Outcome() {
       </div>
 
     </section>
+
   );
 }
-
-export default Outcome;

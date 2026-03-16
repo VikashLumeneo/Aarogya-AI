@@ -15,9 +15,9 @@ export default function HeroSection() {
 
       <div className="hero-container">
 
-        <button className="hero-tag">
-          Clinical intelligence platform
-        </button>
+       <p className="hero-tag">
+  Clinical intelligence platform
+</p>
 
         <h1 className="hero-title">
            Medicine. Meet <span>Intelligence</span>
@@ -25,7 +25,7 @@ export default function HeroSection() {
 
         <p className="hero-description">
           From the moment a consultation begins to the moment a patient walks out,
-          Arogya AI is present reducing the cognitive load on doctors and the
+          Arogya AI is present reducing the cognitive <br /> load on doctors and the
           administrative burden on care teams across every stage of the encounter.<br /> <span>Real-time. Accurate. Invisible until you need it.</span>
           
         </p>

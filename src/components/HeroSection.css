@@ -34,7 +34,7 @@
   position: relative;
   z-index: 2;
 
-  width: 742px;
+  /* width: 742px; */
 
   display: flex;
   flex-direction: column;
@@ -48,19 +48,20 @@
 /* tag */
 
 .hero-tag{
-  height: 36px;
+ height: 36px;
   padding: 0 16px;
 
   border-radius: 120px;
-  border: none;
 
   background: #EBFEFF;
 
   font-size: 14px;
   letter-spacing: 0.04em;
-  color: #222831;
+  color: black !important;
 
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* title */
