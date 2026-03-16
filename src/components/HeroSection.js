@@ -24,9 +24,9 @@ export default function HeroSection() {
         </h1>
 
         <p className="hero-description">
-          From the moment a consultation begins to the final radiology report,
+          From the moment a consultation begins to the moment a patient walks out,
           Arogya AI is present reducing the cognitive load on doctors and the
-          administrative burden on care teams.<br /> <span>Real-time. Accurate. Invisible until you need it.</span>
+          administrative burden on care teams across every stage of the encounter.<br /> <span>Real-time. Accurate. Invisible until you need it.</span>
           
         </p>
 

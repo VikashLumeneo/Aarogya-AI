@@ -4,24 +4,29 @@ function WhatAxionicDoes() {
 
   const steps = [
     {
-      step: "Step 1",
-      title: "Activate",
-      desc: "One tap on any device phone, tablet, or PC. AI Scribe begins listening the moment the consultation starts."
+      number: "1",
+      title: "Scan Ready",
+      desc: "Auto-triggered on scan availability"
     },
     {
-      step: "Step 2",
-      title: "Listen",
-      desc: "The system captures every word of the doctor-patient conversation in real time in English or regional Indian languages."
+      number: "2",
+      title: "Auto-Retrieve",
+      desc: "DICOM pulled directly from PACS"
     },
     {
-      step: "Step 3",
-      title: "Structure",
-      desc: "AI Scribe automatically maps the conversation to clinical fields: History of Present Illness, Review of Systems, Physical Exam, Medications, Allergies."
+      number: "3",
+      title: "Analyse",
+      desc: "Deep learning organ segmentation"
     },
     {
-      step: "Step 4",
-      title: "Deliver",
-      desc: "A complete, structured clinical note is ready for physician review the moment the consultation ends. One tap to approve and it enters the EHR."
+      number: "4",
+      title: "Highlight",
+      desc: "Lesions overlaid on scan"
+    },
+    {
+      number: "5",
+      title: "Report",
+      desc: "Structured report ready to approve"
     }
   ];
 
@@ -31,41 +36,51 @@ function WhatAxionicDoes() {
 
       <div className="works-container">
 
-        <div className="works-header">
+        {/* LEFT SIDE */}
+
+        <div className="works-left">
 
           <div className="works-tag">
             How It Works
           </div>
 
           <h2>
-            From first word to final note
+            From scan acquisition <br />
+            to structured report.
           </h2>
 
           <p>
-            AI Scribe works silently in the background no training, no setup,
-            no workflow change required.
+            AI Radiologist works automatically from the moment imaging
+            studies arrive in your PACS no manual uploads, no workflow
+            change, no waiting.
           </p>
 
         </div>
 
 
-        <div className="works-cards">
+        {/* RIGHT SIDE STEPS */}
+
+        <div className="works-right">
 
           {steps.map((item, index) => (
 
-            <div key={index} className="works-card">
+            <div key={index} className="step-item">
 
-              <span className="step">
-                {item.step}
-              </span>
+              <div className={`step-number ${index === 0 ? "active" : ""}`}>
+                {item.number}
+              </div>
 
-              <h3>
-                {item.title}
-              </h3>
+              <div className="step-content">
 
-              <p>
-                {item.desc}
-              </p>
+                <h3>
+                  {item.title}
+                </h3>
+
+                <p>
+                  {item.desc}
+                </p>
+
+              </div>
 
             </div>
 

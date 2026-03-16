@@ -11,8 +11,21 @@ import Vector7 from "../assets/images/Vector7.svg";
 import Vector8 from "../assets/images/Vector8.svg";
 
 export default function Feature() {
+
+  const features = [
+    { id: "01", icon: Vector1, title: "Ambient consultation capture", sub: "(was: Real-Time Transcription)" },
+    { id: "02", icon: Vector2, title: "Symptom & history extraction", sub: "(was: symptom intelligence)" },
+    { id: "03", icon: Vector3, title: "Differential diagnosis engine", sub: "(was: differential diagnosis)" },
+    { id: "04", icon: Vector4, title: "Automated scan retrieval", sub: "(was: DICOM integration)" },
+    { id: "05", icon: Vector5, title: "Abnormality detection", sub: "(was: lesion detection)" },
+    { id: "06", icon: Vector6, title: "Structured report generation", sub: "(was: report generation)" },
+    { id: "07", icon: Vector7, title: "Multilingual consultation support", sub: "(was: multilingual support)" },
+    { id: "08", icon: Vector8, title: "Care gap & coding intelligence", sub: "(was: clinical analytics)" },
+  ];
+
   return (
-    <div className="problem-strip">
+    <section className="problem-strip">
+
       <div className="frame">
 
         <div className="your-entire-wrapper">
@@ -27,57 +40,36 @@ export default function Feature() {
 
         <div className="feature-grid">
 
-          <div className="feature-card">
-            <div className="feature-number">01</div>
-            <img src={Vector1} className="feature-icon" alt="" />
-            <div className="feature-text">Real-Time Transcription</div>
-          </div>
+          {features.map((item, index) => (
+            <div className="feature-card" key={index}>
 
-          <div className="feature-card">
-            <div className="feature-number">02</div>
-            <img src={Vector2} className="feature-icon" alt="" />
-            <div className="feature-text">Symptom Intelligence</div>
-          </div>
+              <div className="feature-number">{item.id}</div>
 
-          <div className="feature-card">
-            <div className="feature-number">03</div>
-            <img src={Vector3} className="feature-icon" alt="" />
-            <div className="feature-text">Differential Diagnosis</div>
-          </div>
+              <img
+                src={item.icon}
+                className="feature-icon"
+                alt="feature icon"
+              />
 
-          <div className="feature-card">
-            <div className="feature-number">04</div>
-            <img src={Vector4} className="feature-icon" alt="" />
-            <div className="feature-text">DICOM Integration</div>
-          </div>
+              <div className="feature-text">
 
-          <div className="feature-card">
-            <div className="feature-number">05</div>
-            <img src={Vector5} className="feature-icon" alt="" />
-            <div className="feature-text">Lesion Detection</div>
-          </div>
+                <span className="feature-title">
+                  {item.title}
+                </span>
 
-          <div className="feature-card">
-            <div className="feature-number">06</div>
-            <img src={Vector6} className="feature-icon" alt="" />
-            <div className="feature-text">Report Generation</div>
-          </div>
+                <span className="feature-sub">
+                  {item.sub}
+                </span>
 
-          <div className="feature-card">
-            <div className="feature-number">07</div>
-            <img src={Vector7} className="feature-icon" alt="" />
-            <div className="feature-text">Multilingual Support</div>
-          </div>
+              </div>
 
-          <div className="feature-card">
-            <div className="feature-number">08</div>
-            <img src={Vector8} className="feature-icon" alt="" />
-            <div className="feature-text">Clinical Analytics</div>
-          </div>
+            </div>
+          ))}
 
         </div>
 
       </div>
-    </div>
+
+    </section>
   );
 }

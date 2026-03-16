@@ -10,14 +10,12 @@ function AiRLast() {
         <div className="airlast-text">
 
           <h2 className="airlast-title">
-            Cut interpretation time. Miss nothing.
+            The future of clinical intelligence is here
           </h2>
 
           <p className="airlast-desc">
-            Radiology scan queues shouldn't be a bottleneck in patient care.
-            With AI Radiologist, every study is analysed automatically,
-            findings highlighted, reports drafted, and urgent cases surfaced
-            before the radiologist opens the viewer.
+            Doctors should spend their time on patients not documentation,
+            not scan queues, not paperwork.
           </p>
 
         </div>

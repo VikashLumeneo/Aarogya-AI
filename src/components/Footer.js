@@ -33,12 +33,12 @@ export default function Footer() {
             <h4 className="footer-heading">AI AGENTS</h4>
 
             <ul>
-              <li>AI Nurse</li>
-              <li>AI Receptionist</li>
-              <li>AI Consultant</li>
+              <li>AI Intake</li>
               <li>AI Scribe</li>
-              <li>AI Pharmacist</li>
-              <li>AI Medical Coder</li>
+              <li>AI Diagnostics</li>
+              <li>AI Radiology</li>
+              <li>AI Medication</li>
+              <li>AI Care Coordinator</li>
             </ul>
 
           </div>

@@ -1,101 +1,73 @@
 import "./Cards.css";
 
 export default function Cards() {
+  const steps = [
+    {
+      title: "Scan Ready",
+      text: "Auto-triggered on scan availability"
+    },
+    {
+      title: "Auto-Retrieve",
+      text: "DICOM pulled directly from PACS"
+    },
+    {
+      title: "Analyse",
+      text: "Deep learning organ segmentation"
+    },
+    {
+      title: "Highlight",
+      text: "Lesions overlaid on scan"
+    },
+    {
+      title: "Report",
+      text: "Structured report ready to approve"
+    }
+  ];
+
   return (
     <section className="cards">
 
-      <div className="cards-header">
+      <div className="cards-wrapper">
 
-        <button className="cards-tag">
-          How It Works
-        </button>
+        {/* LEFT */}
+        <div className="cards-left">
 
-        <h2 className="cards-title">
-          From scan arrival to structured report.
-        </h2>
+          <button className="cards-tag">
+            How It Works
+          </button>
 
-        <p className="cards-subtitle">
-          AI Radiologist works automatically from the moment imaging studies
-          arrive in your PACS no manual uploads, no workflow change, no waiting.
-        </p>
+          <h2 className="cards-title">
+            From scan acquisition <br/>
+            to structured report.
+          </h2>
 
-      </div>
+          <p className="cards-subtitle">
+            AI Radiologist works automatically from the moment imaging
+            studies arrive in your PACS no manual uploads, no workflow
+            change, no waiting.
+          </p>
 
-
-      <div className="cards-container">
-
-        <div className="card">
-          <span className="step">Step 1</span>
-
-          <div className="card-content">
-            <h3>Retrieve</h3>
-
-            <p>
-              AI Radiologist integrates directly with your PACS system and
-              automatically retrieves DICOM files the moment a study is
-              complete. No manual download. No queue management.
-            </p>
-          </div>
         </div>
 
 
-        <div className="card">
-          <span className="step">Step 2</span>
+        {/* RIGHT */}
+        <div className="steps">
 
-          <div className="card-content">
-            <h3>Segment</h3>
+          {steps.map((step, index) => (
+            <div className="step-item" key={index}>
 
-            <p>
-              Deep learning models segment relevant organs and anatomical
-              structures with high precision creating a spatial map of the scan
-              before analysis begins.
-            </p>
-          </div>
-        </div>
+              <div className="step-number">
+                {index + 1}
+              </div>
 
+              <div className="step-text">
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </div>
 
-        <div className="card">
-          <span className="step">Step 3</span>
+            </div>
+          ))}
 
-          <div className="card-content">
-            <h3>Detect</h3>
-
-            <p>
-              Abnormalities, lesions, and clinically significant findings are
-              identified and localised. Each finding is assigned a confidence
-              level & highlighted directly on the scan.
-            </p>
-          </div>
-        </div>
-
-
-        <div className="card">
-          <span className="step">Step 4</span>
-
-          <div className="card-content">
-            <h3>Prioritise</h3>
-
-            <p>
-              Critical findings are flagged for immediate radiologist attention.
-              Studies are automatically ranked by urgency so the most
-              time-sensitive cases always surface first.
-            </p>
-          </div>
-        </div>
-
-
-        <div className="card">
-          <span className="step">Step 5</span>
-
-          <div className="card-content">
-            <h3>Report</h3>
-
-            <p>
-              A complete, structured radiology report is auto-generated in
-              physician-reviewable format ready for clinician review, approval,
-              and entry into the patient record.
-            </p>
-          </div>
         </div>
 
       </div>

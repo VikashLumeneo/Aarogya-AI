@@ -1,6 +1,6 @@
 import React from "react";
 import "./FeatureCircle.css";
-import heroCircle from "../assets/images/Hero.svg";
+import heroCircle from "../assets/images/Hero1.svg";
 
 export default function FeatureCircle() {
   return (

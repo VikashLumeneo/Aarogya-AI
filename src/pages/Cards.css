@@ -1,132 +1,138 @@
 .cards{
 width:100%;
-padding:80px 130px;
+padding:80px 120px;
 background:#F4F4F4;
 font-family:"Mulish", sans-serif;
 
 display:flex;
-flex-direction:column;
-align-items:center;
-gap:60px;
+justify-content:center;
 }
 
+/* WRAPPER */
 
-/* HEADER */
+.cards-wrapper{
+width:100%;
+max-width:1100px;
 
-.cards-header{
-max-width:780px;
+display:flex;
+/* justify-content:space-between; */
+gap:200px;
+}
+
+/* LEFT SIDE */
+
+.cards-left{
+max-width:520px;
 
 display:flex;
 flex-direction:column;
-align-items:center;
 gap:20px;
-
-text-align:center;
 }
 
 .cards-tag{
 background:#EBFEFF;
 color:#00ADB5;
 border:none;
+
 padding:8px 16px;
 border-radius:120px;
+
 font-size:14px;
 font-weight:600;
+
+width:fit-content;
 }
 
 .cards-title{
 font-size:46px;
 font-weight:700;
+line-height:1.2;
 color:#222831;
 }
 
 .cards-subtitle{
-font-size:18px;
+font-size:16px;
 line-height:26px;
 color:#393E46;
 letter-spacing:0.04em;
+max-width:420px;
 }
 
 
-/* CARDS CONTAINER */
+/* RIGHT STEPS */
 
-.cards-container{
-width:100%;
-max-width:1200px;
-
-display:flex;
-justify-content:center;
-align-items:stretch;
-gap:10px;
-
-/* important */
-flex-wrap:nowrap;
-}
-
-
-/* SINGLE CARD */
-
-.card{
-flex:1;   /* sab cards equal width lenge */
-
-min-height:350px;
-
-padding:30px;
-
+.steps{
 display:flex;
 flex-direction:column;
-align-items:flex-start;
-gap:40px;
+gap:28px;
+}
 
-border-left:0.6px solid #979797;
+
+/* STEP */
+
+.step-item{
+display:flex;
+gap:14px;
+padding-bottom:12px;
+
+border-bottom:0.6px solid #DFEAF0;
+
+cursor:pointer;
 
 transition:all 0.25s ease;
 }
 
 
-/* HOVER EFFECT */
+/* NUMBER */
 
-.card:hover{
-background:#FFFFFF;
-border-left:2px solid #00ADB5;
-border-radius:12px;
-box-shadow:0 8px 20px rgba(0,0,0,0.05);
-cursor:pointer;
+.step-number{
+width:28px;
+height:28px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:50%;
+
+font-size:14px;
+font-weight:700;
+
+color:#00ADB5;
+border:1px solid #00ADB5;
+
+transition:all 0.25s ease;
 }
 
 
-/* STEP TEXT */
+/* TEXT */
 
-.step{
-color:#979797;
-font-size:16px;
-letter-spacing:0.02em;
-}
-
-
-/* CARD CONTENT */
-
-.card-content{
+.step-text{
 display:flex;
 flex-direction:column;
-gap:10px;
+gap:3px;
 }
 
-
-/* TITLE */
-
-.card-content h3{
-font-size:24px;
-font-weight:700;
+.step-text h3{
+font-size:18px;
+font-weight:600;
 color:#000;
 }
 
-
-/* PARAGRAPH */
-
-.card-content p{
-font-size:15px;
-line-height:24px;
+.step-text p{
+font-size:14px;
+color:#000;
 letter-spacing:0.04em;
-color:#000;
+}
+
+
+/* HOVER EFFECT */
+
+.step-item:hover .step-number{
+background:#00ADB5;
+color:white;
+}
+
+.step-item:hover h3{
+color:#00ADB5;
 }

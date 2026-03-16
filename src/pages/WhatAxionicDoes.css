@@ -1,7 +1,7 @@
 .works{
 
 width:100%;
-padding:80px 130px;
+padding:80px 120px;
 
 display:flex;
 justify-content:center;
@@ -17,28 +17,29 @@ font-family:"Mulish", sans-serif;
 
 .works-container{
 
-max-width:1180px;
 width:100%;
+max-width:1200px;
 
 display:flex;
-flex-direction:column;
+justify-content:space-between;
 
-gap:40px;
+gap:80px;
 
 }
 
 
-/* HEADER */
+/* LEFT SIDE */
 
-.works-header{
+.works-left{
+
+max-width:500px;
 
 display:flex;
 flex-direction:column;
 
-gap:10px;
+gap:20px;
 
 }
-
 
 .works-tag{
 
@@ -55,109 +56,110 @@ width:fit-content;
 
 }
 
-
-.works-header h2{
+.works-left h2{
 
 font-size:46px;
 font-weight:700;
 
 color:#222831;
 
+line-height:54px;
+
 }
 
-
-.works-header p{
+.works-left p{
 
 font-size:18px;
-color:#393E46;
 
-max-width:780px;
+color:#393E46;
 
 line-height:26px;
 
-}
-
-
-/* CARDS */
-
-.works-cards{
-
-display:flex;
-
-gap:20px;
+max-width:480px;
 
 }
 
 
-/* CARD */
+/* RIGHT SIDE */
 
-.works-card{
-
-width:260px;
-height:350px;
-
-padding:30px;
+.works-right{
 
 display:flex;
 flex-direction:column;
 
-gap:20px;
-
-border-left:1px solid #979797;
-
-cursor:pointer;
-
-transition:all 0.3s ease;
-
-}
-
-
-/* HOVER EFFECT */
-
-.works-card:hover{
-
-background:white;
-
-border-radius:12px;
-
-border-left:3px solid #00ADB5;
-
-box-shadow:0 10px 20px rgba(0,0,0,0.05);
+gap:30px;
 
 }
 
 
 /* STEP */
 
-.step{
+.step-item{
 
-color:#979797;
+display:flex;
 
-font-size:16px;
+gap:14px;
+
+padding-bottom:14px;
+
+border-bottom:1px solid #DFEAF0;
 
 }
 
 
-/* TITLE */
+/* STEP NUMBER */
 
-.works-card h3{
+.step-number{
 
-font-size:24px;
+width:28px;
+height:28px;
+
+border-radius:14px;
+
+border:2px solid #00ADB5;
+
+color:#00ADB5;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-weight:700;
+
+font-size:14px;
+
+}
+
+
+/* ACTIVE STEP */
+
+.step-number.active{
+
+background:#00ADB5;
+color:white;
+
+}
+
+
+/* STEP TEXT */
+
+.step-content h3{
+
+font-size:20px;
 font-weight:700;
 
 color:#000;
 
+margin-bottom:4px;
+
 }
 
-
-/* DESC */
-
-.works-card p{
+.step-content p{
 
 font-size:15px;
 
-line-height:24px;
-
 color:#000;
+
+line-height:22px;
 
 }

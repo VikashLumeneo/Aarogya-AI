@@ -2,19 +2,30 @@
 background:#081819;
 padding:60px 130px;
 font-family:"Mulish", sans-serif;
+
 display:flex;
-justify-content:center;
+justify-content:flex-start;
 align-items:center;
 }
 
+/* container */
+
 .airlast-container{
-max-width:900px;
 display:flex;
 flex-direction:column;
-align-items:center;
 gap:20px;
-text-align:center;
+max-width:900px;
 }
+
+/* text */
+
+.airlast-text{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+/* title */
 
 .airlast-title{
 color:#FFF;
@@ -23,38 +34,52 @@ font-weight:700;
 letter-spacing:0.02em;
 }
 
-.airlast-desc{
+/* description */
 
+.airlast-desc{
 color:#FFF;
 opacity:0.7;
-font-size:18px;
-line-height:28px;
-max-width:780px;
-margin:0 auto;
-letter-spacing:2%;
-text-align:center;
+font-size:16px;
+line-height:26px;
+max-width:887px;
+letter-spacing:0.02em;
 }
+
+/* button */
 
 .airlast-btn{
 margin-top:10px;
-background:#00ADB5;
-border:none;
-color:#FFF;
-font-size:16px;
-padding:16px 28px;
-border-radius:8px;
-display:flex;
+
+display:inline-flex;
 align-items:center;
+justify-content:center;
 gap:10px;
+
+background:#00ADB5;
+color:#FFF;
+
+border:none;
+border-radius:8px;
+
+width:260px;
+height:56px;
+
+font-size:16px;
+font-weight:600;
+letter-spacing:0.04em;
+
 cursor:pointer;
-transition:0.3s;
+
+transition:all 0.3s ease;
 }
+
+/* hover */
 
 .airlast-btn:hover{
 background:#00979e;
 }
 
-/* ICON */
+/* icon */
 
 .airlast-icon{
 width:18px;
