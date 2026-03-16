@@ -13,16 +13,6 @@ export default function Outcome() {
 
     const rows = gsap.utils.toArray(".outcome-row");
 
-    function setActive(index) {
-      rows.forEach((row, i) => {
-        if (i === index) {
-          row.classList.add("active");
-        } else {
-          row.classList.remove("active");
-        }
-      });
-    }
-
     rows.forEach((row, i) => {
 
       ScrollTrigger.create({
@@ -35,13 +25,17 @@ export default function Outcome() {
 
     });
 
-    ScrollTrigger.create({
-      trigger: sectionRef.current,
-      start: "top top",
-      end: "+=" + rows.length * 100 + "%",
-      pin: true,
-      scrub: true
-    });
+    function setActive(index) {
+
+      rows.forEach((row, i) => {
+        if (i === index) {
+          row.classList.add("active");
+        } else {
+          row.classList.remove("active");
+        }
+      });
+
+    }
 
   }, []);
 
@@ -50,6 +44,8 @@ export default function Outcome() {
     <section className="outcome" ref={sectionRef}>
 
       <div className="outcome-container">
+
+        {/* Heading */}
 
         <div className="outcome-header">
 
@@ -73,8 +69,8 @@ export default function Outcome() {
             <h3>The encounter starts before the patient arrives.</h3>
 
             <p>
-              AI Intake manages appointment confirmations, captures patient history,
-              analyses vitals trends and flags chronic conditions so the clinician walks in already informed.
+              AI Intake manages appointment confirmations, captures patient history, analyses vitals trends and flags chronic conditions so the clinician walks in already informed.
+
             </p>
 
           </div>
@@ -92,10 +88,11 @@ export default function Outcome() {
 
           <div className="outcome-text">
 
-            <h3>Every word captured. Every field complete.</h3>
+            <h3>Every word captured. Every field complete.
+            </h3>
 
             <p>
-              AI Scribe listens to the consultation in real time and converts it into structured clinical notes automatically.
+              AI Scribe listens to the consultation in real time and converts it into structured clinical notes automatically — History of Present Illness, Review of Systems, Physical Exam — without the doctor touching a keyboard.
             </p>
 
           </div>
@@ -113,10 +110,11 @@ export default function Outcome() {
 
           <div className="outcome-text">
 
-            <h3>The right diagnosis. Surfaced faster.</h3>
+            <h3>The right diagnosis. Surfaced faster. </h3>
 
             <p>
-              AI Diagnostics synthesises symptoms, history, lab results and live notes into ranked differential diagnoses.
+              AI Diagnostics synthesises symptoms, history, lab results and live notes into ranked differential diagnoses with confidence scores, red-flag alerts and suggested investigations delivered at the point of care.
+
             </p>
 
           </div>
@@ -134,10 +132,12 @@ export default function Outcome() {
 
           <div className="outcome-text">
 
-            <h3>Scans read. Findings highlighted. Reports ready.</h3>
+            <h3>Scans read. Findings highlighted. Reports ready.
+            </h3>
 
             <p>
-              AI Radiology retrieves CT and MRI studies and generates structured reports.
+              AI Radiology retrieves CT and MRI studies the moment they're available, segments organs using deep learning, detects abnormalities and generates structured reports for physician review in a fraction of the time.
+
             </p>
 
           </div>
@@ -155,10 +155,10 @@ export default function Outcome() {
 
           <div className="outcome-text">
 
-            <h3>Safer prescribing. At the moment of decision.</h3>
+            <h3>Safer prescribing. At the moment of decision. </h3>
 
             <p>
-              AI Medication analyses consultation transcripts for drug interactions and dosage concerns.
+              AI Medication analyses the live consultation transcript for drug interactions, flags dosage concerns, surfaces antibiotic resistance alerts and connects directly to pharmacy systems for post-approval ordering.
             </p>
 
           </div>
@@ -176,10 +176,11 @@ export default function Outcome() {
 
           <div className="outcome-text">
 
-            <h3>The loop closed. Nothing left outstanding.</h3>
+            <h3>The loop closed. Nothing left outstanding.
+            </h3>
 
             <p>
-              AI Care Coordinator handles coding, medication adherence check-ins and schedules follow-ups automatically.
+              AI Care Coordinator handles clinical coding from consultation notes, sends medication adherence check-ins, follows up on outstanding lab and imaging orders and schedules necessary follow-ups automatically.
             </p>
 
           </div>
@@ -193,6 +194,5 @@ export default function Outcome() {
       </div>
 
     </section>
-
   );
 }
