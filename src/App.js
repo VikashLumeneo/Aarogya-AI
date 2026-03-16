@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
+import ScrollToTop from "./components/ScrollToTop";
 
 import HeroSection from "./components/HeroSection";
 import FeatureCircle from "./components/FeatureCircle";
@@ -16,10 +17,8 @@ import Footer from "./components/Footer";
 import AiScribe from "./pages/AiScribe";
 import AiRadiologist from "./pages/AiRadiologist";
 
-function HomePage(){
-
-  return(
-
+function HomePage() {
+  return (
     <>
       <HeroSection />
       <FeatureCircle />
@@ -31,8 +30,7 @@ function HomePage(){
       <Last />
       <Footer />
     </>
-
-  )
+  );
 }
 
 function App() {
@@ -40,6 +38,8 @@ function App() {
   return (
 
     <Router>
+
+      <ScrollToTop />
 
       <Navbar />
 
