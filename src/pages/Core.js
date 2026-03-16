@@ -1,11 +1,9 @@
 import "./Core.css";
 
-import img1 from "../assets/images/Real-time.svg";
-import img2 from "../assets/images/Symptom.svg";
-import img3 from "../assets/images/Context-aware.svg";
+import img1 from "../assets/images/SGraphic1.svg";
+import img2 from "../assets/images/SGraphic2.svg";
+import img3 from "../assets/images/SGraphic3.svg";
 import img4 from "../assets/images/Multilingual.svg";
-
-import arrow from "../assets/images/Arrow.svg";
 
 function Core() {
   return (
@@ -22,18 +20,20 @@ function Core() {
           </div>
 
           <h2 className="core-title">
-            Every word. Every field. Every time.
+            Every word. Every field.
+           <br/> <span>Every time.</span>
           </h2>
 
           <p className="core-desc">
-            AI Scribe captures what matters, structures it correctly, and delivers it where it needs
-            to go automatically, every consultation.
+            AI Scribe captures what matters, structures it correctly,
+            and delivers it where it needs to go automatically,
+            every consultation.
           </p>
 
         </div>
 
 
-        {/* SECTION 1 */}
+        {/* ROW 1 */}
 
         <div className="core-row">
 
@@ -44,16 +44,16 @@ function Core() {
             <h4>The consultation, captured as it happens.</h4>
 
             <p>
-              Every word of the doctor patient conversation is captured, structured, and mapped
-              to clinical fields History of Present Illness, Review of Systems, Physical Exam
+              Every word of the doctor-patient conversation is captured,
+              structured and mapped to clinical fields like HPI, ROS and PE
               without touching a keyboard.
             </p>
 
             <ul>
-              <li><img src={arrow} alt="" /> Ambient listening</li>
-              <li><img src={arrow} alt="" /> One-touch activation</li>
-              <li><img src={arrow} alt="" /> Phone · tablet · PC</li>
-              <li><img src={arrow} alt="" /> No training required</li>
+              <li>Ambient listening</li>
+              <li>One-touch activation</li>
+              <li>Phone · Tablet · PC</li>
+              <li>No training required</li>
             </ul>
 
           </div>
@@ -65,7 +65,7 @@ function Core() {
         </div>
 
 
-        {/* SECTION 2 */}
+        {/* ROW 2 */}
 
         <div className="core-row reverse">
 
@@ -76,16 +76,16 @@ function Core() {
             <h4>Nothing missed. Nothing re-asked.</h4>
 
             <p>
-              Arogya AI Scribe surfaces symptoms, medications, allergies, and relevant history
-              as the conversation unfolds. By the time the consultation ends,
-              the patient record is already complete.
+              AI Scribe surfaces symptoms, medications, allergies and
+              relevant history as the conversation unfolds so the
+              patient record is complete when the consultation ends.
             </p>
 
             <ul>
-              <li><img src={arrow} alt="" /> Auto symptom tagging</li>
-              <li><img src={arrow} alt="" /> Medication detection</li>
-              <li><img src={arrow} alt="" /> Allergy flagging</li>
-              <li><img src={arrow} alt="" /> History mapping</li>
+              <li>Auto symptom tagging</li>
+              <li>Medication detection</li>
+              <li>Allergy flagging</li>
+              <li>History mapping</li>
             </ul>
 
           </div>
@@ -97,7 +97,7 @@ function Core() {
         </div>
 
 
-        {/* SECTION 3 */}
+        {/* ROW 3 */}
 
         <div className="core-row">
 
@@ -108,16 +108,16 @@ function Core() {
             <h4>The question you almost forgot to ask.</h4>
 
             <p>
-              When something important seems absent from the conversation,
-              AI Scribe prompts the doctor with the right follow-up question
-              in the moment, not after the patient has left.
+              When something important is missing from the conversation,
+              AI Scribe prompts the doctor with the right follow-up
+              question instantly.
             </p>
 
             <ul>
-              <li><img src={arrow} alt="" /> Real-time prompts</li>
-              <li><img src={arrow} alt="" /> Gap detection</li>
-              <li><img src={arrow} alt="" /> Non-intrusive alerts</li>
-              <li><img src={arrow} alt="" /> Clinician-controlled</li>
+              <li>Real-time prompts</li>
+              <li>Gap detection</li>
+              <li>Non-intrusive alerts</li>
+              <li>Clinician-controlled</li>
             </ul>
 
           </div>
@@ -129,7 +129,7 @@ function Core() {
         </div>
 
 
-        {/* SECTION 4 */}
+        {/* ROW 4 */}
 
         <div className="core-row reverse">
 
@@ -137,23 +137,19 @@ function Core() {
 
             <h3>Multilingual support</h3>
 
-            <h4>Every patient understood. Every note complete.</h4>
+            <h4>Every patient understood.</h4>
 
             <p>
-              AI Scribe supports English and regional Indian languages natively so every patient
-              can be understood, and every doctor can document in their language of choice.
-            </p>
-
-            <p>
-              The clinical note is always generated in the physician's preferred language,
-              regardless of which language the consultation was conducted in.
+              AI Scribe supports English and regional Indian languages
+              so every patient can be understood and every doctor can
+              document in their preferred language.
             </p>
 
             <ul>
-              <li><img src={arrow} alt="" /> English</li>
-              <li><img src={arrow} alt="" /> Hindi</li>
-              <li><img src={arrow} alt="" /> Tamil</li>
-              <li><img src={arrow} alt="" /> Telugu</li>
+              <li>English</li>
+              <li>Hindi</li>
+              <li>Tamil</li>
+              <li>Telugu</li>
             </ul>
 
           </div>

@@ -1,0 +1,76 @@
+.impact{
+padding:100px 20px;
+font-family:"Mulish",sans-serif;
+display:inline-flex;
+flex-direction:column;
+align-items:center;
+gap:40px;
+width:100%;
+}
+
+/* container */
+
+.impact-container{
+max-width:1180px;
+width:100%;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:40px;
+}
+
+/* title */
+
+.impact-title{
+font-size:46px;
+font-weight:700;
+color:#222831;
+text-align:center;
+}
+
+/* card */
+
+.impact-card{
+display:flex;
+justify-content:center;
+align-items:center;
+background:#fff;
+border:0.6px solid #DFEAF0;
+border-radius:12px;
+overflow:hidden;
+}
+
+/* item */
+
+.impact-item{
+width:280px;
+height:180px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+gap:8px;
+padding:20px;
+text-align:center;
+border-right:0.6px solid #DFEAF0;
+}
+
+.impact-item:last-child{
+border-right:none;
+}
+
+/* numbers */
+
+.impact-number{
+font-size:24px;
+font-weight:700;
+color:#00ADB5;
+}
+
+/* text */
+
+.impact-text{
+font-size:15px;
+color:#000;
+line-height:20px;
+}

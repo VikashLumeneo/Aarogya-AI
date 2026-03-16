@@ -1,145 +1,91 @@
 import "./AiScribe.css";
+
 import bg from "../assets/images/Herobg.svg";
 import demoIcon from "../assets/images/demo.svg";
+import graphic from "../assets/images/AiSHome.svg";
 
-import AiScribe1 from "../assets/images/AiScribe1.svg";
-import AiScribe2 from "../assets/images/AiScribe2.svg";
-import AiScribe3 from "../assets/images/AiScribe3.svg";
 import WhatAxionicDoes from "./WhatAxionicDoes";
 import Core from "./Core";
 import Safety from "./Safety";
 import AiScribeFAQ from "./AiScribeFAQ";
 import AiSLast from "./AiSLast";
 import Footer from "../components/Footer";
+import ImpactStats from "./ImpactStats";
 
 function AiScribe() {
 
   return (
-
     <>
-    
-    {/* HERO SECTION */}
 
-    <section className="ai-scribe">
+      {/* HERO */}
 
-      <img
-        src={bg}
-        className="hero-bg"
-        alt="background"
-      />
+      <section className="hero">
 
-      <div className="hero-content">
+        <img src={bg} className="hero-bg" alt="bg"/>
 
-        <p className="breadcrumb">
-          Arogya AI / Product / <span>AI Scribe</span>
-        </p>
+        <div className="hero-wrapper">
 
-        <div className="hero-text">
+          {/* LEFT */}
 
-          <div className="hero-tag">
-            AI Agents · Arogya AI
-          </div>
+          <div className="hero-left">
 
-          <h1 className="hero-title">
-            Stop typing. Start listening.
-          </h1>
+            <p className="breadcrumb">
+              Arogya AI / Product / <span>AI Scribe</span>
+            </p>
 
-          <p className="hero-desc">
-            Documentation happens automatically while you focus on the patient.
-          </p>
+            <div className="hero-tag">
+              AI Agents · Arogya AI
+            </div>
 
-          <div className="hero-buttons">
+            <h1 className="hero-title">
+              Stop typing. <br/> Start listening.
+            </h1>
 
-            <button className="demo-btn">
+            <p className="hero-desc">
+              Documentation happens automatically while you focus on the patient.
+            </p>
 
-              Request a demo
+            <div className="hero-buttons">
 
-              <img
-                src={demoIcon}
-                alt="demo icon"
-                className="demo-icon"
-              />
+              <button className="demo-btn">
+                Request a demo
+                <img src={demoIcon} alt="icon"/>
+              </button>
 
-            </button>
+              <button className="action-btn">
+                See it in action →
+              </button>
 
-            <button className="action-btn">
-              See it in action →
-            </button>
+            </div>
 
           </div>
 
-        </div>
 
-      </div>
+          {/* RIGHT */}
 
-    </section>
-  
+          <div className="hero-right">
 
+            <img
+              src={graphic}
+              alt="AI Scribe"
+            />
 
-    {/* IMPACT STATISTICS */}
-
-    <section className="impact">
-
-      <h2 className="impact-heading">
-        3 Impact statistics
-      </h2>
-
-      <div className="impact-cards">
-
-
-        <div className="impact-card">
-
-          <img src={AiScribe1} alt="icon" className="impact-icon" />
-
-          <h3>2–3 hrs</h3>
-
-          <p>
-            Saved per doctor per day on documentation
-          </p>
+          </div>
 
         </div>
 
+      </section>
 
+      <ImpactStats/>
+      <WhatAxionicDoes/>
+      <Core/>
+      <Safety/>
+      <AiScribeFAQ/>
+      <AiSLast/>
+      <Footer/>
 
-        <div className="impact-card">
-
-          <img src={AiScribe2} alt="icon" className="impact-icon" />
-
-          <h3>&lt;1 in 100K</h3>
-
-          <p>
-            Hallucination rate via adversarial AI audit
-          </p>
-
-        </div>
-
-
-
-        <div className="impact-card">
-
-          <img src={AiScribe3} alt="icon" className="impact-icon" />
-
-          <h3>10+</h3>
-
-          <p>
-            Indian languages supported natively
-          </p>
-
-        </div>
-
-
-      </div>
-
-    </section>
-<WhatAxionicDoes />
-<Core />
-<Safety />
-<AiScribeFAQ />
-<AiSLast />
-<Footer />
     </>
   );
-
 }
 
 export default AiScribe;

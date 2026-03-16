@@ -5,28 +5,23 @@ function WhatAxionicDoes() {
   const steps = [
     {
       number: "1",
-      title: "Scan Ready",
-      desc: "Auto-triggered on scan availability"
+      title: "Active",
+      desc: "One tap, any device"
     },
     {
       number: "2",
-      title: "Auto-Retrieve",
-      desc: "DICOM pulled directly from PACS"
+      title: "Listen",
+      desc: "Real-time capture"
     },
     {
       number: "3",
-      title: "Analyse",
-      desc: "Deep learning organ segmentation"
+      title: "Structure",
+      desc: "Maps to clinical fields"
     },
     {
       number: "4",
-      title: "Highlight",
-      desc: "Lesions overlaid on scan"
-    },
-    {
-      number: "5",
-      title: "Report",
-      desc: "Structured report ready to approve"
+      title: "Deliver",
+      desc: "Note ready to approve"
     }
   ];
 
@@ -36,51 +31,41 @@ function WhatAxionicDoes() {
 
       <div className="works-container">
 
-        {/* LEFT SIDE */}
+        {/* HEADER */}
 
-        <div className="works-left">
+        <div className="works-header">
 
           <div className="works-tag">
             How It Works
           </div>
 
           <h2>
-            From scan acquisition <br />
-            to structured report.
+            From first word to final note.
           </h2>
 
           <p>
-            AI Radiologist works automatically from the moment imaging
-            studies arrive in your PACS no manual uploads, no workflow
-            change, no waiting.
+            AI Scribe works silently no training, no setup,
+            no workflow change required.
           </p>
 
         </div>
 
 
-        {/* RIGHT SIDE STEPS */}
+        {/* STEPS */}
 
-        <div className="works-right">
+        <div className="works-steps">
 
           {steps.map((item, index) => (
 
-            <div key={index} className="step-item">
+            <div key={index} className="step">
 
-              <div className={`step-number ${index === 0 ? "active" : ""}`}>
+              <div className="step-circle">
                 {item.number}
               </div>
 
-              <div className="step-content">
+              <h3>{item.title}</h3>
 
-                <h3>
-                  {item.title}
-                </h3>
-
-                <p>
-                  {item.desc}
-                </p>
-
-              </div>
+              <p>{item.desc}</p>
 
             </div>
 
