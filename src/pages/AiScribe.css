@@ -73,6 +73,9 @@ max-width:420px;
 display:flex;
 gap:20px;
 margin-top:10px;
+justify-content:flex-start;
+align-items:center;
+flex-wrap:nowrap;
 }
 
 .demo-btn{
@@ -85,6 +88,10 @@ border:none;
 padding:16px 24px;
 border-radius:12px;
 cursor:pointer;
+}
+
+.demo-btn img{
+width:18px;
 }
 
 .action-btn{
