@@ -74,3 +74,34 @@ font-size:15px;
 color:#000;
 line-height:20px;
 }
+
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+.impact{
+padding:60px 20px;
+}
+
+.impact-title{
+font-size:32px;
+}
+
+.impact-card{
+flex-direction:column;
+width:100%;
+}
+
+.impact-item{
+width:100%;
+height:auto;
+border-right:none;
+border-bottom:0.6px solid #DFEAF0;
+}
+
+.impact-item:last-child{
+border-bottom:none;
+}
+
+}

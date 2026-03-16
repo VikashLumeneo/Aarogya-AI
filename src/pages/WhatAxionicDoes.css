@@ -213,3 +213,36 @@ transform:scale(1.1);
 color:#00ADB5;
 
 }
+
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+.works{
+padding:70px 20px;
+}
+
+.works-header h2{
+font-size:32px;
+}
+
+.works-header p{
+font-size:16px;
+}
+
+.works-steps{
+flex-direction:column;
+gap:40px;
+align-items:center;
+}
+
+.works-steps::before{
+display:none;
+}
+
+.step{
+max-width:320px;
+}
+
+}

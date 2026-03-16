@@ -1,6 +1,6 @@
 .faq{
   width:100%;
-  padding:120px 0;
+  padding:120px 20px;
   background:#fff;
 }
 
@@ -34,7 +34,7 @@
   background:#E6F6FF;
 
   font-size:14px;
-  font-family:Mulish;
+  font-family:"Mulish", sans-serif;
   letter-spacing:0.04em;
   color:#222831;
 
@@ -44,14 +44,14 @@
 .faq-title{
   font-size:46px;
   font-weight:700;
-  font-family:Mulish;
+  font-family:"Mulish", sans-serif;
   line-height:60px;
   color:#222831;
 }
 
 .faq-desc{
   font-size:14px;
-  font-family:Mulish;
+  font-family:"Mulish", sans-serif;
   line-height:24px;
   letter-spacing:0.02em;
   color:#222831;
@@ -79,7 +79,7 @@
   background:#fff;
   cursor:pointer;
 
-  margin-top:-1px; /* gap:-1px effect */
+  margin-top:-1px;
 }
 
 
@@ -95,7 +95,7 @@
   padding:0 20px;
 
   font-size:16px;
-  font-family:Mulish;
+  font-family:"Mulish", sans-serif;
   font-weight:700;
   color:#212429;
 
@@ -118,8 +118,63 @@
   padding:0 20px 20px 20px;
 
   font-size:14px;
-  font-family:Mulish;
+  font-family:"Mulish", sans-serif;
   color:#393E46;
   line-height:22px;
   letter-spacing:0.02em;
+}
+
+
+/* ================= */
+/* TABLET */
+/* ================= */
+
+@media (max-width:1024px){
+
+.faq-container{
+  flex-direction:column;
+  gap:60px;
+}
+
+.faq-left{
+  width:100%;
+}
+
+.faq-right{
+  width:100%;
+}
+
+.faq-title{
+  font-size:36px;
+  line-height:48px;
+}
+
+}
+
+
+/* ================= */
+/* MOBILE */
+/* ================= */
+
+@media (max-width:600px){
+
+.faq{
+  padding:80px 20px;
+}
+
+.faq-title{
+  font-size:28px;
+  line-height:38px;
+}
+
+.faq-question{
+  font-size:15px;
+  height:auto;
+  padding:18px 16px;
+}
+
+.faq-answer{
+  font-size:13px;
+}
+
 }
