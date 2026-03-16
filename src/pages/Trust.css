@@ -1,101 +1,74 @@
-/* SECTION */
-
 .trust{
+    /* max-width: 1880px; */
 background:#F4F4F4;
-padding:100px 0;
-font-family:"Mulish", sans-serif;
+padding:120px 0;
+font-family:"Mulish",sans-serif;
 }
 
-
-/* CONTAINER */
 
 .trust-container{
-width:1440px;
-max-width:95%;
+max-width:1440px;
 margin:auto;
-
 display:flex;
-justify-content:center;
 align-items:flex-start;
-gap:55px;
+justify-content:space-between;
+gap:80px;
+padding:0 100px;
 }
 
 
-/* LEFT COLUMN */
+/* LEFT */
 
 .trust-left{
 display:flex;
 flex-direction:column;
-align-items:flex-start;
 gap:30px;
-max-width:595px;
+max-width:600px;
+height: 545px;
 }
 
-
-/* TOP CONTENT */
 
 .trust-top{
 display:flex;
 flex-direction:column;
-align-items:flex-start;
 gap:20px;
-width:100%;
 }
 
-
-/* TAG */
 
 .trust-tag{
-display:flex;
-align-items:center;
-justify-content:center;
-
-height:36px;
-padding:0 16px;
-
 background:#EBFEFF;
 color:#00ADB5;
-
-border-radius:120px;
-
 font-size:14px;
+padding:8px 16px;
+border-radius:120px;
+width:max-content;
 letter-spacing:0.04em;
-width:fit-content;
 }
 
-
-/* TITLE */
 
 .trust-title{
 font-size:46px;
 font-weight:700;
-line-height:56px;
 color:#222831;
+line-height:56px;
 }
 
 
-/* DESCRIPTION */
-
-.trust-text{
+.trust-desc{
 font-size:18px;
-line-height:26px;
 color:#393E46;
-letter-spacing:0.04em;
+line-height:28px;
+letter-spacing:0;
+max-width:560px;
 }
 
-
-/* BOTTOM */
 
 .trust-bottom{
 display:flex;
 flex-direction:column;
-align-items:flex-start;
 gap:16px;
-width:100%;
 }
 
-
-/* SUBTITLE */
 
 .trust-subtitle{
 font-size:20px;
@@ -104,38 +77,29 @@ color:#222831;
 }
 
 
-/* BADGES */
-
-.trust-badges{
+.trust-buttons{
 display:flex;
-align-items:flex-start;
 gap:16px;
-flex-wrap:wrap;
 }
 
-.trust-badge{
-display:flex;
-align-items:center;
-justify-content:center;
 
-height:46px;
-padding:0 20px;
-
+.trust-btn{
+padding:12px 20px;
 border-radius:6px;
-
 font-size:16px;
 font-weight:500;
-color:#222831;
-
-white-space:nowrap;
 }
 
-.badge-primary{
+
+.trust-btn.primary{
 background:rgba(0,173,181,0.10);
+color:#222831;
 }
 
-.badge-secondary{
+
+.trust-btn.secondary{
 background:#C7D6DE;
+color:#222831;
 }
 
 
@@ -143,34 +107,11 @@ background:#C7D6DE;
 
 .trust-right{
 display:flex;
-align-items:flex-start;
-flex-shrink:0;
+align-items:center;
+justify-content:center;
 }
 
 .trust-right img{
 width:530px;
-height:auto;
-display:block;
-}
-
-
-/* RESPONSIVE */
-
-@media (max-width:1100px){
-
-.trust-container{
-flex-direction:column;
-align-items:center;
-gap:60px;
-}
-
-.trust-left{
 max-width:100%;
-}
-
-.trust-right img{
-width:100%;
-max-width:530px;
-}
-
 }
