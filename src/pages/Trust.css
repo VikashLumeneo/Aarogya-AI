@@ -1,19 +1,17 @@
 .trust{
-    /* max-width: 1880px; */
 background:#F4F4F4;
 padding:120px 0;
 font-family:"Mulish",sans-serif;
 }
 
-
 .trust-container{
 max-width:1440px;
 margin:auto;
 display:flex;
-align-items:flex-start;
+align-items:center;
 justify-content:space-between;
 gap:80px;
-padding:0 100px;
+padding:0 80px;
 }
 
 
@@ -24,7 +22,6 @@ display:flex;
 flex-direction:column;
 gap:30px;
 max-width:600px;
-height: 545px;
 }
 
 
@@ -41,7 +38,7 @@ color:#00ADB5;
 font-size:14px;
 padding:8px 16px;
 border-radius:120px;
-width:max-content;
+width:fit-content;
 letter-spacing:0.04em;
 }
 
@@ -58,7 +55,6 @@ line-height:56px;
 font-size:18px;
 color:#393E46;
 line-height:28px;
-letter-spacing:0;
 max-width:560px;
 }
 
@@ -80,6 +76,7 @@ color:#222831;
 .trust-buttons{
 display:flex;
 gap:16px;
+flex-wrap:wrap;
 }
 
 
@@ -106,15 +103,19 @@ color:#222831;
 /* RIGHT IMAGE */
 
 .trust-right{
+flex:1;
 display:flex;
 align-items:center;
 justify-content:center;
 }
 
 .trust-right img{
-width:530px;
-max-width:100%;
+max-width:530px;
+width:100%;
+height:auto;
 }
+
+
 /* ========================= */
 /* MOBILE RESPONSIVE */
 /* ========================= */
@@ -133,7 +134,6 @@ padding:0 20px;
 
 .trust-left{
 max-width:100%;
-height:auto;
 gap:24px;
 text-align:center;
 align-items:center;
@@ -175,13 +175,11 @@ font-size:14px;
 padding:10px 16px;
 }
 
-.trust-right{
-width:100%;
-}
+/* IMAGE FIX */
 
 .trust-right img{
 width:100%;
-max-width:380px;
+max-width:520px;
 height:auto;
 }
 
