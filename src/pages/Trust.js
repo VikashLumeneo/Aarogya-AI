@@ -1,5 +1,5 @@
 import "./Trust.css";
-import arrow from "../assets/images/Arrow.svg";   // arrow icon
+import TrustImage from "../assets/images/Trust.svg";
 
 export default function Trust() {
   return (
@@ -11,7 +11,7 @@ export default function Trust() {
 
         <div className="trust-left">
 
-          <div className="trust-header">
+          <div className="trust-top">
 
             <div className="trust-tag">
               Safety & Trust
@@ -24,51 +24,32 @@ export default function Trust() {
 
             <p className="trust-text">
               AI Radiologist is a decision support tool not a replacement for
-              clinical judgement. Every finding, every report, and every
-              diagnosis suggestion is presented for radiologist review and
-              requires explicit physician authorisation before it enters the
-              patient record. A rigorous human-in-the-loop architecture ensures
-              every output is reviewed before it can affect care. Adversarial AI
-              continuously audits outputs for clinical errors, achieving
-              hallucination rates below 1 in 100,000.
+              clinical judgement. Every finding, every report, and every diagnosis
+              suggestion is presented for radiologist review and requires explicit
+              physician authorisation before it enters the patient record. A
+              rigorous human-in-the-loop architecture ensures every output is
+              reviewed before it can affect care. Adversarial AI continuously
+              audits outputs for clinical errors, achieving hallucination rates
+              below 1 in 100,000.
             </p>
 
           </div>
 
 
-          {/* POINTS */}
-
-          <div className="trust-points">
+          <div className="trust-bottom">
 
             <h4 className="trust-subtitle">
               The radiologist decides. Always.
             </h4>
 
-            <div className="trust-list">
-
-              <div className="trust-item">
-                <img src={arrow} alt="" />
-                <p>Human-in-the-loop</p>
-              </div>
-
-              <div className="trust-item">
-                <img src={arrow} alt="" />
-                <p>Adversarial AI audit</p>
-              </div>
-
-            </div>
-
-
-            {/* BADGES */}
-
             <div className="trust-badges">
 
-              <div className="trust-badge">
-                &lt;1 in 100,000 hallucination rate
+              <div className="trust-badge badge-primary">
+                Human-in-the-Loop
               </div>
 
-              <div className="trust-badge">
-                Radiologist authorisation required
+              <div className="trust-badge badge-secondary">
+                &lt;1 in 100k error rate
               </div>
 
             </div>
@@ -81,11 +62,7 @@ export default function Trust() {
         {/* RIGHT IMAGE */}
 
         <div className="trust-right">
-
-          <div className="trust-image">
-            Product Photo
-          </div>
-
+          <img src={TrustImage} alt="Trust model" />
         </div>
 
       </div>

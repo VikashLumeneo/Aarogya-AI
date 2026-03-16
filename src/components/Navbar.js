@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Navbar.css";
 import Logo from "../assets/images/Logo.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
 
@@ -9,6 +9,12 @@ function Navbar() {
   const [mobileMenu, setMobileMenu] = useState(false);
 
   const dropdownRef = useRef(null);
+  const location = useLocation();
+
+  // detect product active pages
+  const productActive =
+    location.pathname === "/ai-scribe" ||
+    location.pathname === "/ai-radiologist";
 
   // click outside close
   useEffect(() => {
@@ -47,7 +53,7 @@ function Navbar() {
         <div className="product-wrapper" ref={dropdownRef}>
 
           <button
-            className={`nav-item ${showDropdown ? "active" : ""}`}
+            className={`nav-item ${showDropdown || productActive ? "active" : ""}`}
             onClick={() => setShowDropdown(!showDropdown)}
           >
             Product
@@ -59,7 +65,10 @@ function Navbar() {
               <Link
                 to="/ai-scribe"
                 className="dropdown-item"
-                onClick={() => setShowDropdown(false)}
+                onClick={() => {
+                  setShowDropdown(false);
+                  setMobileMenu(false);
+                }}
               >
                 AI Scribe
               </Link>
@@ -67,7 +76,10 @@ function Navbar() {
               <Link
                 to="/ai-radiologist"
                 className="dropdown-item"
-                onClick={() => setShowDropdown(false)}
+                onClick={() => {
+                  setShowDropdown(false);
+                  setMobileMenu(false);
+                }}
               >
                 AI Radiologist
               </Link>
@@ -80,7 +92,7 @@ function Navbar() {
         <button className="nav-item">Intelligence</button>
         <button className="nav-item">Solutions</button>
 
-        {/* Buttons row */}
+        {/* Buttons */}
         <div className="nav-buttons">
 
           <button className="demo-button">

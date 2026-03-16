@@ -1,22 +1,20 @@
 import "./CoreCapabilities.css";
 
-import img1 from "../assets/images/Mask Group1.svg";
-import img2 from "../assets/images/Mask Group2.svg";
-import img3 from "../assets/images/Mask Group3.svg";
-import img4 from "../assets/images/Mask Group4.svg";
+import graphic1 from "../assets/images/Graphic 1.svg";
+import graphic2 from "../assets/images/Graphic 2.svg";
+import graphic3 from "../assets/images/Graphic 3.svg";
+import graphic4 from "../assets/images/Graphic 4.svg";
 
 import arrow from "../assets/images/Arrow.svg";
 
 function CoreCapabilities() {
   return (
     <section className="corecap">
-
       <div className="corecap-container">
 
         {/* HEADER */}
 
         <div className="corecap-header">
-
           <div className="corecap-tag">
             Core Capabilities
           </div>
@@ -27,9 +25,8 @@ function CoreCapabilities() {
 
           <p className="corecap-desc">
             AI Radiologist analyses every study with the same precision
-            automatically, without a queue, without fatigue.
+            automatically, without  a<br /> queue, without fatigue.
           </p>
-
         </div>
 
 
@@ -39,35 +36,41 @@ function CoreCapabilities() {
 
           <div className="corecap-text">
 
-            <h3>Automatic DICOM retrieval & PACS integration</h3>
+            <div className="corecap-pill">
+              Automatic DICOM retrieval
+            </div>
 
-            <h4>No upload. No waiting. No workflow change.</h4>
+            <h3 className="corecap-main-title">
+              The scan arrives.<br/>
+              AI Radiologist is already waiting.
+            </h3>
+
+            <h4 className="corecap-subtitle">
+              No upload. No waiting. No workflow change.
+            </h4>
 
             <p>
-              AI Radiologist integrates directly with your existing PACS
-              system and retrieves imaging studies automatically the
-              moment they are available without manual intervention.
+              AI Radiologist integrates directly with your existing PACS system
+              and retrieves imaging studies the moment they are available
+              automatically, without any manual intervention from clinical staff.
             </p>
 
             <p>
               The system supports standard DICOM protocols and connects
-              to radiology infrastructure already in place.
+              to radiology infrastructure already in place. No rip-and-replace.
+              No retraining. No friction.
             </p>
 
-            <ul>
-              <li><img src={arrow} alt="" /> Automatic DICOM retrieval</li>
-              <li><img src={arrow} alt="" /> PACS-native integration</li>
-            </ul>
-
             <div className="corecap-tags">
-              <span>Zero manual uploads</span>
-              <span>Works with existing infrastructure</span>
+              <span>PACS Native</span>
+              <span>DICOM Auto-Pull</span>
+              <span className="tag-gray">Zero Manual Steps</span>
             </div>
 
           </div>
 
           <div className="corecap-image">
-            <img src={img1} alt="" />
+            <img src={graphic1} alt="Graphic 1"/>
           </div>
 
         </div>
@@ -79,36 +82,40 @@ function CoreCapabilities() {
 
           <div className="corecap-text">
 
-            <h3>Deep learning organ segmentation</h3>
+            <div className="corecap-pill">
+              Organ Segmentation
+            </div>
 
-            <h4>Anatomy understood. Context preserved.</h4>
+            <h3 className="corecap-main-title">
+              Every organ. Defined.<br/>
+              Every boundary. Mapped.
+            </h3>
+
+            <h4 className="corecap-subtitle">
+              Anatomy understood. Context preserved.
+            </h4>
 
             <p>
-              Before looking for abnormalities, AI Radiologist maps
-              the anatomy. Deep learning models segment organs and
-              anatomical structures with high precision.
+              Before looking for abnormalities, AI Radiologist maps the anatomy.
+              Deep learning models segment organs and anatomical structures with
+              high precision creating a spatial understanding of the scan.
             </p>
 
             <p>
-              A nodule isn’t just a nodule. It’s an 8mm nodule in the
-              right upper lobe of the lung. AI Radiologist understands
-              that context.
+              A nodule isn't just a nodule. It's a 8mm nodule in the right upper
+              lobe of the lung, adjacent to the pleura.
             </p>
-
-            <ul>
-              <li><img src={arrow} alt="" /> Multi-organ segmentation</li>
-              <li><img src={arrow} alt="" /> Spatial contextualisation</li>
-            </ul>
 
             <div className="corecap-tags">
-              <span>Deep learning models</span>
-              <span>Trained on clinical imaging datasets</span>
+              <span>Multi-Organ</span>
+              <span>CT + MRI</span>
+              <span className="tag-gray">Clinical-Grade</span>
             </div>
 
           </div>
 
           <div className="corecap-image">
-            <img src={img2} alt="" />
+            <img src={graphic2} alt="Graphic 2"/>
           </div>
 
         </div>
@@ -116,86 +123,95 @@ function CoreCapabilities() {
 
         {/* ROW 3 */}
 
-        <div className="corecap-row">
+<div className="corecap-row">
 
-          <div className="corecap-text">
+  <div className="corecap-text">
 
-            <h3>Abnormality detection & lesion highlighting</h3>
+    <div className="corecap-pill">
+      Lesion Detection & Highlighting
+    </div>
 
-            <h4>The finding the eye might have missed.</h4>
+    <h3 className="corecap-main-title highlight">
+      Found. <span>Before it’s missed</span>
+    </h3>
 
-            <p>
-              AI Radiologist detects abnormalities, lesions,
-              nodules, and clinically significant findings
-              across multiple organ systems simultaneously.
-            </p>
+    <h4 className="corecap-subtitle">
+      The finding the eye might have missed.
+    </h4>
 
-            <p>
-              Each detection is highlighted directly on the
-              scan with size, location, and confidence score.
-            </p>
+    <p>
+      AI Radiologist detects and localises abnormalities lesions,
+      nodules, masses, and clinically significant findings across
+      multiple organ systems simultaneously. Each detection is
+      highlighted directly on the scan, with size, location, and
+      confidence score attached.
+    </p>
 
-            <ul>
-              <li><img src={arrow} alt="" /> Lesion detection & localisation</li>
-              <li><img src={arrow} alt="" /> Confidence scoring</li>
-            </ul>
+    <p>
+      Critical findings are escalated automatically. The radiologist's
+      attention goes where it's most needed immediately.
+    </p>
 
-            <div className="corecap-tags">
-              <span>Critical finding escalation</span>
-              <span>Multi-system analysis</span>
-            </div>
+    <div className="corecap-tags">
+      <span>Multi-Region</span>
+      <span>Confidence Score</span>
+      <span className="tag-gray">On-Scan Annotation</span>
+    </div>
 
-          </div>
+  </div>
 
-          <div className="corecap-image">
-            <img src={img3} alt="" />
-          </div>
+  <div className="corecap-image">
+    <img src={graphic3} alt="Graphic 3"/>
+  </div>
 
-        </div>
+</div>
 
+      {/* ROW 4 */}
 
-        {/* ROW 4 */}
+<div className="corecap-row reverse">
 
-        <div className="corecap-row reverse">
+  <div className="corecap-text">
 
-          <div className="corecap-text">
+    <div className="corecap-pill">
+      Structured Radiology Reports
+    </div>
 
-            <h3>Structured radiology report generation</h3>
+    <h3 className="corecap-main-title">
+      Report written. <br/>
+      Radiologist reviews.
+    </h3>
 
-            <h4>Report ready. Radiologist in control.</h4>
+    <p>
+      Before looking for abnormalities, AI Radiologist maps the anatomy.
+      Deep learning models segment organs and anatomical structures with
+      high precision creating a spatial understanding of the scan that
+      makes every subsequent finding clinically contextualised.
+    </p>
 
-            <p>
-              AI Radiologist generates a complete structured
-              radiology report including Clinical Indication,
-              Technique, Findings, and Impression automatically.
-            </p>
+    <p>
+      A nodule isn't just a nodule. It's a 8mm nodule in the right upper
+      lobe of the lung, adjacent to the pleura. That distinction matters.
+      AI Radiologist understands it.
+    </p>
 
-            <p>
-              The radiologist reviews, edits if needed,
-              and approves. The report enters the record.
-            </p>
+    <h4 className="corecap-subtitle">
+      The radiologist decides, Always
+    </h4>
 
-            <ul>
-              <li><img src={arrow} alt="" /> Structured report format</li>
-              <li><img src={arrow} alt="" /> Physician-reviewable output</li>
-            </ul>
+    <div className="corecap-tags">
+      <span>Auto-Generated</span>
+      <span className="tag-gray">EHR-Ready</span>
+      <span className="tag-gray">One-Click Approval</span>
+    </div>
 
-            <div className="corecap-tags">
-              <span>One-touch approval</span>
-              <span>Direct EHR entry</span>
-            </div>
+  </div>
 
-          </div>
+  <div className="corecap-image">
+    <img src={graphic4} alt="Graphic 4"/>
+  </div>
 
-          <div className="corecap-image">
-            <img src={img4} alt="" />
-          </div>
-
-        </div>
-
-
+</div>
       </div>
-
     </section>
   );
 }
