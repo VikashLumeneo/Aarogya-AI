@@ -90,3 +90,54 @@ color:#393E46;
 line-height:22px;
 letter-spacing:0.02em;
 }
+/* ========================= */
+/* MOBILE RESPONSIVE */
+/* ========================= */
+
+@media (max-width:768px){
+
+.faqr{
+padding:60px 20px;
+}
+
+.faqr-container{
+flex-direction:column;
+width:100%;
+gap:40px;
+}
+
+.faqr-left{
+width:100%;
+text-align:center;
+align-items:center;
+}
+
+.faqr-title{
+font-size:32px;
+line-height:40px;
+}
+
+.faqr-desc{
+font-size:13px;
+line-height:20px;
+}
+
+.faqr-right{
+width:100%;
+}
+
+.faqr-item{
+padding:16px;
+}
+
+.faqr-question{
+font-size:15px;
+gap:10px;
+}
+
+.faqr-answer{
+font-size:13px;
+line-height:20px;
+}
+
+}

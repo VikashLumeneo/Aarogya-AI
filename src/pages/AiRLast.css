@@ -85,3 +85,44 @@ background:#00979e;
 width:18px;
 height:18px;
 }
+/* ========================= */
+/* MOBILE RESPONSIVE */
+/* ========================= */
+
+@media (max-width:768px){
+
+.airlast{
+padding:50px 20px;
+justify-content:center;
+text-align:center;
+}
+
+.airlast-container{
+max-width:100%;
+align-items:center;
+}
+
+.airlast-title{
+font-size:28px;
+line-height:36px;
+}
+
+.airlast-desc{
+font-size:14px;
+line-height:22px;
+max-width:100%;
+}
+
+.airlast-btn{
+width:100%;
+max-width:320px;
+height:52px;
+font-size:15px;
+}
+
+.airlast-icon{
+width:16px;
+height:16px;
+}
+
+}

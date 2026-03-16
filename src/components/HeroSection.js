@@ -1,7 +1,7 @@
 import React from "react";
 import "./HeroSection.css";
 import heroBg from "../assets/images/Herobg.svg";
-// import HeroAI from "../assets/images/Hero.svg";
+import demoIcon from "../assets/images/demo.svg";
 
 export default function HeroSection() {
   return (
@@ -15,25 +15,27 @@ export default function HeroSection() {
 
       <div className="hero-container">
 
-       <p className="hero-tag">
-  Clinical intelligence platform
-</p>
+        <p className="hero-tag">
+          Clinical intelligence platform
+        </p>
 
         <h1 className="hero-title">
-           Medicine. Meet <span>Intelligence</span>
+          Medicine. Meet <span>Intelligence</span>
         </h1>
 
         <p className="hero-description">
           From the moment a consultation begins to the moment a patient walks out,
-          Arogya AI is present reducing the cognitive <br /> load on doctors and the
-          administrative burden on care teams across every stage of the encounter.<br /> <span>Real-time. Accurate. Invisible until you need it.</span>
-          
+          Arogya AI is present reducing the cognitive<br/> load on doctors and the
+          administrative burden on care teams across every stage of the encounter.
+          <br />
+          <span>Real-time. Accurate. Invisible until you need it.</span>
         </p>
 
         <div className="hero-buttons">
 
           <button className="hero-demo-btn">
             Request a demo
+            <img src={demoIcon} alt="demo icon" />
           </button>
 
           <button className="hero-action-btn">
@@ -43,9 +45,7 @@ export default function HeroSection() {
         </div>
 
       </div>
-      
 
     </div>
-    
   );
 }
