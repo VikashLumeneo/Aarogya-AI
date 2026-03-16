@@ -5,7 +5,6 @@ import graphic2 from "../assets/images/Graphic 2.svg";
 import graphic3 from "../assets/images/Graphic 3.svg";
 import graphic4 from "../assets/images/Graphic 4.svg";
 
-import arrow from "../assets/images/Arrow.svg";
 
 function CoreCapabilities() {
   return (
