@@ -8,16 +8,29 @@ function Navbar() {
   const [mobileMenu, setMobileMenu] = useState(false);
 
   const dropdownRef = useRef(null);
+  const navbarRef = useRef(null);
+
   const location = useLocation();
 
   const productActive =
     location.pathname === "/ai-scribe" ||
     location.pathname === "/ai-radiologist";
 
-  // close dropdown on outside click
+  // ✅ Close on outside click
   useEffect(() => {
     function handleClickOutside(e) {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+      if (
+        navbarRef.current &&
+        !navbarRef.current.contains(e.target)
+      ) {
+        setMobileMenu(false);
+        setShowDropdown(false);
+      }
+
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target)
+      ) {
         setShowDropdown(false);
       }
     }
@@ -27,10 +40,16 @@ function Navbar() {
       document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // ✅ Close on route change
+  useEffect(() => {
+    setMobileMenu(false);
+    setShowDropdown(false);
+  }, [location.pathname]);
+
   return (
-    <nav className="navbar">
+    <nav className="navbar" ref={navbarRef}>
       <div className="navbar-container">
-        
+
         {/* LOGO */}
         <Link to="/" className="logo">
           <img src={Logo} alt="logo" />
@@ -38,22 +57,30 @@ function Navbar() {
 
         {/* HAMBURGER */}
         <div
-          className="hamburger"
-          onClick={() => setMobileMenu(!mobileMenu)}
+          className={`hamburger ${mobileMenu ? "active" : ""}`}
+          onClick={() => {
+            const newState = !mobileMenu;
+            setMobileMenu(newState);
+
+            // 🔥 always close dropdown when menu closes
+            if (!newState) setShowDropdown(false);
+          }}
         >
-          ☰
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
 
-        {/* RIGHT SIDE */}
+        {/* RIGHT MENU */}
         <div className={`nav-right ${mobileMenu ? "open" : ""}`}>
-          
+
           {/* PRODUCT */}
           <div className="product-wrapper" ref={dropdownRef}>
             <button
               className={`nav-item ${
                 showDropdown || productActive ? "active" : ""
               }`}
-              onClick={() => setShowDropdown(!showDropdown)}
+              onClick={() => setShowDropdown(prev => !prev)}
             >
               Product
             </button>
@@ -62,10 +89,6 @@ function Navbar() {
               <Link
                 to="/ai-scribe"
                 className="dropdown-item"
-                onClick={() => {
-                  setShowDropdown(false);
-                  setMobileMenu(false);
-                }}
               >
                 AI Scribe
               </Link>
@@ -73,10 +96,6 @@ function Navbar() {
               <Link
                 to="/ai-radiologist"
                 className="dropdown-item"
-                onClick={() => {
-                  setShowDropdown(false);
-                  setMobileMenu(false);
-                }}
               >
                 AI Radiologist
               </Link>

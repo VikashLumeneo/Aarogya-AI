@@ -1,28 +1,32 @@
+*{
+  box-sizing:border-box;
+}
+
 .outcome{
   padding:120px 0;
-  font-family:"Mulish",sans-serif;
+  font-family:"Mulish", sans-serif;
   background:#ffffff;
-  position:relative;
 }
+
+/* CONTAINER */
 
 .outcome-container{
   width:1180px;
   max-width:95%;
   margin:auto;
+
   display:flex;
   flex-direction:column;
   gap:80px;
 }
 
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 .outcome-header{
   display:flex;
   flex-direction:column;
   gap:16px;
-  position:relative;
-  z-index:5;
 }
 
 .outcome-tag{
@@ -45,6 +49,7 @@
   font-size:46px;
   font-weight:700;
   line-height:60px;
+  color:#111;
 }
 
 .outcome-title span{
@@ -52,42 +57,45 @@
 }
 
 
-/* CARDS WRAPPER */
+/* ================= CARDS ================= */
 
 .outcome-cards{
-  position:relative;
-  height:600px;
-  margin-top:-80px; 
+  display:flex;
+  flex-direction:column;
+  gap:60px;
 }
 
 
-/* STACK CARDS */
+/* SINGLE CARD */
 
 .outcome-row{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-
-  display:flex;
+ display:flex;
   justify-content:space-between;
   align-items:flex-start;
 
   gap:80px;
   padding:60px;
 
-  background:#fff;
+  background:#ffffff;
   border-radius:20px;
 
-  box-shadow:none;
-  z-index:1;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  transition:0.3s ease;
+}
+
+/* HOVER EFFECT */
+
+.outcome-row:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
 }
 
 
-/* TEXT */
+/* ================= TEXT ================= */
 
 .outcome-text{
   width:420px;
+
   display:flex;
   flex-direction:column;
   gap:18px;
@@ -106,7 +114,7 @@
 }
 
 
-/* IMAGE */
+/* ================= IMAGE ================= */
 
 .image-box{
   width:620px;
@@ -119,22 +127,40 @@
   justify-content:center;
   align-items:center;
 
-  overflow:hidden; /* 👈 ADD (important) */
+  overflow:hidden;
 }
 
 .image-box.light{
   background:#E9F3F8;
 }
 
-
-/* ✅ IMAGE FIX (NEW ADDITION) */
-
 .image-box img{
   width:100%;
   height:100%;
-  object-fit:contain; /* 👈 SVG ke liye best */
+  object-fit:contain;
   display:block;
 }
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px){
+
+  .outcome-row{
+    gap:40px;
+    padding:40px;
+  }
+
+  .image-box{
+    width:100%;
+    height:320px;
+  }
+
+  .outcome-text{
+    width:100%;
+  }
+}
+
 @media (max-width: 768px){
 
   .outcome{
@@ -151,13 +177,12 @@
   }
 
   .outcome-cards{
-    height:auto;
-    margin-top:0;
+    gap:40px;
   }
 
-  /* 👇 IMPORTANT: position absolute hi rahega */
   .outcome-row{
     flex-direction:column;
+    align-items:flex-start;
     gap:30px;
     padding:30px 20px;
   }
@@ -179,5 +204,4 @@
     width:100%;
     height:250px;
   }
-
 }
