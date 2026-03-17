@@ -4,11 +4,9 @@ import demoIcon from "../assets/images/demo.svg";
 function AiRLast() {
   return (
     <section className="airlast">
-
       <div className="airlast-container">
 
         <div className="airlast-text">
-
           <h2 className="airlast-title">
             The future of clinical intelligence is here
           </h2>
@@ -17,7 +15,6 @@ function AiRLast() {
             Doctors should spend their time on patients not documentation,
             not scan queues, not paperwork.
           </p>
-
         </div>
 
         <button className="airlast-btn">
@@ -26,7 +23,6 @@ function AiRLast() {
         </button>
 
       </div>
-
     </section>
   );
 }
