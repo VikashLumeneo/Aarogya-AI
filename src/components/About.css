@@ -94,9 +94,12 @@ cursor:pointer;
 transition:all .2s ease;
 }
 
+/* ICON DEFAULT (grey look) */
 .feature-item img{
 width:26px;
 height:26px;
+filter: grayscale(100%) brightness(0.6);
+transition: all 0.3s ease;
 }
 
 .feature-item span{
@@ -104,12 +107,18 @@ font-weight:500;
 }
 
 
-/* ACTIVE */
+/* ACTIVE → ONLY ICON CHANGE */
 
 .feature-item.active{
-background:#eeeeee;
-color:#222831;
-font-weight:600;
+background:#eeeeee; /* same as before */
+}
+.feature-item.active span{
+  font-weight:700;
+}
+
+/* BLUE ICON */
+.feature-item.active img{
+filter: brightness(0) saturate(100%) invert(55%) sepia(60%) saturate(600%) hue-rotate(140deg) brightness(95%) contrast(95%);
 }
 
 
@@ -238,7 +247,6 @@ font-size:16px;
 
 .feature-item:hover{
 background:#f5f5f5;
-color:#222831;
 }
 
 .feature-item img{

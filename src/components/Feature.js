@@ -13,14 +13,14 @@ import Vector8 from "../assets/images/Vector8.svg";
 export default function Feature() {
 
   const features = [
-    { id: "01", icon: Vector1, title: "Ambient consultation capture", sub: "(was: Real-Time Transcription)" },
-    { id: "02", icon: Vector2, title: "Symptom & history extraction", sub: "(was: symptom intelligence)" },
-    { id: "03", icon: Vector3, title: "Differential diagnosis engine", sub: "(was: differential diagnosis)" },
-    { id: "04", icon: Vector4, title: "Automated scan retrieval", sub: "(was: DICOM integration)" },
-    { id: "05", icon: Vector5, title: "Abnormality detection", sub: "(was: lesion detection)" },
-    { id: "06", icon: Vector6, title: "Structured report generation", sub: "(was: report generation)" },
-    { id: "07", icon: Vector7, title: "Multilingual consultation support", sub: "(was: multilingual support)" },
-    { id: "08", icon: Vector8, title: "Care gap & coding intelligence", sub: "(was: clinical analytics)" },
+    { id: "01", icon: Vector1, title: "Ambient consultation capture" },
+    { id: "02", icon: Vector2, title: "Symptom & history extraction" },
+    { id: "03", icon: Vector3, title: "Differential diagnosis engine" },
+    { id: "04", icon: Vector4, title: "Automated scan retrieval" },
+    { id: "05", icon: Vector5, title: "Abnormality detection" },
+    { id: "06", icon: Vector6, title: "Structured report generation" },
+    { id: "07", icon: Vector7, title: "Multilingual consultation support" },
+    { id: "08", icon: Vector8, title: "Care gap & coding intelligence" },
   ];
 
   return (
@@ -55,10 +55,6 @@ export default function Feature() {
 
                 <span className="feature-title">
                   {item.title}
-                </span>
-
-                <span className="feature-sub">
-                  {item.sub}
                 </span>
 
               </div>
