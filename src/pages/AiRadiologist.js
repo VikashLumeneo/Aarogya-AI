@@ -80,7 +80,7 @@ function AiRadiologist() {
 
       <section className="stats">
 
-        <h2>Stats Impact Bar (Schematic)</h2>
+        <h2>How we help <span>Radiologists</span></h2>
 
         <div className="stats-bar">
 

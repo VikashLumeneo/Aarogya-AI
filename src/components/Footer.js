@@ -18,7 +18,7 @@ export default function Footer() {
             <h3 className="footer-logo">AROGYA AI</h3>
 
             <p className="footer-desc">
-              Intelligent Clinical Co-Pilot for Modern Healthcare
+               Clinical Intelligence Platform for Modern Healthcare
             </p>
           </div>
 

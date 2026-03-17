@@ -7,7 +7,7 @@ function ImpactStats() {
       <div className="impact-container">
 
         <h2 className="impact-title">
-          3 Impact statistics
+          How we help <span>Clinicians</span>
         </h2>
 
         <div className="impact-card">
