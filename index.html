@@ -812,6 +812,53 @@ footer {
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
 
+/* =================================
+   ABOUT PAGE RESPONSIVE
+================================= */
+
+.about-story-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:80px;
+  align-items:center;
+}
+
+.about-stats-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+@media (max-width:768px){
+
+  .about-story-grid{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .about-stats-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+  }
+
+  .about-stats-grid .card{
+    padding:20px;
+  }
+
+  .about-stats-grid h3{
+    font-size:1.4rem !important;
+  }
+
+}
+
+@media (max-width:480px){
+
+  .about-stats-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
@@ -2323,340 +2370,404 @@ function closeModal() {
    PAGE: ABOUT
    ============================================================ -->
 <div class="page" id="page-about">
+
+  <!-- HERO -->
   <section class="product-hero" style="min-height:auto;padding:100px 0 80px;">
     <div class="hero-grid-bg"></div>
+
     <div class="container" style="position:relative;z-index:1;">
-<div class="hero-eyebrow" style="margin-bottom:20px;display:inline-flex;">
-    <span class="hero-eyebrow-dot"></span>
-    About Arogya Labs
-</div>      <h1 class="display-2" style="color:white;max-width:640px;">Building AI that gives physicians time to heal</h1>
-      <p class="body-lg" style="color:rgba(255,255,255,.72);max-width:600px;margin-top:16px;">
-        Arogya means "health" in Sanskrit. We started this company because we watched brilliant physicians spend 40% of their day on documentation — not patients. We're changing that.
+
+      <div class="hero-eyebrow" style="margin-bottom:20px;display:inline-flex;">
+        <span class="hero-eyebrow-dot"></span>
+        About Arogya Labs
+      </div>
+
+      <h1 class="display-2" style="color:white;max-width:760px;">
+        Building the Intelligence Layer for Modern Healthcare
+      </h1>
+
+      <p class="body-lg" style="color:rgba(255,255,255,.72);max-width:720px;margin-top:18px;">
+        Arogya Labs is an AI healthcare technology company focused on helping clinicians work faster,
+        document smarter, and deliver better patient care. We build intelligent systems that reduce
+        administrative burden, improve clinical workflows, and assist healthcare professionals in making
+        informed decisions with confidence.
       </p>
+
     </div>
   </section>
 
-  <!-- Mission -->
+  <!-- STORY -->
   <section class="section">
     <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+
+<div class="about-story-grid">
         <div>
-          <div class="section-eyebrow" style="text-align:left;margin-bottom:16px;">Mission</div>
-          <h2 class="heading-1">AI that augments, not replaces, the clinician</h2>
-          <p class="body-lg" style="color:var(--text-secondary);margin-top:16px;">
-            We believe the physician-patient relationship is sacred. Our AI exists to handle the administrative and analytical tasks that pull physicians away from that relationship — documentation, imaging triage, coding, reporting.
+
+          <div class="section-eyebrow" style="margin-bottom:16px;">
+            Our Story
+          </div>
+
+          <h2 class="heading-1">
+            Healthcare deserves better tools
+          </h2>
+
+          <p class="body-lg" style="color:var(--text-secondary);margin-top:20px;">
+            Healthcare professionals spend countless hours on documentation, reporting,
+            administrative work, and repetitive clinical processes. These challenges reduce the
+            time available for what matters most — patient care.
           </p>
-          <p class="body-md" style="color:var(--text-secondary);margin-top:16px;">
-            Every product we build is designed with a "physician in the loop" philosophy. AI provides the draft, the insight, the alert — the clinician makes the final call.
+
+          <p class="body-md" style="color:var(--text-secondary);margin-top:18px;">
+            Arogya Labs was created to solve this problem through practical artificial intelligence.
+            Our mission is not to replace clinicians, but to empower them with intelligent software
+            that simplifies workflows, accelerates decision-making, and improves operational efficiency.
           </p>
-          <div class="chip-row" style="margin-top:24px;">
-            <span class="chip active">Physician-First</span>
-            <span class="chip active">DPDP Native</span>
-            <span class="chip active">Evidence-Based</span>
-            <span class="chip active">SOC 2 Certified</span>
-          </div>
+
+          <p class="body-md" style="color:var(--text-secondary);margin-top:18px;">
+            By combining advances in machine learning, clinical intelligence, and workflow automation,
+            we are building a future where healthcare teams spend less time on paperwork and more time
+            caring for patients.
+          </p>
+
         </div>
-        <div class="grid-2" style="gap:16px;">
-          <div class="card text-center" style="padding:24px 16px;">
-            <!-- <div style="font-size:1.8rem;margin-bottom:8px;">🎓</div> -->
-            <h4 style="font-size:1.1rem;">Founded 2025</h4>
-            <p class="body-sm" style="color:var(--text-secondary);margin-top:4px;">By physicians, for physicians</p>
+
+<div class="about-stats-grid">
+          <div class="card text-center">
+            <h3 style="font-size:1.8rem;">AI</h3>
+            <p class="body-sm" style="margin-top:8px;">
+              Powered Clinical Intelligence
+            </p>
           </div>
-          <div class="card text-center" style="padding:24px 16px;">
-            <!-- <div style="font-size:1.8rem;margin-bottom:8px;">🌎</div> -->
-            <h4 style="font-size:1.1rem;">India</h4>
-            <p class="body-sm" style="color:var(--text-secondary);margin-top:4px;">Bengluru, Karnataka</p>
+
+          <div class="card text-center">
+            <h3 style="font-size:1.8rem;">24/7</h3>
+            <p class="body-sm" style="margin-top:8px;">
+              Intelligent Workflow Support
+            </p>
           </div>
-          <div class="card text-center" style="padding:24px 16px;">
-            <!-- <div style="font-size:1.8rem;margin-bottom:8px;">💰</div> -->
-            <h4 style="font-size:1.1rem;">$12M Series A</h4>
-            <p class="body-sm" style="color:var(--text-secondary);margin-top:4px;">Backed by top healthcare VCs</p>
+
+          <div class="card text-center">
+            <h3 style="font-size:1.8rem;">Secure</h3>
+            <p class="body-sm" style="margin-top:8px;">
+              Privacy Focused Architecture
+            </p>
           </div>
-          <div class="card text-center" style="padding:24px 16px;">
-            <!-- <div style="font-size:1.8rem;margin-bottom:8px;">👩‍⚕️</div> -->
-            <h4 style="font-size:1.1rem;">10,000+ Doctors</h4>
-            <p class="body-sm" style="color:var(--text-secondary);margin-top:4px;">Trust Arogya daily</p>
+
+          <div class="card text-center">
+            <h3 style="font-size:1.8rem;">Scalable</h3>
+            <p class="body-sm" style="margin-top:8px;">
+              Built for Modern Healthcare
+            </p>
           </div>
+
         </div>
+
       </div>
+
     </div>
   </section>
 
-  <!-- Team -->
-  <!-- <section class="section bg-secondary-section">
+  <!-- PRODUCTS -->
+  <section class="section bg-secondary-section">
+
     <div class="container">
+
       <div class="section-header">
-        <div class="section-eyebrow"> Leadership Team</div>
-        <h2 class="heading-1">Physicians and engineers united</h2>
+        <div class="section-eyebrow">
+          What We Build
+        </div>
+
+        <h2 class="heading-1">
+          AI solutions designed for clinical excellence
+        </h2>
+
         <p class="body-lg" style="color:var(--text-secondary);margin-top:14px;">
-          [Placeholder: Add real team bios, photos, and LinkedIn links here]
+          Every product at Arogya Labs is built to eliminate friction from healthcare workflows.
         </p>
       </div>
-      <div class="team-grid">
-        <div class="team-card">
-          <div class="team-avatar">RK</div>
-          <div class="team-name">Dr. Raj Kumar, MD</div>
-          <div class="team-role">Co-Founder & CEO</div>
-          <div class="team-bio">Former hospitalist at UCSF. 10+ years in clinical medicine. Frustrated by documentation burden, built the product he wished existed.</div>
-        </div>
-        <div class="team-card">
-          <div class="team-avatar">PS</div>
-          <div class="team-name">Priya Sharma</div>
-          <div class="team-role">Co-Founder & CTO</div>
-          <div class="team-bio">PhD in NLP from Stanford. Former AI researcher at Google Health. Leads all model development and platform architecture.</div>
-        </div>
-        <div class="team-card">
-          <div class="team-avatar">DL</div>
-          <div class="team-name">Dr. David Lee, MD</div>
-          <div class="team-role">Chief Medical Officer</div>
-          <div class="team-bio">Board-certified radiologist. Former clinical AI lead at a major academic medical center. Oversees clinical validation and safety.</div>
-        </div>
-        <div class="team-card">
-          <div class="team-avatar">AM</div>
-          <div class="team-name">Ananya Mehta</div>
-          <div class="team-role">VP of Product</div>
-          <div class="team-bio">Former PM at Epic Systems. Deep expertise in healthcare interoperability, EHR workflow design, and clinical UX.</div>
-        </div>
-        <div class="team-card">
-          <div class="team-avatar">TC</div>
-          <div class="team-name">Tom Chen</div>
-          <div class="team-role">VP of Engineering</div>
-          <div class="team-bio">Previously at Palantir and Flatiron Health. Leads a 30-person engineering team building DPDP-compliant, real-time AI infrastructure.</div>
-        </div>
-        <div class="team-card">
-          <div class="team-avatar">SB</div>
-          <div class="team-name">Sarah Brown</div>
-          <div class="team-role">VP of Sales & Partnerships</div>
-          <div class="team-bio">10+ years in health tech sales. Previously at Nuance (now Microsoft) and Doximity. Leads enterprise and health system partnerships.</div>
-        </div>
-      </div>
-    </div>
-  </section> -->
 
-  <!-- Values -->
+      <div class="grid-3">
+
+        <div class="card">
+          <h3 class="heading-3">AI Scribe</h3>
+
+          <p class="body-sm" style="margin-top:12px;color:var(--text-secondary);">
+            Automatically converts patient conversations into structured clinical notes,
+            helping clinicians reduce documentation time and maintain complete records with ease.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 class="heading-3">AI Radiologist</h3>
+
+          <p class="body-sm" style="margin-top:12px;color:var(--text-secondary);">
+            Intelligent imaging analysis designed to assist radiologists with report generation,
+            workflow prioritization, and faster interpretation of diagnostic studies.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 class="heading-3">Clinical Intelligence Platform</h3>
+
+          <p class="body-sm" style="margin-top:12px;color:var(--text-secondary);">
+            A unified AI infrastructure connecting clinical workflows, documentation,
+            diagnostics, and healthcare operations into one intelligent ecosystem.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- VALUES -->
   <section class="section">
+
     <div class="container">
+
       <div class="section-header">
-        <div class="section-eyebrow">Our Values</div>
-        <h2 class="heading-1">How we work</h2>
+
+        <div class="section-eyebrow">
+          Our Principles
+        </div>
+
+        <h2 class="heading-1">
+          The values behind every product
+        </h2>
+
       </div>
+
       <div class="grid-3">
+
         <div class="card">
-          <!-- <div class="card-icon">🩺</div> -->
-          <h3 class="heading-3">Clinical Safety First</h3>
-          <p class="body-sm" style="color:var(--text-secondary);margin-top:8px;">Every AI output is subject to physician review. We'd rather a doctor correct us than an AI harm a patient. Human in the loop, always.</p>
+          <h3 class="heading-3">Clinician First</h3>
+
+          <p class="body-sm" style="margin-top:12px;color:var(--text-secondary);">
+            We build technology that supports healthcare professionals rather than replacing them.
+          </p>
         </div>
+
         <div class="card">
-          <!-- <div class="card-icon">🔒</div> -->
-          <h3 class="heading-3">Privacy by Design</h3>
-          <p class="body-sm" style="color:var(--text-secondary);margin-top:8px;">DPDP compliance is a minimum, not a goal. We apply privacy-preserving ML techniques and never sell patient data. Period.</p>
+          <h3 class="heading-3">Privacy & Security</h3>
+
+          <p class="body-sm" style="margin-top:12px;color:var(--text-secondary);">
+            Protecting healthcare data is fundamental to every system and workflow we create.
+          </p>
         </div>
+
         <div class="card">
-          <!-- <div class="card-icon">📊</div> -->
-          <h3 class="heading-3">Evidence-Based AI</h3>
-          <p class="body-sm" style="color:var(--text-secondary);margin-top:8px;">We validate every model on real-world clinical datasets before deployment and publish our results openly. No black boxes.</p>
+          <h3 class="heading-3">Responsible AI</h3>
+
+          <p class="body-sm" style="margin-top:12px;color:var(--text-secondary);">
+            We focus on transparent, reliable, and clinically useful AI that can be trusted in real-world environments.
+          </p>
         </div>
+
       </div>
+
     </div>
+
   </section>
 
-  <!-- Investors / Press -->
-  <section class="section bg-secondary-section">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-eyebrow">Press & Recognition</div>
-        <h2 class="heading-1">In the news</h2>
-      </div>
-      <div class="grid-3">
-        <div class="card" style="padding:24px;">
-          <div style="font-size:1.1rem;font-weight:800;color:var(--text-muted);margin-bottom:12px;">STAT News</div>
-          <p class="body-sm" style="color:var(--text-secondary);font-style:italic;">"Arogya Labs is building one of the most complete clinical AI platforms we've seen from a startup of this size."</p>
-        </div>
-        <div class="card" style="padding:24px;">
-          <div style="font-size:1.1rem;font-weight:800;color:var(--text-muted);margin-bottom:12px;">MedCity News</div>
-          <p class="body-sm" style="color:var(--text-secondary);font-style:italic;">"Named a Top 10 Health AI Startup to Watch — combining physician founders with world-class ML research."</p>
-        </div>
-        <div class="card" style="padding:24px;">
-          <div style="font-size:1.1rem;font-weight:800;color:var(--text-muted);margin-bottom:12px;">Fierce Healthcare</div>
-          <p class="body-sm" style="color:var(--text-secondary);font-style:italic;">"Arogya's AI Scribe is winning converts in practices that tried and abandoned other ambient documentation tools."</p>
-        </div>
-      </div>
-      <div style="margin-top:32px;text-align:center;">
-        <p class="body-sm" style="color:var(--text-muted);">Press inquiries: <a href="mailto:press@arogyalabs.ai" style="color:var(--brand-royal);">press@arogyalabs.ai</a></p>
-      </div>
-    </div>
-  </section>
+  <!-- CTA -->
+  <section class="cta-section" style="padding:90px 0;">
 
-  <!-- Join team CTA -->
-  <section class="cta-section" style="padding:80px 0;">
     <div class="container" style="position:relative;z-index:1;">
-      <h2 class="heading-1" style="color:white;">Join the team building the future of clinical AI</h2>
-      <p style="color:rgba(255,255,255,.7);margin-top:12px;">We're hiring engineers, clinical informaticists, and product managers. Remote-first.</p>
+
+      <h2 class="heading-1" style="color:white;">
+        Transform healthcare with intelligent AI
+      </h2>
+
+      <p style="color:rgba(255,255,255,.72);margin-top:14px;max-width:650px;margin-left:auto;margin-right:auto;">
+        Discover how Arogya Labs helps healthcare teams streamline documentation,
+        improve efficiency, and focus more on patient outcomes.
+      </p>
+
       <div class="cta-actions">
-        <button class="btn btn-accent btn-lg" onclick="showToast('🚀 Opening careers page...')">View Open Roles</button>
-        <button class="btn btn-ghost btn-lg" onclick="showToast('📬 Opening contact form...')">Get in Touch</button>
+        <button class="btn btn-accent btn-lg"
+          onclick="window.open('https://dev.arogyalabs.ai/signup?trial=true','_blank')">
+          Start Free Trial
+        </button>
       </div>
+
     </div>
+
   </section>
+
 </div>
 
 <!-- ============================================================
-   PAGE:  privacy policy
+   PAGE: PRIVACY POLICY
    ============================================================ -->
-   <div class="page" id="page-privacy">
+<div class="page" id="page-privacy">
 
-  <section class="product-hero" style="min-height:auto;padding:100px 0 260px;">
-    <div class="hero-grid-bg"></div>
+  <section class="section">
+    <div class="container-sm">
 
-    <div class="container" style="position:relative;z-index:1;">
-      <div class="section-eyebrow" style="margin-bottom:20px;display:inline-flex;">
-         Privacy Policy
+      <div class="section-header">
+        <div class="section-eyebrow">
+          ✦ Legal
+        </div>
+
+        <h1 class="heading-1">Privacy Policy</h1>
+
+        <p class="body-lg" style="color:var(--text-secondary);margin-top:14px;">
+          At Arogya Labs, protecting healthcare information, user privacy, and data security is fundamental to everything we build. This Privacy Policy explains how we collect, use, store, and protect information when you use our AI-powered healthcare solutions.
+        </p>
       </div>
 
-      <h1 class="display-2" style="color:white;max-width:700px;">
-        Your Privacy Matters
-      </h1>
+      <div class="card" style="padding:48px;">
 
-      <p class="body-lg" style="color:rgba(255,255,255,.72);max-width:700px;margin-top:16px;">
-        Arogya Labs is committed to protecting the privacy,
-        security and confidentiality of healthcare providers,
-        patients and organizations using our AI-powered platform.
-      </p>
+        <h3 class="heading-3">1. Information We Collect</h3>
 
-      <p style="color:rgba(255,255,255,.5);margin-top:20px;">
-        Last Updated: May 2026
-      </p>
-    </div>
-  </section>
-
-  <section class="section bg-secondary-section">
-    <div class="container">
-
-      <div class="card" style="margin-bottom:24px;">
-        <h3>1. Information We Collect</h3>
-        <p style="margin-top:12px;color:var(--text-secondary);">
-          We may collect information voluntarily provided while creating accounts,
-          requesting support, or using our services.
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          We may collect information that you voluntarily provide when creating an account,
+          requesting a demo, contacting support, subscribing to services, or using our platform.
+          This may include your name, email address, organization information, professional details,
+          and account credentials.
         </p>
 
-        <ul class="feature-list" style="margin-top:16px;">
-          <li>Name and contact information</li>
-          <li>Organization details</li>
-          <li>Account credentials</li>
-          <li>Usage analytics and logs</li>
-          <li>Technical device information</li>
+        <hr class="divider">
+
+        <h3 class="heading-3">2. Healthcare & Clinical Data</h3>
+
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          Certain Arogya Labs products may process clinical information, documentation,
+          imaging metadata, transcripts, or workflow-related healthcare data to provide
+          AI-powered functionality. Such information is processed solely for delivering,
+          improving, and supporting our services.
+        </p>
+
+        <hr class="divider">
+
+        <h3 class="heading-3">3. How We Use Information</h3>
+
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          We use collected information to:
+        </p>
+
+        <ul style="margin-top:12px;padding-left:20px;color:var(--text-secondary);line-height:1.9;">
+          <li>Provide and maintain platform functionality</li>
+          <li>Generate AI-powered clinical outputs and workflows</li>
+          <li>Improve product performance and user experience</li>
+          <li>Respond to inquiries and support requests</li>
+          <li>Protect platform security and prevent misuse</li>
+          <li>Comply with legal and regulatory obligations</li>
         </ul>
-      </div>
 
-      <div class="card" style="margin-bottom:24px;">
-        <h3>2. How We Use Information</h3>
+        <hr class="divider">
 
-        <ul class="feature-list" style="margin-top:16px;">
-          <li>Provide and maintain services</li>
-          <li>Generate AI-assisted outputs</li>
-          <li>Improve platform accuracy</li>
-          <li>Respond to support requests</li>
-          <li>Prevent fraud and abuse</li>
-          <li>Meet legal requirements</li>
-        </ul>
-      </div>
+        <h3 class="heading-3">4. Data Security</h3>
 
-      <div class="card" style="margin-bottom:24px;">
-        <h3>3. Data Storage & Security</h3>
-
-        <p style="margin-top:12px;color:var(--text-secondary);">
-          We use encryption, secure infrastructure,
-          access controls, monitoring and audit logging
-          to protect information from unauthorized access,
-          disclosure or alteration.
-        </p>
-      </div>
-
-      <div class="card" style="margin-bottom:24px;">
-        <h3>4. Sharing of Information</h3>
-
-        <p style="margin-top:12px;color:var(--text-secondary);">
-          Arogya Labs does not sell personal information.
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          We implement administrative, technical, and organizational safeguards designed
+          to protect information against unauthorized access, disclosure, alteration,
+          or destruction. Security practices are continuously reviewed and improved to
+          maintain a secure operating environment.
         </p>
 
-        <ul class="feature-list" style="margin-top:16px;">
-          <li>Authorized service providers</li>
-          <li>Healthcare organizations using our platform</li>
-          <li>Legal compliance requirements</li>
-          <li>Security and platform protection</li>
-        </ul>
-      </div>
+        <hr class="divider">
 
-      <div class="card" style="margin-bottom:24px;">
-        <h3>5. Cookies & Analytics</h3>
+        <h3 class="heading-3">5. Data Sharing</h3>
 
-        <p style="margin-top:12px;color:var(--text-secondary);">
-          We may use cookies and analytics technologies
-          to improve performance and user experience.
-        </p>
-      </div>
-
-      <div class="card" style="margin-bottom:24px;">
-        <h3>6. User Rights</h3>
-
-        <ul class="feature-list" style="margin-top:16px;">
-          <li>Access personal information</li>
-          <li>Correct inaccurate information</li>
-          <li>Request deletion</li>
-          <li>Request portability</li>
-          <li>Withdraw consent where applicable</li>
-        </ul>
-      </div>
-
-      <div class="card" style="margin-bottom:24px;">
-        <h3>7. Data Retention</h3>
-
-        <p style="margin-top:12px;color:var(--text-secondary);">
-          Information is retained only as long as necessary
-          to provide services, comply with law and resolve disputes.
-        </p>
-      </div>
-
-      <div class="card" style="margin-bottom:24px;">
-        <h3>8. Third-Party Services</h3>
-
-        <p style="margin-top:12px;color:var(--text-secondary);">
-          Our platform may integrate with third-party healthcare,
-          analytics or cloud infrastructure providers operating
-          under their own privacy policies.
-        </p>
-      </div>
-
-      <div class="card" style="margin-bottom:24px;">
-        <h3>9. Children's Privacy</h3>
-
-        <p style="margin-top:12px;color:var(--text-secondary);">
-          Our services are not intended for children without
-          appropriate authorization and legal basis.
-        </p>
-      </div>
-
-      <div class="card" style="margin-bottom:24px;">
-        <h3>10. Changes To This Policy</h3>
-
-        <p style="margin-top:12px;color:var(--text-secondary);">
-          We may update this Privacy Policy periodically.
-          Updates will be posted on this page.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>11. Contact Us</h3>
-
-        <p style="margin-top:12px;color:var(--text-secondary);">
-          Questions regarding this Privacy Policy may be directed to:
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          Arogya Labs does not sell personal information or healthcare-related data.
+          Information may be shared only with trusted service providers, technology partners,
+          or regulatory authorities when necessary to deliver services, comply with legal
+          obligations, or protect platform security.
         </p>
 
-        <p style="margin-top:16px;">
-          <strong>Arogya Labs</strong><br>
-          Email: privacy@arogyalabs.ai<br>
-          Website: arogyalabs.ai
+        <hr class="divider">
+
+        <h3 class="heading-3">6. Cookies & Analytics</h3>
+
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          We may use cookies, analytics technologies, and similar tools to understand how
+          visitors interact with our website, improve performance, and enhance the user
+          experience. These technologies do not grant us access to personal devices beyond
+          standard web functionality.
         </p>
+
+        <hr class="divider">
+
+        <h3 class="heading-3">7. Data Retention</h3>
+
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          Information is retained only for as long as necessary to provide services,
+          fulfill contractual obligations, resolve disputes, maintain security,
+          and comply with applicable legal requirements.
+        </p>
+
+        <hr class="divider">
+
+        <h3 class="heading-3">8. User Rights</h3>
+
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          Depending on applicable laws and regulations, users may have rights to access,
+          update, correct, restrict, or request deletion of their personal information.
+          Requests may be submitted through our support channels.
+        </p>
+
+        <hr class="divider">
+
+        <h3 class="heading-3">9. International Data Processing</h3>
+
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          Information may be processed and stored in locations where our infrastructure
+          or service providers operate. Appropriate safeguards are implemented to protect
+          information during any cross-border processing activities.
+        </p>
+
+        <hr class="divider">
+
+        <h3 class="heading-3">10. Children's Privacy</h3>
+
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          Our services are intended for healthcare professionals and organizations and are
+          not directed toward children. We do not knowingly collect personal information
+          directly from children through our platform.
+        </p>
+
+        <hr class="divider">
+
+        <h3 class="heading-3">11. Updates to This Policy</h3>
+
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          We may update this Privacy Policy periodically to reflect changes in our
+          services, technology, legal requirements, or security practices.
+          Updated versions become effective when published on this website.
+        </p>
+
+        <hr class="divider">
+
+        <h3 class="heading-3">12. Contact Us</h3>
+
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          If you have any questions regarding this Privacy Policy or our data practices,
+          please contact us.
+        </p>
+
+        <div style="
+          margin-top:18px;
+          padding:22px;
+          background:var(--bg-secondary);
+          border:1px solid var(--border-color);
+          border-radius:16px;
+        ">
+          <p style="margin:0;">
+            <strong>Email:</strong> support@arogyalabs.ai
+          </p>
+
+          <p style="margin-top:10px;">
+            <strong>Website:</strong> arogyalabs.ai
+          </p>
+
+          <p style="margin-top:10px;">
+            <strong>Company:</strong> Arogya Labs
+          </p>
+        </div>
+
       </div>
 
     </div>
@@ -2667,80 +2778,149 @@ function closeModal() {
  <!-- ============================================================
    PAGE: TERMS & CONDITIONS
    ============================================================ -->
+<!-- ============================================================
+   PAGE: TERMS & CONDITIONS
+   ============================================================ -->
 <div class="page" id="page-terms">
 
   <section class="section">
     <div class="container-sm">
 
+      <!-- Header -->
       <div class="section-header">
-        <div class="section-eyebrow">Legal</div>
+        <div class="section-eyebrow">
+          ✦ Legal
+        </div>
+
         <h1 class="heading-1">Terms & Conditions</h1>
+
         <p class="body-lg" style="color:var(--text-secondary);margin-top:14px;">
-          Please read these terms carefully before using Arogya Labs services.
+          These Terms & Conditions govern your access to and use of Arogya Labs' AI-powered clinical intelligence platform, including AI Scribe, AI Radiologist, and related healthcare technology services.
         </p>
       </div>
 
-      <div class="card">
-        <h3>1. Acceptance of Terms</h3>
-        <p>
-          By accessing or using Arogya Labs services, you agree to comply with these Terms & Conditions.
+      <!-- Content Card -->
+      <div class="card" style="padding:48px;">
+
+        <h3 class="heading-3">1. Acceptance of Terms</h3>
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          By accessing or using Arogya Labs, you acknowledge that you have read, understood, and agree to be bound by these Terms & Conditions. If you do not agree with any provision of these terms, you must discontinue use of the platform immediately.
         </p>
 
-        <br>
+        <hr class="divider">
 
-        <h3>2. Use of Services</h3>
-        <p>
-          You agree to use the platform only for lawful purposes and in accordance with applicable regulations.
+        <h3 class="heading-3">2. Services Provided</h3>
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          Arogya Labs provides AI-powered healthcare technology solutions, including clinical documentation assistance, radiology workflow support, report generation, clinical intelligence tools, and related software services designed to improve healthcare efficiency and productivity.
         </p>
 
-        <br>
+        <hr class="divider">
 
-        <h3>3. User Accounts</h3>
-        <p>
-          You are responsible for maintaining the security and confidentiality of your account credentials.
+        <h3 class="heading-3">3. Eligibility</h3>
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          The platform is intended for use by healthcare professionals, healthcare organizations, and authorized personnel. Users must comply with all applicable laws, regulations, and professional standards while using our services.
         </p>
 
-        <br>
+        <hr class="divider">
 
-        <h3>4. Intellectual Property</h3>
-        <p>
-          All content, software, trademarks and materials remain the property of Arogya Labs.
+        <h3 class="heading-3">4. User Responsibilities</h3>
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          Users are responsible for maintaining accurate account information, safeguarding login credentials, and ensuring that all activities performed through their accounts comply with applicable legal and regulatory requirements.
         </p>
 
-        <br>
+        <hr class="divider">
 
-        <h3>5. Healthcare Disclaimer</h3>
-        <p>
-          Our AI tools assist healthcare workflows but do not replace professional medical judgment.
+        <h3 class="heading-3">5. AI Generated Content</h3>
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          Content generated by Arogya Labs, including clinical notes, summaries, reports, recommendations, and analytical outputs, is produced using artificial intelligence and should always be reviewed, verified, and approved by qualified healthcare professionals before clinical use.
         </p>
 
-        <br>
+        <hr class="divider">
 
-        <h3>6. Privacy</h3>
-        <p>
-          Your use of the platform is also governed by our Privacy Policy.
+        <h3 class="heading-3">6. Medical Disclaimer</h3>
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          Arogya Labs does not provide medical advice, diagnosis, treatment recommendations, or emergency healthcare services. Clinical decisions remain solely the responsibility of licensed healthcare professionals.
         </p>
 
-        <br>
+        <hr class="divider">
 
-        <h3>7. Limitation of Liability</h3>
-        <p>
-          Arogya Labs shall not be liable for indirect or consequential damages arising from use of the platform.
+        <h3 class="heading-3">7. Data Privacy & Security</h3>
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          We implement industry-standard security measures to protect information processed through our platform. Use of the platform is also governed by our Privacy Policy, which explains how information is collected, used, stored, and protected.
         </p>
 
-        <br>
+        <hr class="divider">
 
-        <h3>8. Changes to Terms</h3>
-        <p>
-          We may update these Terms & Conditions from time to time.
+        <h3 class="heading-3">8. Intellectual Property Rights</h3>
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          All software, technology, trademarks, logos, content, designs, algorithms, and proprietary materials associated with Arogya Labs remain the exclusive property of Arogya Labs and are protected by applicable intellectual property laws.
         </p>
 
-        <br>
+        <hr class="divider">
 
-        <h3>9. Contact Us</h3>
-        <p>
-          For questions regarding these Terms, please contact our support team.
+        <h3 class="heading-3">9. Prohibited Activities</h3>
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          Users may not misuse the platform, attempt unauthorized access, interfere with system operations, distribute malicious software, violate applicable laws, or use the platform in any manner that may compromise security, privacy, or service integrity.
         </p>
+
+        <hr class="divider">
+
+        <h3 class="heading-3">10. Service Availability</h3>
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          While we strive to maintain reliable and uninterrupted service, Arogya Labs does not guarantee continuous availability of the platform and may perform maintenance, updates, or service modifications without prior notice.
+        </p>
+
+        <hr class="divider">
+
+        <h3 class="heading-3">11. Limitation of Liability</h3>
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          To the fullest extent permitted by law, Arogya Labs shall not be liable for any indirect, incidental, consequential, special, or punitive damages, including loss of profits, business interruption, data loss, or clinical outcomes arising from the use of the platform.
+        </p>
+
+        <hr class="divider">
+
+        <h3 class="heading-3">12. Termination</h3>
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          We reserve the right to suspend or terminate access to the platform at our discretion if these Terms & Conditions are violated or if continued access poses legal, operational, or security risks.
+        </p>
+
+        <hr class="divider">
+
+        <h3 class="heading-3">13. Changes to These Terms</h3>
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          Arogya Labs may update these Terms & Conditions periodically. Updated versions become effective immediately upon publication. Continued use of the platform constitutes acceptance of the revised terms.
+        </p>
+
+        <hr class="divider">
+
+        <h3 class="heading-3">14. Governing Law</h3>
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          These Terms & Conditions shall be governed by and interpreted in accordance with the laws of India. Any disputes arising from the use of the platform shall be subject to the exclusive jurisdiction of the competent courts of India.
+        </p>
+
+        <hr class="divider">
+
+        <h3 class="heading-3">15. Contact Information</h3>
+        <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
+          If you have any questions regarding these Terms & Conditions, please contact us:
+        </p>
+
+        <div style="
+          margin-top:18px;
+          padding:20px;
+          background:var(--bg-secondary);
+          border:1px solid var(--border-color);
+          border-radius:16px;
+        ">
+          <p style="margin:0;">
+            <strong>Email:</strong> support@arogyalabs.ai
+          </p>
+
+          <p style="margin:10px 0 0;">
+            <strong>Website:</strong> arogyalabs.ai
+          </p>
+        </div>
+
       </div>
 
     </div>
@@ -2748,9 +2928,7 @@ function closeModal() {
 
 </div>
 
- <!-- ============================================================
-   PAGE: CONTACT / SUPPORT
-   ============================================================ -->
+ 
 <!-- ============================================================
    PAGE: CONTACT / SUPPORT
    ============================================================ -->
