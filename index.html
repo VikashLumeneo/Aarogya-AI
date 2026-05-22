@@ -585,17 +585,39 @@ ul { list-style: none; }
 /* ============================================================
    CTA SECTION
    ============================================================ */
-.cta-section {
-  background: linear-gradient(135deg, var(--brand-dark) 0%, #1A256E 50%, #0F1D56 100%);
-  padding: 100px 0; text-align: center; position: relative; overflow: hidden;
+.cta-section{
+  background:#ffffff;
+  padding:100px 0;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  border-top:1px solid var(--border-color);
 }
-.cta-section::before {
-  content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse 50% 80% at 50% 50%, rgba(91,101,221,.2) 0%, transparent 70%);
-  pointer-events: none;
+
+.cta-section::before{
+  display:none;
 }
-.cta-section h2, .cta-section p { color: white; }
-.cta-section p { color: rgba(255,255,255,.7); max-width: 520px; margin: 16px auto 0; }
+
+.cta-section h2{
+  color:var(--text-primary);
+}
+
+.cta-section p{
+  color:var(--text-secondary);
+  max-width:620px;
+  margin:16px auto 0;
+}
+.btn-ghost{
+  background:#ffffff;
+  color:var(--brand-dark);
+  border:2px solid var(--border-color);
+}
+
+.btn-ghost:hover{
+  background:var(--bg-secondary);
+  border-color:var(--brand-royal);
+  color:var(--brand-royal);
+}
 .cta-actions { display: flex; justify-content: center; gap: 16px; margin-top: 36px; flex-wrap: wrap; }
 
 /* ============================================================
@@ -1885,6 +1907,32 @@ dropdown.querySelectorAll(".nav-dropdown-item").forEach(item => {
           </div>
         </div>
 
+        <!-- Patient portal -->
+         <div class="product-card" style="opacity:.75;cursor:default;">
+          <div class="product-card-header">
+            <span class="product-badge badge-soon"> Coming soon</span>
+            <!-- <div style="font-size:2.5rem;margin-bottom:16px;">💊</div> -->
+            <h2 class="heading-2">Patient Portal</h2>
+            <p style="color:var(--text-secondary);margin-top:10px;">A secure mobile app where patients access their Rx, visit notes, labs, and reminders, built for India.</p>
+          </div>
+          <div class="product-card-body">
+            <ul class="feature-list">
+              <li>View Rx, SOAP notes, lab results</li>
+              <li>Medication adherence reminders</li>
+              <li>Follow-up appointment booking</li>
+              <!-- <li>Polypharmacy risk scoring</li> -->
+              <li>WhatsApp & SMS notifications</li>
+            </ul>
+            <div style="margin-top:24px;">
+<span 
+  class="btn btn-secondary disabled-btn" 
+  style="width:100%;justify-content:center;"
+>
+  Join Waitlist
+</span>            </div>
+          </div>
+        </div>
+
         <!-- Coming Soon -->
         <div class="product-card" style="opacity:.75;cursor:default;">
           <div class="product-card-header">
@@ -2599,20 +2647,39 @@ dropdown.querySelectorAll(".nav-dropdown-item").forEach(item => {
 </section>
 
   <!-- Scribe Pricing CTA -->
-  <section class="cta-section">
-    <div class="container" style="position:relative;z-index:1;">
-      <h2 class="display-2" style="color:white;">Start scribing smarter today</h2>
-      <p class="body-lg" style="color:rgba(255,255,255,.7);margin-top:12px;">14-day free trial. No credit card. Full platform access.</p>
-      <div class="cta-actions">
-<button 
-  class="btn btn-accent btn-lg" 
-  onclick="window.open('https://dev.arogyalabs.ai/signup?trial=true', '_blank', 'noopener,noreferrer')"
->
-  Start Free Trial
-</button>        <button class="btn btn-ghost btn-lg" onclick="navigate('pricing')">View Plans</button>
-      </div>
+  <section class="cta-section" aria-label="Call to action">
+  <div class="container" style="position:relative;z-index:1;">
+
+    <div class="section-eyebrow" style="color:#A5ABEF;background:rgba(91,101,221,.2);border:1px solid rgba(91,101,221,.3);display:inline-flex;margin-bottom:20px;">
+      Start Today
     </div>
-  </section>
+
+    <h2 class="display-2">
+      Start scribing smarter today
+    </h2>
+
+    <p class="body-lg" style="margin-top:12px;">
+      14-day free trial. No credit card. Full platform access.
+    </p>
+
+    <div class="cta-actions" style="margin-top:32px;">
+      <button
+        class="btn btn-accent btn-lg"
+        onclick="window.open('https://dev.arogyalabs.ai/signup?trial=true', '_blank', 'noopener,noreferrer')"
+      >
+        Start Free Trial
+      </button>
+
+      <button
+        class="btn btn-ghost btn-lg"
+        onclick="navigate('pricing')"
+      >
+        View Plans
+      </button>
+    </div>
+
+  </div>
+</section>
 </div>
 
 
@@ -2726,17 +2793,39 @@ dropdown.querySelectorAll(".nav-dropdown-item").forEach(item => {
   </section>
 
   <!-- Radiology CTA -->
-  <section class="cta-section">
-    <div class="container" style="position:relative;z-index:1;">
-      <h2 class="display-2" style="color:white;">Catch more. Report faster. Reduce risk.</h2>
-      <p class="body-lg" style="color:rgba(255,255,255,.7);margin-top:12px;">Join radiology departments already using Arogya AI for first-pass triage and report assistance.</p>
-      <div class="cta-actions">
-        <button class="btn btn-accent btn-lg" onclick="openSignup('AI Radiologist')">Request Early Access</button>
-        <button class="btn btn-ghost btn-lg" onclick="navigate('pricing')">View Plans</button>
-      </div>
+ <section class="cta-section" aria-label="Call to action">
+  <div class="container" style="position:relative;z-index:1;">
+
+    <div class="section-eyebrow" style="display:inline-flex;margin-bottom:20px;">
+      Start Today
     </div>
-      </div>
-  </section>
+
+    <h2 class="display-2">
+      Catch more. Report faster. Reduce risk.
+    </h2>
+
+    <p class="body-lg" style="margin-top:12px;">
+      Join radiology departments already using Arogya AI for first-pass triage and report assistance.
+    </p>
+
+    <div class="cta-actions" style="margin-top:32px;">
+      <button
+        class="btn btn-accent btn-lg"
+        onclick="openSignup('AI Radiologist')"
+      >
+        Request Early Access
+      </button>
+
+      <button
+        class="btn btn-ghost btn-lg"
+        onclick="navigate('pricing')"
+      >
+        View Plans
+      </button>
+    </div>
+
+  </div>
+</section>
 </div>
  
 <!-- ============================================================
@@ -3644,34 +3733,40 @@ dropdown.querySelectorAll(".nav-dropdown-item").forEach(item => {
 </style>
 
   <!-- CTA -->
-  <section class="cta-section">
-    <div class="container" style="position:relative;z-index:1;">
+  <section class="cta-section" aria-label="Call to action">
+  <div class="container" style="position:relative;z-index:1;">
 
-      <h2 class="display-2" style="color:white;">
-        Start generating compliant prescriptions today
-      </h2>
-
-      <p class="body-lg"
-         style="color:rgba(255,255,255,.7);margin-top:12px;">
-        14-day free trial. No credit card required. Full access to AI Scribe, AI Rx, and the patient portal.
-      </p>
-
-      <div class="cta-actions">
-        <button 
-  class="btn btn-accent btn-lg" 
-  onclick="window.open('https://dev.arogyalabs.ai/signup?trial=true', '_blank', 'noopener,noreferrer')"
->
-  Start Free Trial
-</button>
-
-        <!-- <button class="btn btn-ghost btn-lg"
-                onclick="navigate('contact')">
-          Contact Sales
-        </button> -->
-      </div>
-
+    <div class="section-eyebrow" style="color:#A5ABEF;background:rgba(91,101,221,.2);border:1px solid rgba(91,101,221,.3);display:inline-flex;margin-bottom:20px;">
+      Start Today
     </div>
-  </section>
+
+    <h2 class="display-2">
+      Start generating compliant prescriptions today
+    </h2>
+
+    <p class="body-lg" style="margin-top:12px;">
+      14-day free trial. No credit card required. Full access to AI Scribe, AI Rx, and the patient portal.
+    </p>
+
+    <div class="cta-actions" style="margin-top:32px;">
+      <button
+        class="btn btn-accent btn-lg"
+        onclick="window.open('https://dev.arogyalabs.ai/signup?trial=true', '_blank', 'noopener,noreferrer')"
+      >
+        Start Free Trial
+      </button>
+
+      <!--
+      <button
+        class="btn btn-ghost btn-lg"
+        onclick="navigate('contact')">
+        Contact Sales
+      </button>
+      -->
+    </div>
+
+  </div>
+</section>
 
 </div>
 
