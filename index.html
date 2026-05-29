@@ -3447,40 +3447,57 @@ dropdown.querySelectorAll(".nav-dropdown-item").forEach(item => {
       <div class="compliance-badges">
 
         <div class="compliant-badge">
-          <!-- <div class="compliant-icon">✓</div> -->
-          <div>
-            <div class="compliant-badge-title">
-              NHSRC Prescription Audit Guidelines
-            </div>
-            <div class="compliant-badge-sub">
-              Annexure A & B fully satisfied
-            </div>
-          </div>
-        </div>
+  
+  <div class="compliant-icon">
+    <img src="assets/icons/NHSRC Prescription Audit Guidelines.svg"
+         alt="NHSRC Icon">
+  </div>
+
+  <div>
+    <div class="compliant-badge-title">
+      NHSRC Prescription Audit Guidelines
+    </div>
+    <div class="compliant-badge-sub">
+      Annexure A & B fully satisfied
+    </div>
+  </div>
+
+</div>
+        <div class="compliant-badge">
+
+  <div class="compliant-icon">
+    <img src="assets/icons/MCI Professional Conduct Regulations.svg"
+         alt="MCI Professional Conduct Regulations">
+  </div>
+
+  <div>
+    <div class="compliant-badge-title">
+      MCI Professional Conduct Regulations
+    </div>
+    <div class="compliant-badge-sub">
+      Generic names, capital letters, correct spacing
+    </div>
+  </div>
+
+</div>
 
         <div class="compliant-badge">
-          <!-- <div class="compliant-icon">✓</div> -->
-          <div>
-            <div class="compliant-badge-title">
-              MCI Professional Conduct Regulations
-            </div>
-            <div class="compliant-badge-sub">
-              Generic names, capital letters, correct spacing
-            </div>
-          </div>
-        </div>
 
-        <div class="compliant-badge">
-          <!-- <div class="compliant-icon">✓</div> -->
-          <div>
-            <div class="compliant-badge-title">
-              Essential Medicines List (EML)
-            </div>
-            <div class="compliant-badge-sub">
-              Prescriptions by generic INN names only
-            </div>
-          </div>
-        </div>
+  <div class="compliant-icon">
+    <img src="assets/icons/Essential Medicines List (EML).svg"
+         alt="Essential Medicines List">
+  </div>
+
+  <div>
+    <div class="compliant-badge-title">
+      Essential Medicines List (EML)
+    </div>
+    <div class="compliant-badge-sub">
+      Prescriptions by generic INN names only
+    </div>
+  </div>
+
+</div>
 
       </div>
     </div>
@@ -3625,10 +3642,22 @@ dropdown.querySelectorAll(".nav-dropdown-item").forEach(item => {
   border-radius:12px;
 
   padding:18px 20px;
+  display:flex;
+  align-items:center;
+  gap:16px;
 
   transition:.25s ease;
 }
+.compliant-icon{
+  flex-shrink:0;
+}
 
+.compliant-icon img{
+  width:32px;
+  height:32px;
+  object-fit:contain;
+  display:block;
+}
 .compliant-badge:hover{
   transform:translateY(-2px);
   border-color:var(--brand-royal);
@@ -3755,32 +3784,60 @@ dropdown.querySelectorAll(".nav-dropdown-item").forEach(item => {
     <div class="grid-4">
 
       <div class="card">
-        <h3 class="heading-3">PDF Download</h3>
-        <p class="body-sm" style="color:var(--text-secondary);margin-top:8px;">
-          Full-format Rx PDF available for download, print, or sharing with pharmacy or imaging centre.
-        </p>
-      </div>
+
+  <div class="card-icon">
+    <img src="assets/icons/PDF Download.svg" alt="PDF Download">
+  </div>
+
+  <h3 class="heading-3">PDF Download</h3>
+
+  <p class="body-sm" style="color:var(--text-secondary);margin-top:8px;">
+    Full-format Rx PDF available for download, print, or sharing with pharmacy or imaging centre.
+  </p>
+
+</div>
 
       <div class="card">
-        <h3 class="heading-3">WhatsApp Delivery</h3>
-        <p class="body-sm" style="color:var(--text-secondary);margin-top:8px;">
-          Rx sent directly to the patient's WhatsApp number — the most accessible channel for Indian patients.
-        </p>
-      </div>
+
+  <div class="card-icon">
+    <img src="assets/icons/WhatsApp Delivery.svg" alt="WhatsApp Delivery">
+  </div>
+
+  <h3 class="heading-3">WhatsApp Delivery</h3>
+
+  <p class="body-sm" style="color:var(--text-secondary);margin-top:8px;">
+    Rx sent directly to the patient's WhatsApp number — the most accessible channel for Indian patients.
+  </p>
+
+</div>
 
       <div class="card">
-        <h3 class="heading-3">SMS Summary</h3>
-        <p class="body-sm" style="color:var(--text-secondary);margin-top:8px;">
-          Key medication and follow-up information sent as SMS for patients without smartphones.
-        </p>
-      </div>
+
+  <div class="card-icon">
+    <img src="assets/icons/SMS Summary.svg" alt="SMS Summary">
+  </div>
+
+  <h3 class="heading-3">SMS Summary</h3>
+
+  <p class="body-sm" style="color:var(--text-secondary);margin-top:8px;">
+    Key medication and follow-up information sent as SMS for patients without smartphones.
+  </p>
+
+</div>
 
       <div class="card">
-        <h3 class="heading-3">Patient Portal</h3>
-        <p class="body-sm" style="color:var(--text-secondary);margin-top:8px;">
-          Full Rx history visible in the Arogya patient portal app alongside visit notes, labs, and follow-up reminders.
-        </p>
-      </div>
+
+  <div class="card-icon portal-icon">
+    <img src="assets/icons/Patient Portal.svg" alt="Patient Portal">
+  </div>
+
+  <h3 class="heading-3">Patient Portal</h3>
+
+  <p class="body-sm" style="color:var(--text-secondary);margin-top:8px;">
+    Full Rx history visible in the Arogya patient portal app alongside visit notes, labs, and follow-up reminders.
+  </p>
+
+</div>
 
     </div>
 
@@ -3790,6 +3847,7 @@ dropdown.querySelectorAll(".nav-dropdown-item").forEach(item => {
     .delivery-section{
     background:var(--bg-secondary);
 }
+
   </style>
 
 
