@@ -1042,8 +1042,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const savedPage = localStorage.getItem("activePage");
 
   if (savedPage) {
-    navigate(savedPage);
+    navigate(savedPage, false);
   }
+});
+</script>
+<script>
+window.addEventListener("popstate", function () {
+
+  const page =
+    location.hash.replace("#", "") || "home";
+
+  navigate(page, false);
 });
 </script>
 <body>
@@ -5616,7 +5625,7 @@ function closeModal() {
 let currentPage = 'home';
 const pages = ['home','scribe','radiology','rx','pricing','resources','about','privacy','terms','contact-support'];
 
-function navigate(page) {
+function navigate(page, pushHistory = true) {
 localStorage.setItem("activePage", page);
   // 🔥 STEP 1: pehle nav close karo (important)
   closeMobileNav();
@@ -5636,7 +5645,9 @@ localStorage.setItem("activePage", page);
   });
 
   currentPage = page;
-
+if (pushHistory) {
+  history.pushState({ page }, "", "#" + page);
+}
   // 🔥 STEP 2: ALWAYS GO TOP (no smooth for instant fix)
   window.scrollTo(0, 0);
 }
