@@ -2725,12 +2725,22 @@ dropdown.querySelectorAll(".nav-dropdown-item").forEach(item => {
       <div class="section-header">
         <div class="section-eyebrow"> Capabilities</div>
         <h2 class="heading-1">The AI second opinion radiologists trust</h2>
-       <p style="
-  white-space: nowrap;
-  margin: 0;
-">
+      <p class="workflow-text">
   Purpose-built features for radiology workflow integration — from first scan to signed report.
 </p>
+<style>.workflow-text{
+  margin:0;
+  white-space:nowrap;
+}
+
+@media (max-width:768px){
+  .workflow-text{
+    white-space:normal;      /* mobile par wrap ho jayega */
+    text-align:center;
+    font-size:14px;
+    line-height:1.6;
+  }
+}</style>
       </div>
       <div class="grid-3">
         <!-- <div class="card">
@@ -2840,6 +2850,48 @@ dropdown.querySelectorAll(".nav-dropdown-item").forEach(item => {
       </div>
     </div>
   </section>
+  <style>/* Modalities Tabs Responsive */
+.tab-list{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  flex-wrap:nowrap;
+}
+
+.tab-list::-webkit-scrollbar{
+  display:none;
+}
+
+.tab-btn{
+  flex:0 0 auto;
+  white-space:nowrap;
+}
+
+@media (max-width:768px){
+
+  .tab-list{
+    padding-bottom:8px;
+  }
+
+  .tab-btn{
+    font-size:13px;
+    padding:10px 14px;
+  }
+
+  .grid-3{
+    grid-template-columns:1fr;
+  }
+
+  .card{
+    padding:20px;
+  }
+
+  .heading-3{
+    font-size:1rem;
+  }
+}</style>
 
   <!-- Radiology CTA -->
  <section class="cta-section" aria-label="Call to action">
