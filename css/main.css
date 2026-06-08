@@ -742,9 +742,10 @@ footer {
 ================================= */
 
 .about-story-grid{
-  display:block;
-  max-width:1100px;
-  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:80px;
+  align-items:center;
 }
 
 .about-stats-grid{
