@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Rx — Arogya Labs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --teal:#0F6E56;--teal-mid:#1D9E75;--teal-light:#E1F5EE;--teal-dark:#085041;--teal-deeper:#04342C;
+  --amber:#BA7517;--amber-light:#FAEEDA;--purple:#534AB7;--purple-light:#EEEDFE;
+  --text:#0d1a12;--text-muted:#4a5e52;--border:rgba(15,110,86,0.15);
+  --white:#ffffff;--off-white:#f7faf8;
+  --font-display:'DM Serif Display',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--text);background:var(--white);font-size:16px;line-height:1.6}
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-family:var(--font-display);font-size:1.4rem;color:var(--teal-dark)}
+.nav-logo span{color:var(--teal-mid)}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-links a{font-size:.875rem;color:var(--text-muted);text-decoration:none;font-weight:500;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--teal)}
+.nav-cta{background:var(--teal);color:#fff;padding:.5rem 1.25rem;border-radius:6px;font-size:.875rem;font-weight:500;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--teal-dark)}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,var(--teal-deeper) 0%,#1a2d40 60%);color:#fff;padding:5rem 2rem 4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 30% 50%,rgba(83,74,183,.2) 0%,transparent 60%)}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:4rem;align-items:center}
+.hero-breadcrumb{font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:1rem}
+.hero-breadcrumb a{color:rgba(255,255,255,.5);text-decoration:none}
+.hero-breadcrumb a:hover{color:#9fe1cb}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(83,74,183,.25);border:1px solid rgba(83,74,183,.5);border-radius:100px;padding:4px 14px;font-size:.78rem;font-weight:500;color:#b8b4f8;margin-bottom:1.25rem}
+.hero h1{font-family:var(--font-display);font-size:clamp(2.2rem,4vw,3.2rem);line-height:1.1;letter-spacing:-.02em;margin-bottom:1rem}
+.hero h1 em{font-style:italic;color:#9fe1cb}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.7);margin-bottom:2rem;font-weight:300;line-height:1.7}
+.btn-primary{background:var(--teal-mid);color:#fff;padding:.75rem 1.75rem;border-radius:8px;font-size:.95rem;font-weight:500;text-decoration:none;border:none;cursor:pointer;transition:background .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{background:var(--teal)}
+.btn-ghost{background:rgba(255,255,255,.1);color:#fff;padding:.75rem 1.75rem;border-radius:8px;font-size:.95rem;font-weight:500;text-decoration:none;border:1px solid rgba(255,255,255,.25);transition:background .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-ghost:hover{background:rgba(255,255,255,.18)}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+.hero-trust{display:flex;gap:1rem;flex-wrap:wrap}
+.trust-pill{display:flex;align-items:center;gap:6px;font-size:.76rem;color:rgba(255,255,255,.65);font-weight:500}
+.trust-pill i{font-size:14px;color:#9fe1cb}
+
+/* RX PREVIEW MOCKUP */
+.rx-preview-wrap{position:relative}
+.rx-screen{background:var(--white);border-radius:16px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.08);font-family:var(--font-body)}
+.rx-screen-header{background:var(--teal-dark);padding:10px 14px;display:flex;align-items:center;justify-content:space-between}
+.rx-screen-header-left{display:flex;align-items:center;gap:8px}
+.rx-screen-logo{width:28px;height:28px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.rx-screen-logo i{font-size:14px;color:var(--teal)}
+.rx-screen-title{font-size:11px;font-weight:600;color:#fff}
+.rx-screen-sub{font-size:9px;color:rgba(255,255,255,.6)}
+.rx-screen-badge{font-size:9px;background:rgba(255,255,255,.15);color:#fff;padding:2px 8px;border-radius:100px}
+.rx-doctor-bar{background:#085041;padding:5px 14px;display:flex;align-items:center;justify-content:space-between}
+.rx-doctor-bar-name{font-size:10px;font-weight:500;color:#fff}
+.rx-doctor-bar-dept{font-size:9px;background:rgba(255,255,255,.12);padding:1px 6px;border-radius:100px;color:rgba(255,255,255,.85)}
+.rx-body{padding:10px 14px;font-size:10px}
+.rx-section-label{font-size:8px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--teal);margin-bottom:5px;margin-top:8px}
+.rx-patient-row{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:6px}
+.rx-field-label{font-size:8px;color:var(--text-muted)}
+.rx-field-val{font-size:10px;font-weight:500;color:var(--text)}
+.rx-diag-box{background:var(--teal-light);border-left:3px solid var(--teal-mid);border-radius:0 6px 6px 0;padding:5px 8px;margin-bottom:6px}
+.rx-diag-title{font-size:8px;color:var(--teal);font-weight:600;text-transform:uppercase}
+.rx-diag-val{font-size:10px;font-weight:600;color:var(--teal-dark)}
+.rx-med-mini{border:0.5px solid var(--border);border-radius:6px;margin-bottom:4px;overflow:hidden}
+.rx-med-mini-head{background:var(--off-white);padding:4px 8px;display:flex;align-items:center;gap:6px;border-bottom:0.5px solid var(--border)}
+.rx-med-mini-num{width:16px;height:16px;border-radius:50%;background:var(--teal);color:#fff;font-size:9px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rx-med-mini-name{font-size:9px;font-weight:600;color:var(--text);flex:1;text-transform:uppercase;letter-spacing:.01em}
+.rx-med-mini-type{font-size:8px;background:var(--amber-light);color:var(--amber);padding:1px 5px;border-radius:100px;font-weight:500}
+.rx-med-mini-body{display:grid;grid-template-columns:repeat(4,1fr);padding:3px 0}
+.rx-med-mini-cell{padding:3px 8px;border-right:0.5px solid var(--border)}
+.rx-med-mini-cell:last-child{border-right:none}
+.rx-med-mini-cell-label{font-size:7px;color:var(--text-muted);text-transform:uppercase}
+.rx-med-mini-cell-val{font-size:9px;font-weight:500;color:var(--text)}
+.rx-alert-bar{background:#fff3cd;border:1px solid #ffc107;border-radius:6px;padding:5px 8px;display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.rx-alert-bar i{font-size:12px;color:#856404}
+.rx-alert-bar-text{font-size:9px;color:#856404;font-weight:500}
+.rx-footer-bar{background:var(--teal-dark);padding:5px 14px;display:flex;justify-content:space-between;align-items:center}
+.rx-footer-bar-copy{font-size:8px;color:rgba(255,255,255,.6)}
+.rx-footer-bar-actions{display:flex;gap:6px}
+.rx-footer-btn{font-size:8px;background:rgba(255,255,255,.15);color:#fff;padding:2px 8px;border-radius:100px;display:flex;align-items:center;gap:3px}
+.rx-footer-btn i{font-size:10px}
+
+/* AI BADGE ON MOCKUP */
+.rx-ai-badge{position:absolute;top:-12px;right:-12px;background:var(--purple);color:#fff;border-radius:10px;padding:6px 12px;font-size:.72rem;font-weight:600;display:flex;align-items:center;gap:5px;box-shadow:0 4px 16px rgba(83,74,183,.4)}
+.rx-ai-badge i{font-size:14px}
+
+/* SECTIONS */
+section{padding:5rem 2rem}
+.section-label{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);margin-bottom:.75rem}
+.section-title{font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.15;letter-spacing:-.02em;color:var(--text);margin-bottom:1rem}
+.section-sub{font-size:1.05rem;color:var(--text-muted);font-weight:300;line-height:1.7}
+.content-wrap{max-width:1100px;margin:0 auto}
+
+/* WHY ELECTRONIC RX */
+.why-section{background:var(--off-white)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;max-width:1100px;margin:0 auto}
+.error-list{display:flex;flex-direction:column;gap:10px}
+.error-item{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:.875rem 1rem;display:flex;align-items:flex-start;gap:10px}
+.error-item-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.error-item-icon i{font-size:16px}
+.error-item-title{font-size:.875rem;font-weight:600;color:var(--text);margin-bottom:2px}
+.error-item-desc{font-size:.8rem;color:var(--text-muted);line-height:1.5}
+.solve-list{display:flex;flex-direction:column;gap:10px}
+.solve-item{background:var(--white);border:1px solid rgba(15,110,86,.2);border-left:3px solid var(--teal-mid);border-radius:0 10px 10px 0;padding:.875rem 1rem;display:flex;align-items:flex-start;gap:10px}
+.solve-item i{font-size:18px;color:var(--teal-mid);flex-shrink:0;margin-top:1px}
+.solve-item-title{font-size:.875rem;font-weight:600;color:var(--text);margin-bottom:2px}
+.solve-item-desc{font-size:.8rem;color:var(--text-muted);line-height:1.5}
+
+/* FEATURES */
+.features-section{background:var(--white)}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem}
+.feat-card{border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;transition:box-shadow .2s,border-color .2s}
+.feat-card:hover{border-color:var(--teal-mid);box-shadow:0 4px 20px rgba(15,110,86,.1)}
+.feat-card-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:.875rem}
+.feat-card-icon i{font-size:22px}
+.feat-card-title{font-size:1rem;font-weight:600;color:var(--text);margin-bottom:.4rem}
+.feat-card-desc{font-size:.83rem;color:var(--text-muted);line-height:1.6}
+
+/* COMPLIANCE */
+.compliance-section{background:var(--off-white)}
+.compliance-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;max-width:1100px;margin:0 auto}
+.guideline-list{display:flex;flex-direction:column;gap:8px}
+.guideline-item{display:flex;align-items:flex-start;gap:10px;padding:.75rem 1rem;background:var(--white);border:1px solid var(--border);border-radius:10px}
+.guideline-num{width:24px;height:24px;border-radius:50%;background:var(--purple);color:#fff;font-size:.7rem;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.guideline-text{font-size:.83rem;color:var(--text-muted);line-height:1.5}
+.guideline-text strong{color:var(--text);font-weight:600}
+.compliant-badge{background:var(--teal-light);border:1px solid rgba(15,110,86,.25);border-radius:10px;padding:1.25rem;display:flex;align-items:center;gap:10px;margin-bottom:.875rem}
+.compliant-badge i{font-size:22px;color:var(--teal);flex-shrink:0}
+.compliant-badge-title{font-size:.9rem;font-weight:600;color:var(--teal-dark)}
+.compliant-badge-sub{font-size:.78rem;color:var(--text-muted)}
+
+/* DELIVERY */
+.delivery-section{background:var(--white)}
+.delivery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;max-width:1100px;margin:0 auto}
+.delivery-card{border:1px solid var(--border);border-radius:14px;padding:1.5rem;text-align:center;transition:box-shadow .2s}
+.delivery-card:hover{box-shadow:0 4px 20px rgba(15,110,86,.1)}
+.delivery-card-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.delivery-card-icon i{font-size:26px}
+.delivery-card-title{font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:.4rem}
+.delivery-card-desc{font-size:.82rem;color:var(--text-muted);line-height:1.5}
+
+/* TRUST STRIP */
+.trust-strip{background:var(--teal-deeper);color:#fff;padding:3rem 2rem;text-align:center}
+.trust-strip-inner{max-width:900px;margin:0 auto}
+.trust-strip h2{font-family:var(--font-display);font-size:1.8rem;margin-bottom:.75rem}
+.trust-strip p{color:rgba(255,255,255,.65);font-weight:300;margin-bottom:2rem}
+.trust-badges-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.t-badge{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:8px 16px;font-size:.82rem;color:rgba(255,255,255,.85);font-weight:500}
+.t-badge i{font-size:16px;color:#9fe1cb}
+
+/* CTA */
+.cta-section{background:var(--off-white);text-align:center;padding:4rem 2rem}
+
+/* FOOTER */
+footer{background:var(--teal-deeper);color:rgba(255,255,255,.6);padding:3rem 2rem 2rem}
+.footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2.5rem}
+.footer-logo{font-family:var(--font-display);font-size:1.3rem;color:#fff;margin-bottom:.75rem}
+.footer-tagline{font-size:.82rem;line-height:1.6;max-width:260px}
+.footer-col h4{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.85);margin-bottom:1rem}
+.footer-col a{display:block;font-size:.83rem;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:.5rem;transition:color .2s}
+.footer-col a:hover{color:#9fe1cb}
+.footer-bottom{max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;font-size:.78rem;flex-wrap:wrap;gap:1rem}
+
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr}.rx-preview-wrap{display:none}.why-grid,.compliance-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Arogya<span>Labs</span></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#journey">Care Journey</a></li>
+    <li><a href="#" class="active">AI Rx</a></li>
+    <li><a href="index.html#products">Products</a></li>
+  </ul>
+  <a href="#" class="nav-cta">Start Free Trial</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-breadcrumb"><a href="index.html">Home</a> / Products / AI Rx</div>
+      <div class="hero-badge"><i class="ti ti-prescription" aria-hidden="true"></i> Electronic Prescriptions</div>
+      <h1>Electronic prescriptions that are <em>complete, safe,</em> and compliant</h1>
+      <p class="hero-sub">Arogya AI Rx generates structured electronic prescriptions from the clinical encounter — meeting Ministry of Health guidelines, flagging drug interactions before they happen, and delivering the Rx directly to patients in the format they need.</p>
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(186,117,23,.15);border:1px solid rgba(186,117,23,.35);border-radius:8px;padding:8px 14px;margin-bottom:1.5rem;font-size:.82rem;color:#FAEEDA;font-weight:500"><i class="ti ti-info-circle" aria-hidden="true" style="font-size:15px;color:#FAC775;flex-shrink:0"></i> AI Rx is included with an AI Scribe subscription. <a href="#" style="color:#FAC775;margin-left:4px;text-decoration:underline">Learn about AI Scribe</a></div>
+      <div class="hero-actions">
+        <a href="#" class="btn-primary"><i class="ti ti-player-play" aria-hidden="true"></i> Start Free Trial</a>
+        <a href="#features" class="btn-ghost"><i class="ti ti-arrow-down" aria-hidden="true"></i> See all features</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-pill"><i class="ti ti-shield-check" aria-hidden="true"></i> MoH Rx Guidelines</div>
+        <div class="trust-pill"><i class="ti ti-alert-triangle" aria-hidden="true"></i> Drug interaction checks</div>
+        <div class="trust-pill"><i class="ti ti-certificate" aria-hidden="true"></i> DPDP Compliant</div>
+      </div>
+    </div>
+    <div class="rx-preview-wrap">
+      <div class="rx-ai-badge"><i class="ti ti-sparkles" aria-hidden="true"></i> AI-Generated</div>
+      <div class="rx-screen">
+        <div class="rx-screen-header">
+          <div class="rx-screen-header-left">
+            <div class="rx-screen-logo"><i class="ti ti-building-hospital" aria-hidden="true"></i></div>
+            <div>
+              <div class="rx-screen-title">SHRI DHANWANTARI DISTRICT HOSPITAL</div>
+              <div class="rx-screen-sub">Raipur, Chhattisgarh — OPD: 8am–2pm</div>
+            </div>
+          </div>
+          <div class="rx-screen-badge">Rx</div>
+        </div>
+        <div class="rx-doctor-bar">
+          <div>
+            <div class="rx-doctor-bar-name">DR. PRIYA MEENAKSHI IYER, MBBS, MD</div>
+            <div style="font-size:8px;color:rgba(255,255,255,.55)">MCI Reg. 2019-DL-45872</div>
+          </div>
+          <div class="rx-doctor-bar-dept">General Medicine</div>
+        </div>
+        <div class="rx-body">
+          <div class="rx-section-label">Patient Details</div>
+          <div class="rx-patient-row">
+            <div><div class="rx-field-label">Full Name</div><div class="rx-field-val">MR. RAJESH KUMAR SHARMA</div></div>
+            <div><div class="rx-field-label">Age / Sex</div><div class="rx-field-val">42 Years / Male</div></div>
+            <div><div class="rx-field-label">Weight</div><div class="rx-field-val">72 kg</div></div>
+            <div><div class="rx-field-label">Known Allergy</div><div class="rx-field-val" style="color:var(--teal);font-weight:600">NKDA</div></div>
+          </div>
+          <div class="rx-alert-bar">
+            <i class="ti ti-alert-triangle" aria-hidden="true"></i>
+            <div class="rx-alert-bar-text">Metronidazole + existing Atenolol — interaction noted. Physician reviewed.</div>
+          </div>
+          <div class="rx-diag-box">
+            <div class="rx-diag-title">Provisional Diagnosis</div>
+            <div class="rx-diag-val">Acute Gastroenteritis with Mild Dehydration</div>
+          </div>
+          <div class="rx-section-label">Prescription of Medicines (Generic Names Only)</div>
+          <div class="rx-med-mini">
+            <div class="rx-med-mini-head">
+              <div class="rx-med-mini-num">1</div>
+              <div class="rx-med-mini-name">Oral Rehydration Salts (ORS)</div>
+              <div class="rx-med-mini-type">Sachet</div>
+            </div>
+            <div class="rx-med-mini-body">
+              <div class="rx-med-mini-cell"><div class="rx-med-mini-cell-label">Dose</div><div class="rx-med-mini-cell-val">1 sachet</div></div>
+              <div class="rx-med-mini-cell"><div class="rx-med-mini-cell-label">Route</div><div class="rx-med-mini-cell-val">By mouth</div></div>
+              <div class="rx-med-mini-cell"><div class="rx-med-mini-cell-label">Frequency</div><div class="rx-med-mini-cell-val">After each loose motion</div></div>
+              <div class="rx-med-mini-cell"><div class="rx-med-mini-cell-label">Duration</div><div class="rx-med-mini-cell-val">Until resolved</div></div>
+            </div>
+          </div>
+          <div class="rx-med-mini">
+            <div class="rx-med-mini-head">
+              <div class="rx-med-mini-num">2</div>
+              <div class="rx-med-mini-name">Metronidazole 400 mg</div>
+              <div class="rx-med-mini-type">Tablet</div>
+            </div>
+            <div class="rx-med-mini-body">
+              <div class="rx-med-mini-cell"><div class="rx-med-mini-cell-label">Dose</div><div class="rx-med-mini-cell-val">1 tablet</div></div>
+              <div class="rx-med-mini-cell"><div class="rx-med-mini-cell-label">Route</div><div class="rx-med-mini-cell-val">By mouth</div></div>
+              <div class="rx-med-mini-cell"><div class="rx-med-mini-cell-label">Frequency</div><div class="rx-med-mini-cell-val">Three times a day</div></div>
+              <div class="rx-med-mini-cell"><div class="rx-med-mini-cell-label">Duration</div><div class="rx-med-mini-cell-val">5 Days</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="rx-footer-bar">
+          <div class="rx-footer-bar-copy">Patient Copy — saved to EHR</div>
+          <div class="rx-footer-bar-actions">
+            <div class="rx-footer-btn"><i class="ti ti-file-type-pdf" aria-hidden="true"></i> PDF</div>
+            <div class="rx-footer-btn"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Send</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ELECTRONIC RX -->
+<section class="why-section">
+  <div class="why-grid">
+    <div>
+      <div class="section-label">The Problem</div>
+      <div class="section-title">Handwritten prescriptions cause preventable harm</div>
+      <p class="section-sub" style="margin-bottom:1.5rem">Illegible handwriting, missing information, and dangerous abbreviations lead to prescription errors that affect patient safety and create legal risk for physicians.</p>
+      <div class="error-list">
+        <div class="error-item">
+          <div class="error-item-icon" style="background:#FCEBEB"><i class="ti ti-writing" style="color:#A32D2D" aria-hidden="true"></i></div>
+          <div><div class="error-item-title">Illegible handwriting</div><div class="error-item-desc">Drug names, doses, and instructions misread by pharmacists — resulting in wrong medications or wrong doses dispensed.</div></div>
+        </div>
+        <div class="error-item">
+          <div class="error-item-icon" style="background:#FCEBEB"><i class="ti ti-x" style="color:#A32D2D" aria-hidden="true"></i></div>
+          <div><div class="error-item-title">Missing critical information</div><div class="error-item-desc">Prescriptions often lack patient weight, known allergies, route of administration, or follow-up instructions — each a potential safety gap.</div></div>
+        </div>
+        <div class="error-item">
+          <div class="error-item-icon" style="background:#FCEBEB"><i class="ti ti-letter-case" style="color:#A32D2D" aria-hidden="true"></i></div>
+          <div><div class="error-item-title">Dangerous abbreviations</div><div class="error-item-desc">Latin abbreviations and unsafe symbols ('U' misread as '0' or '4', 'µg' misread as 'mg') can result in 1,000-fold overdoses. MCI guidelines prohibit them.</div></div>
+        </div>
+        <div class="error-item">
+          <div class="error-item-icon" style="background:#FCEBEB"><i class="ti ti-pills" style="color:#A32D2D" aria-hidden="true"></i></div>
+          <div><div class="error-item-title">Undetected drug interactions</div><div class="error-item-desc">Without access to a patient's full medication history at the point of prescribing, interactions go undetected until harm occurs.</div></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">The Arogya Solution</div>
+      <div class="section-title">AI Rx eliminates every one of these risks</div>
+      <p class="section-sub" style="margin-bottom:1.5rem">Generated from the clinical encounter, AI Rx produces structured, complete, and legible prescriptions — every time.</p>
+      <div class="solve-list">
+        <div class="solve-item">
+          <i class="ti ti-check" aria-hidden="true"></i>
+          <div><div class="solve-item-title">Always legible, always structured</div><div class="solve-item-desc">Digital generation means zero handwriting errors. Medicines in capital letters with correct spacing between name and strength, exactly as MCI requires.</div></div>
+        </div>
+        <div class="solve-item">
+          <i class="ti ti-check" aria-hidden="true"></i>
+          <div><div class="solve-item-title">Complete by default</div><div class="solve-item-desc">Every Rx includes patient name, age, sex, weight, address, allergy status, diagnosis, dose, route, frequency, duration, and follow-up — nothing is left blank.</div></div>
+        </div>
+        <div class="solve-item">
+          <i class="ti ti-check" aria-hidden="true"></i>
+          <div><div class="solve-item-title">Local language instructions, no Latin abbreviations</div><div class="solve-item-desc">Medication instructions use plain language directions — "Three times a day", "After food" — never error-prone Latin abbreviations. An abbreviation key is included for reference.</div></div>
+        </div>
+        <div class="solve-item">
+          <i class="ti ti-check" aria-hidden="true"></i>
+          <div><div class="solve-item-title">Drug interaction check before it prints</div><div class="solve-item-desc">Our AI cross-references newly prescribed medications against the patient's known medication history and flags any interactions for physician review before the Rx is finalized.</div></div>
+        </div>
+        <div class="solve-item">
+          <i class="ti ti-check" aria-hidden="true"></i>
+          <div><div class="solve-item-title">Generic names only, per EML</div><div class="solve-item-desc">Prescriptions use generic (INN) drug names as required by MCI guidelines and the Essential Medicines List, reducing cost for patients and ambiguity for pharmacists.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="features-section">
+  <div class="content-wrap">
+    <div style="max-width:640px;margin-bottom:3rem">
+      <div class="section-label">Features</div>
+      <div class="section-title">Everything a great prescription needs</div>
+      <p class="section-sub">AI Rx is generated from the clinical encounter automatically — so the physician spends time on the patient, not the paperwork.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="feat-card-icon" style="background:var(--teal-light)"><i class="ti ti-microphone" style="color:var(--teal)" aria-hidden="true"></i></div>
+        <div class="feat-card-title">Auto-generated from AI Scribe</div>
+        <div class="feat-card-desc">AI Rx is produced directly from the ambient clinical encounter recording — no manual entry required. The physician reviews and approves.</div>
+      </div>
+
+      <div class="feat-card">
+        <div class="feat-card-icon" style="background:#FCEBEB"><i class="ti ti-alert-triangle" style="color:#A32D2D" aria-hidden="true"></i></div>
+        <div class="feat-card-title">Drug interaction detection</div>
+        <div class="feat-card-desc">Cross-references prescribed medications against the patient's medication history before the Rx is generated. Flagged interactions require physician acknowledgment.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-card-icon" style="background:var(--teal-light)"><i class="ti ti-pill" style="color:var(--teal)" aria-hidden="true"></i></div>
+        <div class="feat-card-title">Generic names, correct format</div>
+        <div class="feat-card-desc">All medicines prescribed by INN generic name, in capitals, with correct spacing between drug name and strength — per MCI Professional Conduct Regulations.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-card-icon" style="background:var(--amber-light)"><i class="ti ti-checklist" style="color:var(--amber)" aria-hidden="true"></i></div>
+        <div class="feat-card-title">Patient instructions &amp; advice</div>
+        <div class="feat-card-desc">Generates do's and don'ts, dietary guidance, and special instructions in plain language — and can display them in the patient's preferred Indian language.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-card-icon" style="background:#e6f1fb"><i class="ti ti-flask" style="color:#185FA5" aria-hidden="true"></i></div>
+        <div class="feat-card-title">Investigations &amp; referrals included</div>
+        <div class="feat-card-desc">Lab work, imaging referrals, and follow-up instructions are included on the same Rx document — so patients have everything they need in one place.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-card-icon" style="background:#dcf8c6"><i class="ti ti-brand-whatsapp" style="color:#075e54" aria-hidden="true"></i></div>
+        <div class="feat-card-title">Multi-channel delivery</div>
+        <div class="feat-card-desc">Rx delivered as a PDF to the patient's portal, or sent directly via WhatsApp or SMS — accepted at pharmacies, laboratories, and imaging centres.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-card-icon" style="background:var(--teal-light)"><i class="ti ti-copy" style="color:var(--teal)" aria-hidden="true"></i></div>
+        <div class="feat-card-title">Two-copy record keeping</div>
+        <div class="feat-card-desc">Each Rx is automatically saved to the clinic EHR and sent to the patient's portal. Patients can forward the digital Rx to their pharmacy, show it on their phone, or download a PDF — no paper copies required.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-card-icon" style="background:var(--amber-light)"><i class="ti ti-bell-check" style="color:var(--amber)" aria-hidden="true"></i></div>
+        <div class="feat-card-title">Medication adherence reminders</div>
+        <div class="feat-card-desc">After the Rx is sent, the platform can automatically remind patients via WhatsApp or SMS to take their medicines on schedule and complete prescribed investigations.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
+<section class="compliance-section">
+  <div class="compliance-grid">
+    <div>
+      <div class="section-label">Regulatory Compliance</div>
+      <div class="section-title">Meets every Ministry of Health guideline</div>
+      <p class="section-sub" style="margin-bottom:1.5rem">Our Rx format is built to satisfy the NHSRC Prescription Audit Guidelines (Annexure A &amp; B) and MCI Professional Conduct Regulations — so every prescription your physicians issue is defensible.</p>
+      <div style="margin-bottom:1.25rem">
+        <div class="compliant-badge">
+          <i class="ti ti-shield-check" aria-hidden="true"></i>
+          <div><div class="compliant-badge-title">NHSRC Prescription Audit Guidelines</div><div class="compliant-badge-sub">Annexure A &amp; B — fully satisfied</div></div>
+        </div>
+        <div class="compliant-badge">
+          <i class="ti ti-certificate" aria-hidden="true"></i>
+          <div><div class="compliant-badge-title">MCI Professional Conduct Regulations</div><div class="compliant-badge-sub">Generic names, capital letters, correct spacing</div></div>
+        </div>
+        <div class="compliant-badge">
+          <i class="ti ti-file-check" aria-hidden="true"></i>
+          <div><div class="compliant-badge-title">Essential Medicines List (EML)</div><div class="compliant-badge-sub">Prescriptions by generic INN names only</div></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:.82rem;font-weight:600;color:var(--text-muted);margin-bottom:.875rem;text-transform:uppercase;letter-spacing:.06em">What our format satisfies</div>
+      <div class="guideline-list">
+        <div class="guideline-item"><div class="guideline-num">5</div><div class="guideline-text"><strong>Doctor's Details</strong> — Name, registration number, department, and facility on every Rx</div></div>
+        <div class="guideline-item"><div class="guideline-num">6</div><div class="guideline-text"><strong>Complete</strong> — Date, name, age, sex, address, weight, allergy status, diagnosis, follow-up included automatically</div></div>
+        <div class="guideline-item"><div class="guideline-num">7</div><div class="guideline-text"><strong>Legible</strong> — Digital generation; medicines in capital letters as per MCI gazette notification</div></div>
+        <div class="guideline-item"><div class="guideline-num">8</div><div class="guideline-text"><strong>No Latin abbreviations</strong> — Plain local language directions; abbreviation key included for reference</div></div>
+        <div class="guideline-item"><div class="guideline-num">9</div><div class="guideline-text"><strong>Medicine Details</strong> — Name, dosage, form, strength, frequency, timing, route, and duration fully specified</div></div>
+        <div class="guideline-item"><div class="guideline-num">10</div><div class="guideline-text"><strong>Generic Names Only</strong> — All prescriptions use INN generic names, per EML</div></div>
+        <div class="guideline-item"><div class="guideline-num">11</div><div class="guideline-text"><strong>Spacing</strong> — Correct space between drug name and strength to prevent dangerous misreads</div></div>
+        <div class="guideline-item"><div class="guideline-num">12</div><div class="guideline-text"><strong>Diagnosis</strong> — Brief history, provisional diagnosis, and ICD-10 code included</div></div>
+        <div class="guideline-item"><div class="guideline-num">13</div><div class="guideline-text"><strong>Advice</strong> — Supportive instructions, investigations, and do's/don'ts generated automatically</div></div>
+        <div class="guideline-item"><div class="guideline-num">15</div><div class="guideline-text"><strong>Leading zeros</strong> — Correct decimal format (0.25 mg, not .25 mg); no trailing zeros</div></div>
+        <div class="guideline-item"><div class="guideline-num">16</div><div class="guideline-text"><strong>Instructions</strong> — Before/after food, drug interactions, side effects, and pharmacist notes included</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERY -->
+<section class="delivery-section">
+  <div class="content-wrap">
+    <div style="max-width:640px;margin-bottom:3rem">
+      <div class="section-label">Delivery Channels</div>
+      <div class="section-title">Patients get their Rx however they need it</div>
+      <p class="section-sub">One prescription, multiple delivery paths — so the Rx is actually useful at the pharmacy, lab, and imaging centre.</p>
+    </div>
+    <div class="delivery-grid">
+      <div class="delivery-card">
+        <div class="delivery-card-icon" style="background:var(--teal-light)"><i class="ti ti-file-type-pdf" style="color:var(--teal)" aria-hidden="true"></i></div>
+        <div class="delivery-card-title">PDF Download</div>
+        <div class="delivery-card-desc">Full-format Rx PDF available for download, print, or sharing with pharmacy or imaging centre.</div>
+      </div>
+      <div class="delivery-card">
+        <div class="delivery-card-icon" style="background:#dcf8c6"><i class="ti ti-brand-whatsapp" style="color:#075e54" aria-hidden="true"></i></div>
+        <div class="delivery-card-title">WhatsApp Delivery</div>
+        <div class="delivery-card-desc">Rx sent directly to the patient's WhatsApp number — the most accessible channel for Indian patients.</div>
+      </div>
+      <div class="delivery-card">
+        <div class="delivery-card-icon" style="background:var(--teal-light)"><i class="ti ti-message" style="color:var(--teal)" aria-hidden="true"></i></div>
+        <div class="delivery-card-title">SMS Summary</div>
+        <div class="delivery-card-desc">Key medication and follow-up information sent as SMS for patients without smartphones.</div>
+      </div>
+      <div class="delivery-card">
+        <div class="delivery-card-icon" style="background:#e6f1fb"><i class="ti ti-device-mobile" style="color:#185FA5" aria-hidden="true"></i></div>
+        <div class="delivery-card-title">Patient Portal</div>
+        <div class="delivery-card-desc">Full Rx history visible in the Arogya patient portal app alongside visit notes, labs, and follow-up reminders.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-strip-inner">
+    <h2>Built for Indian healthcare. Backed by evidence.</h2>
+    <p>Every AI Rx is physician-approved before delivery. Our AI provides the structure, the completeness, and the safety checks — the clinician makes every clinical decision.</p>
+    <div class="trust-badges-row">
+      <div class="t-badge"><i class="ti ti-shield-check" aria-hidden="true"></i> DPDP Compliant</div>
+      <div class="t-badge"><i class="ti ti-file-check" aria-hidden="true"></i> MoH Rx Guidelines</div>
+      <div class="t-badge"><i class="ti ti-user-check" aria-hidden="true"></i> Physician in the loop</div>
+      <div class="t-badge"><i class="ti ti-lock" aria-hidden="true"></i> Privacy by Design</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div style="max-width:580px;margin:0 auto;text-align:center">
+    <div class="section-label" style="text-align:center">Get Started</div>
+    <div class="section-title">Start generating compliant prescriptions today</div>
+    <p style="color:var(--text-muted);margin-bottom:2rem;font-weight:300">14-day free trial. No credit card required. Full access to AI Scribe, AI Rx, and the patient portal.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="#" class="btn-primary"><i class="ti ti-player-play" aria-hidden="true"></i> Start Free Trial</a>
+      <a href="index.html" style="background:transparent;color:var(--teal);border:1.5px solid var(--teal);padding:.75rem 1.75rem;border-radius:8px;font-size:.95rem;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s"><i class="ti ti-arrow-left" aria-hidden="true"></i> Back to Platform</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">ArogyaLabs</div>
+      <div class="footer-tagline">AI Clinical Intelligence Platform — giving physicians time back, improving diagnostic accuracy, and reducing administrative burden across Indian healthcare.</div>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <a href="#">AI Scribe</a>
+      <a href="ai-rx.html">AI Rx</a>
+      <a href="#">AI Radiologist</a>
+      <a href="#">Patient Portal</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About Us</a>
+      <a href="#">Press</a>
+      <a href="#">Careers</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">DPDP Compliance</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Arogya Labs, Inc. All rights reserved. Bengaluru, Karnataka, India.</span>
+  </div>
+</footer>
+</body>
+</html>
