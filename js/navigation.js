@@ -8,7 +8,7 @@ const pages = [
 ];
 
 function navigate(page, pushHistory = true) {
-  localStorage.setItem('activePage', page);
+  // localStorage.setItem('activePage', page);
   closeMobileNav();
 
   pages.forEach((p) => {
@@ -46,14 +46,17 @@ window.addEventListener('scroll', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const hashPage = location.hash.replace('#', '');
-  const savedPage = localStorage.getItem('activePage');
-  const page = hashPage || savedPage || 'home';
 
-  navigate(page, false);
+  // Always start from Overview/Home
+  navigate('home', false);
 
-  if (page === 'home' && location.hash) {
-    history.replaceState({ page: 'home' }, '', location.pathname + location.search);
+  // Remove any leftover hash
+  if (location.hash) {
+    history.replaceState(
+      { page: 'home' },
+      '',
+      location.pathname + location.search
+    );
   }
 });
 
