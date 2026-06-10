@@ -4,7 +4,11 @@
 let currentPage = 'home';
 const pages = [
   'home', 'scribe', 'radiology', 'rx', 'pricing',
-  'resources', 'about', 'privacy', 'terms', 'contact-support'
+  'resources', 'about', 'privacy', 'terms', 'contact-support',
+  'blog',
+  'articles',
+  'videos',
+  'events'
 ];
 
 function navigate(page, pushHistory = true) {
