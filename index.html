@@ -80,45 +80,8 @@
           <span class="nav-link" id="nav-pricing" onclick="navigate('pricing')" role="menuitem"
             tabindex="0">Plans</span>
           <!-- resources dropdown -->
-          <div class="nav-dropdown" id="resourcesDropdown" role="none">
-            <span class="nav-link" id="nav-resources" role="menuitem" tabindex="0" aria-haspopup="true">
-              Resources ▾
-            </span>
-            <div class="nav-dropdown-menu" role="menu" aria-label="Resources submenu">
-              <div class="nav-dropdown-item" onclick="navigate('blog')" role="menuitem" tabindex="0">
-                <!-- <div class="nav-dropdown-icon" style="background:rgba(13,191,173,.1);">🎤</div> -->
-                <div>
-                  <div style="color:var(--text-primary);font-size:.875rem;">Blog</div>
-                  <div style="color:var(--text-muted);font-size:.75rem;font-weight:400;">Insights, updates, and deep
-                    dives</div>
-                </div>
-              </div>
-              <div class="nav-dropdown-item" onclick="navigate('articles')" role="menuitem" tabindex="0">
-                <!-- <div class="nav-dropdown-icon" style="background:rgba(91,101,221,.1);">🩻</div> -->
-                <div>
-                  <div style="color:var(--text-primary);font-size:.875rem;">Articles</div>
-                  <div style="color:var(--text-muted);font-size:.75rem;font-weight:400;">Field notes from the desk</div>
-                </div>
-              </div>
-              <div class="nav-dropdown-item" onclick="navigate('videos')" role="menuitem" tabindex="0">
-                <!-- <div class="nav-dropdown-icon" style="background:rgba(61,155,233,.1);">💊</div> -->
-                <div>
-                  <div style="color:var(--text-primary);font-size:.875rem;">Videos</div>
-                  <div style="color:var(--text-muted);font-size:.75rem;font-weight:400;">
-                    Demos, walkthroughs, and shorts
-                  </div>
-                </div>
-              </div>
-              <div class="nav-dropdown-item" onclick="navigate('events')" role="menuitem" tabindex="0">
-                <!-- <div class="nav-dropdown-icon" style="background:rgba(249,115,22,.1);">💊</div> -->
-                <div>
-                  <div style="color:var(--text-primary);font-size:.875rem;">Events</div>
-                  <div style="color:var(--text-muted);font-size:.75rem;font-weight:400;">Hackathons, summit, and meetups
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <span class="nav-link active" id="nav-resources" onclick="navigate('resources')" role="menuitem"
+            tabindex="0">Resources</span>
 
           
           <!-- <span class="nav-link" id="nav-resources" onclick="navigate('resources')" role="menuitem" tabindex="0">Resources</span> -->
@@ -159,29 +122,10 @@
     <div class="mobile-nav-link" onclick="navigate('radiology')">ANVIQ Radiologist</div>
         <div class="mobile-nav-link" onclick="navigate('pricing')">Plans</div>
 
-    <div class="mobile-nav-link mobile-dropdown-toggle" onclick="toggleMobileResources()">
-      Resources ▾
-    </div>
+    <span class="nav-link active" id="nav-resources" onclick="navigate('resources')" role="menuitem"
+            tabindex="0">Resources</span>
 
-    <div id="mobileResourcesMenu" style="display:none;padding-left:18px;">
-
-      <div class="mobile-nav-link" onclick="navigate('blog'); closeMobileNav();">
-        Blog
-      </div>
-
-      <div class="mobile-nav-link" onclick="navigate('articles'); closeMobileNav();">
-        Articles
-      </div>
-
-      <div class="mobile-nav-link" onclick="navigate('videos'); closeMobileNav();">
-        Videos
-      </div>
-
-      <div class="mobile-nav-link" onclick="navigate('events'); closeMobileNav();">
-        Events
-      </div>
-
-    </div>
+    
     <div class="mobile-nav-link" onclick="navigate('about')">About</div>
 
     
@@ -933,7 +877,7 @@
             <div class="matrix-col-head">Patient & Front Desk</div>
 
             <div class="matrix-item">
-              <img src="assets/icons/Symptom Triage Chat.svg" alt="AI Symptom Triage Chat">
+              <!-- <img src="assets/icons/Symptom Triage Chat.svg" alt="AI Symptom Triage Chat"> -->
               <div>
                 <div class="m-name">Symptom Triage Chat</div>
                 <div class="m-desc">WhatsApp & SMS AI triage</div>
@@ -941,7 +885,7 @@
             </div>
 
             <div class="matrix-item">
-              <img src="assets/icons/Appointment Booking.svg" alt="AI Symptom Triage Chat">
+              <!-- <img src="assets/icons/Appointment Booking.svg" alt="AI Symptom Triage Chat"> -->
               <div>
                 <div class="m-name">Appointment Booking</div>
                 <div class="m-desc">In-chat scheduling & reminders</div>
@@ -949,7 +893,7 @@
             </div>
 
             <div class="matrix-item">
-              <img src="assets/icons/Smart Check-In.svg" alt="AI Symptom Triage Chat">
+              <!-- <img src="assets/icons/Smart Check-In.svg" alt="AI Symptom Triage Chat"> -->
 
               <div>
                 <div class="m-name">Smart Check-In</div>
@@ -958,7 +902,7 @@
             </div>
 
             <div class="matrix-item">
-              <img src="assets/icons/Patient Portal App.svg" alt="AI Symptom Triage Chat">
+              <!-- <img src="assets/icons/Patient Portal App.svg" alt="AI Symptom Triage Chat"> -->
 
               <div>
                 <div class="m-name">Patient Portal App</div>
@@ -972,7 +916,7 @@
             <div class="matrix-col-head">Clinical Intelligence</div>
 
             <div class="matrix-item">
-              <img src="assets/icons/AI Scribe.svg" alt="AI Symptom Triage Chat">
+              <!-- <img src="assets/icons/AI Scribe.svg" alt="AI Symptom Triage Chat"> -->
 
               <div>
                 <div class="m-name">ANVIQ Scribe</div>
@@ -981,7 +925,7 @@
             </div>
 
             <div class="matrix-item">
-              <img src="assets/icons/Live Guidance.svg" alt="AI Symptom Triage Chat">
+              <!-- <img src="assets/icons/Live Guidance.svg" alt="AI Symptom Triage Chat"> -->
 
               <div>
                 <div class="m-name">Live Guidance</div>
@@ -990,7 +934,7 @@
             </div>
 
             <div class="matrix-item">
-              <img src="assets/icons/AI Rx.svg" alt="AI Symptom Triage Chat">
+              <!-- <img src="assets/icons/AI Rx.svg" alt="AI Symptom Triage Chat"> -->
 
               <div>
                 <div class="m-name">ANVIQ Rx</div>
@@ -999,7 +943,7 @@
             </div>
 
             <div class="matrix-item">
-              <img src="assets/icons/Drug Interaction Alerts.svg" alt="AI Symptom Triage Chat">
+              <!-- <img src="assets/icons/Drug Interaction Alerts.svg" alt="AI Symptom Triage Chat"> -->
 
               <div>
                 <div class="m-name">Drug Interaction Alerts</div>
@@ -1008,7 +952,7 @@
             </div>
 
             <div class="matrix-item">
-              <img src="assets/icons/AI Radiologist.svg" alt="AI Symptom Triage Chat">
+              <!-- <img src="assets/icons/AI Radiologist.svg" alt="AI Symptom Triage Chat"> -->
 
               <div>
                 <div class="m-name">ANVIQ Radiologist</div>
@@ -1022,7 +966,7 @@
             <div class="matrix-col-head">Operations & Revenue</div>
 
             <div class="matrix-item">
-              <img src="assets/icons/ICD-10 Auto-Coding.svg" alt="AI Symptom Triage Chat">
+              <!-- <img src="assets/icons/ICD-10 Auto-Coding.svg" alt="AI Symptom Triage Chat"> -->
 
               <div>
                 <div class="m-name">ICD-10 Auto-Coding</div>
@@ -1034,7 +978,7 @@
               <!-- <div class="m-icon icon-dark">
             <i class="ti ti-bell-check"></i>
           </div> -->
-              <img src="assets/icons/Follow-Up Automation.svg" alt="AI Symptom Triage Chat">
+              <!-- <img src="assets/icons/Follow-Up Automation.svg" alt="AI Symptom Triage Chat"> -->
               <div>
                 <div class="m-name">Follow-Up Automation</div>
                 <div class="m-desc">Lab, scan & medication reminders</div>
@@ -1045,7 +989,7 @@
               <!-- <div class="m-icon m-icon-ghost">
             <i class="ti ti-pill"></i>
           </div> -->
-              <img src="assets/icons/AI Pharmacist Q3 2025.svg" alt="AI Symptom Triage Chat">
+              <!-- <img src="assets/icons/AI Pharmacist Q3 2025.svg" alt="AI Symptom Triage Chat"> -->
               <div>
                 <div class="m-name">
                   AI Pharmacist
@@ -1061,7 +1005,7 @@
               <!-- <div class="m-icon m-icon-ghost">
             <i class="ti ti-brain"></i>
           </div> -->
-              <img src="assets/icons/Clinical OS 2026.svg" alt="AI Symptom Triage Chat">
+              <!-- <img src="assets/icons/Clinical OS 2026.svg" alt="AI Symptom Triage Chat"> -->
               <div>
                 <div class="m-name">
                   Clinical OS
@@ -2080,7 +2024,7 @@
       </span>
 
       <h1 class="display-2 product-title">
-        40 patients.<br>
+        Every patients.<br>
         Zero prescriptions to write.
       </h1>
 
@@ -3017,160 +2961,71 @@
    PAGE: RESOURCES
    ============================================================ -->
 
-   <!--blogs-->
-   <div class="page" id="page-blog">
+   <!-- ============================================================
+   PAGE: RESOURCES
+   ============================================================ -->
+<div class="page" id="page-resources">
 
-  <section class="product-hero">
+  <section class="resources-hero">
     <div class="hero-grid-bg"></div>
 
     <div class="container">
-      <div class="product-hero-content">
 
-        <span class="product-badge badge-soon">
-          Coming Soon
-        </span>
+      <div class="resources-layout">
 
-        <h1 class="display-2" style="color:white;">
-          ANVIQ Blog
-        </h1>
+        <!-- LEFT CONTENT -->
+        <div class="resources-content">
 
-        <p class="body-lg" style="color:rgba(255,255,255,.72);max-width:650px;">
-          Insights, product updates, healthcare AI trends, and clinical innovation stories.
-        </p>
+          <span class="resources-badge">
+             Launching Soon
+          </span>
 
-      </div>
-    </div>
-  </section>
+          <h1 class="resources-title">
+            Resources <span>Hub</span>
+          </h1>
 
-  <section class="section">
-    <div class="container-sm" style="text-align:center;">
+          <p class="resources-subtitle">
+            Discover expert insights, healthcare AI guides, product updates,
+            industry research, webinars, and educational content designed for
+            modern clinicians and healthcare organizations.
+          </p>
 
-      <h2 class="heading-1">Coming Soon</h2>
+          <div class="resource-features">
 
-      <p class="body-lg" style="color:var(--text-secondary);margin-top:16px;">
-        We're preparing insightful content for clinicians, healthcare leaders,
-        and technology innovators.
-      </p>
+            <div class="feature-pill">
+              Articles & Guides
+            </div>
 
-    </div>
-  </section>
+            <div class="feature-pill">
+              Webinars
+            </div>
 
-</div>
+            <div class="feature-pill">
+             Industry Research
+            </div>
 
+            <div class="feature-pill">
+              Product Updates
+            </div>
 
-<!--article -->
-<div class="page" id="page-articles">
+          </div>
 
-  <section class="product-hero">
-    <div class="hero-grid-bg"></div>
+          <button class="btn btn-accent btn-lg"
+                  onclick="navigate('home')">
+            Back to Home
+          </button>
 
-    <div class="container">
-      <div class="product-hero-content">
+        </div>
 
-        <span class="product-badge badge-soon">
-          Coming Soon
-        </span>
+        <!-- RIGHT IMAGE -->
+        <div class="resources-image">
 
-        <h1 class="display-2" style="color:white;">
-          Articles
-        </h1>
+          <img src="assets/Coming Soon.png"
+               alt="Coming Soon">
 
-        <p class="body-lg" style="color:rgba(255,255,255,.72);max-width:650px;">
-          Deep dives into AI, healthcare operations, and digital transformation.
-        </p>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container-sm" style="text-align:center;">
-
-      <h2 class="heading-1">Coming Soon</h2>
-
-      <p class="body-lg" style="color:var(--text-secondary);margin-top:16px;">
-        Long-form research, implementation guides, and healthcare insights
-        will be available here shortly.
-      </p>
-
-    </div>
-  </section>
-
-</div>
-
-<!--videos-->
-<div class="page" id="page-videos">
-
-  <section class="product-hero">
-    <div class="hero-grid-bg"></div>
-
-    <div class="container">
-      <div class="product-hero-content">
-
-        <span class="product-badge badge-soon">
-          Coming Soon
-        </span>
-
-        <h1 class="display-2" style="color:white;">
-          Videos
-        </h1>
-
-        <p class="body-lg" style="color:rgba(255,255,255,.72);max-width:650px;">
-          Product demos, walkthroughs, webinars, and customer stories.
-        </p>
+        </div>
 
       </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container-sm" style="text-align:center;">
-
-      <h2 class="heading-1">Coming Soon</h2>
-
-      <p class="body-lg" style="color:var(--text-secondary);margin-top:16px;">
-        Video content and platform demonstrations will be available soon.
-      </p>
-
-    </div>
-  </section>
-
-</div>
-
-<!--events-->
-<div class="page" id="page-events">
-
-  <section class="product-hero">
-    <div class="hero-grid-bg"></div>
-
-    <div class="container">
-      <div class="product-hero-content">
-
-        <span class="product-badge badge-soon">
-          Coming Soon
-        </span>
-
-        <h1 class="display-2" style="color:white;">
-          Events
-        </h1>
-
-        <p class="body-lg" style="color:rgba(255,255,255,.72);max-width:650px;">
-          Hackathons, conferences, healthcare summits, webinars, and community meetups from ANVIQ.
-        </p>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container-sm" style="text-align:center;">
-
-      <h2 class="heading-1">Coming Soon</h2>
-
-      <p class="body-lg" style="color:var(--text-secondary);margin-top:16px;">
-        We're planning exciting events, webinars, product showcases,
-        and healthcare innovation discussions.
-      </p>
 
     </div>
   </section>
@@ -4322,27 +4177,7 @@
           </span>
         </div>
 
-        <!--Resources-->
-         <div class="footer-col">
-          <h4>Resources</h4>
-          <span class="footer-link" onclick="navigate('blog')" style="cursor:pointer;">
-            Blogs
-          </span>
-
-          <span class="footer-link" onclick="navigate('articles')" style="cursor:pointer;">
-            Articles
-          </span>
-          <span class="footer-link" onclick="navigate('videos')" style="cursor:pointer;">
-            Videos
-          </span>
-          <span class="footer-link" onclick="navigate('events')" style="cursor:pointer;">
-            Events
-          </span>
-          <!-- <span class="footer-link">Terms of Service</span> -->
-          <!-- <span class="footer-link">DPDP Compliance</span> -->
-          <!-- <span class="footer-link">Security</span> -->
-          
-        </div>
+       
       </div>
       <div class="footer-bottom">
         <span>© 2026 ANVIQ, Inc. All rights reserved.</span>
