@@ -309,6 +309,37 @@ ul { list-style: none; }
 /* ==========================================
    SCRIBE MOBILE VIEW (Same as Radiology)
 ========================================== */
+@media (max-width:768px){
+
+  #pricing-scribe .pricing-cards{
+      display:flex !important;
+      flex-direction:row !important;
+      flex-wrap:nowrap !important;
+
+      overflow-x:auto !important;
+      overflow-y:hidden;
+
+      gap:16px;
+      padding:0 16px 16px;
+
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+  }
+
+  #pricing-scribe .pricing-cards::-webkit-scrollbar{
+      display:none;
+  }
+
+  #pricing-scribe .pricing-card{
+      flex:0 0 90% !important;
+      width:90% !important;
+      min-width:90% !important;
+      max-width:90% !important;
+
+      scroll-snap-align:start;
+  }
+
+}
 
 @media (max-width:768px){
 
@@ -362,6 +393,7 @@ ul { list-style: none; }
   }
 
 }
+
 #pricing-radiology .pricing-card.featured:not(.early-access-card):hover::before{
     width: 100%;
 }
