@@ -2589,238 +2589,403 @@
             Start free. Scale as you grow. No surprise fees, no annual lock-in required.
         </p>
 
-        <div class="chip-row" style="margin-top:32px;">
-            <span class="chip active" id="chip-scribe" onclick="showPricingTab('scribe')">
-                ANVIQ Scribe
-            </span>
+        <div class="chip-row">
+    <span class="chip active" id="chip-scribe" onclick="showPricingTab('scribe')">
+        ANVIQ Scribe
+    </span>
 
-            <span class="chip" id="chip-radiology" onclick="showPricingTab('radiology')">
-                ANVIQ Radiologist
-            </span>
+    <span class="chip" id="chip-radiology" onclick="showPricingTab('radiology')">
+        ANVIQ Radiologist
+    </span>
 
-            <span class="chip" id="chip-enterprise" onclick="showPricingTab('enterprise')">
-                Enterprise
-            </span>
+    <span class="chip" id="chip-enterprise" onclick="showPricingTab('enterprise')">
+        Enterprise
+    </span>
+</div>
+
+    </div>
+
+</section>
+    <section class="pricing-section" id="pricing-scribe">
+
+    <div class="pricing-container">
+
+        <div class="pricing-heading">
+
+            <span>PRICING</span>
+
+            <h2>
+                Choose the perfect plan for your organization
+            </h2>
+
+            <p>
+                Start with a free trial and scale as your healthcare organization grows.
+            </p>
+
+        </div>
+
+        <!-- ===================== CARDS ===================== -->
+
+        <div class="pricing-cards">
+
+            <!-- Trial -->
+
+            <div class="pricing-card" data-plan="0">
+
+                <div class="plan-type">Free Trial</div>
+
+                <h3>Try ANVIQ</h3>
+
+                <p class="plan-seat">
+                    1 Seat • 14 Days
+                </p>
+
+                <button class="pricing-btn primary">
+                    Start Free Trial
+                </button>
+
+                <hr>
+
+                <ul>
+
+                    <li>✔ AI Radiologist</li>
+
+                    <li>✔ Chest X-ray Analysis</li>
+
+                    <li>✔ AI Report Generation</li>
+
+                    <li>✔ 3 Languages</li>
+
+                    <li>✔ Email Support</li>
+
+                </ul>
+
+            </div>
+
+            <!-- Clinic -->
+
+            <div class="pricing-card" data-plan="1">
+
+                <div class="plan-type orange">
+                    Clinic
+                </div>
+
+                <h3>Clinic</h3>
+
+                <p class="plan-seat">
+                    Up to 5 Seats
+                </p>
+
+                <button class="pricing-btn">
+                    Contact Sales
+                </button>
+
+                <hr>
+
+                <ul>
+
+                    <li>✔ Everything in Trial</li>
+
+                    <li>✔ AI Radiologist</li>
+
+                    <li>✔ DICOM Upload</li>
+
+                    <li>✔ 3 Languages</li>
+
+                    <li>✔ Email Support</li>
+
+                </ul>
+
+            </div>
+
+            <!-- Hospital -->
+
+            <div class="pricing-card featured" data-plan="2">
+
+                <div class="popular-badge">
+                    MOST POPULAR
+                </div>
+
+                <div class="plan-type white">
+                    Hospital
+                </div>
+
+                <h3>Hospital</h3>
+
+                <p class="plan-seat">
+                    Minimum 20 Seats
+                </p>
+
+                <button class="pricing-btn white">
+                    Contact Sales
+                </button>
+
+                <hr>
+
+                <ul>
+
+                    <li>✔ Everything in Clinic</li>
+
+                    <li>✔ PACS Integration</li>
+
+                    <li>✔ HIMS Integration</li>
+
+                    <li>✔ All Languages</li>
+
+                    <li>✔ Priority Support</li>
+
+                </ul>
+
+            </div>
+
+            <!-- Network -->
+
+            <div class="pricing-card" data-plan="3">
+
+                <div class="plan-type orange">
+                    Network
+                </div>
+
+                <h3>Network</h3>
+
+                <p class="plan-seat">
+                    100+ Seats
+                </p>
+
+                <button class="pricing-btn">
+                    Contact Sales
+                </button>
+
+                <hr>
+
+                <ul>
+
+                    <li>✔ Everything in Hospital</li>
+
+                    <li>✔ Dedicated Manager</li>
+
+                    <li>✔ Custom AI Models</li>
+
+                    <li>✔ SLA 99.9%</li>
+
+                    <li>✔ 24×7 Support</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- ======================= COMPARISON ====================== -->
+
+        <div class="comparison-heading">
+
+            <span>COMPARE PLANS</span>
+
+            <h2>
+                Full feature comparison
+            </h2>
+
+        </div>
+
+        <div class="comparison-table">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th></th>
+
+                        <th data-column="0">Trial</th>
+
+                        <th data-column="1">Clinic</th>
+
+                        <th class="hospital-head" data-column="2">
+                            Hospital
+                        </th>
+
+                        <th data-column="3">Network</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>AI Chest X-ray</td>
+
+                        <td data-column="0">✔</td>
+
+                        <td data-column="1">✔</td>
+
+                        <td class="hospital-col" data-column="2">✔</td>
+
+                        <td data-column="3">✔</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>AI CT Scan</td>
+
+                        <td>—</td>
+
+                        <td>✔</td>
+
+                        <td class="hospital-col">✔</td>
+
+                        <td>✔</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>AI MRI</td>
+
+                        <td>—</td>
+
+                        <td>✔</td>
+
+                        <td class="hospital-col">✔</td>
+
+                        <td>✔</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>DICOM Support</td>
+
+                        <td>✔</td>
+
+                        <td>✔</td>
+
+                        <td class="hospital-col">✔</td>
+
+                        <td>✔</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Heatmap Visualization</td>
+
+                        <td>—</td>
+
+                        <td>✔</td>
+
+                        <td class="hospital-col">✔</td>
+
+                        <td>✔</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Confidence Score</td>
+
+                        <td>✔</td>
+
+                        <td>✔</td>
+
+                        <td class="hospital-col">✔</td>
+
+                        <td>✔</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Report Generation</td>
+
+                        <td>✔</td>
+
+                        <td>✔</td>
+
+                        <td class="hospital-col">✔</td>
+
+                        <td>✔</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>PACS Integration</td>
+
+                        <td>—</td>
+
+                        <td>—</td>
+
+                        <td class="hospital-col">✔</td>
+
+                        <td>✔</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>HIMS Integration</td>
+
+                        <td>—</td>
+
+                        <td>—</td>
+
+                        <td class="hospital-col">✔</td>
+
+                        <td>✔</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Dedicated Manager</td>
+
+                        <td>—</td>
+
+                        <td>—</td>
+
+                        <td class="hospital-col">—</td>
+
+                        <td>✔</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Support</td>
+
+                        <td>Email</td>
+
+                        <td>Email</td>
+
+                        <td class="hospital-col">
+                            Priority
+                        </td>
+
+                        <td>24×7</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
         </div>
 
     </div>
 
 </section>
-    <section class="section" id="pricing-scribe" style="padding:120px 20px;font-family:Mulish, sans-serif;">
-      <div style="max-width:1180px;margin:auto;">
-        <div class="pricing-table-wrap">
-          <table id="pricingTable" class="pricing-table">
-            <colgroup>
-              <col>
-              <col>
-              <col>
-              <col>
-              <col>
-            </colgroup>
-
-            <!-- ================= HEAD ================= -->
-            <thead>
-              <tr>
-
-                <th></th>
-
-                <th data-col="0" style="cursor:pointer;">
-                  <div class="plan-head">
-                    <div style="font-size:12px;color:#F2572B;">Free Trial</div>
-                    <div style="font-size:20px;font-weight:700;">Try ANVIQ</div>
-                    <div style="font-size:13px;color:#6b7280;">1 seat · 14 days</div>
-                  </div>
-                </th>
-
-                <th data-col="1" style="cursor:pointer;">
-                  <div class="plan-head">
-                    <div style="font-size:12px;color:#F2572B;">Clinic</div>
-                    <div style="font-size:20px;font-weight:700;">Clinic</div>
-                    <div style="font-size:13px;color:#6b7280;">Up to 5 seats</div>
-                  </div>
-                </th>
-
-                <!-- MOST POPULAR -->
-                <th data-col="2" class="most-popular" style="cursor:pointer;
-              background:linear-gradient(160deg,#111e4d 0%,#1E2B6A 100%);
-              color:white;">
-
-                  <div class="plan-head">
-                    <div class="table-most-popular">
-                      Most popular
-                    </div>
-                    <div style="font-size:12px;">Hospital</div>
-                    <div style="font-size:20px;font-weight:700;">Hospital</div>
-                    <div style="font-size:13px;">Min 20 seats</div>
-                  </div>
-                </th>
-
-                <th data-col="3" style="cursor:pointer;">
-                  <div class="plan-head">
-                    <div style="font-size:12px;color:#F2572B;">Network</div>
-                    <div style="font-size:20px;font-weight:700;">Network</div>
-                    <div style="font-size:13px;color:#6b7280;">Min 100 seats · Negotiated annually</div>
-                  </div>
-                </th>
-
-              </tr>
-            </thead>
-
-            <!-- ================= BODY ================= -->
-            <tbody>
-
-              <!-- ROW TEMPLATE -->
-              <tr>
-                <td class="feature-title">ANVIQ Scribe — ambient transcription</td>
-                <td data-col="0">✓</td>
-                <td data-col="1">✓</td>
-                <td data-col="2" style="background:#1E2B6A;color:#fff;">✓</td>
-                <td data-col="3">✓</td>
-              </tr>
-
-              <tr>
-                <td class="feature-title">SOAP note generation</td>
-                <td data-col="0">✓</td>
-                <td data-col="1">✓</td>
-                <td data-col="2" style="background:#1E2B6A;color:#fff;">✓</td>
-                <td data-col="3">✓</td>
-              </tr>
-
-              <tr>
-                <td class="feature-title">Symptom & history extraction</td>
-                <td data-col="0">✓</td>
-                <td data-col="1">✓</td>
-                <td data-col="2" style="background:#1E2B6A;color:#fff;">✓</td>
-                <td data-col="3">✓</td>
-              </tr>
-
-              <tr>
-                <td class="feature-title">Secure note storage</td>
-                <td data-col="0">✓</td>
-                <td data-col="1">✓</td>
-                <td data-col="2" style="background:#1E2B6A;color:#fff;">✓</td>
-                <td data-col="3">✓</td>
-              </tr>
-
-              <tr>
-                <td class="feature-title">
-                  Multilingual support
-                  <!-- <div class="muted-meta">All 10 languages</div> -->
-                </td>
-                <td data-col="0">3 languages</td>
-                <td data-col="1">3 languages</td>
-                <td data-col="2" style="background:#1E2B6A;color:#fff;">✓ All 10</td>
-                <td data-col="3">✓ All 10</td>
-              </tr>
-
-              <tr>
-                <td class="feature-title">
-                  EHR / HIMS integration
-                  <!-- <div class="muted-meta">All systems from Hospital plan</div> -->
-                </td>
-                <td data-col="0">1 system</td>
-                <td data-col="1">1 system</td>
-                <td data-col="2" style="background:#1E2B6A;color:#fff;">✓ All systems</td>
-                <td data-col="3">✓ All systems</td>
-              </tr>
-
-              <tr>
-                <td class="feature-title">Live guidance / clinical prompts</td>
-                <td data-col="0">—</td>
-                <td data-col="1">—</td>
-                <td data-col="2" style="background:#1E2B6A;color:#fff;">✓</td>
-                <td data-col="3">✓</td>
-              </tr>
-
-              <tr>
-                <td class="feature-title">
-                  Custom model fine-tuning
-                  <!-- <div class="muted-meta">Network plan only</div> -->
-                </td>
-                <td data-col="0">—</td>
-                <td data-col="1">—</td>
-                <td data-col="2" style="background:#1E2B6A;color:#fff;">—</td>
-                <td data-col="3">✓</td>
-              </tr>
-
-              <tr>
-                <td class="feature-title">
-                  Dedicated account manager
-                  <!-- <div class="muted-meta">Network plan only</div> -->
-                </td>
-                <td data-col="0">—</td>
-                <td data-col="1">—</td>
-                <td data-col="2" style="background:#1E2B6A;color:#fff;">—</td>
-                <td data-col="3">✓</td>
-              </tr>
-
-              <tr>
-                <td class="feature-title">SLA uptime guarantee</td>
-                <td data-col="0">—</td>
-                <td data-col="1">99.0%</td>
-                <td data-col="2" style="background:#1E2B6A;color:#fff;">99.5%</td>
-                <td data-col="3">99.9%</td>
-              </tr>
-
-              <tr>
-                <td class="feature-title">Support</td>
-                <td data-col="0">Email</td>
-                <td data-col="1">Email</td>
-                <td data-col="2" style="background:#1E2B6A;color:#fff;">Priority</td>
-                <td data-col="3">24/7 Phone</td>
-              </tr>
-
-              <tr>
-                <td class="feature-title">Min seat commitment</td>
-                <td data-col="0">1</td>
-                <td data-col="1">Up to 5</td>
-                <td data-col="2" style="background:#1E2B6A;color:#fff;">20</td>
-                <td data-col="3">100</td>
-              </tr>
-
-              <!-- CTA -->
-              <tr class="cta-row">
-                <td></td>
-
-                <td data-col="0">
-                  <button class="plan-btn primary"
-                    onclick="window.open('https://dev.arogyalabs.ai/signup?trial=true', '_blank', 'noopener,noreferrer')">
-                    Sign up free
-                  </button>
-                </td>
-
-                <td data-col="1">
-                  <button class="plan-btn">
-                    Contact us - Free Trial Available
-                  </button>
-                </td>
-
-                <td data-col="2">
-                  <button class="plan-btn hospital">
-                    Contact us - Free Trial Available
-                  </button>
-                </td>
-
-                <td data-col="3">
-                  <button class="plan-btn">
-                    Contact us - Free Trial Available
-                  </button>
-                </td>
-
-              </tr>
-
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
 
     <!-- ================= JS ================= -->
     <!-- Radiology Pricing (hidden by default) -->
     <section class="section" id="pricing-radiology" style="display:none;">
       <div class="container">
         <div class="pricing-grid">
-          <div class="pricing-card featured">
+          <div class="pricing-card featured early-access-card">
             <div class="pricing-name">Early Access</div>
             <div class="pricing-desc">Full beta access while we refine the platform with your feedback.</div>
             <div class="pricing-price">

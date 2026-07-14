@@ -84,7 +84,110 @@ ul { list-style: none; }
   display: flex;
   gap: 20px;
 }
+.early-access-card{
+    background:#fff !important;
+    color:#111827 !important;
+    border:2px solid #F2572B !important;
+    transform:none !important;
+}
+.early-access-card .pricing-name{
+  font-size: 1.8rem !important;
+}
+.pricing-name{
+  font-size: 1.8rem !important;
+}
 
+.early-access-card .pricing-name,
+.early-access-card .pricing-desc,
+.early-access-card .pricing-feature,
+.early-access-card .pricing-period,
+.early-access-card .pricing-amount{
+    color:#111827 !important;
+}
+
+.early-access-card .pricing-divider{
+    border-color:#E5E7EB !important;
+}
+/* Early Access Card */
+.early-access-card{
+    position: relative;
+    overflow: hidden;
+}
+
+/* Top Orange Line */
+.early-access-card::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    background: #F2572B;
+    border-radius: 0 0 8px 8px;
+    transform: translateX(-50%);
+    transition: width .35s ease;
+    z-index: 5;
+}
+/* ===========================
+   EARLY ACCESS TOP ORANGE LINE
+   =========================== */
+
+#pricing-radiology .early-access-card{
+    position: relative;
+    overflow: hidden;
+}
+
+#pricing-radiology .early-access-card::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #F2572B;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .35s ease;
+    z-index: 100;
+}
+/* PRO & DEPARTMENT - Hover Border */
+#pricing-radiology .pricing-card.featured:not(.early-access-card){
+    border: 2px solid #E5E7EB;
+    transition: all .35s ease;
+}
+
+/* Hover */
+#pricing-radiology .pricing-card.featured:not(.early-access-card):hover{
+    border-color: #F2572B !important;
+}
+
+/* White top line on hover */
+#pricing-radiology .pricing-card.featured:not(.early-access-card)::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    background: #fff;
+    transform: translateX(-50%);
+    transition: width .35s ease;
+    z-index: 10;
+}
+
+#pricing-radiology .pricing-card.featured:not(.early-access-card):hover::before{
+    width: 100%;
+}
+#pricing-radiology .early-access-card:hover::before{
+    transform: scaleX(1);
+}
+/* Hover */
+.early-access-card:hover::before{
+    width: 100%;
+}
+.early-access-card .pricing-check{
+    color:#F2572B !important;
+}
 .pricing-card {
    display: flex;
   flex-direction: column;
