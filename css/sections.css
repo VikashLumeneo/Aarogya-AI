@@ -547,6 +547,32 @@
     line-height:1.6;
   }
 }
+/* ===========================
+   MOBILE TABLE FIX
+=========================== */
+@media (max-width:768px){
+
+  .comparison-table td:first-child,
+  .comparison-table th:first-child{
+      position: static !important;
+      left: auto !important;
+      z-index: auto !important;
+      background: inherit !important;
+      box-shadow: none !important;
+  }
+
+  .comparison-table{
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+  }
+
+  .comparison-table table{
+      min-width: 850px;
+      width: max-content;
+  }
+
+}
 
 /* Modalities Tabs Responsive */
 .tab-list{

@@ -174,7 +174,189 @@ ul { list-style: none; }
     transition: width .35s ease;
     z-index: 10;
 }
+/* ==========================================
+   RADIOLOGY MOBILE RESPONSIVE
+========================================== */
 
+@media (max-width:768px){
+
+  /* Section spacing */
+  #page-radiology .section{
+    padding:60px 0;
+  }
+
+  #page-radiology .container{
+    padding:0 18px;
+  }
+
+  /* Hero */
+  #page-radiology .display-2{
+    font-size:2rem;
+    line-height:1.2;
+    text-align:center;
+  }
+
+  #page-radiology .body-lg{
+    font-size:15px;
+    text-align:center;
+  }
+
+  #page-radiology .hero-actions{
+    width:100%;
+    justify-content:center;
+  }
+
+  #page-radiology .hero-actions .btn{
+    width:100%;
+  }
+
+  #page-radiology .hero-trust{
+    justify-content:center;
+    gap:12px;
+  }
+
+  /* All grids */
+  #page-radiology .grid-2,
+  #page-radiology .grid-3,
+  #page-radiology .grid-4{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  /* Cards */
+  #page-radiology .card{
+    padding:22px;
+  }
+
+  /* Pricing */
+  #pricing-radiology .pricing-grid{
+    flex-direction:column;
+    gap:20px;
+  }
+
+  #pricing-radiology .pricing-card{
+    width:100%;
+    padding:24px;
+  }
+
+  #pricing-radiology .btn{
+    width:100%;
+  }
+
+  /* Tabs */
+  #page-radiology .tab-list{
+    overflow-x:auto;
+    flex-wrap:nowrap;
+    justify-content:flex-start;
+    gap:10px;
+    padding-bottom:8px;
+  }
+
+  #page-radiology .tab-btn{
+    flex:0 0 auto;
+    white-space:nowrap;
+  }
+
+  /* Images */
+  #page-radiology img{
+    max-width:100%;
+    height:auto;
+  }
+
+  /* CTA */
+  #page-radiology .cta-actions{
+    flex-direction:column;
+  }
+
+  #page-radiology .cta-actions .btn{
+    width:100%;
+  }
+
+}
+/* =========================================
+   RESPONSIVE PRICING - ALL DEVICES
+========================================= */
+
+/* Large Tablet */
+@media (max-width:1200px){
+
+#pricing-scribe .pricing-grid,
+#pricing-radiology .pricing-grid,
+#pricing-enterprise .pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(280px,1fr));
+    gap:24px;
+}
+
+}
+
+/* Tablet */
+@media (max-width:992px){
+
+#pricing-scribe .pricing-grid,
+#pricing-radiology .pricing-grid,
+#pricing-enterprise .pricing-grid{
+    grid-template-columns:1fr;
+    max-width:500px;
+    margin:auto;
+}
+
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+#pricing-scribe,
+#pricing-radiology,
+#pricing-enterprise{
+    padding:60px 0;
+}
+
+#pricing-scribe .container,
+#pricing-radiology .container,
+#pricing-enterprise .container{
+    padding:0 18px;
+}
+
+#pricing-scribe .pricing-grid,
+#pricing-radiology .pricing-grid,
+#pricing-enterprise .pricing-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+    max-width:100%;
+}
+
+#pricing-scribe .pricing-card,
+#pricing-radiology .pricing-card,
+#pricing-enterprise .pricing-card{
+
+    width:100%;
+    min-width:unset;
+    max-width:100%;
+    padding:24px;
+    margin:0;
+}
+
+#pricing-scribe .pricing-name,
+#pricing-radiology .pricing-name,
+#pricing-enterprise .pricing-name{
+    font-size:28px;
+}
+
+#pricing-scribe .pricing-feature,
+#pricing-radiology .pricing-feature,
+#pricing-enterprise .pricing-feature{
+    font-size:15px;
+}
+
+#pricing-scribe .btn,
+#pricing-radiology .btn,
+#pricing-enterprise .btn{
+    width:100%;
+}
+
+}
 #pricing-radiology .pricing-card.featured:not(.early-access-card):hover::before{
     width: 100%;
 }
