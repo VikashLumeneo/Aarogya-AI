@@ -304,57 +304,62 @@ ul { list-style: none; }
 }
 
 /* Mobile */
+/* PASTE HERE */
+
+/* ==========================================
+   SCRIBE MOBILE VIEW (Same as Radiology)
+========================================== */
+
 @media (max-width:768px){
 
-#pricing-scribe,
-#pricing-radiology,
-#pricing-enterprise{
+  #pricing-scribe{
     padding:60px 0;
-}
+  }
 
-#pricing-scribe .container,
-#pricing-radiology .container,
-#pricing-enterprise .container{
+  #pricing-scribe .pricing-container,
+  #pricing-scribe .container{
     padding:0 18px;
-}
+  }
 
-#pricing-scribe .pricing-grid,
-#pricing-radiology .pricing-grid,
-#pricing-enterprise .pricing-grid{
-    display:grid;
-    grid-template-columns:1fr;
+  #pricing-scribe .pricing-cards,
+  #pricing-scribe .pricing-grid{
+    display:flex;
+    flex-direction:column;
     gap:20px;
-    max-width:100%;
-}
+  }
 
-#pricing-scribe .pricing-card,
-#pricing-radiology .pricing-card,
-#pricing-enterprise .pricing-card{
-
+  #pricing-scribe .pricing-card{
     width:100%;
+    max-width:100%;
     min-width:unset;
-    max-width:100%;
-    padding:24px;
     margin:0;
-}
+    padding:24px;
+  }
 
-#pricing-scribe .pricing-name,
-#pricing-radiology .pricing-name,
-#pricing-enterprise .pricing-name{
-    font-size:28px;
-}
-
-#pricing-scribe .pricing-feature,
-#pricing-radiology .pricing-feature,
-#pricing-enterprise .pricing-feature{
-    font-size:15px;
-}
-
-#pricing-scribe .btn,
-#pricing-radiology .btn,
-#pricing-enterprise .btn{
+  #pricing-scribe .pricing-btn,
+  #pricing-scribe .btn{
     width:100%;
-}
+  }
+
+  #pricing-scribe .comparison-table{
+    overflow-x:auto;
+    overflow-y:hidden;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  #pricing-scribe .comparison-table table{
+    min-width:850px;
+    width:max-content;
+  }
+
+  #pricing-scribe .comparison-table th:first-child,
+  #pricing-scribe .comparison-table td:first-child{
+    position:static !important;
+    left:auto !important;
+    z-index:auto !important;
+    background:inherit !important;
+    box-shadow:none !important;
+  }
 
 }
 #pricing-radiology .pricing-card.featured:not(.early-access-card):hover::before{
