@@ -2353,6 +2353,24 @@ box-shadow:
 0 30px 80px rgba(30,43,106,.35);
 
 }
+/* ==========================================
+   ORANGE TOP LINE ON HOVER
+========================================== */
+
+#pricing-scribe .pricing-card:not(.featured)::before{
+    background:#F2572B !important;
+    left:50%;
+    width:0;
+    transform:translateX(-50%);
+}
+
+#pricing-scribe .pricing-card:not(.featured):hover::before{
+    width:100%;
+}
+
+#pricing-scribe .featured::before{
+    background:#fff !important;
+}
 .comparison-table tbody td{
 
 transition:.25s;
