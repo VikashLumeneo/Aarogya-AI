@@ -90,6 +90,12 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeSignup();
 });
 
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 768) {
+    closeMobileNav();
+  }
+});
+
 function showToast(message, type = 'success') {
   const container = document.getElementById('toastContainer');
   const toast = document.createElement('div');

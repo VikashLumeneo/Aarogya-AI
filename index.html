@@ -65,6 +65,14 @@
                   <div style="color:var(--text-muted);font-size:.75rem;font-weight:400;">Diagnostic imaging AI</div>
                 </div>
               </div>
+
+              <div class="nav-dropdown-item" onclick="navigate('receptionist')" role="menuitem" tabindex="0">
+                <!-- <div class="nav-dropdown-icon" style="background:rgba(91,101,221,.1);">🩻</div> -->
+                <div>
+                  <div style="color:var(--text-primary);font-size:.875rem;">ANVIQ Receptionist</div>
+                  <div style="color:var(--text-muted);font-size:.75rem;font-weight:400;">Patient management AI</div>
+                </div>
+              </div>
               
               <div class="nav-dropdown-item" style="opacity:.6;cursor:default;">
                 <!-- <div class="nav-dropdown-icon" style="background:rgba(249,115,22,.1);">💊</div> -->
@@ -120,6 +128,7 @@
         <div class="mobile-nav-link" onclick="navigate('rx')">ANVIQ Rx</div>
 
     <div class="mobile-nav-link" onclick="navigate('radiology')">ANVIQ Radiologist</div>
+    <div class="mobile-nav-link" onclick="navigate('receptionist')">ANVIQ Receptionist</div>
         <div class="mobile-nav-link" onclick="navigate('pricing')">Plans</div>
 
        <div class="mobile-nav-link" onclick="navigate('resources')">Resources</div>
@@ -2566,6 +2575,1376 @@
 
   </div>
 
+  
+  <!-- ============================================================
+   PAGE: ANVIQ Receptionist
+   ============================================================ -->
+  <div class="page" id="page-receptionist">
+    <section class="product-hero receptionist-hero" aria-label="ANVIQ Receptionist hero">
+      <div class="hero-grid-bg"></div>
+
+      <div class="container">
+        <div class="receptionist-hero-grid">
+          <div class="receptionist-content animate-up">
+            <span class="product-badge badge-live">
+        ✦ Patient Registration · Powered by AI
+      </span>
+            <h1 class="display-2">
+              Register walk-in patients <span class="gradient-text">in seconds.</span>
+            </h1>
+
+            <p class="body-lg">
+              One photo of the patient’s Aadhaar card, ABHA card, or License. No forms. No manual entry. Patient registered in your HIS/EMR and added to the queue before the next patient steps forward.
+            </p>
+
+            <div class="hero-actions">
+              <button class="btn btn-accent btn-lg"
+                onclick="window.open('https://dev.arogyalabs.ai/signup?trial=true', '_blank', 'noopener,noreferrer')">
+                Start Free Trial →
+              </button>
+              <button class="btn btn-ghost btn-lg" onclick="navigate('about')">
+                Request a Demo
+              </button>
+            </div>
+
+            <div class="hero-trust">
+              <div class="hero-trust-item">
+                <span class="hero-trust-icon">✓</span>
+                No forms. No manual entry.
+              </div>
+              <div class="hero-trust-item">
+                <span class="hero-trust-icon">✓</span>
+                Live HIS/EMR &amp; OPD queue integration
+              </div>
+              <div class="hero-trust-item">
+                <span class="hero-trust-icon">✓</span>
+                Aadhaar, ABHA &amp; Driving License
+              </div>
+              <div class="hero-trust-item">
+                <span class="hero-trust-icon">✓</span>
+                14-day free trial, no credit card
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="phone-mock">
+              <div class="phone-screen">
+                <div class="mock-top">
+                  <span class="dot"></span>
+                  New Patient Registration
+                </div>
+                <div class="phone-content">
+                  <div class="scan-frame" style="margin-bottom:12px;">
+                    <div class="aadhaar-mock">
+                      <div class="aadhaar-top">
+                        <div class="aadhaar-badge">GOVERNMENT OF INDIA</div>
+                        <div style="font-size:8px;opacity:.6;">AADHAAR</div>
+                      </div>
+                      <div class="aadhaar-name">Aarush Deo</div>
+                      <div style="font-size:9px;opacity:.7;">DOB: 13/03/2003 &nbsp;•&nbsp; Male</div>
+                      <div class="aadhaar-num">XXXX XXXX 4560</div>
+                    </div>
+                    <div class="scan-line-inside"><i class="bi bi-check-circle-fill"></i> Reading card...</div>
+                  </div>
+
+                  <div class="phone-field"><span class="f-label">First Name</span><span class="field-val">Aarush</span></div>
+                  <div class="phone-field"><span class="f-label">Date of Birth</span><span class="field-val">13/03/2003</span></div>
+                  <div class="phone-field"><span class="f-label">Gender</span><span class="field-val">Male</span></div>
+                  <div class="phone-field"><span class="f-label">Aadhaar No.</span><span class="field-val">XXXX XXXX 4560</span></div>
+                  <div class="mock-btn">Submit &amp; Register</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="How ANVIQ Receptionist works">
+  <div class="container">
+
+    <div class="section-header">
+      <div class="section-eyebrow">How It Works</div>
+      <h2 class="heading-1">
+        From card scan to queue in <br>
+        <span class="gradient-text">3 steps</span>
+      </h2>
+      
+      <p class="body-lg" style="margin-top:12px;max-width:640px;margin-inline:auto;">
+        The simplest patient registration workflow your front desk will ever use.
+      </p>
+    </div>
+
+    <div class="steps-row">
+
+      <!-- STEP 1 -->
+      <div class="step-col">
+
+        <div class="phone-mock">
+          <div class="phone-screen">
+
+            <div class="mock-top">
+              <span class="num">1</span>
+              Take Photo
+            </div>
+
+            <div class="phone-content">
+
+              <div class="scan-frame scan-frame--square">
+
+                <div class="aadhaar-mock">
+                  <div class="aadhaar-top">
+                    <div class="aadhaar-badge">GOVERNMENT OF INDIA</div>
+                    <div style="font-size:8px;opacity:.6;">AADHAAR</div>
+                  </div>
+
+                  <div class="aadhaar-name">Aarush Deo</div>
+
+                  <div style="font-size:9px;opacity:.7;">
+                    DOB: 13/03/2003 • Male
+                  </div>
+
+                  <div class="aadhaar-num">
+                    XXXX XXXX 4560
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="scan-status-below">
+                <i class="bi bi-arrow-repeat"></i>
+                Reading card automatically...
+              </div>
+
+              <div class="mock-btn-outline">
+                Enter manually instead
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="mockup-caption">
+          <h3>Open the app. Take a photo.</h3>
+          <p>
+            Point the camera at the patient's Aadhaar card,
+            ABHA card, or driving license.
+            ANVIQ reads the card automatically.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="step-arrow">
+        <i class="bi bi-arrow-right"></i>
+      </div>
+<div class="step-arrow"><i class="bi bi-arrow-right">→</i></div>
+      <!-- STEP 2 -->
+      <div class="step-col">
+
+        <div class="phone-mock">
+          <div class="phone-screen">
+
+            <div class="mock-top">
+              <span class="num">2</span>
+              Review &amp; Submit
+            </div>
+
+            <div class="phone-content">
+
+              <div style="font-size:11px;font-weight:700;margin-bottom:12px;">
+                Review patient details
+              </div>
+
+              <div class="form-row">
+                <span class="f-label">First name</span>
+                <span class="f-val">Aarush</span>
+              </div>
+
+              <div class="form-row">
+                <span class="f-label">Last name</span>
+                <span class="f-val">Deo</span>
+              </div>
+
+              <div class="form-row">
+                <span class="f-label">Date of birth</span>
+                <span class="f-val">13/03/2003</span>
+              </div>
+
+              <div class="form-row">
+                <span class="f-label">Gender</span>
+                <span class="f-val">Male</span>
+              </div>
+
+              <div class="form-row">
+                <span class="f-label">Aadhaar number</span>
+                <span class="f-val">XXXX XXXX 4560</span>
+              </div>
+
+              <div class="form-row">
+                <span class="f-label">Hospital</span>
+                <span class="f-val">Sai Deepthi Centre</span>
+              </div>
+
+              <div class="mock-btn">
+                Submit &amp; Register
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="mockup-caption">
+          <h3>All fields auto-filled.</h3>
+          <p>
+            Every field is pre-populated from the card.
+            Edit anything if needed, then tap Register.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="step-arrow">
+        <i class="bi bi-arrow-right"></i>
+      </div>
+<div class="step-arrow"><i class="bi bi-arrow-right">→</i></div>
+      <!-- STEP 3 -->
+      <div class="step-col">
+
+        <div class="phone-mock">
+          <div class="phone-screen">
+
+            <div class="mock-top">
+              <span class="num">3</span>
+              Registration Complete
+            </div>
+
+            <div class="phone-content">
+
+              <div style="text-align:center;">
+
+                <div class="confirm-check">
+                  <i class="bi bi-check-lg">✓</i>
+                </div>
+
+                <div style="font-size:11px;font-weight:700;color:#065F46;text-transform:uppercase;margin-bottom:8px;">
+                  Patient Registered
+                </div>
+
+                <div style="font-size:15px;font-weight:700;margin-bottom:2px;">
+                  Aarush Deo
+                </div>
+
+                <div style="font-size:11px;color:var(--text-secondary);">
+                  Male • 13/03/2003
+                </div>
+
+              </div>
+
+              <div class="confirm-rows">
+
+                <div class="confirm-row">
+                  <span class="c-label">Patient ID</span>
+                  <span class="c-val">MRN-2024-08471</span>
+                </div>
+
+                <div class="confirm-row">
+                  <span class="c-label">Token No.</span>
+                  <span class="c-val">#T-042</span>
+                </div>
+
+                <div class="confirm-row">
+                  <span class="c-label">Registered at</span>
+                  <span class="c-val">09:14 AM</span>
+                </div>
+
+              </div>
+
+              <div class="mock-btn">
+                <i class="bi bi-plus-lg"></i>
+                Register Next Patient
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="mockup-caption">
+          <h3>Patient ID created instantly.</h3>
+          <p>
+            A new encounter is opened in your HIS/EMR,
+            a token is assigned, and the patient is added
+            to the OPD queue automatically.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<style>
+/* ==========================
+   HOW IT WORKS LAYOUT FIX
+========================== */
+
+.steps-row{
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    flex-wrap:nowrap;      /* Left → Right */
+    gap:28px;
+    width:100%;
+}
+
+.step-col{
+    width:260px;
+    min-width:260px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    flex-shrink:0;
+}
+
+.step-arrow{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    color:var(--brand-accent);
+    margin-top:220px;
+    flex-shrink:0;
+}
+
+/* Tablet */
+
+@media (max-width:991px){
+
+.steps-row{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.step-arrow{
+    display:none;
+}
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+.steps-row{
+    flex-direction:column;
+    align-items:center;
+}
+
+.step-col{
+    width:100%;
+    max-width:300px;
+}
+
+}
+.phone-mock{
+    width:260px;
+    max-width:100%;
+    background:#fff;
+    border-radius:26px;
+    padding:8px;
+    box-shadow:
+        0 12px 32px rgba(13,27,42,.16),
+        0 0 0 1px rgba(13,27,42,.05);
+}
+
+.phone-screen{
+    background:var(--bg-secondary);
+    border-radius:19px;
+    overflow:hidden;
+    min-height:496px;
+    display:flex;
+    flex-direction:column;
+}
+
+.mock-top{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 16px;
+    background:var(--brand-dark);
+    color:#fff;
+    font-size:13px;
+    font-weight:700;
+}
+
+.mock-top .num{
+    width:20px;
+    height:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:var(--brand-accent);
+    color:#fff;
+    font-size:11px;
+    font-weight:800;
+}
+
+.phone-content{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    padding:16px;
+}
+
+.scan-frame{
+    border:2px dashed var(--brand-accent);
+    border-radius:10px;
+    background:rgba(242,87,43,.04);
+}
+
+.scan-frame--square{
+    width:190px;
+    height:190px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.scan-status-below{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:6px;
+    margin-top:12px;
+    color:var(--brand-accent);
+    font-size:11px;
+    font-weight:600;
+}
+
+.aadhaar-mock{
+    background:linear-gradient(120deg,#1565C0,#0D47A1);
+    color:#fff;
+    padding:10px 12px;
+    border-radius:8px;
+    font-size:9px;
+    text-align:left;
+}
+
+.aadhaar-top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:6px;
+}
+
+.aadhaar-badge{
+    font-size:8px;
+    font-weight:700;
+    letter-spacing:.05em;
+    opacity:.8;
+}
+
+.aadhaar-name{
+    font-size:12px;
+    font-weight:700;
+    margin:4px 0 2px;
+}
+
+.aadhaar-num{
+    font-size:10px;
+    letter-spacing:.15em;
+    opacity:.75;
+}
+
+.form-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#fff;
+    border:1px solid var(--border-color);
+    border-radius:6px;
+    padding:9px 12px;
+    margin-bottom:8px;
+    font-size:11px;
+}
+
+.f-label{
+    color:var(--text-muted);
+}
+
+.f-val{
+    color:var(--text-primary);
+    font-weight:600;
+}
+
+.mock-btn,
+.mock-btn-outline{
+    margin-top:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:12px;
+    border-radius:8px;
+    font-size:13px;
+    font-weight:700;
+    transition:.25s;
+}
+
+.mock-btn{
+    background:var(--brand-accent);
+    color:#fff;
+}
+
+.mock-btn:hover{
+    background:#df4b20;
+    transform:translateY(-2px);
+}
+
+.mock-btn-outline{
+    border:1.5px solid var(--border-color);
+    color:var(--text-secondary);
+    background:#fff;
+}
+
+.mock-btn-outline:hover{
+    border-color:var(--brand-accent);
+    color:var(--brand-accent);
+}
+
+.confirm-check{
+    width:40px;
+    height:40px;
+    margin:0 auto 10px;
+    border-radius:50%;
+    background:#D1FAE5;
+    color:#065F46;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+}
+
+.confirm-row{
+    display:flex;
+    justify-content:space-between;
+    padding:9px 0;
+    border-bottom:1px solid var(--border-color);
+}
+
+.confirm-row:last-child{
+    border-bottom:none;
+}
+
+.c-label{
+    color:var(--text-muted);
+    font-size:10px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+}
+
+.c-val{
+    color:var(--text-primary);
+    font-size:12px;
+    font-weight:700;
+}
+
+.mockup-caption{
+    margin-top:22px;
+    text-align:center;
+    max-width:260px;
+}
+
+.mockup-caption h3{
+    color:var(--text-primary);
+    font-size:15px;
+    font-weight:700;
+    margin-bottom:6px;
+}
+
+.mockup-caption p{
+    color:var(--text-secondary);
+    font-size:13px;
+    line-height:1.6;
+}</style>
+
+<!-- =========================================================
+CTA SECTION
+========================================================= -->
+
+<section class="receptionist-trial">
+
+    <div class="container">
+
+        <div class="trial-inner">
+
+            <div class="trial-label">
+                Free Trial
+            </div>
+
+            <h2>
+                See it live in your clinic.
+                Free for 14 days.
+            </h2>
+
+            <p>
+                No credit card required. Set up in under 48 hours.
+                Full access from day one.
+            </p>
+
+            <div class="trial-buttons">
+
+                <a href="#" class="btn btn-primary">
+                    Start Free Trial
+                </a>
+
+                <a href="#" class="btn btn-outline-light">
+                    Request a Demo
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<style>/*=========================================
+RECEPTIONIST FREE TRIAL
+=========================================*/
+
+.receptionist-trial{
+     background:linear-gradient(
+    135deg,
+    #122056 0%,
+    #1a2b73 55%,
+    #122056 100%
+  );
+    padding:42px 24px;
+}
+
+.trial-inner{
+    max-width:680px;
+    margin:0 auto;
+    text-align:center;
+}
+
+.trial-label{
+    display:inline-block;
+    margin-bottom:12px;
+
+    padding:6px 14px;
+    border-radius:999px;
+
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.15);
+
+    color:#A5ABEF;
+
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+}
+
+.trial-inner h2{
+    color:#fff;
+    font-size:clamp(24px,3vw,34px);
+    line-height:1.2;
+    font-weight:800;
+    margin-bottom:14px;
+}
+
+.trial-inner p{
+    color:rgba(255,255,255,.75);
+
+    font-size:16px;
+    line-height:1.7;
+
+    margin-bottom:28px;
+}
+
+.trial-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+/*=========================
+ORANGE BUTTON
+=========================*/
+
+.trial-buttons .btn-primary{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:14px 32px;
+
+    background:#F2572B;
+    color:#fff;
+
+    border:2px solid #F2572B;
+    border-radius:8px;
+
+    font-size:16px;
+    font-weight:700;
+
+    transition:.25s ease;
+}
+
+.trial-buttons .btn-primary:hover{
+    background:#df4b20;
+    border-color:#df4b20;
+    transform:translateY(-2px);
+    box-shadow:0 10px 24px rgba(242,87,43,.35);
+}
+
+/*=========================
+GLASS BUTTON
+=========================*/
+
+.trial-buttons .btn-outline-light{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:14px 32px;
+
+    background:rgba(255,255,255,.08);
+    color:#fff;
+
+    border:1.5px solid rgba(255,255,255,.28);
+
+    border-radius:8px;
+
+    font-size:16px;
+    font-weight:600;
+
+    transition:.25s ease;
+}
+
+.trial-buttons .btn-outline-light:hover{
+    background:rgba(255,255,255,.16);
+    border-color:rgba(255,255,255,.45);
+    transform:translateY(-2px);
+}
+
+/*=========================
+Responsive
+=========================*/
+
+@media (max-width:768px){
+
+.receptionist-trial{
+    padding:40px 20px;
+}
+
+.trial-inner h2{
+    font-size:30px;
+}
+
+.trial-inner p{
+    font-size:15px;
+}
+
+.trial-buttons{
+    flex-direction:column;
+}
+
+.trial-buttons a{
+    width:100%;
+    justify-content:center;
+}
+
+}</style>
+
+    <section class="section" style="background:var(--bg-secondary);">
+    <div class="container">
+
+        <div class="section-header">
+            <div class="section-eyebrow">Why ANVIQ AI Receptionist?</div>
+            <h2 class="heading-1">
+                The bottleneck that slows every OPD,
+                <span class="gradient-text">eliminated.</span>
+            </h2>
+        </div>
+
+        <div class="card receptionist-intro">
+            <p class="body-md">
+                <strong>Every morning, the queue builds before the doors open.</strong>
+                Walk-in patients wait while receptionists manually transcribe details from ID cards,
+                one field at a time. The bottleneck delays how quickly patients can be seen by doctors.
+                ANVIQ AI Receptionist eliminates that bottleneck entirely.
+            </p>
+        </div>
+
+        <div class="grid-2 receptionist-benefits">
+
+            <!-- Card 1 -->
+            <div class="card receptionist-benefit-card">
+
+                <div class="card-icon">
+                    <i class="bi bi-stopwatch"></i>
+                </div>
+
+                <div class="benefit-content">
+                    <h3 class="heading-3">Under 60 seconds</h3>
+                    <p class="body-sm">
+                        From card scan to queue, faster than filling any form. What used to take 10 minutes now takes less than a minute.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card receptionist-benefit-card">
+
+                <div class="card-icon">
+                    <i class="bi bi-keyboard"></i>
+                </div>
+
+                <div class="benefit-content">
+                    <h3 class="heading-3">Zero manual entry</h3>
+                    <p class="body-sm">
+                        Name, date of birth, gender, and address are extracted automatically from the ID card. No typing, no transcription errors.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card receptionist-benefit-card">
+
+                <div class="card-icon">
+                    <i class="bi bi-link-45deg"></i>
+                </div>
+
+                <div class="benefit-content">
+                    <h3 class="heading-3">Live HIS/EMR integration</h3>
+                    <p class="body-sm">
+                        Patient ID and encounter are created via API instantly. The record is in your system before the patient reaches the doctor's room.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card receptionist-benefit-card">
+
+                <div class="card-icon">
+                    <i class="bi bi-hospital"></i>
+                </div>
+
+                <div class="benefit-content">
+                    <h3 class="heading-3">Every clinic, every volume</h3>
+                    <p class="body-sm">
+                        Saves time in any OPD. Transformative for high-footfall hospitals where every second at registration counts.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card receptionist-benefit-card">
+
+                <div class="card-icon">
+                    <i class="bi bi-globe-americas"></i>
+                </div>
+
+                <div class="benefit-content">
+                    <h3 class="heading-3">Multi-site consistent</h3>
+                    <p class="body-sm">
+                        One patient record across all clinic locations from day one. No duplicate registrations, no fragmented history.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Card 6 -->
+            <div class="card receptionist-benefit-card">
+
+                <div class="card-icon">
+                    <i class="bi bi-file-earmark-text"></i>
+                </div>
+
+                <div class="benefit-content">
+                    <h3 class="heading-3">Multiple ID types accepted</h3>
+                    <p class="body-sm">
+                        Accepts Aadhaar, ABHA card, or driving license. Works with whatever ID the patient brings to the clinic.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<style>/* ===========================
+   Receptionist Intro
+=========================== */
+.receptionist-benefit-card.card{
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:flex-start !important;
+}
+.receptionist-intro{
+    padding:24px 28px !important;
+    margin-bottom:34px !important;
+    border-left:4px solid var(--brand-royal) !important;
+}
+
+.receptionist-intro p{
+    margin:0 !important;
+    color:var(--text-secondary) !important;
+    line-height:1.8 !important;
+}
+
+.receptionist-intro strong{
+    color:var(--text-primary) !important;
+}
+
+/* ===========================
+   Benefits Grid
+=========================== */
+
+.receptionist-benefits{
+    gap:24px !important;
+}
+
+/* ===========================
+   Benefit Card
+=========================== */
+
+.receptionist-benefit-card{
+    display:flex !important;
+    align-items:flex-start !important;
+    gap:18px !important;
+
+    padding:28px !important;
+
+    border:1px solid var(--border-color) !important;
+
+    transition:.25s ease !important;
+}
+
+.receptionist-benefit-card:hover{
+    transform:translateY(-4px) !important;
+    border-color:rgba(59,130,246,.18) !important;
+    box-shadow:0 12px 30px rgba(15,23,42,.08) !important;
+}
+
+/* ===========================
+   Icon
+=========================== */
+
+.receptionist-benefit-card .card-icon{
+    width:48px !important;
+    height:48px !important;
+    min-width:48px !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    border-radius:14px !important;
+
+    background:#EEF4FF !important;
+
+    margin-top:2px !important;
+
+    flex-shrink:0 !important;
+}
+
+.receptionist-benefit-card .card-icon i{
+    font-size:20px !important;
+    color:var(--brand-royal) !important;
+}
+
+/* ===========================
+   Content
+=========================== */
+
+.receptionist-benefit-card .benefit-content{
+    flex:1 !important;
+}
+
+.receptionist-benefit-card .benefit-content h3{
+    margin:0 0 10px !important;
+    line-height:1.25 !important;
+}
+
+.receptionist-benefit-card .benefit-content p{
+    margin:0 !important;
+    color:var(--text-secondary) !important;
+    line-height:1.75 !important;
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media (max-width:768px){
+
+    .receptionist-benefit-card{
+        padding:22px !important;
+        gap:16px !important;
+    }
+
+    .receptionist-benefit-card .card-icon{
+        width:42px !important;
+        height:42px !important;
+        min-width:42px !important;
+    }
+
+    .receptionist-benefit-card .card-icon i{
+        font-size:18px !important;
+    }
+
+}</style>
+
+   <section class="section receptionist-stats-section">
+    <div class="container">
+
+        <div class="receptionist-stats">
+
+            <!-- Left -->
+            <div class="receptionist-stats-left">
+
+                <div class="heading-1 gradient-text">
+                    Registration Time
+                </div>
+
+                <div class="time-comparison">
+
+                    <span class="old-time">10 min</span>
+
+                    <span class="time-arrow">
+                        <i class="bi bi-arrow-right">→</i>
+                    </span>
+
+                    <span class="new-time">60 sec</span>
+
+                </div>
+
+                <h2 class="heading-2">
+                    <span class="gradient-text">Zero typing.</span>
+                    Zero forms.
+                    Zero wait.
+                </h2>
+
+                <p class="body-md integrations-title">
+                    Integrates with your existing systems
+                </p>
+
+                <div class="integration-tags">
+
+                    <span>Your HIS/EMR</span>
+                    <span>OPD Queue System</span>
+                    <span>ANVIQ AI Scribe</span>
+                    <span>ANVIQ AI Rx</span>
+
+                </div>
+
+            </div>
+
+            <!-- Right -->
+            <div class="receptionist-stats-grid">
+
+                <div class="card receptionist-stat-card">
+                    <h3>&lt;60s</h3>
+                    <p>From card scan to patient in queue</p>
+                </div>
+
+                <div class="card receptionist-stat-card">
+                    <h3>0</h3>
+                    <p>Manual data entry fields</p>
+                </div>
+
+                <div class="card receptionist-stat-card">
+                    <h3>3</h3>
+                    <p>ID types supported: Aadhaar, ABHA, License</p>
+                </div>
+
+                <div class="card receptionist-stat-card">
+                    <h3>48h</h3>
+                    <p>Setup time. No migration required.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<style>/*=========================================
+RECEPTIONIST STATS
+=========================================*/
+
+.gradient-text{
+    background:linear-gradient(135deg,#F2572B,#F2A43B);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.receptionist-stats-section{
+    background:linear-gradient(
+        135deg,
+        #122056 0%,
+        #1a2b73 55%,
+        #122056 100%
+    );
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+}
+
+.receptionist-stats{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+/*==========================
+Left
+==========================*/
+
+.receptionist-stats-left .section-eyebrow{
+    color:rgba(255,255,255,.65);
+    margin-bottom:22px;
+}
+
+.time-comparison{
+    display:flex;
+    align-items:center;
+    gap:22px;
+    margin-bottom:28px;
+}
+
+.old-time{
+    font-size:clamp(2.8rem,5vw,4rem);
+    font-weight:800;
+    color:rgba(255,255,255,.28);
+    text-decoration:line-through;
+}
+
+.time-arrow{
+    font-size:34px;
+    color:rgba(255,255,255,.35);
+    transition:.35s ease;
+}
+
+.new-time{
+    font-size:clamp(2.8rem,5vw,4rem);
+    font-weight:800;
+    color:#F2572B;
+}
+
+.receptionist-stats-left .heading-2{
+    color:#fff;
+    max-width:520px;
+    margin-bottom:32px;
+}
+
+.integrations-title{
+    color:rgba(255,255,255,.65);
+    margin-bottom:16px;
+}
+
+/*==========================
+Integration Pills
+==========================*/
+
+.integration-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.integration-tags span{
+    padding:10px 18px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.08);
+    font-size:14px;
+    color:#fff;
+    font-weight:600;
+
+    cursor:pointer;
+    transition:all .35s ease;
+}
+
+.integration-tags span:hover{
+    transform:translateY(-4px);
+    background:rgba(255,255,255,.14);
+    border-color:rgba(255,255,255,.25);
+    box-shadow:0 10px 24px rgba(0,0,0,.18);
+}
+
+/*==========================
+Right Grid
+==========================*/
+
+.receptionist-stats-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+/*==========================
+Stat Card
+==========================*/
+
+.receptionist-stat-card{
+    position:relative;
+    overflow:hidden;
+
+    padding:32px 24px !important;
+    text-align:center;
+
+    background:rgba(255,255,255,.08) !important;
+    border:1px solid rgba(255,255,255,.10) !important;
+    backdrop-filter:blur(10px);
+
+    cursor:pointer;
+    transition:all .35s ease;
+}
+
+/* Glow Overlay */
+
+.receptionist-stat-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+
+    background:linear-gradient(
+        135deg,
+        rgba(242,87,43,.12),
+        transparent 60%
+    );
+
+    opacity:0;
+    transition:.35s ease;
+    pointer-events:none;
+}
+
+/* Hover */
+
+.receptionist-stat-card:hover{
+    transform:translateY(-8px);
+    background:rgba(255,255,255,.11) !important;
+    border-color:rgba(255,255,255,.22) !important;
+    box-shadow:0 20px 42px rgba(0,0,0,.22);
+}
+
+.receptionist-stat-card:hover::before{
+    opacity:1;
+}
+
+/* Number */
+
+.receptionist-stat-card h3{
+    margin:0 0 10px;
+    font-size:44px;
+    font-weight:800;
+    color:#fff;
+
+    position:relative;
+    z-index:1;
+
+    transition:all .35s ease;
+}
+
+.receptionist-stat-card:hover h3{
+    color:#F2572B;
+    transform:scale(1.08);
+}
+
+/* Description */
+
+.receptionist-stat-card p{
+    margin:0;
+    color:rgba(255,255,255,.72);
+    line-height:1.7;
+    font-size:15px;
+
+    position:relative;
+    z-index:1;
+}
+
+/*==========================
+Responsive
+==========================*/
+
+@media(max-width:991px){
+
+    .receptionist-stats{
+        grid-template-columns:1fr;
+        gap:50px;
+    }
+
+    .receptionist-stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:640px){
+
+    .receptionist-stats-grid{
+        grid-template-columns:1fr;
+    }
+
+    .time-comparison{
+        gap:14px;
+    }
+
+    .old-time,
+    .new-time{
+        font-size:2.3rem;
+    }
+
+    .receptionist-stat-card{
+        padding:24px 18px !important;
+    }
+
+    .integration-tags{
+        justify-content:center;
+    }
+
+}</style>
+
+    <section class="cta-section" aria-label="Receptionist CTA">
+      <div class="container" style="position:relative; z-index:1;">
+        <div class="section-eyebrow">Free Trial</div>
+        <h2 class="display-3">Your front desk deserves a
+better first 60 seconds.</h2>
+        <p class="body-lg">Join hospitals and clinics across India who have eliminated registration bottlenecks with ANVIQ AI Receptionist.</p>
+        <div class="cta-actions">
+          <button class="btn btn-accent btn-lg"
+            onclick="window.open('https://dev.arogyalabs.ai/signup?trial=true', '_blank', 'noopener,noreferrer')">
+            Start Free Trial
+          </button>
+          <button class="btn btn-ghost btn-lg" onclick="navigate('pricing')" style="color:var(--brand-dark); border-color:var(--border-color); background:#ffffff;">
+            Request a Demo
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+
   <!-- ============================================================
    PAGE: PRICING
    ============================================================ -->
@@ -2985,71 +4364,54 @@
     <section class="section" id="pricing-radiology" style="display:none;">
       <div class="container">
         <div class="pricing-grid">
-          <div class="pricing-card featured early-access-card">
-            <div class="pricing-name">Early Access</div>
-            <div class="pricing-desc">Full beta access while we refine the platform with your feedback.</div>
-            <div class="pricing-price">
-              <!-- <div class="pricing-amount">$0</div> -->
-              <!-- <div class="pricing-period">Free trial · 100 studies</div> -->
-            </div>
+          <!-- Early Access (white) -->
+          <div class="pricing-card early-access-card">
+            <h3 class="pricing-name">Early Access</h3>
+            <p class="pricing-desc">Full beta access while we refine the platform with your feedback.</p>
             <hr class="pricing-divider">
             <div class="pricing-features">
-              <div class="pricing-feature"><span class="pricing-check">✓</span>CT & MRI analysis</div>
+              <div class="pricing-feature"><span class="pricing-check">✓</span> CT & MRI analysis</div>
               <div class="pricing-feature"><span class="pricing-check">✓</span> Critical result alerting</div>
               <div class="pricing-feature"><span class="pricing-check">✓</span> Auto-report generation</div>
               <div class="pricing-feature"><span class="pricing-check">✓</span> DICOM & PACS integration</div>
               <div class="pricing-feature"><span class="pricing-check">✓</span> Direct line to our product team</div>
             </div>
-            <button class="btn btn-accent"
-  style="width:100%; justify-content:center; background-color:#F2572B; color:white;"
-  onclick="openModal('early-access')">
-  Request Early Access
-</button>
-          </div>
-          <div class="pricing-card featured">
-            <!-- <span class="pricing-badge">Most Popular</span> -->
-            <div class="pricing-name" style="color:white;">Pro</div>
-            <div class="pricing-desc">For individual radiologists and small practices</div>
-            <div class="pricing-price">
-              <!-- <div class="pricing-amount" style="color:var(--brand-teal);">$299</div> -->
-              <!-- <div class="pricing-period">per radiologist / month</div> -->
+            <div style="margin-top:18px;">
+              <button class="btn btn-accent btn-lg" onclick="openModal('early-access')">Request Early Access</button>
             </div>
+          </div>
+
+          <!-- Pro (blue) -->
+          <div class="pricing-card featured">
+            <h3 class="pricing-name">Pro</h3>
+            <p class="pricing-desc">For individual radiologists and small practices.</p>
             <hr class="pricing-divider">
             <div class="pricing-features">
               <div class="pricing-feature"><span class="pricing-check">✓</span> Unlimited studies</div>
               <div class="pricing-feature"><span class="pricing-check">✓</span> All modalities</div>
               <div class="pricing-feature"><span class="pricing-check">✓</span> Longitudinal comparison</div>
               <div class="pricing-feature"><span class="pricing-check">✓</span> Priority support</div>
-              <!-- <div class="pricing-feature"><span class="pricing-check">✓</span> PACS integration</div> -->
-              <!-- <div class="pricing-feature"><span class="pricing-check">✓</span> Longitudinal comparison</div> -->
             </div>
-              <button class="btn btn-accent"
-  style="width:100%; justify-content:center; background-color:#F2572B; color:white;"
-  onclick="openModal('early-access')">
-  Request Access
-</button>
+            <div style="margin-top:18px;">
+              <button class="btn btn-primary btn-lg" onclick="openModal('pro')">Request Access</button>
+            </div>
           </div>
+
+          <!-- Department (blue) -->
           <div class="pricing-card featured">
-            <div class="pricing-name">Department</div>
-            <div class="pricing-desc">For hospital radiology departments and health systems.</div>
-            <div class="pricing-price">
-              <!-- <div class="pricing-amount">Custom</div> -->
-              <!-- <div class="pricing-period">Volume pricing available</div> -->
-            </div>
+            <h3 class="pricing-name">Department</h3>
+            <p class="pricing-desc">For hospital radiology departments and health systems.</p>
             <hr class="pricing-divider">
             <div class="pricing-features">
               <div class="pricing-feature"><span class="pricing-check">✓</span> Everything in Pro</div>
               <div class="pricing-feature"><span class="pricing-check">✓</span> On-premise deployment</div>
-              <div class="pricing-feature"><span class="pricing-check">✓</span> HL7 FHIR integration</div>
-              <!-- <div class="pricing-feature"><span class="pricing-check">✓</span> Custom AI model fine-tuning</div> -->
-              <!-- <div class="pricing-feature"><span class="pricing-check">✓</span> Dedicated Rad AI specialist</div> -->
+              <div class="pricing-feature"><span class="pricing-check">✓</span> HL7 / FHIR integration</div>
             </div>
-              <button class="btn btn-accent"
-  style="width:100%; justify-content:center; background-color:#F2572B; color:white;"
-  onclick="openModal('early-access')">
-  Request Access
-</button>
+            <div style="margin-top:18px;">
+              <button class="btn btn-primary btn-lg" onclick="openModal('department')">Request Access</button>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -4365,8 +5727,9 @@
           <span class="footer-link" onclick="navigate('scribe')">ANVIQ Scribe</span>
           <span class="footer-link" onclick="navigate('rx')">ANVIQ Rx</span>
           <span class="footer-link" onclick="navigate('radiology')">ANVIQ Radiologist</span>
-          <span class="footer-link" style="opacity:.5;cursor:default;">ANVIQ Pharmacist (Soon)</span>
-          <span class="footer-link" style="opacity:.5;cursor:default;">ANVIQ Diagnostician (Soon)</span>
+          <span class="footer-link" onclick="navigate('receptionist')">ANVIQ Receptionist</span>
+          <!-- <span class="footer-link" style="opacity:.5;cursor:default;">ANVIQ Pharmacist (Soon)</span> -->
+          <!-- <span class="footer-link" style="opacity:.5;cursor:default;">ANVIQ Diagnostician (Soon)</span> -->
         </div>
         <!-- Company -->
         <!-- <div class="footer-col">

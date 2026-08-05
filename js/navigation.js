@@ -8,6 +8,7 @@ const pages = [
   'scribe',
   'radiology',
   'rx',
+  'receptionist',
   'pricing',
   'resources',
   'about',

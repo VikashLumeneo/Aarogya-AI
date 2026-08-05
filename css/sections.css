@@ -77,30 +77,47 @@
 
 .journey-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(3, minmax(0, 1fr));
   gap:24px;
 }
 
 .journey-grid-4{
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(4, minmax(0, 1fr));
 }
 
 .journey-card{
-   background:var(--bg-card);
-  border:1px solid var(--border-color);
+  background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(247,248,255,0.96));
+  border:1px solid rgba(91, 101, 221, 0.16);
   border-radius:24px;
   padding:28px;
-  transition:.3s ease;
-
+  transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
   display:flex;
   flex-direction:column;
   height:100%;
+  box-shadow:0 12px 30px rgba(15, 23, 42, 0.06);
+  position:relative;
+  overflow:hidden;
+}
+
+.journey-card::before{
+  content:"";
+  position:absolute;
+  inset:0 auto auto 0;
+  width:100%;
+  height:4px;
+  background:var(--brand-royal);
+  opacity:0;
+  transition:opacity .3s ease;
 }
 
 .journey-card:hover{
   transform:translateY(-6px);
   border-color:var(--brand-royal);
-  box-shadow:var(--shadow-lg);
+  box-shadow:0 16px 44px rgba(242, 87, 43, 0.16);
+}
+
+.journey-card:hover::before{
+  opacity:1;
 }
 
 .journey-card.featured{
@@ -111,8 +128,6 @@
     rgba(61,155,233,.05)
   );
 }
-
-
 
 .journey-card h4{
   font-size:1rem;
@@ -126,40 +141,34 @@
   line-height:1.7;
   margin-bottom:18px;
   font-size:.92rem;
-
   flex:1;
 }
 
 .journey-tags{
-   display:flex;
+  display:flex;
   flex-wrap:wrap;
   gap:8px;
-
   margin-top:auto;
 }
 
 .journey-tags span{
   padding:6px 12px;
   border-radius:999px;
-
   background:#EFF0FB;
   color:#122056;
-/* gap:1px; */
-  font-size:.72rem;
+  font-size:.76rem;
   font-weight:700;
+  letter-spacing:.01em;
 }
 
-@media(max-width:1100px){
-
+@media (max-width: 1024px){
   .journey-grid,
   .journey-grid-4{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(2, minmax(0, 1fr));
   }
-
 }
 
-@media(max-width:768px){
-
+@media (max-width: 768px){
   .journey-grid,
   .journey-grid-4{
     grid-template-columns:1fr;
@@ -167,6 +176,11 @@
 
   .journey-phase-header{
     align-items:flex-start;
+    gap:14px;
+  }
+
+  .journey-card{
+    padding:22px;
   }
 
   .journey-phase-number{
@@ -174,7 +188,6 @@
     height:54px;
     border-radius:14px;
   }
-
 }
 
 /* ===== PLATFORM MATRIX ===== */
@@ -297,20 +310,6 @@
   color:var(--brand-royal)!important;
   font-weight:700;
 }
-
-/* Hover */
-
-.matrix-item{
-   display:flex;
-    align-items:flex-start;
-    gap:12px;
-    margin-bottom:12px;
-}
-
-/* .matrix-item:hover{
-  background:var(--bg-secondary);
-  transform:translateY(-2px);
-} */
 
 /* Responsive */
 
@@ -1085,6 +1084,10 @@
     line-height: 1.3;
     white-space: normal;
     padding: 0 10px;
+  }
+
+  .desktop-nowrap {
+    white-space: normal;
   }
 
   .team-desc{
@@ -2719,3 +2722,804 @@ border-color:#1E2B6A;
     }
 }
 
+/* ============================================================
+   AI RECEPTIONIST HERO
+============================================================ */
+
+.hero-inner{
+    max-width:1400px;
+    margin:0 auto;
+    padding:0 24px;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:70px;
+    align-items:center;
+}
+
+.hero-inner h1{
+    color:#fff;
+    font-size:clamp(2.7rem, 5vw, 4.8rem);
+    line-height:1.08;
+    margin:18px 0 20px;
+    max-width:680px;
+}
+
+.hero-inner h1 em{
+    color:#F2572B;
+    font-style:normal;
+}
+
+.hero-inner p{
+    color:rgba(255,255,255,.78);
+    font-size:1.06rem;
+    line-height:1.8;
+    max-width:640px;
+    margin:0 0 30px;
+}
+
+.hero-ctas{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.btn--orange,
+.btn--white,
+.btn--lg{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    border-radius:14px;
+    line-height:1;
+    font-weight:800;
+    text-decoration:none;
+    transition:.25s ease;
+}
+
+.btn--lg{
+    min-height:52px;
+    padding:0 24px;
+    font-size:15px;
+}
+
+.btn--orange{
+    background:#F2572B;
+    color:#fff;
+    border:1px solid #F2572B;
+    box-shadow:0 12px 30px rgba(242,87,43,.22);
+}
+
+.btn--orange:hover{
+    background:#df4b20;
+    transform:translateY(-2px);
+}
+
+.btn--white{
+    background:#fff;
+    color:#122056;
+    border:1px solid rgba(255,255,255,.85);
+}
+
+.btn--white:hover{
+    background:#f7f8fd;
+    transform:translateY(-2px);
+}
+
+.hero-checks{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px 20px;
+    max-width:660px;
+}
+
+.hero-check{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:rgba(255,255,255,.88);
+    font-size:.94rem;
+    font-weight:700;
+}
+
+.tick{
+    width:22px;
+    height:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#F2572B;
+    color:#fff;
+    flex-shrink:0;
+}
+
+.label-pill--white{
+    background:rgba(255,255,255,.14);
+    color:#fff;
+    border:1px solid rgba(255,255,255,.18);
+    backdrop-filter:blur(8px);
+}
+
+.receptionist-hero{
+    position:relative;
+    min-height:calc(100vh - 90px);
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    padding:110px 0 92px;
+}
+
+.receptionist-hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:72px;
+    align-items:center;
+    padding:0;
+    position:relative;
+    z-index:2;
+    width:100%;
+}
+
+.receptionist-content{
+    max-width:620px;
+}
+
+.receptionist-content .hero-eyebrow{
+    background:rgba(13, 191, 173, .16);
+    border:1px solid rgba(13, 191, 173, .38);
+    color:var(--brand-teal);
+}
+
+.receptionist-content .hero-eyebrow-dot{
+    color:var(--brand-teal);
+}
+
+.receptionist-content .display-2{
+    color:#fff;
+    margin:20px 0 18px;
+    line-height:1.02;
+    letter-spacing:-.04em;
+    font-size:clamp(3rem, 5vw, 5.1rem);
+}
+
+.receptionist-content .gradient-text{
+    background:linear-gradient(
+        135deg,
+        #A5ABEF 0%,
+        #5B65DD 45%,
+        #F2572B 100%
+    );
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.receptionist-content .body-lg{
+    color:rgba(255,255,255,.78);
+    max-width:620px;
+    margin-bottom:34px;
+    line-height:1.78;
+    font-size:1.08rem;
+}
+
+.receptionist-content .hero-actions{
+    display:flex;
+    gap:16px;
+    margin-bottom:34px;
+    flex-wrap:wrap;
+}
+
+.receptionist-content .btn-ghost{
+    border:1px solid rgba(255,255,255,.25);
+    color:#fff;
+    background:rgba(255,255,255,.05);
+}
+
+.receptionist-content .btn-ghost:hover{
+    background:rgba(255,255,255,.12);
+}
+
+.receptionist-content .hero-trust{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px 22px;
+}
+
+.receptionist-content .hero-trust-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:rgba(255,255,255,.86);
+    font-size:.94rem;
+    font-weight:600;
+    padding:0;
+}
+
+.receptionist-content .hero-trust-icon{
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    background:#F2572B;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    flex-shrink:0;
+}
+
+.receptionist-steps{
+    gap:24px;
+    align-items:stretch;
+}
+
+.receptionist-step-card,
+.receptionist-benefit-card{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    border-radius:24px;
+    padding:26px;
+    border:1px solid rgba(18,32,86,.10);
+    box-shadow:var(--shadow-sm);
+}
+
+.receptionist-step-card .card-icon,
+.receptionist-benefit-card .card-icon{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    margin-bottom:18px;
+    background:var(--brand-ice);
+    color:var(--brand-royal);
+    font-size:1.15rem;
+}
+
+.receptionist-step-card h3,
+.receptionist-benefit-card h3{
+    margin-bottom:10px;
+}
+
+.receptionist-step-card p,
+.receptionist-benefit-card p{
+    margin-bottom:18px;
+}
+
+.receptionist-step-card .phone-mock-small{
+    width:100%;
+    max-width:290px;
+    margin:12px auto 0;
+    border-radius:28px;
+    padding:10px;
+    box-shadow:0 18px 40px rgba(18,32,86,.20);
+}
+
+.receptionist-step-card .phone-mock-small .phone-screen{
+    min-height:420px;
+    border-radius:22px;
+}
+
+.receptionist-step-card .phone-mock-small .mock-top{
+    padding:18px 16px;
+    font-size:14px;
+}
+
+.receptionist-step-card .phone-mock-small .phone-content{
+    padding:16px;
+}
+
+.receptionist-step-card .mock-btn-outline{
+    margin-top:auto;
+    border-radius:12px;
+    border:1px solid var(--border-color);
+    background:#fff;
+    color:var(--text-primary);
+    padding:12px 14px;
+    font-size:13px;
+    font-weight:700;
+    text-align:center;
+}
+
+.receptionist-step-card .mock-btn-outline:hover{
+    border-color:var(--brand-royal);
+    color:var(--brand-royal);
+}
+
+.receptionist-step-card .phone-field,
+.receptionist-step-card .form-row,
+.receptionist-step-card .confirm-row{
+    border-radius:12px;
+}
+
+.receptionist-benefits{
+    gap:24px;
+    align-items:stretch;
+}
+
+.receptionist-benefit-card:hover{
+    transform:translateY(-4px);
+    border-color:rgba(242,87,43,.35);
+    box-shadow:var(--shadow-md);
+}
+
+.hero-visual{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+@media(max-width:991px){
+
+.hero-inner{
+    grid-template-columns:1fr;
+    gap:45px;
+    text-align:center;
+}
+
+.hero-inner h1,
+.hero-inner p{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.hero-ctas,
+.hero-checks{
+    justify-content:center;
+}
+
+.hero-checks{
+    grid-template-columns:1fr;
+}
+
+.receptionist-hero{
+    min-height:auto;
+    padding:84px 0 74px;
+}
+
+.receptionist-hero-grid{
+    grid-template-columns:1fr;
+    gap:45px;
+    text-align:center;
+}
+
+.receptionist-content{
+    max-width:100%;
+}
+
+.receptionist-content .display-2,
+.receptionist-content .body-lg{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.receptionist-content .hero-actions{
+    justify-content:center;
+}
+
+.receptionist-content .hero-trust{
+    grid-template-columns:1fr;
+}
+
+.hero-visual{
+    order:-1;
+}
+
+}
+
+@media(max-width:768px){
+
+.receptionist-hero{
+    min-height:auto;
+    padding:72px 0 58px;
+}
+
+.hero-inner{
+    padding:0 16px;
+}
+
+.hero-ctas{
+    flex-direction:column;
+}
+
+.btn--orange,
+.btn--white,
+.btn--lg{
+    width:100%;
+}
+
+.receptionist-hero-grid{
+    padding:0;
+}
+
+.receptionist-content .hero-actions{
+    flex-direction:column;
+}
+
+.receptionist-content .btn{
+    width:100%;
+}
+
+}
+/* ============================================================
+   PHONE MOCKUP
+============================================================ */
+
+.phone-mock{
+    width:260px;
+    max-width:100%;
+    background:#fff;
+    border-radius:26px;
+    padding:8px;
+    box-shadow:
+        0 12px 32px rgba(13,27,42,.16),
+        0 0 0 1px rgba(13,27,42,.05);
+    position:relative;
+}
+
+.phone-mock::before{
+    content:"";
+    position:absolute;
+    top:8px;
+    left:50%;
+    transform:translateX(-50%);
+    width:120px;
+    height:24px;
+    border-radius:0 0 18px 18px;
+    /* background:#000; */
+    z-index:20;
+}
+
+.phone-screen{
+    background:var(--bg-secondary);
+    border-radius:19px;
+    overflow:hidden;
+    min-height:496px;
+    display:flex;
+    flex-direction:column;
+}
+
+.mock-top{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:18px 16px 12px;
+    background:var(--brand-dark);
+    font-size:13px;
+    font-weight:700;
+    color:#fff;
+}
+
+.mock-top .dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--brand-accent);
+    flex-shrink:0;
+}
+
+.phone-content{
+    padding:16px;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+.scan-frame{
+    border:2px dashed var(--brand-accent);
+    border-radius:10px;
+    padding:18px;
+    text-align:center;
+    background:rgba(242,87,43,.04);
+    position:relative;
+    margin-bottom:12px;
+}
+
+.scan-line-inside{
+    font-size:10px;
+    color:var(--brand-accent);
+    font-weight:600;
+    margin-top:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+}
+
+.aadhaar-mock{
+    background:linear-gradient(120deg, #1565C0, #0D47A1);
+    border-radius:8px;
+    padding:10px 12px;
+    color:#fff;
+    text-align:left;
+    font-size:9px;
+}
+
+.aadhaar-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:6px;
+}
+
+.aadhaar-badge{
+    font-size:8px;
+    font-weight:700;
+    letter-spacing:.05em;
+    opacity:.8;
+}
+
+.aadhaar-type{
+    font-size:10px;
+    color:#7B8398;
+}
+
+.aadhaar-name{
+    font-size:12px;
+    font-weight:700;
+    margin:4px 0 2px;
+}
+
+.aadhaar-info{
+    margin-top:6px;
+    color:#6B7280;
+    font-size:13px;
+}
+
+.aadhaar-number{
+    font-size:10px;
+    letter-spacing:.15em;
+    opacity:.75;
+}
+
+.phone-field{
+    background:#fff;
+    border:1px solid var(--border-color);
+    border-radius:6px;
+    padding:9px 12px;
+    margin-bottom:8px;
+    font-size:11px;
+    color:var(--text-secondary);
+    display:flex;
+    justify-content:space-between;
+}
+
+.f-label{
+    color:var(--text-muted);
+}
+
+.field-val{
+    font-weight:600;
+    color:var(--text-primary);
+}
+
+.mock-btn,
+.mock-btn-outline{
+    margin-top:auto;
+    border-radius:8px;
+    padding:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    text-align:center;
+    font-size:13px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.mock-btn{
+    background:var(--brand-accent);
+    color:#fff;
+    border:none;
+}
+
+.mock-btn:hover{
+    background:#df4b20;
+    transform:translateY(-2px);
+}
+
+.mock-btn-outline{
+    background:transparent;
+    color:var(--text-secondary);
+    border:1.5px solid var(--border-color);
+}
+
+@keyframes pulseDot{
+
+0%{
+opacity:1;
+transform:scale(1);
+}
+
+50%{
+opacity:.5;
+transform:scale(1.5);
+}
+
+100%{
+opacity:1;
+transform:scale(1);
+}
+
+}
+/* ============================================================
+   AI RECEPTIONIST HERO RESPONSIVE
+============================================================ */
+
+.hero-visual{
+    position:relative;
+}
+
+.hero-visual::before{
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    background:radial-gradient(
+        rgba(61,155,233,.18),
+        transparent 70%
+    );
+    filter:blur(10px);
+    z-index:-1;
+}
+
+.receptionist-hero .phone-mock{
+    animation:none;
+}
+
+@keyframes floatPhone{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+.scan-frame{
+    overflow:hidden;
+}
+
+.scan-frame::after{
+    content:"";
+    position:absolute;
+    left:-100%;
+    top:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(13,191,173,.22),
+        transparent
+    );
+    animation:scanMove 2.5s linear infinite;
+}
+
+@keyframes scanMove{
+
+    from{
+        left:-100%;
+    }
+
+    to{
+        left:100%;
+    }
+
+}
+
+.phone-field{
+    transition:none;
+}
+
+.aadhaar-mock{
+    transition:none;
+}
+
+@media (max-width:1200px){
+
+    .receptionist-hero-grid{
+        gap:50px;
+    }
+
+    .phone-mock{
+        width:340px;
+    }
+
+}
+
+@media (max-width:991px){
+
+    .hero-visual{
+        margin:auto;
+    }
+
+    .phone-mock{
+        width:340px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .hero-visual::before{
+        width:280px;
+        height:280px;
+    }
+
+    .phone-mock{
+        width:300px;
+        padding:10px;
+        border-radius:28px;
+    }
+
+    .phone-screen{
+        min-height:auto;
+        border-radius:22px;
+    }
+
+    .mock-top{
+        padding:18px 16px;
+        font-size:14px;
+    }
+
+    .phone-content{
+        padding:16px;
+    }
+
+    .aadhaar-name{
+        font-size:16px;
+    }
+
+    .aadhaar-number{
+        font-size:13px;
+        letter-spacing:1px;
+    }
+
+    .phone-field{
+        padding:12px 14px;
+    }
+
+    .field-val{
+        font-size:13px;
+    }
+
+    .mock-btn{
+        padding:14px;
+        font-size:15px;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .phone-mock{
+        width:100%;
+        max-width:310px;
+    }
+
+    .hero-visual{
+        width:100%;
+        display:flex;
+        justify-content:center;
+    }
+
+    .receptionist-content .product-title{
+        font-size:clamp(2rem,9vw,2.7rem);
+    }
+
+    .receptionist-content .product-subtitle{
+        font-size:15px;
+    }
+
+}
