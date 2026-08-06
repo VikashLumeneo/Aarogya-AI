@@ -20,6 +20,12 @@ const pages = [
 function navigate(page, pushHistory = true) {
   closeMobileNav();
 
+  // Top banner control - Sirf 'receptionist' page par dikhega
+  const banner = document.getElementById('receptionistBanner');
+  if (banner) {
+    banner.style.display = (page === 'receptionist') ? 'block' : 'none';
+  }
+
   pages.forEach((p) => {
     const el = document.getElementById('page-' + p);
     const link = document.getElementById('nav-' + p);
