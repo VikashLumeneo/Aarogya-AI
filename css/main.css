@@ -415,12 +415,13 @@ ul { list-style: none; }
   border-color: transparent;
   box-shadow: 0 10px 26px rgba(242, 87, 43, 0.24);
 }
-.btn-accent:hover {
-  background: linear-gradient(135deg, #ff8f5a 0%, #f2572b 55%, #ff9f62 100%);
-  border-color: transparent;
+/* .btn-accent:hover {
+  background: white;
+  border-color: #F2572B;
+  color: #F2572B;
   transform: translateY(-2px);
   box-shadow: 0 16px 34px rgba(242, 87, 43, 0.34);
-}
+} */
 
 .btn-secondary {
   background: var(--btn-secondary-bg); color: var(--btn-secondary-fg);
