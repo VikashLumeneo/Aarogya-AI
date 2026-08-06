@@ -410,7 +410,7 @@ ul { list-style: none; }
 .btn-primary:hover { background: var(--btn-primary-hover); border-color: var(--btn-primary-hover); transform: translateY(-1px); box-shadow: var(--shadow-md); }
 
 .btn-accent {
-  background: linear-gradient(135deg, #ff7d4a 0%, #f2572b 55%, #ff934f 100%);
+  background: #F2572B;
   color: var(--btn-accent-fg);
   border-color: transparent;
   box-shadow: 0 10px 26px rgba(242, 87, 43, 0.24);
@@ -802,9 +802,8 @@ ul { list-style: none; }
    CTA SECTION
    ============================================================ */
 .cta-section{
-  background:
-    radial-gradient(circle at top center, rgba(242, 87, 43, 0.12), transparent 42%),
-    linear-gradient(180deg, #ffffff 0%, #fffaf7 100%);
+  background:#ffffff;
+  
   padding:100px 0;
   text-align:center;
   position:relative;
@@ -817,13 +816,13 @@ ul { list-style: none; }
   position:absolute;
   inset:auto 12% -20% 12%;
   height:180px;
-  background: radial-gradient(circle, rgba(242, 87, 43, 0.14), transparent 68%);
+  background: #ffffff;
   filter: blur(12px);
   pointer-events:none;
 }
 
 .cta-section h2{
-  color:transparent;
+  color:#f2572b;
   background: linear-gradient(135deg, #ff7a46 0%, #f2572b 45%, #ffb36d 100%);
   -webkit-background-clip: text;
   background-clip: text;

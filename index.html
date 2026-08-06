@@ -12,6 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&family=Lato:wght@300;400;700;900&display=swap"
     rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/sections.css">
@@ -2828,7 +2829,7 @@
               <div style="text-align:center;">
 
                 <div class="confirm-check">
-                  <i class="bi bi-check-lg">✓</i>
+                  <i class="bi bi-check-lg"></i>
                 </div>
 
                 <div style="font-size:11px;font-weight:700;color:#065F46;text-transform:uppercase;margin-bottom:8px;">
@@ -3095,7 +3096,10 @@
     border-radius:8px;
     font-size:13px;
     font-weight:700;
-    transition:.25s;
+    pointer-events: none;
+    cursor: default;
+    transform: none !important;
+    transition: none;
 }
 
 .mock-btn{
@@ -3115,8 +3119,8 @@
 }
 
 .mock-btn-outline:hover{
-    border-color:var(--brand-accent);
-    color:var(--brand-accent);
+    border-color:#F2572B;
+    color:#F2572B;
 }
 
 .confirm-check{
@@ -3559,7 +3563,7 @@ Responsive
 
     border-radius:14px !important;
 
-    background:#EEF4FF !important;
+    background:#FFECE8 !important;
 
     margin-top:2px !important;
 
@@ -3568,7 +3572,7 @@ Responsive
 
 .receptionist-benefit-card .card-icon i{
     font-size:20px !important;
-    color:var(--brand-royal) !important;
+    color:#F2572B !important;
 }
 
 /* ===========================
@@ -5065,7 +5069,7 @@ better first 60 seconds.</h2>
 
       <div class="container" style="position:relative;z-index:1;">
 
-        <h2 class="display-3" style="color:black;">
+        <h2 class="display-3">
           Transform healthcare with intelligent AI
         </h2>
 
