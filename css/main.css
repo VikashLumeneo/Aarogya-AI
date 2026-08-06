@@ -1287,36 +1287,41 @@ body.nav-open {
 }
 
 /* ============================================================
-   AI RECEPTIONIST MOBILE RESPONSIVE (Updated Spacing & Layout)
+   AI RECEPTIONIST MOBILE RESPONSIVE (White Space & Spacing Fixes)
    ============================================================ */
 @media (max-width: 768px) {
 
-  /* 1. Hero Section & Badge Top Shift Fix */
-  #page-receptionist .receptionist-hero {
-    min-height: auto;
-    padding-top: 165px !important; /* Banner/Nav ke niche proper space */
-    padding-bottom: 40px;
+  /* Page Horizontal Scroll / White Space Stop */
+  #page-receptionist {
+    overflow-x: hidden;
   }
 
-  #page-receptionist .receptionist-content .product-badge {
-    margin-top: 10px; /* Badge ko thoda niche shift kiya */
-    margin-bottom: 16px;
+  /* 1. FIX: "Why ANVIQ" Negative Margin Fix (Ab Upar Proper Gap Rahega) */
+  #page-receptionist .section-header {
+    margin-top: 0 !important;
+    margin-bottom: 28px !important;
   }
 
   #page-receptionist .section {
-    padding: 50px 0;
+    padding: 60px 0 !important;
   }
 
   #page-receptionist .container {
     padding: 0 16px;
   }
 
-  /* 2. "How It Works" Section Top Spacing Increase */
-  #page-receptionist section[aria-label="How ANVIQ Receptionist works"] {
-    padding-top: 75px !important; /* How It Works ke upar space badhaya */
+  /* 2. Hero Section Clearance */
+  #page-receptionist .receptionist-hero {
+    min-height: auto;
+    padding-top: 165px !important;
+    padding-bottom: 40px;
   }
 
-  /* Hero Section Layout */
+  #page-receptionist .receptionist-content .product-badge {
+    margin-top: 10px;
+    margin-bottom: 16px;
+  }
+
   #page-receptionist .receptionist-hero-grid {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -1376,18 +1381,13 @@ body.nav-open {
     justify-content: center;
   }
 
-  #page-receptionist .phone-mock {
-    width: 100%;
-    max-width: 270px;
-  }
-
-  /* 3. Side-by-Side Horizontal Scroll for "How It Works" Steps */
+  /* 3. FIX: "How It Works" Horizontal Scroll & Inner Card Overflow (White Space Fix) */
   #page-receptionist .steps-row {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     justify-content: flex-start !important;
-    align-items: flex-start !important;
+    align-items: stretch !important;
 
     overflow-x: auto !important;
     overflow-y: hidden !important;
@@ -1396,8 +1396,10 @@ body.nav-open {
     scrollbar-width: none !important;
 
     gap: 16px !important;
-    padding: 8px 16px 20px !important;
-    margin: 0 -16px !important;
+    padding: 12px 16px 24px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   #page-receptionist .steps-row::-webkit-scrollbar {
@@ -1405,15 +1407,55 @@ body.nav-open {
   }
 
   #page-receptionist .step-col {
-    flex: 0 0 82% !important;
-    width: 82% !important;
+    flex: 0 0 260px !important;
+    width: 260px !important;
     min-width: 260px !important;
-    max-width: 280px !important;
+    max-width: 260px !important;
     scroll-snap-align: center !important;
+    box-sizing: border-box !important;
   }
 
   #page-receptionist .step-arrow {
     display: none !important;
+  }
+
+  /* Inner Card Content Overflow Control */
+  #page-receptionist .phone-mock {
+    width: 100% !important;
+    max-width: 260px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  #page-receptionist .phone-screen {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  #page-receptionist .phone-content {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    padding: 12px !important;
+  }
+
+  #page-receptionist .form-row,
+  #page-receptionist .confirm-row {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    gap: 4px !important;
+    overflow: hidden !important;
+    padding: 8px 10px !important;
+  }
+
+  #page-receptionist .f-val,
+  #page-receptionist .c-val {
+    font-size: 10px !important;
+    text-align: right !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
   }
 
   #page-receptionist .mockup-caption {
@@ -1432,7 +1474,7 @@ body.nav-open {
 
   /* Free Trial Section */
   #page-receptionist .receptionist-trial {
-    padding: 40px 16px;
+    padding: 45px 16px;
   }
 
   #page-receptionist .trial-inner h2 {
