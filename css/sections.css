@@ -2855,7 +2855,8 @@ border-color:#1E2B6A;
     display:grid;
     grid-template-columns:1.05fr .95fr;
     gap:72px;
-    align-items:center;
+    /* align-items:center; */
+    text-align:left;
     padding:0;
     position:relative;
     z-index:2;
@@ -2864,6 +2865,7 @@ border-color:#1E2B6A;
 
 .receptionist-content{
     max-width:620px;
+    text-align:left;
 }
 
 .receptionist-content .hero-eyebrow{
@@ -2878,6 +2880,7 @@ border-color:#1E2B6A;
 
 .receptionist-content .display-2{
     color:#fff;
+    text-align:left;
     margin:20px 0 18px;
     line-height:1.02;
     letter-spacing:-.04em;
@@ -2902,11 +2905,14 @@ border-color:#1E2B6A;
     margin-bottom:34px;
     line-height:1.78;
     font-size:1.08rem;
+     text-align:left;
+    margin:0 0 34px;
 }
 
-.receptionist-content .hero-actions{
+.receptionist-content .hero-actions1{
     display:flex;
     gap:16px;
+     justify-content:flex-start;
     margin-bottom:34px;
     flex-wrap:wrap;
 }
@@ -2921,10 +2927,11 @@ border-color:#1E2B6A;
     background:rgba(255,255,255,.12);
 }
 
-.receptionist-content .hero-trust{
+.receptionist-content .hero-trust1{
     display:grid;
     grid-template-columns:repeat(2,minmax(0,1fr));
     gap:14px 22px;
+    justify-items:start;
 }
 
 .receptionist-content .hero-trust-item{
@@ -2934,6 +2941,7 @@ border-color:#1E2B6A;
     color:rgba(255,255,255,.86);
     font-size:.94rem;
     font-weight:600;
+      justify-content:flex-start;
     padding:0;
 }
 
@@ -3090,12 +3098,12 @@ border-color:#1E2B6A;
 
 .receptionist-content .display-2,
 .receptionist-content .body-lg{
-    margin-left:auto;
-    margin-right:auto;
+    margin-left:0;
+    margin-right:0;
 }
 
 .receptionist-content .hero-actions{
-    justify-content:center;
+    justify-content:flex-start;
 }
 
 .receptionist-content .hero-trust{
@@ -3218,7 +3226,7 @@ border-color:#1E2B6A;
 
 .scan-line-inside{
     font-size:10px;
-    color:var(--brand-accent);
+    color:#F2572B;
     font-weight:600;
     margin-top:10px;
     display:flex;
