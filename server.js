@@ -1,7 +1,7 @@
 /**
  * Local server for the ANVIQ website.
  *   npm install      (first time only)
- *   npm start        → http://localhost:3000
+ *   npm start        → http://localhost:4545
  * Serves the website and the form backend (/api/early-access, /api/notify).
  */
 const http = require('http');
@@ -23,7 +23,7 @@ const API = {
 };
 
 const ROOT = __dirname;
-const PORT = Number(process.env.PORT || 3000);
+const PORT = Number(process.env.PORT || 4545);   // own port, so it doesn't clash with other apps on 3000
 const TYPES = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json',
   '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.gif': 'image/gif',
@@ -32,7 +32,7 @@ const TYPES = {
 // never serve these over HTTP
 const BLOCKED = /^\/(\.env|\.git|lib|api|data|node_modules|server\.js|package)/i;
 
-http.createServer((req, res) => {
+const server = http.createServer((req, res) => {
   const url = decodeURIComponent((req.url || '/').split('?')[0]);
 
   if (API[url]) return API[url](req, res);
@@ -53,5 +53,15 @@ http.createServer((req, res) => {
 }).listen(PORT, () => {
   console.log(`\nANVIQ website running at http://localhost:${PORT}`);
   console.log(`Form emails go to: ${TO_EMAIL}`);
-  if (!smtpConfigured()) console.log('⚠  SMTP not set up yet — emails will be printed here, not sent. Fill in .env (see .env.example).');
+  if (!smtpConfigured()) console.log('⚠  SMTP_PASS missing in .env — emails will be printed here, not sent.');
+  else console.log(`Sending with Gmail account: ${require('./lib/mailer').SMTP_USER}`);
+});
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`\n✖ Port ${PORT} is already used by another program. Close it, or run with another port:  set PORT=4546 && npm start`);
+  } else {
+    console.error(err);
+  }
+  process.exit(1);
 });

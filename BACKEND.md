@@ -25,8 +25,8 @@ Spam protection: hidden honeypot field, 5 requests / 10 min per IP, server-side 
 ```bash
 npm start
 ```
-Open http://localhost:3000 — website + backend together.
-You can still use Live Server (port 5502): forms automatically send to http://localhost:3000,
+Open http://localhost:4545 — website + backend together.
+You can still use Live Server (port 5502): forms automatically send to http://localhost:4545,
 so keep `npm start` running in a terminal.
 
 If `SMTP_PASS` is empty, nothing is sent: the email is printed in the terminal instead.

@@ -84,10 +84,14 @@ function closeModal(e) {
  * Same server in production (/api/...). When the site is opened with VS Code Live Server
  * (port 5502) or as a file, send to the local backend started with "npm start".
  */
-const API_BASE =
-  location.protocol === 'file:' || location.port === '5502' || location.port === '5500'
-    ? 'http://localhost:3000'
-    : '';
+const API_BASE = (() => {
+  const BACKEND = 'http://localhost:4545';   // started with "npm start"
+  if (location.protocol === 'file:') return BACKEND;
+  const local = ['localhost', '127.0.0.1'].includes(location.hostname);
+  // Live Server (5500, 5501, 5502…) has no backend: use the one started with "npm start"
+  if (local && location.port !== '4545') return BACKEND;
+  return '';
+})();
 
 async function postForm(name, data) {
   let res;
@@ -100,7 +104,11 @@ async function postForm(name, data) {
   } catch (err) {
     throw new Error('Cannot reach the server. Is the backend running? (npm start)');
   }
-  const out = await res.json().catch(() => ({}));
+  const out = await res.json().catch(() => null);
+  if (!out) {
+    console.error('[form] backend did not return JSON', res.status, res.url);
+    throw new Error(`Backend not found (${res.status}). Run "npm start" in the arogya-ai folder`);
+  }
   if (!res.ok || !out.ok) throw new Error(out.error || 'Something went wrong. Please try again.');
   return out;
 }
