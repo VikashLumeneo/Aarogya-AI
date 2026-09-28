@@ -869,17 +869,35 @@ footer {
    MODAL / SIGNUP
    ============================================================ */
 .modal-overlay {
-  position: fixed; inset: 0; z-index: 2000;
+  position: fixed; inset: 0; z-index: 6000;              /* above the floating navbar */
   background: rgba(9,33,30,.7); backdrop-filter: blur(8px);
-  display: none; align-items: center; justify-content: center; padding: 24px;
+  display: none; align-items: center; justify-content: center;
+  padding: clamp(12px, 3vh, 32px) 16px;
+  overflow-y: auto; overscroll-behavior: contain;          /* scroll inside the popup, not the page */
 }
 .modal-overlay.open { display: flex; }
 .modal {
   background: var(--bg-card); border: 1px solid var(--border-color);
-  border-radius: var(--radius-xl); padding: 48px 40px;
+  border-radius: var(--radius-xl);
+  padding: clamp(24px, 4vh, 44px) clamp(20px, 4vw, 40px);
   max-width: 520px; width: 100%; position: relative;
+  max-height: calc(100dvh - 2 * clamp(12px, 3vh, 32px));
+  overflow-y: auto;
+  margin: auto;
   box-shadow: var(--shadow-xl);
   animation: modalIn .3s ease;
+}
+.modal .input-group { margin-bottom: clamp(10px, 2vh, 18px); }
+.modal .heading-2 { font-size: clamp(1.4rem, 3.2vw, 2rem); margin-bottom: clamp(10px, 2vh, 18px) !important; }
+.modal-name-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 480px) {
+  .modal-name-row { grid-template-columns: 1fr; gap: 0; }
+  .modal { border-radius: 20px; }
+}
+@media (max-height: 700px) {
+  .modal .input-field { padding: 9px 14px; }
+  .modal .input-label { margin-bottom: 4px; }
+  .modal-plan-badge { margin-bottom: 10px; }
 }
 @keyframes modalIn { from { transform: translateY(20px) scale(.97); opacity: 0; } to { transform: none; opacity: 1; } }
 .modal-close {

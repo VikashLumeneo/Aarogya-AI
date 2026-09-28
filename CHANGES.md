@@ -56,6 +56,18 @@
 - Changed: `js/ui.js` (sends the forms), `index.html` (hidden spam-trap fields), `css/resources.css`
 - To undo: restore `js/ui.js` from before this change; the backend files can simply be deleted
 
+### Follow-up: feature comparison table fix (Plans page)
+- Header row was "sticky" inside the table's scroll box, so it slid down, left an empty white gap
+  on top and covered the first row ("AI Chest X-ray") — now fixed
+- Row hover is a soft tint instead of turning the Hospital cell solid dark
+- File: `css/pricing-glass.css`
+
+### Follow-up: "Request Early Access" popup fits every screen
+- Popup was behind the floating navbar and cut off on short screens; now it sits on top, fits the
+  screen height and scrolls inside itself; first/last name side by side on wider screens
+- Page behind stops scrolling while the popup is open
+- Files: `css/main.css`, `index.html`, `js/ui.js`
+
 ## Earlier the same day – CSS cleanup
 - Removed unused CSS, merged dead/duplicate rules, moved inline `<style>` blocks to `css/pages.css`
 

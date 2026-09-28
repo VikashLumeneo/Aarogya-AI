@@ -64,12 +64,16 @@ function showPricingTab(tab) {
 
 function openSignup(plan) {
   document.getElementById('modalPlanBadge').textContent = plan || 'Free Trial';
-  document.getElementById('signupModal').classList.add('open');
-  document.getElementById('signupEmail').focus();
+  const overlay = document.getElementById('signupModal');
+  overlay.classList.add('open');
+  overlay.scrollTop = 0;
+  document.documentElement.style.overflow = 'hidden';   // stop the page behind from scrolling
+  document.getElementById('signupFirst').focus({ preventScroll: true });
 }
 
 function closeSignup() {
   document.getElementById('signupModal').classList.remove('open');
+  document.documentElement.style.overflow = '';
 }
 
 function closeModal(e) {
