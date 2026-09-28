@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Hospital column always highlighted
             if (col === 2) {
 
-                cell.style.background = "#22665D";
+                cell.style.background = "#1E2B6A";
                 cell.style.color = "#fff";
 
             } else {

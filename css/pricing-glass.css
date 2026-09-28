@@ -1,0 +1,231 @@
+/* ============================================================
+   PLANS PAGE: dark glass pricing panel
+   Remove the <link> to css/pricing-glass.css to switch it off.
+   ============================================================ */
+
+/* ---------- Dark teal panel with glowing orbs (full width, joins the hero) ---------- */
+#pricing-scribe{
+  padding-top:0;
+  overflow-x:clip;
+}
+
+#pricing-scribe .pricing-glass-panel{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  /* break out of the 1280px container to fill the whole screen width */
+  margin:0 calc(50% - 50vw) 90px;
+  padding:80px max(24px, calc(50vw - 616px)) 84px;
+  border-radius:0 0 40px 40px;
+  background:
+    radial-gradient(40% 55% at 100% 35%, rgba(45,212,191,.20) 0%, transparent 60%),
+    radial-gradient(40% 60% at 0% 100%, rgba(242,87,43,.14) 0%, transparent 60%),
+    linear-gradient(180deg, #0A3D3A 0%, #0C4A45 45%, #072B29 100%);
+  box-shadow:0 30px 80px rgba(10,61,58,.25);
+}
+
+/* inner glass frame, centred on the content */
+#pricing-scribe .pricing-glass-panel::before{
+  content:"";
+  position:absolute;
+  top:28px;
+  bottom:28px;
+  left:max(12px, calc(50vw - 664px));
+  right:max(12px, calc(50vw - 664px));
+  z-index:-1;
+  border-radius:28px;
+  background:linear-gradient(135deg, rgba(255,255,255,.10) 0%, rgba(255,255,255,.03) 60%);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18);
+  -webkit-backdrop-filter:blur(6px);
+  backdrop-filter:blur(6px);
+}
+
+#pricing-scribe .pg-orb{
+  position:absolute;
+  z-index:-2;
+  border-radius:50%;
+  filter:blur(8px);
+  pointer-events:none;
+}
+#pricing-scribe .pg-orb-1{
+  width:420px; height:420px; top:60px; right:-200px;
+  background:radial-gradient(circle at 35% 35%, #99F6E4 0%, #2DD4BF 35%, rgba(13,148,136,.0) 70%);
+  opacity:.55;
+}
+#pricing-scribe .pg-orb-2{
+  width:300px; height:300px; bottom:-140px; left:-90px;
+  background:radial-gradient(circle at 60% 40%, #FFB59C 0%, #F2572B 40%, rgba(242,87,43,0) 72%);
+  opacity:.2;
+}
+#pricing-scribe .pg-orb-3{
+  width:220px; height:220px; top:38%; left:46%;
+  background:radial-gradient(circle, rgba(94,234,212,.35) 0%, rgba(94,234,212,0) 70%);
+  opacity:.6;
+}
+
+/* ---------- Heading ---------- */
+#pricing-scribe .pricing-glass-panel .pricing-heading{
+  margin-bottom:44px;
+}
+#pricing-scribe .pricing-glass-panel .pricing-heading span{
+  display:inline-block;
+  padding:6px 14px;
+  border-radius:999px;
+  color:#A7F3D0;
+  background:rgba(45,212,191,.14);
+  border:1px solid rgba(45,212,191,.35);
+  letter-spacing:.12em;
+}
+#pricing-scribe .pricing-glass-panel .pricing-heading h2{
+  color:#fff;
+}
+#pricing-scribe .pricing-glass-panel .pricing-heading p{
+  color:rgba(255,255,255,.72);
+}
+
+/* ---------- Glass cards ---------- */
+#pricing-scribe .pricing-glass-panel .pricing-card{
+  display:flex;
+  flex-direction:column;
+  padding:28px 24px 26px;
+  border-radius:22px;
+  color:#fff;
+  background:
+    linear-gradient(105deg, transparent 38%, rgba(255,255,255,.30) 50%, transparent 62%) 100% 0 / 300% 100% no-repeat,
+    linear-gradient(160deg, rgba(255,255,255,.14) 0%, rgba(255,255,255,.05) 100%) !important;
+  border:1px solid rgba(255,255,255,.18) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.22), 0 16px 40px rgba(0,0,0,.18) !important;
+  -webkit-backdrop-filter:blur(16px) saturate(160%);
+  backdrop-filter:blur(16px) saturate(160%);
+  transform:none;
+  transition:transform .35s ease, border-color .35s ease, background-position .9s ease, box-shadow .35s ease;
+}
+#pricing-scribe .pricing-glass-panel .pricing-card::before{ display:none; }
+
+#pricing-scribe .pricing-glass-panel .pricing-card:hover,
+#pricing-scribe .pricing-glass-panel .pricing-card.active-card{
+  transform:translateY(-6px);
+  background-position:0% 0, 0 0;
+  border:1px solid rgba(153,246,228,.55) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.28), 0 24px 56px rgba(0,0,0,.26) !important;
+}
+
+/* featured card: a bit brighter */
+#pricing-scribe .pricing-glass-panel .pricing-card.featured{
+  background:
+    linear-gradient(105deg, transparent 38%, rgba(255,255,255,.32) 50%, transparent 62%) 100% 0 / 300% 100% no-repeat,
+    linear-gradient(160deg, rgba(255,255,255,.24) 0%, rgba(255,255,255,.09) 100%) !important;
+  border:1px solid rgba(153,246,228,.45) !important;
+}
+
+/* order: tag, title, seats, divider, features, button at bottom */
+#pricing-scribe .pricing-glass-panel .pricing-card .plan-type{ order:1; }
+#pricing-scribe .pricing-glass-panel .pricing-card h3{ order:2; }
+#pricing-scribe .pricing-glass-panel .pricing-card .plan-seat{ order:3; }
+#pricing-scribe .pricing-glass-panel .pricing-card hr{ order:4; }
+#pricing-scribe .pricing-glass-panel .pricing-card ul{ order:5; flex:1; }
+#pricing-scribe .pricing-glass-panel .pricing-card .pricing-btn{ order:6; margin-top:24px; }
+
+/* white pill tag */
+#pricing-scribe .pricing-glass-panel .plan-type{
+  align-self:flex-start;
+  width:auto;
+  padding:5px 12px;
+  border-radius:999px;
+  background:#fff !important;
+  color:#0A3D3A !important;
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.02em;
+  margin-bottom:16px;
+}
+
+#pricing-scribe .pricing-glass-panel .pricing-card h3{
+  color:#fff;
+  margin:0 0 6px;
+}
+#pricing-scribe .pricing-glass-panel .plan-seat{
+  color:rgba(255,255,255,.72);
+}
+#pricing-scribe .pricing-glass-panel .pricing-card hr{
+  border:0;
+  border-top:1px solid rgba(255,255,255,.16);
+  margin:20px 0;
+}
+
+/* features with round check icons */
+#pricing-scribe .pricing-glass-panel .pricing-card ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+#pricing-scribe .pricing-glass-panel .pricing-card li{
+  position:relative;
+  padding:0 0 0 32px;
+  margin-bottom:14px;
+  color:rgba(255,255,255,.86);
+  font-size:.9rem;
+  line-height:1.45;
+  border:0;
+}
+#pricing-scribe .pricing-glass-panel .pricing-card li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  top:0;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:.7rem;
+  font-weight:900;
+  color:#0A3D3A;
+  background:rgba(153,246,228,.85);
+  box-shadow:0 0 0 4px rgba(153,246,228,.12);
+}
+
+/* buttons */
+#pricing-scribe .pricing-glass-panel .pricing-btn{
+  width:100%;
+  padding:13px 18px;
+  border-radius:12px;
+  font-weight:800;
+  color:#fff;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.28);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.2);
+  transition:background .25s ease, transform .25s ease;
+}
+#pricing-scribe .pricing-glass-panel .pricing-btn:hover{
+  background:rgba(255,255,255,.2);
+  transform:translateY(-1px);
+}
+#pricing-scribe .pricing-glass-panel .pricing-btn.primary{
+  background:var(--cta);
+  border-color:var(--cta);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.35), 0 10px 24px rgba(242,87,43,.35);
+}
+#pricing-scribe .pricing-glass-panel .pricing-btn.primary:hover{ background:var(--cta-hover); }
+#pricing-scribe .pricing-glass-panel .pricing-btn.white{
+  background:#99F6E4;
+  border-color:#99F6E4;
+  color:#0A3D3A;
+}
+#pricing-scribe .pricing-glass-panel .pricing-btn.white:hover{ background:#CCFBF1; }
+
+/* ---------- Tablet / mobile ---------- */
+@media (max-width:1024px){
+  #pricing-scribe .pricing-glass-panel{ padding:64px 28px 60px; }
+}
+@media (max-width:768px){
+  #pricing-scribe .pricing-glass-panel{
+    margin:0 calc(50% - 50vw) 60px;
+    padding:48px 16px 40px;
+    border-radius:0 0 28px 28px;
+  }
+  #pricing-scribe .pricing-glass-panel::before{ top:10px; bottom:10px; left:8px; right:8px; border-radius:18px; }
+  #pricing-scribe .pg-orb-1{ width:260px; height:260px; top:-100px; right:-100px; }
+  #pricing-scribe .pg-orb-3{ display:none; }
+}

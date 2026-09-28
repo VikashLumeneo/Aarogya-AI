@@ -1,0 +1,4 @@
+# secrets and local data
+.env
+data/
+node_modules/

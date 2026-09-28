@@ -3,51 +3,52 @@
    ============================================================ */
 :root {
   /* Fonts */
-  --font-main:       'Mulish', sans-serif;
   --font-display:    'Mulish', sans-serif;
 
-  /* Brand Colors */
-  --brand-dark:      #122056;
-  --brand-royal:     #F2572B;
-  --brand-ice:       #FFECE8;
-  --brand-accent:    #3D9BE9;
-  --brand-teal:      #0DBFAD;
-  --accent:          #F2572B;
+  /* Brand Colors
+     60% white/mint · 30% teal-green · 10% orange */
+  --brand-dark:      #0A3D3A;   /* primary teal-green: hero, headings, dark sections */
+  --navy-700:        #12574F;   /* teal hover / gradients */
+  --brand-orange:    #F2572B;   /* logo, highlights, text on dark teal */
+  --brand-ice:       #FFECE8;   /* light orange tint */
+  --brand-teal:      #0DBFAD;   /* success / health indicators (on dark) */
+  --brand-highlight: #2DD4BF;
+  --success:         #0B8A7D;   /* success text on light backgrounds */
+
+  /* Orange: CTA buttons + accessible text shade */
+  --cta:             #F2572B;   /* button background */
+  --cta-hover:       #D9461C;
+  --accent-text:     #C2410C;   /* small orange text on light backgrounds */
 
   /* Light Theme Defaults */
   --bg-primary:      #FFFFFF;
-  --bg-secondary:    #F7F8FD;
-  --bg-tertiary:     #EFF0FB;
+  --bg-secondary:    #F5F7F8;
+  --bg-tertiary:     #E4F3EE;
   --bg-card:         #FFFFFF;
-  --bg-card-hover:   #F3F4FD;
   --bg-nav:          rgba(255, 255, 255, 0.92);
-  --bg-hero:         #122056;
 
-  --text-primary:    #0D1530;
-  --text-secondary:  #4A5578;
-  --text-muted:      #8892AD;
+  --text-primary:    #0A221F;
+  --text-secondary:  #4A615C;
+  --text-muted:      #687E79;
   --text-inverse:    #FFFFFF;
-  --text-accent:     #5B65DD;
 
-  --border-color:    #DDE0F0;
-  --border-focus:    #5B65DD;
+  --border-color:    #D3E7E0;
+  --border-focus:    #0A3D3A;
 
   /* Buttons */
-  --btn-primary-bg:    #F2572B;
+  --btn-primary-bg:    var(--cta);
   --btn-primary-fg:    #FFFFFF;
-  --btn-primary-hover: #1a2f78;
+  --btn-primary-hover: var(--cta-hover);
   --btn-secondary-bg:  transparent;
-  --btn-secondary-fg:  #122056;
-  --btn-secondary-border: #122056;
-  --btn-accent-bg:     #F2572B;
+  --btn-secondary-fg:  #15534A;
+  --btn-secondary-border: #15534A;
   --btn-accent-fg:     #FFFFFF;
-  --btn-accent-hover:  #4854c9;
 
   /* Shadows */
-  --shadow-sm:  0 1px 3px rgba(18, 32, 86, 0.06), 0 1px 2px rgba(18, 32, 86, 0.04);
-  --shadow-md:  0 4px 16px rgba(18, 32, 86, 0.10), 0 2px 6px rgba(18, 32, 86, 0.06);
-  --shadow-lg:  0 12px 40px rgba(18, 32, 86, 0.14), 0 4px 12px rgba(18, 32, 86, 0.08);
-  --shadow-xl:  0 24px 60px rgba(18, 32, 86, 0.18);
+  --shadow-sm:  0 1px 3px rgba(21,83,74, 0.06), 0 1px 2px rgba(21,83,74, 0.04);
+  --shadow-md:  0 4px 16px rgba(21,83,74, 0.10), 0 2px 6px rgba(21,83,74, 0.06);
+  --shadow-lg:  0 12px 40px rgba(21,83,74, 0.14), 0 4px 12px rgba(21,83,74, 0.08);
+  --shadow-xl:  0 24px 60px rgba(21,83,74, 0.18);
 
   /* Border Radii */
   --radius-sm:   6px;
@@ -59,30 +60,26 @@
 
 /* Dark Theme Overrides */
 [data-theme="dark"] {
-  --bg-primary:      #080E22;
-  --bg-secondary:    #0E1830;
-  --bg-tertiary:     #141F3E;
-  --bg-card:         #111828;
-  --bg-card-hover:   #192040;
-  --bg-nav:          rgba(8, 14, 34, 0.94);
-  --bg-hero:         #060C1C;
+  --bg-primary:      #09211E;
+  --bg-secondary:    #102E2A;
+  --bg-tertiary:     #163C37;
+  --bg-card:         #122724;
+  --bg-nav:          rgba(9,33,30, 0.94);
 
-  --text-primary:    #E8EBF8;
-  --text-secondary:  #9BA5C7;
-  --text-muted:      #5C6A8E;
-  --text-inverse:    #0D1530;
-  --text-accent:     #818AEF;
+  --text-primary:    #E9F7F5;
+  --text-secondary:  #9DC5C0;
+  --text-muted:      #5E8C86;
+  --text-inverse:    #0F2E2A;
 
-  --border-color:    #1E2B4A;
-  --border-focus:    #818AEF;
+  --border-color:    #204843;
+  --border-focus:    #FFB59C;
 
-  --btn-primary-bg:    #5B65DD;
+  --btn-primary-bg:    var(--cta);
   --btn-primary-fg:    #FFFFFF;
-  --btn-primary-hover: #4854c9;
+  --btn-primary-hover: var(--cta-hover);
   --btn-secondary-bg:  transparent;
-  --btn-secondary-fg:  #E8EBF8;
-  --btn-secondary-border: #3A4567;
-  --btn-accent-bg:     #3D9BE9;
+  --btn-secondary-fg:  #E9F7F5;
+  --btn-secondary-border: #3C655F;
   --btn-accent-fg:     #FFFFFF;
 
   --shadow-sm:  0 1px 3px rgba(0, 0, 0, 0.3);

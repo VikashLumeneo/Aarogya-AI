@@ -76,14 +76,65 @@ function closeModal(e) {
   if (e.target === document.getElementById('signupModal')) closeSignup();
 }
 
-function submitSignup() {
-  const email = document.getElementById('signupEmail').value;
-  if (!email || !email.includes('@')) {
+/* ---------- Form backend ----------
+ * Same server in production (/api/...). When the site is opened with VS Code Live Server
+ * (port 5502) or as a file, send to the local backend started with "npm start".
+ */
+const API_BASE =
+  location.protocol === 'file:' || location.port === '5502' || location.port === '5500'
+    ? 'http://localhost:3000'
+    : '';
+
+async function postForm(name, data) {
+  let res;
+  try {
+    res = await fetch(`${API_BASE}/api/${name}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...data, page: location.href }),
+    });
+  } catch (err) {
+    throw new Error('Cannot reach the server. Is the backend running? (npm start)');
+  }
+  const out = await res.json().catch(() => ({}));
+  if (!res.ok || !out.ok) throw new Error(out.error || 'Something went wrong. Please try again.');
+  return out;
+}
+
+async function submitSignup() {
+  const first = document.getElementById('signupFirst').value.trim();
+  const last = document.getElementById('signupLast').value.trim();
+  const email = document.getElementById('signupEmail').value.trim();
+  const specialty = document.getElementById('signupSpecialty').value;
+  const plan = document.getElementById('modalPlanBadge').textContent.trim();
+  const honeypot = document.getElementById('signupWebsite');
+  const btn = document.getElementById('signupSubmit');
+
+  if (!first) {
+    showToast('⚠️ Please enter your first name', 'warning');
+    return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
     showToast('⚠️ Please enter a valid work email address', 'warning');
     return;
   }
-  closeSignup();
-  showToast('🎉 Welcome to Anviq! Check your email to activate your account.');
+
+  const label = btn ? btn.innerHTML : '';
+  if (btn) { btn.disabled = true; btn.innerHTML = 'Sending…'; }
+  try {
+    await postForm('early-access', {
+      firstName: first, lastName: last, email, specialty, plan,
+      website: honeypot ? honeypot.value : '',
+    });
+    closeSignup();
+    ['signupFirst', 'signupLast', 'signupEmail'].forEach((id) => { document.getElementById(id).value = ''; });
+    document.getElementById('signupSpecialty').value = '';
+    showToast("🎉 Thanks! We've received your request and will contact you soon.");
+  } catch (err) {
+    showToast('⚠️ ' + err.message, 'warning');
+  } finally {
+    if (btn) { btn.disabled = false; btn.innerHTML = label; }
+  }
 }
 
 document.addEventListener('keydown', (e) => {
@@ -141,3 +192,69 @@ document
     el.style.transition = 'opacity .5s ease, transform .5s ease';
     observer.observe(el);
   });
+
+/** Resources page: "Notify me" form → /api/notify */
+async function rhNotify(e) {
+  e.preventDefault();
+  const form = e.target;
+  const input = form.querySelector('input[type="email"]');
+  const btn = form.querySelector('button[type="submit"]');
+  const trap = form.querySelector('input[name="website"]');
+  const email = input.value.trim();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+    showToast('⚠️ Please enter a valid work email address', 'warning');
+    input.focus();
+    return false;
+  }
+  const label = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = 'Sending…';
+  try {
+    await postForm('notify', { email, website: trap ? trap.value : '' });
+    form.classList.add('is-done');
+    input.value = '';
+    input.placeholder = "You're on the list!";
+    showToast("🎉 Thanks! We'll let you know when the Resources Hub launches.");
+  } catch (err) {
+    showToast('⚠️ ' + err.message, 'warning');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = label;
+  }
+  return false;
+}
+
+/** Resources hero: mouse parallax on the preview cards + cycling "Now preparing" word */
+(function () {
+  const preview = document.getElementById('rhPreview');
+  if (!preview) return;
+  // animations always play (Windows "animation effects: off" used to switch them off)
+  {
+    const hero = preview.closest('section') || preview;
+    hero.addEventListener('mousemove', (e) => {
+      const r = preview.getBoundingClientRect();
+      const x = (e.clientX - (r.left + r.width / 2)) / r.width;   // about -1 … 1
+      const y = (e.clientY - (r.top + r.height / 2)) / r.height;
+      preview.style.setProperty('--mx', Math.max(-1, Math.min(1, x)).toFixed(3));
+      preview.style.setProperty('--my', Math.max(-1, Math.min(1, y)).toFixed(3));
+    });
+    hero.addEventListener('mouseleave', () => {
+      preview.style.setProperty('--mx', 0);
+      preview.style.setProperty('--my', 0);
+    });
+  }
+
+  const word = document.getElementById('rhWord');
+  const words = ['Guides', 'Webinars', 'Research', 'Updates'];
+  let i = 0;
+  if (word) {
+    setInterval(() => {
+      word.classList.add('is-out');
+      setTimeout(() => {
+        i = (i + 1) % words.length;
+        word.textContent = words[i];
+        word.classList.remove('is-out');
+      }, 300);
+    }, 2200);
+  }
+})();

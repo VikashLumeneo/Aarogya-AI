@@ -34,6 +34,11 @@ function navigate(page, pushHistory = true) {
     if (link) link.classList.toggle('active', p === page);
   });
 
+  ['scribe', 'radiology'].forEach((p) => {
+    const link = document.getElementById('nav-' + p);
+    if (link) link.classList.toggle('active', p === page);
+  });
+
   currentPage = page;
 
   if (pushHistory) {

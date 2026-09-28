@@ -1,0 +1,16 @@
+{
+  "name": "anviq-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ANVIQ website with form backend (early access + resources notify)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "nodemailer": "^7.0.0"
+  }
+}
