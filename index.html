@@ -21,6 +21,10 @@
   <link rel="stylesheet" href="css/pricing-glass.css">
   <link rel="stylesheet" href="css/nav-glass.css">
   <link rel="stylesheet" href="css/resources.css">
+  <link rel="stylesheet" href="css/team.css">
+  <link rel="stylesheet" href="css/privacy.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/report.css">
 
 </head>
 
@@ -1231,7 +1235,7 @@
 </section>
 
     <!-- Radiology features -->
-    <section class="section">
+    <section class="section rad-caps">
       <div class="container">
         <div class="section-header">
           <div class="section-eyebrow"> Capabilities</div>
@@ -1290,116 +1294,68 @@
       </p>
     </div>
 
-    <div class="report-wrap">
+    <div class="report-wrap rp">
 
-      <div class="report-header">
-        <div>
-          <h3>ANVIQ Radiologist</h3>
-          <span>AI Radiology Report</span>
-        </div>
-        <div class="report-type">
-          Abdominal CT · AI-generated
-        </div>
-      </div>
-
-      <div class="report-body">
-
-        <div class="report-section-title">
-          Key Liver Findings
-        </div>
-
-        <div class="report-row">
-          <span class="key">Total lesions</span>
-          <span class="value">20</span>
-        </div>
-
-        <div class="report-row">
-          <span class="key">Largest lesion</span>
-          <span class="value">7.2 cm</span>
-        </div>
-
-        <div class="report-row">
-          <span class="key">Small range</span>
-          <span class="value">~2–5 mm</span>
-        </div>
-
-        <div class="report-row">
-          <span class="key">Morphology</span>
-          <span class="value">Heterogeneous</span>
-        </div>
-
-        <div class="report-row">
-          <span class="key">Margins</span>
-          <span class="value">Ill-defined</span>
-        </div>
-
-        <div class="report-section-title">
-          Organ Status
-        </div>
-
-        <div class="report-row">
-          <span class="key">Lymph nodes</span>
-          <span class="value">No adenopathy</span>
-        </div>
-
-        <div class="report-row">
-          <span class="key">Pancreas</span>
-          <span class="value">Normal</span>
-        </div>
-
-        <div class="report-row">
-          <span class="key">Kidneys</span>
-          <span class="value">Normal bilateral</span>
-        </div>
-
-        <div class="report-row">
-          <span class="key">Ascites</span>
-          <span class="value">None</span>
-        </div>
-
-        <div class="report-row">
-          <span class="key">Gallbladder</span>
-          <span class="value">Unremarkable</span>
-        </div>
-
-        <div class="report-row">
-          <span class="key">Spleen</span>
-          <span class="value">Normal</span>
-        </div>
-
-        <div class="report-row">
-          <span class="key">Lung bases</span>
-          <span class="value">Clear</span>
-        </div>
-
-        <div class="report-row">
-          <span class="key">Bones</span>
-          <span class="value">Unremarkable</span>
-        </div>
-
-        <div class="report-alert">
-          <div class="alert-title">
-            ⚠ Findings Requiring Action
+      <div class="rp-head">
+        <div class="rp-brand">
+          <span class="rp-logo"><i class="bi bi-activity" aria-hidden="true"></i></span>
+          <div>
+            <h3>ANVIQ Radiologist</h3>
+            <span>AI Radiology Report</span>
           </div>
+        </div>
+        <div class="rp-tags">
+          <span><i class="bi bi-person-bounding-box" aria-hidden="true"></i> Abdominal CT</span>
+          <span class="rp-ai"><i class="bi bi-stars" aria-hidden="true"></i> AI-generated</span>
+        </div>
+      </div>
 
-          <p>
-            Multiple liver lesions (~2–5 mm to
-            <strong>7.2 cm dominant lesion</strong>).
-            Heterogeneity and ill-defined margins place
-            <strong>metastatic disease high on the differential</strong>.
-            Multifocal HCC should also be considered.
-            <strong>Contrast-enhanced imaging recommended.</strong>
-          </p>
+      <div class="rp-body">
+
+        <div class="rp-col">
+          <h4 class="rp-title"><i class="bi bi-search" aria-hidden="true"></i> Key liver findings</h4>
+          <div class="rp-stats">
+            <div class="rp-stat"><span>Total lesions</span><strong>20</strong></div>
+            <div class="rp-stat rp-stat-hot"><span>Largest lesion</span><strong>7.2 cm</strong></div>
+            <div class="rp-stat"><span>Small range</span><strong>~2–5 mm</strong></div>
+            <div class="rp-stat"><span>Morphology</span><strong>Heterogeneous</strong></div>
+            <div class="rp-stat rp-wide"><span>Margins</span><strong>Ill-defined</strong></div>
+          </div>
+        </div>
+
+        <div class="rp-col">
+          <h4 class="rp-title"><i class="bi bi-heart-pulse" aria-hidden="true"></i> Organ status</h4>
+          <ul class="rp-organs">
+            <li><span>Lymph nodes</span><b>No adenopathy</b></li>
+            <li><span>Pancreas</span><b>Normal</b></li>
+            <li><span>Kidneys</span><b>Normal bilateral</b></li>
+            <li><span>Ascites</span><b>None</b></li>
+            <li><span>Gallbladder</span><b>Unremarkable</b></li>
+            <li><span>Spleen</span><b>Normal</b></li>
+            <li><span>Lung bases</span><b>Clear</b></li>
+            <li><span>Bones</span><b>Unremarkable</b></li>
+          </ul>
+        </div>
+
+        <div class="rp-alert">
+          <div class="rp-alert-ico"><i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i></div>
+          <div>
+            <div class="rp-alert-title">Findings requiring action</div>
+            <p>
+              Multiple liver lesions (~2–5 mm to <strong>7.2 cm dominant lesion</strong>).
+              Heterogeneity and ill-defined margins place
+              <strong>metastatic disease high on the differential</strong>.
+              Multifocal HCC should also be considered.
+            </p>
+            <span class="rp-rec"><i class="bi bi-arrow-right-circle" aria-hidden="true"></i> Contrast-enhanced imaging recommended</span>
+          </div>
         </div>
 
       </div>
 
-      <div class="report-footer">
-        AI-generated report for clinical correlation only.<br>
-        Not a substitute for professional medical judgment.<br><br>
-        <strong>
-          Anviq Health · Built for radiologists, validated on millions of exams
-        </strong>
+      <div class="rp-foot">
+        <span><i class="bi bi-info-circle" aria-hidden="true"></i> AI-generated report for clinical correlation only. Not a substitute for professional medical judgment.</span>
+        <strong>ANVIQ Health · Built for radiologists</strong>
       </div>
 
     </div>
@@ -1408,7 +1364,7 @@
 </section>
 
     <!-- Modalities tabs -->
-    <section class="section bg-secondary-section">
+    <section class="section bg-secondary-section rad-modalities">
       <div class="container">
         <div class="section-header">
           <div class="section-eyebrow">Supported Modalities</div>
@@ -3535,7 +3491,7 @@ better first 60 seconds.</h2>
           <!-- Card 1 -->
           <div class="team-card">
             <div class="team-image-wrapper">
-              <img src="assets/teams/Ram.jpeg" alt="Ram">
+              <img src="assets/teams/Ram.jpeg" alt="Ram" class="team-photo" style="--w:117.8%;--h:103.0%;--l:-17.4%;--t:-0.2%">
             </div>
 
             <div class="team-info">
@@ -3547,16 +3503,14 @@ better first 60 seconds.</h2>
              <a href="https://www.linkedin.com/in/ramshan/" 
    class="linkedin-btn" 
    target="_blank" 
-   rel="noopener noreferrer">
-   in
-</a>
+   rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a>
             </div>
           </div>
 
           <!-- Card 2 -->
           <div class="team-card">
             <div class="team-image-wrapper">
-              <img src="assets/teams/Krishna.jpeg" alt="Krishna">
+              <img src="assets/teams/Krishna.jpeg" alt="Krishna" class="team-photo" style="--w:130.0%;--h:100.0%;--l:-15.4%;--t:0.0%">
             </div>
 
             <div class="team-info">
@@ -3568,15 +3522,13 @@ better first 60 seconds.</h2>
               <a href="https://www.linkedin.com/in/shrikrishna-s-a56955a" 
    class="linkedin-btn" 
    target="_blank" 
-   rel="noopener noreferrer">
-   in
-</a>
+   rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a>
             </div>
           </div>
           <!-- Card 3 -->
           <div class="team-card">
             <div class="team-image-wrapper">
-              <img src="assets/teams/Shalini.jpeg" alt="Shalini">
+              <img src="assets/teams/Shalini.jpeg" alt="Shalini" class="team-photo" style="--w:102.8%;--h:100.0%;--l:-2.8%;--t:0.0%">
             </div>
 
             <div class="team-info">
@@ -3588,16 +3540,14 @@ better first 60 seconds.</h2>
                 <a href="https://www.linkedin.com/in/sharmasx/" 
    class="linkedin-btn" 
    target="_blank" 
-   rel="noopener noreferrer">
-   in
-</a>
+   rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a>
             </div>
           </div>
 
           <!-- Card 4 -->
           <div class="team-card">
             <div class="team-image-wrapper">
-              <img src="assets/teams/Abhishek Kumar Mishra.jpeg" alt="Abhishek Mishra">
+              <img src="assets/teams/Abhishek Kumar Mishra.jpeg" alt="Abhishek Mishra" class="team-photo" style="--w:100.0%;--h:102.6%;--l:0.0%;--t:0.0%">
             </div>
 
             <div class="team-info">
@@ -3609,16 +3559,14 @@ better first 60 seconds.</h2>
              <a href="https://www.linkedin.com/in/abhishek-mishra-326901221" 
    class="linkedin-btn" 
    target="_blank" 
-   rel="noopener noreferrer">
-   in
-</a>
+   rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a>
             </div>
           </div>
 
           <!-- Card 5 -->
           <div class="team-card">
             <div class="team-image-wrapper">
-              <img src="assets/teams/nikhil_kumar_tomar.jpg" alt="Nikhil Kumar Tomar">
+              <img src="assets/teams/nikhil_kumar_tomar.jpg" alt="Nikhil Kumar Tomar" class="team-photo" style="--w:101.6%;--h:100.0%;--l:0.0%;--t:0.0%">
             </div>
 
             <div class="team-info">
@@ -3630,16 +3578,14 @@ better first 60 seconds.</h2>
               <a href="https://www.linkedin.com/in/nktomar/" 
    class="linkedin-btn" 
    target="_blank" 
-   rel="noopener noreferrer">
-   in
-</a>
+   rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a>
             </div>
           </div>
 
           <!-- Card 6 -->
           <div class="team-card">
             <div class="team-image-wrapper">
-              <img src="assets/teams/piyush_sharma_lumeneo.png" alt="Piyush Sharma">
+              <img src="assets/teams/piyush_sharma_lumeneo.png" alt="Piyush Sharma" class="team-photo" style="--w:129.2%;--h:100.0%;--l:-13.2%;--t:0.0%">
             </div>
 
             <div class="team-info">
@@ -3651,16 +3597,14 @@ better first 60 seconds.</h2>
              <a href="https://www.linkedin.com/in/piyush-sharma-079590280/" 
    class="linkedin-btn" 
    target="_blank" 
-   rel="noopener noreferrer">
-   in
-</a>
+   rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a>
             </div>
           </div>
 
           <!-- Card 7 -->
           <div class="team-card">
             <div class="team-image-wrapper">
-              <img src="assets/teams/Rishabh_Pundir.jpg" alt="Rishabh Pundir">
+              <img src="assets/teams/Rishabh_Pundir.jpg" alt="Rishabh Pundir" class="team-photo" style="--w:104.0%;--h:100.0%;--l:0.0%;--t:0.0%">
             </div>
 
             <div class="team-info">
@@ -3672,16 +3616,14 @@ better first 60 seconds.</h2>
              <a href="https://www.linkedin.com/in/rishabhpundir/" 
    class="linkedin-btn" 
    target="_blank" 
-   rel="noopener noreferrer">
-   in
-</a>
+   rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a>
             </div>
           </div>
 
           <!-- Card 8 -->
           <div class="team-card">
             <div class="team-image-wrapper">
-              <img src="assets/teams/Vikash.jpeg" alt="Vikash Singh">
+              <img src="assets/teams/Vikash.jpeg" alt="Vikash Singh" class="team-photo" style="--w:100.0%;--h:115.6%;--l:0.0%;--t:-13.4%">
             </div>
 
             <div class="team-info">
@@ -3693,16 +3635,14 @@ better first 60 seconds.</h2>
              <a href="https://www.linkedin.com/in/vikash-singh-492241230" 
    class="linkedin-btn" 
    target="_blank" 
-   rel="noopener noreferrer">
-   in
-</a>
+   rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a>
             </div>
           </div>
 
           <!-- Card 9 -->
           <div class="team-card">
             <div class="team-image-wrapper">
-              <img src="assets/teams/Deep ladani.jpeg" alt="Deep Ladani">
+              <img src="assets/teams/Deep ladani.jpeg" alt="Deep Ladani" class="team-photo" style="--w:225.4%;--h:130.1%;--l:-58.2%;--t:-1.6%">
             </div>
 
             <div class="team-info">
@@ -3714,16 +3654,14 @@ better first 60 seconds.</h2>
               <a href="https://www.linkedin.com/in/deepladani" 
    class="linkedin-btn" 
    target="_blank" 
-   rel="noopener noreferrer">
-   in
-</a>
+   rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a>
             </div>
           </div>
 
           <!-- Card 10 -->
           <div class="team-card">
             <div class="team-image-wrapper">
-              <img src="assets/teams/Nilesh K Aandani.png" alt="Nilesh K Andani">
+              <img src="assets/teams/Nilesh K Aandani.png" alt="Nilesh K Andani" class="team-photo" style="--w:123.1%;--h:128.2%;--l:-8.5%;--t:-2.1%">
             </div>
 
             <div class="team-info">
@@ -3735,16 +3673,14 @@ better first 60 seconds.</h2>
               <a href="https://www.linkedin.com/in/nilesh-aandani-510b5631" 
    class="linkedin-btn" 
    target="_blank" 
-   rel="noopener noreferrer">
-   in
-</a>
+   rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a>
             </div>
           </div>
 
           <!-- Card 11 -->
           <div class="team-card">
             <div class="team-image-wrapper">
-              <img src="assets/teams/Meenaga Sateesh.png" alt="Meenaga Sateesh">
+              <img src="assets/teams/Meenaga Sateesh.png" alt="Meenaga Sateesh" class="team-photo" style="--w:111.8%;--h:110.6%;--l:-7.2%;--t:-8.1%">
             </div>
 
             <div class="team-info">
@@ -3756,16 +3692,14 @@ better first 60 seconds.</h2>
               <a href="https://www.linkedin.com/in/meenaga-sateesh-67a352226/" 
    class="linkedin-btn" 
    target="_blank" 
-   rel="noopener noreferrer">
-   in
-</a>
+   rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a>
             </div>
           </div>
 
           <!-- Card 11 -->
           <!-- <div class="team-card">
         <div class="team-image-wrapper">
-          <img src="assets/teams/Shalini.jpeg" alt="Shalini">
+          <img src="assets/teams/Shalini.jpeg" alt="Shalini" class="team-photo" style="--w:102.8%;--h:100.0%;--l:-2.8%;--t:0.0%">
         </div>
 
         <div class="team-info">
@@ -3774,7 +3708,7 @@ better first 60 seconds.</h2>
             <span>Customer Success Lead</span>
           </div>
 
-          <a href="#" class="linkedin-btn">in</a>
+          <a href="#" class="linkedin-btn"><i class="bi bi-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a>
         </div>
       </div> -->
 
@@ -3816,176 +3750,225 @@ better first 60 seconds.</h2>
    ============================================================ -->
   <div class="page" id="page-privacy">
 
-    <section class="section">
-      <div class="container-sm">
-
-        <div class="section-header">
-          <div class="section-eyebrow">
-            ✦ Legal
-          </div>
-
-          <h1 class="heading-1">Privacy Policy</h1>
-
-          <p class="body-lg" style="color:var(--text-secondary);margin-top:14px;">
-            At Anviq, protecting healthcare information, user privacy, and data security is fundamental to everything we
-            build. This Privacy Policy explains how we collect, use, store, and protect information when you use our
-            AI-powered healthcare solutions.
-          </p>
+    <!-- HERO -->
+    <section class="product-hero pp-hero">
+      <div class="hero-grid-bg"></div>
+      <div class="container" style="position:relative;z-index:1;">
+        <div class="hero-eyebrow" style="display:inline-flex;">
+          <span class="hero-eyebrow-dot">●</span>
+          Legal · Privacy
         </div>
+        <h1 class="pp-title">Privacy Policy</h1>
+        <p class="pp-sub">
+          How ANVIQ collects, uses, stores and protects information when you visit this website,
+          fill in a form, or use our AI healthcare products.
+        </p>
+        <div class="pp-meta">
+          <span><i class="bi bi-calendar3" aria-hidden="true"></i> Last updated: 28 September 2026</span>
+          <span><i class="bi bi-shield-check" aria-hidden="true"></i> Built for India's DPDP Act, 2023</span>
+          <span><i class="bi bi-clock" aria-hidden="true"></i> 6 min read</span>
+        </div>
+      </div>
+    </section>
 
-        <div class="card" style="padding:48px;">
-
-          <h3 class="heading-3">1. Information We Collect</h3>
-
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            We may collect information that you voluntarily provide when creating an account,
-            requesting a demo, contacting support, subscribing to services, or using our platform.
-            This may include your name, email address, organization information, professional details,
-            and account credentials.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">2. Healthcare & Clinical Data</h3>
-
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            Certain ANVIQ products may process clinical information, documentation,
-            imaging metadata, transcripts, or workflow-related healthcare data to provide
-            AI-powered functionality. Such information is processed solely for delivering,
-            improving, and supporting our services.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">3. How We Use Information</h3>
-
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            We use collected information to:
-          </p>
-
-          <ul style="margin-top:12px;padding-left:20px;color:var(--text-secondary);line-height:1.9;">
-            <li>Provide and maintain platform functionality</li>
-            <li>Generate AI-powered clinical outputs and workflows</li>
-            <li>Improve product performance and user experience</li>
-            <li>Respond to inquiries and support requests</li>
-            <li>Protect platform security and prevent misuse</li>
-            <li>Comply with legal and regulatory obligations</li>
-          </ul>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">4. Data Security</h3>
-
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            We implement administrative, technical, and organizational safeguards designed
-            to protect information against unauthorized access, disclosure, alteration,
-            or destruction. Security practices are continuously reviewed and improved to
-            maintain a secure operating environment.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">5. Data Sharing</h3>
-
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            ANVIQ does not sell personal information or healthcare-related data.
-            Information may be shared only with trusted service providers, technology partners,
-            or regulatory authorities when necessary to deliver services, comply with legal
-            obligations, or protect platform security.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">6. Cookies & Analytics</h3>
-
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            We may use cookies, analytics technologies, and similar tools to understand how
-            visitors interact with our website, improve performance, and enhance the user
-            experience. These technologies do not grant us access to personal devices beyond
-            standard web functionality.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">7. Data Retention</h3>
-
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            Information is retained only for as long as necessary to provide services,
-            fulfill contractual obligations, resolve disputes, maintain security,
-            and comply with applicable legal requirements.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">8. User Rights</h3>
-
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            Depending on applicable laws and regulations, users may have rights to access,
-            update, correct, restrict, or request deletion of their personal information.
-            Requests may be submitted through our support channels.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">9. International Data Processing</h3>
-
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            Information may be processed and stored in locations where our infrastructure
-            or service providers operate. Appropriate safeguards are implemented to protect
-            information during any cross-border processing activities.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">10. Children's Privacy</h3>
-
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            Our services are intended for healthcare professionals and organizations and are
-            not directed toward children. We do not knowingly collect personal information
-            directly from children through our platform.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">11. Updates to This Policy</h3>
-
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            We may update this Privacy Policy periodically to reflect changes in our
-            services, technology, legal requirements, or security practices.
-            Updated versions become effective when published on this website.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">12. Contact Us</h3>
-
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            If you have any questions regarding this Privacy Policy or our data practices,
-            please contact us.
-          </p>
-
-          <div style="
-          margin-top:18px;
-          padding:22px;
-          background:var(--bg-secondary);
-          border:1px solid var(--border-color);
-          border-radius:16px;
-        ">
-            <p style="margin:0;">
-              <strong>Email:</strong> support@arogyalabs.ai
-            </p>
-
-            <p style="margin-top:10px;">
-              <strong>Website:</strong> arogyalabs.ai
-            </p>
-
-            <p style="margin-top:10px;">
-              <strong>Company:</strong> Anviq
-            </p>
+    <!-- AT A GLANCE -->
+    <section class="section pp-glance-wrap">
+      <div class="container">
+        <div class="pp-glance">
+          <div class="pp-glance-card">
+            <span class="pp-ico"><i class="bi bi-ban" aria-hidden="true"></i></span>
+            <h4>We never sell your data</h4>
+            <p>Personal and clinical data is never sold or used for advertising.</p>
           </div>
+          <div class="pp-glance-card">
+            <span class="pp-ico"><i class="bi bi-envelope-check" aria-hidden="true"></i></span>
+            <h4>Forms go only to our team</h4>
+            <p>Early Access and Notify details are emailed to ANVIQ and used only to reply to you.</p>
+          </div>
+          <div class="pp-glance-card">
+            <span class="pp-ico"><i class="bi bi-cookie" aria-hidden="true"></i></span>
+            <h4>No tracking cookies</h4>
+            <p>This website does not use advertising or analytics cookies.</p>
+          </div>
+          <div class="pp-glance-card">
+            <span class="pp-ico"><i class="bi bi-person-check" aria-hidden="true"></i></span>
+            <h4>You stay in control</h4>
+            <p>Ask us any time to see, correct or delete your information.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POLICY -->
+    <section class="section pp-body">
+      <div class="container pp-layout">
+
+        <!-- table of contents -->
+        <aside class="pp-toc" aria-label="On this page">
+          <p class="pp-toc-title">On this page</p>
+          <nav>
+            <a href="#pp-collect">1. Information we collect</a>
+            <a href="#pp-forms">2. Website forms</a>
+            <a href="#pp-clinical">3. Healthcare &amp; clinical data</a>
+            <a href="#pp-use">4. How we use information</a>
+            <a href="#pp-share">5. Sharing &amp; service providers</a>
+            <a href="#pp-cookies">6. Cookies &amp; third-party content</a>
+            <a href="#pp-security">7. Security</a>
+            <a href="#pp-retention">8. Data retention</a>
+            <a href="#pp-rights">9. Your rights</a>
+            <a href="#pp-transfer">10. Where data is processed</a>
+            <a href="#pp-children">11. Children</a>
+            <a href="#pp-changes">12. Changes to this policy</a>
+            <a href="#pp-contact">13. Contact &amp; grievances</a>
+          </nav>
+        </aside>
+
+        <div class="pp-content">
+
+          <article class="pp-block" id="pp-collect">
+            <h2><span class="pp-num">01</span> Information we collect</h2>
+            <p>We collect only what we need to run our services and reply to you:</p>
+            <ul class="pp-list">
+              <li><strong>Information you give us:</strong> your name, work email, specialty, organisation and the plan you are interested in, when you fill in a form, request a demo, contact support or create an account.</li>
+              <li><strong>Account and product data:</strong> login details and the content you create while using ANVIQ products (see section 3).</li>
+              <li><strong>Technical data:</strong> your IP address and basic browser information, which our hosting provider records in standard server logs, and which we use briefly to block spam.</li>
+            </ul>
+          </article>
+
+          <article class="pp-block" id="pp-forms">
+            <h2><span class="pp-num">02</span> Website forms</h2>
+            <p>This website has two forms. Here is exactly what happens when you submit them:</p>
+            <div class="pp-table" role="table">
+              <div class="pp-tr pp-th" role="row">
+                <span role="columnheader">Form</span><span role="columnheader">What we collect</span><span role="columnheader">What happens</span>
+              </div>
+              <div class="pp-tr" role="row">
+                <span role="cell"><strong>Request Early Access</strong></span>
+                <span role="cell">First and last name, work email, specialty, selected plan, the page you were on</span>
+                <span role="cell">Sent by email to the ANVIQ team so we can contact you. You receive a confirmation email.</span>
+              </div>
+              <div class="pp-tr" role="row">
+                <span role="cell"><strong>Notify me</strong> (Resources)</span>
+                <span role="cell">Work email, the page you were on</span>
+                <span role="cell">Added to our list to tell you when the Resources Hub launches. You receive a confirmation email.</span>
+              </div>
+            </div>
+            <p class="pp-note"><i class="bi bi-info-circle" aria-hidden="true"></i>
+              To stop automated spam, our server briefly keeps the number of requests from each IP address in memory (for about 10 minutes). It is not stored or linked to your profile.
+            </p>
+          </article>
+
+          <article class="pp-block" id="pp-clinical">
+            <h2><span class="pp-num">03</span> Healthcare &amp; clinical data</h2>
+            <p>
+              ANVIQ products (Scribe, Rx, Radiologist and Receptionist) may process clinical notes, audio transcripts,
+              prescriptions, imaging and related patient information on behalf of clinics and hospitals. For this data,
+              the healthcare organisation decides what is collected and why. ANVIQ processes it only on their
+              instructions, to deliver the service, and under a separate agreement with that organisation.
+            </p>
+            <p>Patient data is never used for advertising and is never sold.</p>
+          </article>
+
+          <article class="pp-block" id="pp-use">
+            <h2><span class="pp-num">04</span> How we use information</h2>
+            <ul class="pp-list pp-check">
+              <li>Reply to early access, demo and support requests</li>
+              <li>Tell you about launches you asked to hear about</li>
+              <li>Provide, maintain and improve ANVIQ products</li>
+              <li>Keep the website and platform secure and prevent misuse</li>
+              <li>Meet our legal and regulatory obligations</li>
+            </ul>
+            <p>We will not send you marketing emails you did not ask for. Every launch email lets you unsubscribe.</p>
+          </article>
+
+          <article class="pp-block" id="pp-share">
+            <h2><span class="pp-num">05</span> Sharing &amp; service providers</h2>
+            <p>We do not sell personal information. We share it only with providers that help us run our services, and only as much as they need:</p>
+            <div class="pp-chips">
+              <span><i class="bi bi-hdd-network" aria-hidden="true"></i> Vercel: website hosting</span>
+              <span><i class="bi bi-envelope" aria-hidden="true"></i> Google Workspace: email delivery</span>
+              <span><i class="bi bi-cloud" aria-hidden="true"></i> Cloud infrastructure for ANVIQ products</span>
+            </div>
+            <p>We may also share information when the law requires it, or to protect the safety and rights of our users and company.</p>
+          </article>
+
+          <article class="pp-block" id="pp-cookies">
+            <h2><span class="pp-num">06</span> Cookies &amp; third-party content</h2>
+            <p>
+              This website does not set advertising or analytics cookies. To show fonts and icons, pages load files from
+              Google Fonts and cdnjs (Cloudflare). When your browser downloads these files, those providers can see your
+              IP address, as with any website request. If we add analytics in future, we will update this policy first.
+            </p>
+          </article>
+
+          <article class="pp-block" id="pp-security">
+            <h2><span class="pp-num">07</span> Security</h2>
+            <p>
+              Information is sent over encrypted HTTPS connections. Email passwords and keys are stored as protected server
+              settings and never in the website code. Access to form submissions and product data is limited to people who
+              need it. We review our safeguards regularly, but no system is completely risk-free.
+            </p>
+          </article>
+
+          <article class="pp-block" id="pp-retention">
+            <h2><span class="pp-num">08</span> Data retention</h2>
+            <p>
+              We keep form details only as long as we need them to respond to you and follow up on your request, or until
+              you ask us to delete them. Product and clinical data is kept for as long as our agreement with the healthcare
+              organisation and the law require.
+            </p>
+          </article>
+
+          <article class="pp-block" id="pp-rights">
+            <h2><span class="pp-num">09</span> Your rights</h2>
+            <p>Under India's Digital Personal Data Protection Act, 2023 and other laws that apply to you, you can:</p>
+            <div class="pp-rights">
+              <div><i class="bi bi-eye" aria-hidden="true"></i><strong>Access</strong><span>Know what data we hold about you</span></div>
+              <div><i class="bi bi-pencil-square" aria-hidden="true"></i><strong>Correct</strong><span>Fix details that are wrong or incomplete</span></div>
+              <div><i class="bi bi-trash3" aria-hidden="true"></i><strong>Delete</strong><span>Ask us to erase your information</span></div>
+              <div><i class="bi bi-x-circle" aria-hidden="true"></i><strong>Withdraw consent</strong><span>Stop us contacting you at any time</span></div>
+            </div>
+            <p>Email <a href="mailto:support@arogyalabs.ai">support@arogyalabs.ai</a> and we will reply within 30 days.</p>
+          </article>
+
+          <article class="pp-block" id="pp-transfer">
+            <h2><span class="pp-num">10</span> Where data is processed</h2>
+            <p>
+              Our service providers may process information in India and other countries where they operate. When data is
+              transferred, we rely on providers that use appropriate safeguards and follow the rules that apply under Indian law.
+            </p>
+          </article>
+
+          <article class="pp-block" id="pp-children">
+            <h2><span class="pp-num">11</span> Children</h2>
+            <p>
+              This website and our products are for healthcare professionals and organisations. We do not knowingly collect
+              personal information from children through this website.
+            </p>
+          </article>
+
+          <article class="pp-block" id="pp-changes">
+            <h2><span class="pp-num">12</span> Changes to this policy</h2>
+            <p>
+              We may update this policy when our services or the law change. The "Last updated" date at the top shows the
+              latest version. For important changes, we will make it clear on this page.
+            </p>
+          </article>
+
+          <article class="pp-block pp-contact" id="pp-contact">
+            <h2><span class="pp-num">13</span> Contact &amp; grievances</h2>
+            <p>Questions, requests or complaints about your data? We're here to help.</p>
+            <div class="pp-contact-grid">
+              <a href="mailto:support@arogyalabs.ai"><i class="bi bi-envelope" aria-hidden="true"></i><span><small>Email</small>support@arogyalabs.ai</span></a>
+              <a href="https://arogyalabs.ai" target="_blank" rel="noopener noreferrer"><i class="bi bi-globe" aria-hidden="true"></i><span><small>Website</small>arogyalabs.ai</span></a>
+              <div><i class="bi bi-building" aria-hidden="true"></i><span><small>Company</small>ANVIQ</span></div>
+            </div>
+            <p class="pp-note"><i class="bi bi-info-circle" aria-hidden="true"></i>
+              If you are not satisfied with our response, you may contact the Data Protection Board of India.
+            </p>
+          </article>
 
         </div>
-
       </div>
     </section>
 
@@ -3999,177 +3982,231 @@ better first 60 seconds.</h2>
    ============================================================ -->
   <div class="page" id="page-terms">
 
-    <section class="section">
-      <div class="container-sm">
-
-        <!-- Header -->
-        <div class="section-header">
-          <div class="section-eyebrow">
-            ✦ Legal
-          </div>
-
-          <h1 class="heading-1">Terms & Conditions</h1>
-
-          <p class="body-lg" style="color:var(--text-secondary);margin-top:14px;">
-            These Terms & Conditions govern your access to and use of AnviqAI-powered clinical intelligence platform,
-            including ANVIQ Scribe, ANVIQ Radiologist, and related healthcare technology services.
-          </p>
+    <!-- HERO -->
+    <section class="product-hero pp-hero">
+      <div class="hero-grid-bg"></div>
+      <div class="container" style="position:relative;z-index:1;">
+        <div class="hero-eyebrow" style="display:inline-flex;">
+          <span class="hero-eyebrow-dot">●</span>
+          Legal · Terms
         </div>
+        <h1 class="pp-title">Terms &amp; Conditions</h1>
+        <p class="pp-sub">
+          The rules for using the ANVIQ website and our AI clinical intelligence platform:
+          ANVIQ Scribe, Rx, Radiologist and Receptionist.
+        </p>
+        <div class="pp-meta">
+          <span><i class="bi bi-calendar3" aria-hidden="true"></i> Last updated: 28 September 2026</span>
+          <span><i class="bi bi-geo-alt" aria-hidden="true"></i> Governed by the laws of India</span>
+          <span><i class="bi bi-clock" aria-hidden="true"></i> 7 min read</span>
+        </div>
+      </div>
+    </section>
 
-        <!-- Content Card -->
-        <div class="card" style="padding:48px;">
-
-          <h3 class="heading-3">1. Acceptance of Terms</h3>
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            By accessing or using Anviq, you acknowledge that you have read, understood, and agree to be bound by these
-            Terms & Conditions. If you do not agree with any provision of these terms, you must discontinue use of the
-            platform immediately.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">2. Services Provided</h3>
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            ANVIQ provides AI-powered healthcare technology solutions, including clinical documentation assistance,
-            radiology workflow support, report generation, clinical intelligence tools, and related software services
-            designed to improve healthcare efficiency and productivity.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">3. Eligibility</h3>
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            The platform is intended for use by healthcare professionals, healthcare organizations, and authorized
-            personnel. Users must comply with all applicable laws, regulations, and professional standards while using
-            our services.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">4. User Responsibilities</h3>
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            Users are responsible for maintaining accurate account information, safeguarding login credentials, and
-            ensuring that all activities performed through their accounts comply with applicable legal and regulatory
-            requirements.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">5. AI Generated Content</h3>
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            Content generated by Anviq, including clinical notes, summaries, reports, recommendations, and analytical
-            outputs, is produced using artificial intelligence and should always be reviewed, verified, and approved by
-            qualified healthcare professionals before clinical use.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">6. Medical Disclaimer</h3>
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            ANVIQ does not provide medical advice, diagnosis, treatment recommendations, or emergency healthcare
-            services. Clinical decisions remain solely the responsibility of licensed healthcare professionals.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">7. Data Privacy & Security</h3>
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            We implement industry-standard security measures to protect information processed through our platform. Use
-            of the platform is also governed by our Privacy Policy, which explains how information is collected, used,
-            stored, and protected.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">8. Intellectual Property Rights</h3>
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            All software, technology, trademarks, logos, content, designs, algorithms, and proprietary materials
-            associated with ANVIQ remain the exclusive property of ANVIQ and are protected by applicable intellectual
-            property laws.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">9. Prohibited Activities</h3>
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            Users may not misuse the platform, attempt unauthorized access, interfere with system operations, distribute
-            malicious software, violate applicable laws, or use the platform in any manner that may compromise security,
-            privacy, or service integrity.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">10. Service Availability</h3>
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            While we strive to maintain reliable and uninterrupted service, ANVIQ does not guarantee continuous
-            availability of the platform and may perform maintenance, updates, or service modifications without prior
-            notice.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">11. Limitation of Liability</h3>
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            To the fullest extent permitted by law, ANVIQ shall not be liable for any indirect, incidental,
-            consequential, special, or punitive damages, including loss of profits, business interruption, data loss, or
-            clinical outcomes arising from the use of the platform.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">12. Termination</h3>
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            We reserve the right to suspend or terminate access to the platform at our discretion if these Terms &
-            Conditions are violated or if continued access poses legal, operational, or security risks.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">13. Changes to These Terms</h3>
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            ANVIQ may update these Terms & Conditions periodically. Updated versions become effective immediately upon
-            publication. Continued use of the platform constitutes acceptance of the revised terms.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">14. Governing Law</h3>
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            These Terms & Conditions shall be governed by and interpreted in accordance with the laws of India. Any
-            disputes arising from the use of the platform shall be subject to the exclusive jurisdiction of the
-            competent courts of India.
-          </p>
-
-          <hr class="divider">
-
-          <h3 class="heading-3">15. Contact Information</h3>
-          <p class="body-md" style="margin-top:10px;color:var(--text-secondary);">
-            If you have any questions regarding these Terms & Conditions, please contact us:
-          </p>
-
-          <div style="
-          margin-top:18px;
-          padding:20px;
-          background:var(--bg-secondary);
-          border:1px solid var(--border-color);
-          border-radius:16px;
-        ">
-            <p style="margin:0;">
-              <strong>Email:</strong> support@arogyalabs.ai
-            </p>
-
-            <p style="margin:10px 0 0;">
-              <strong>Website:</strong> arogyalabs.ai
-            </p>
+    <!-- AT A GLANCE -->
+    <section class="section pp-glance-wrap">
+      <div class="container">
+        <div class="pp-glance">
+          <div class="pp-glance-card">
+            <span class="pp-ico"><i class="bi bi-hospital" aria-hidden="true"></i></span>
+            <h4>For healthcare professionals</h4>
+            <p>ANVIQ is built for clinicians, clinics and hospitals, not for personal medical use.</p>
           </div>
+          <div class="pp-glance-card">
+            <span class="pp-ico"><i class="bi bi-person-check" aria-hidden="true"></i></span>
+            <h4>AI assists, doctors decide</h4>
+            <p>Every AI note, report or prescription must be reviewed by a qualified professional.</p>
+          </div>
+          <div class="pp-glance-card">
+            <span class="pp-ico"><i class="bi bi-shield-lock" aria-hidden="true"></i></span>
+            <h4>Keep your account safe</h4>
+            <p>You are responsible for your login and for activity under your account.</p>
+          </div>
+          <div class="pp-glance-card">
+            <span class="pp-ico"><i class="bi bi-file-earmark-lock" aria-hidden="true"></i></span>
+            <h4>Your data stays yours</h4>
+            <p>Clinical data you enter belongs to your organisation. See our Privacy Policy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TERMS -->
+    <section class="section pp-body">
+      <div class="container pp-layout">
+
+        <aside class="pp-toc" aria-label="On this page">
+          <p class="pp-toc-title">On this page</p>
+          <nav>
+            <a href="#tc-accept">1. Acceptance of terms</a>
+            <a href="#tc-services">2. Our services</a>
+            <a href="#tc-eligibility">3. Who can use ANVIQ</a>
+            <a href="#tc-accounts">4. Accounts &amp; trials</a>
+            <a href="#tc-ai">5. AI-generated content</a>
+            <a href="#tc-medical">6. Medical disclaimer</a>
+            <a href="#tc-data">7. Data &amp; privacy</a>
+            <a href="#tc-acceptable">8. Acceptable use</a>
+            <a href="#tc-ip">9. Intellectual property</a>
+            <a href="#tc-availability">10. Availability &amp; changes</a>
+            <a href="#tc-liability">11. Limitation of liability</a>
+            <a href="#tc-termination">12. Suspension &amp; termination</a>
+            <a href="#tc-updates">13. Updates to these terms</a>
+            <a href="#tc-law">14. Governing law</a>
+            <a href="#tc-contact">15. Contact</a>
+          </nav>
+        </aside>
+
+        <div class="pp-content">
+
+          <article class="pp-block" id="tc-accept">
+            <h2><span class="pp-num">01</span> Acceptance of terms</h2>
+            <p>
+              By visiting this website, filling in a form, or using any ANVIQ product, you agree to these Terms &amp; Conditions.
+              If you use ANVIQ on behalf of a clinic or hospital, you confirm that you are allowed to accept these terms for
+              that organisation. If you do not agree, please do not use the website or the platform.
+            </p>
+          </article>
+
+          <article class="pp-block" id="tc-services">
+            <h2><span class="pp-num">02</span> Our services</h2>
+            <p>ANVIQ provides AI tools that support clinical work:</p>
+            <div class="pp-chips">
+              <span><i class="bi bi-mic" aria-hidden="true"></i> ANVIQ Scribe: ambient clinical notes</span>
+              <span><i class="bi bi-capsule" aria-hidden="true"></i> ANVIQ Rx: e-prescriptions</span>
+              <span><i class="bi bi-lungs" aria-hidden="true"></i> ANVIQ Radiologist: imaging AI</span>
+              <span><i class="bi bi-person-badge" aria-hidden="true"></i> ANVIQ Receptionist: patient registration</span>
+            </div>
+            <p>Some products or features may be in early access or "coming soon" and can change before full release.</p>
+          </article>
+
+          <article class="pp-block" id="tc-eligibility">
+            <h2><span class="pp-num">03</span> Who can use ANVIQ</h2>
+            <p>
+              The platform is for licensed healthcare professionals, healthcare organisations and staff they authorise.
+              You must be at least 18 years old and follow all laws, regulations and professional standards that apply to
+              your practice.
+            </p>
+          </article>
+
+          <article class="pp-block" id="tc-accounts">
+            <h2><span class="pp-num">04</span> Accounts &amp; trials</h2>
+            <ul class="pp-list pp-check">
+              <li>Give accurate details when you sign up or request early access</li>
+              <li>Keep your password private and tell us straight away if you think your account is misused</li>
+              <li>You are responsible for everything done through your account</li>
+              <li>Free trials (for example, 14 days) are for evaluation. At the end, you can choose a paid plan or stop</li>
+              <li>Plan details and pricing for Clinic, Hospital and Network are agreed separately with our team</li>
+            </ul>
+          </article>
+
+          <article class="pp-block" id="tc-ai">
+            <h2><span class="pp-num">05</span> AI-generated content</h2>
+            <p>
+              ANVIQ uses artificial intelligence to draft clinical notes, prescriptions, ICD codes, reports, alerts and
+              summaries. AI can make mistakes or miss information.
+            </p>
+            <p class="pp-note"><i class="bi bi-exclamation-triangle" aria-hidden="true"></i>
+              All AI output must be reviewed, corrected where needed, and approved by a qualified healthcare professional before it is used for patient care, shared with a patient, or submitted for billing.
+            </p>
+          </article>
+
+          <article class="pp-block" id="tc-medical">
+            <h2><span class="pp-num">06</span> Medical disclaimer</h2>
+            <p>
+              ANVIQ is a support tool. It does not give medical advice, diagnose conditions, or replace clinical judgement,
+              and it is not an emergency service. All clinical decisions remain the responsibility of the treating
+              healthcare professional.
+            </p>
+          </article>
+
+          <article class="pp-block" id="tc-data">
+            <h2><span class="pp-num">07</span> Data &amp; privacy</h2>
+            <p>
+              Patient and clinical data entered into ANVIQ belongs to your organisation, and we process it only to provide
+              the service. You are responsible for having the right consent to record and process patient information.
+              How we handle personal data, including website form details, is explained in our
+              <a href="#privacy" onclick="navigate('privacy'); return false;">Privacy Policy</a>.
+            </p>
+          </article>
+
+          <article class="pp-block" id="tc-acceptable">
+            <h2><span class="pp-num">08</span> Acceptable use</h2>
+            <p>You agree not to:</p>
+            <ul class="pp-list">
+              <li>Try to access accounts, systems or data you are not authorised to use</li>
+              <li>Copy, reverse-engineer or resell the platform or its AI models</li>
+              <li>Upload malware or interfere with how the service works</li>
+              <li>Send spam or automated submissions through our website forms</li>
+              <li>Use ANVIQ in any way that breaks the law or harms patients' privacy</li>
+            </ul>
+          </article>
+
+          <article class="pp-block" id="tc-ip">
+            <h2><span class="pp-num">09</span> Intellectual property</h2>
+            <p>
+              The ANVIQ name, logo, software, AI models, designs and website content belong to ANVIQ and are protected by
+              law. You receive a limited right to use the platform for your organisation's work while your account is active.
+            </p>
+          </article>
+
+          <article class="pp-block" id="tc-availability">
+            <h2><span class="pp-num">10</span> Availability &amp; changes</h2>
+            <p>
+              We work to keep ANVIQ available and reliable, but we cannot promise it will never be interrupted. We may
+              update, improve or change features, and carry out maintenance. Where possible, we will give notice of
+              changes that affect you. Uptime commitments (for example, 99.9% SLA on the Network plan) apply only when
+              agreed in writing.
+            </p>
+          </article>
+
+          <article class="pp-block" id="tc-liability">
+            <h2><span class="pp-num">11</span> Limitation of liability</h2>
+            <p>
+              As far as the law allows, ANVIQ is not liable for indirect or consequential losses, such as lost profits,
+              business interruption or data loss, or for clinical outcomes that result from using the platform. Nothing in
+              these terms limits liability that cannot be limited under Indian law.
+            </p>
+          </article>
+
+          <article class="pp-block" id="tc-termination">
+            <h2><span class="pp-num">12</span> Suspension &amp; termination</h2>
+            <p>
+              You can stop using ANVIQ at any time. We may suspend or close an account if these terms are broken, or if
+              continued access creates a legal, security or operational risk. After closure, we handle your
+              organisation's data as described in our agreement and Privacy Policy.
+            </p>
+          </article>
+
+          <article class="pp-block" id="tc-updates">
+            <h2><span class="pp-num">13</span> Updates to these terms</h2>
+            <p>
+              We may update these terms from time to time. The "Last updated" date at the top shows the latest version.
+              If you keep using ANVIQ after an update, you accept the new terms.
+            </p>
+          </article>
+
+          <article class="pp-block" id="tc-law">
+            <h2><span class="pp-num">14</span> Governing law</h2>
+            <p>
+              These terms are governed by the laws of India. Any dispute will be handled by the competent courts of India.
+            </p>
+          </article>
+
+          <article class="pp-block pp-contact" id="tc-contact">
+            <h2><span class="pp-num">15</span> Contact</h2>
+            <p>Questions about these terms? Get in touch.</p>
+            <div class="pp-contact-grid">
+              <a href="mailto:support@arogyalabs.ai"><i class="bi bi-envelope" aria-hidden="true"></i><span><small>Email</small>support@arogyalabs.ai</span></a>
+              <a href="https://arogyalabs.ai" target="_blank" rel="noopener noreferrer"><i class="bi bi-globe" aria-hidden="true"></i><span><small>Website</small>arogyalabs.ai</span></a>
+              <div><i class="bi bi-building" aria-hidden="true"></i><span><small>Company</small>ANVIQ</span></div>
+            </div>
+          </article>
 
         </div>
-
       </div>
     </section>
 
   </div>
-
 
   <!-- ============================================================
    PAGE: CONTACT / SUPPORT
@@ -4177,250 +4214,252 @@ better first 60 seconds.</h2>
   <div class="page" id="page-contact-support">
 
     <!-- HERO -->
-    <section class="section">
-      <div class="container-sm">
-
-        <div class="section-header">
-          <div class="section-eyebrow">Support Center</div>
-
-          <h1 class="heading-1">
-            How can we help you today?
-          </h1>
-
-          <p class="body-lg" style="color:var(--text-secondary);margin-top:14px;">
-            Whether you're setting up ANVIQ Scribe, onboarding your clinical team,
-            troubleshooting a workflow, or exploring enterprise deployment,
-            our team is ready to help.
-          </p>
+    <section class="product-hero pp-hero">
+      <div class="hero-grid-bg"></div>
+      <div class="container" style="position:relative;z-index:1;">
+        <div class="hero-eyebrow" style="display:inline-flex;">
+          <span class="hero-eyebrow-dot">●</span>
+          Support Center
         </div>
-
-        <!-- SUPPORT OPTIONS -->
-        <div class="grid-2">
-
-          <div class="card">
-            <!-- <div class="card-icon">⚙️</div> -->
-            <h3>Technical Support</h3>
-
-            <p>
-              Need help with ANVIQ Scribe, ANVIQ Radiologist, integrations,
-              platform access, workflows, or unexpected issues?
-              Our product specialists can assist.
-            </p>
-
-            <div style="margin-top:18px;">
-              <!-- <strong>support@arogyalabs.ai</strong> -->
-            </div>
-          </div>
-
-          <div class="card">
-            <!-- <div class="card-icon">🚀</div> -->
-            <h3>Product Onboarding</h3>
-
-            <p>
-              Get assistance with implementation, team setup,
-              deployment planning, account configuration,
-              and best practices.
-            </p>
-
-            <div style="margin-top:18px;">
-              <!-- <strong>success@arogyalabs.ai</strong> -->
-            </div>
-          </div>
-
-          <div class="card">
-            <!-- <div class="card-icon">🏥</div> -->
-            <h3>Enterprise & Hospitals</h3>
-
-            <p>
-              Discuss large-scale deployments, custom integrations,
-              procurement requirements, compliance reviews,
-              and enterprise licensing.
-            </p>
-
-            <div style="margin-top:18px;">
-              <!-- <strong>business@arogyalabs.ai</strong> -->
-            </div>
-          </div>
-
-          <div class="card">
-            <!-- <div class="card-icon">💳</div> -->
-            <h3>Billing & Subscriptions</h3>
-
-            <p>
-              Questions regarding invoices, subscriptions,
-              renewals, payments, upgrades,
-              or account management.
-            </p>
-
-            <div style="margin-top:18px;">
-              <!-- <strong>billing@arogyalabs.ai</strong> -->
-            </div>
-          </div>
-
+        <h1 class="pp-title">How can we help you today?</h1>
+        <p class="pp-sub">
+          Setting up ANVIQ, onboarding your clinical team, fixing a workflow, or planning a hospital rollout.
+          Our team is here to help.
+        </p>
+        <div class="pp-meta">
+          <span><i class="bi bi-lightning-charge" aria-hidden="true"></i> Replies within 24 hours</span>
+          <span><i class="bi bi-people" aria-hidden="true"></i> Real product specialists</span>
+          <span><i class="bi bi-shield-check" aria-hidden="true"></i> DPDP compliant</span>
         </div>
-
       </div>
     </section>
 
-
-
-    <!-- CONTACT DIRECTORY -->
-    <section class="section bg-secondary-section">
-      <div class="container-sm">
-
-        <div class="section-header">
-          <div class="section-eyebrow">Contact Directory</div>
-
-          <h2 class="heading-1">
-            Reach the right team faster
-          </h2>
+    <!-- HELP TOPICS (click = pre-select topic in the form) -->
+    <section class="section pp-glance-wrap">
+      <div class="container">
+        <div class="pp-glance cs-topics">
+          <button type="button" class="pp-glance-card cs-topic" data-topic="Technical support">
+            <span class="pp-ico"><i class="bi bi-tools" aria-hidden="true"></i></span>
+            <h4>Technical Support</h4>
+            <p>Help with Scribe, Rx, Radiologist, Receptionist, integrations, access or unexpected issues.</p>
+            <span class="cs-go">Ask a question <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+          </button>
+          <button type="button" class="pp-glance-card cs-topic" data-topic="Product onboarding">
+            <span class="pp-ico"><i class="bi bi-rocket-takeoff" aria-hidden="true"></i></span>
+            <h4>Product Onboarding</h4>
+            <p>Setup, team accounts, deployment planning, configuration and best practices.</p>
+            <span class="cs-go">Get set up <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+          </button>
+          <button type="button" class="pp-glance-card cs-topic" data-topic="Enterprise & hospitals">
+            <span class="pp-ico"><i class="bi bi-hospital" aria-hidden="true"></i></span>
+            <h4>Enterprise &amp; Hospitals</h4>
+            <p>Large rollouts, custom integrations, procurement, compliance reviews and licensing.</p>
+            <span class="cs-go">Talk to us <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+          </button>
+          <button type="button" class="pp-glance-card cs-topic" data-topic="Billing & subscriptions">
+            <span class="pp-ico"><i class="bi bi-credit-card" aria-hidden="true"></i></span>
+            <h4>Billing &amp; Subscriptions</h4>
+            <p>Invoices, renewals, payments, upgrades and account management.</p>
+            <span class="cs-go">Billing help <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+          </button>
         </div>
-
-        <div class="card">
-
-          <div
-            style="display:flex;justify-content:space-between;padding:18px 0;border-bottom:1px solid var(--border-color);">
-            <span>General Support</span>
-            <strong>solutions@arogyalabs.ai</strong>
-          </div>
-
-          <div
-            style="display:flex;justify-content:space-between;padding:18px 0;border-bottom:1px solid var(--border-color);">
-            <span>Business & Partnerships</span>
-            <strong>solutions@arogyalabs.ai</strong>
-          </div>
-
-          <div
-            style="display:flex;justify-content:space-between;padding:18px 0;border-bottom:1px solid var(--border-color);">
-            <span>Billing & Accounts</span>
-            <strong>solutions@arogyalabs.ai</strong>
-          </div>
-
-          <div
-            style="display:flex;justify-content:space-between;padding:18px 0;border-bottom:1px solid var(--border-color);">
-            <span>Customer Success</span>
-            <strong>solutions@arogyalabs.ai</strong>
-          </div>
-
-          <div style="display:flex;justify-content:space-between;padding:18px 0;">
-            <span>Security & Privacy</span>
-            <strong>solutions@arogyalabs.ai</strong>
-          </div>
-
-        </div>
-
       </div>
     </section>
 
+    <!-- FORM + DIRECTORY -->
+    <section class="section" id="csFormSection">
+      <div class="container cs-layout">
 
-
-    <!-- SECURITY -->
-    <section class="section">
-      <div class="container-sm">
-
-        <div class="card">
-
-          <span class="product-badge badge-live">
-            Security & Compliance
-          </span>
-
-          <h2 class="heading-2" style="margin-bottom:14px;">
-            Responsible Security Reporting
-          </h2>
-
-          <p style="color:var(--text-secondary);">
-            If you believe you have identified a security vulnerability,
-            privacy concern, unauthorized access attempt,
-            or compliance issue, please contact our security team directly.
-          </p>
-
-          <div style="
-          margin-top:24px;
-          padding:18px;
-          border-radius:14px;
-          background:var(--bg-secondary);
-          border:1px solid var(--border-color);
-        ">
-            <strong>solutions@arogyalabs.ai</strong>
+        <form class="cs-form cs-form-x" id="csForm" onsubmit="return csSubmit(event)" novalidate>
+          <div class="cs-fhead">
+            <span class="cs-fbadge"><i class="bi bi-chat-dots" aria-hidden="true"></i></span>
+            <div>
+              <h2>Send us a message</h2>
+              <p class="cs-form-sub">Tell us what you need and we'll get back to you by email.</p>
+            </div>
+            <span class="cs-reply-pill"><i class="bi bi-lightning-charge-fill" aria-hidden="true"></i> Reply in 24h</span>
           </div>
 
-        </div>
+          <div class="modal-name-row">
+            <div class="input-group">
+              <label class="input-label" for="csName">Full name</label>
+              <div class="cs-field"><i class="bi bi-person" aria-hidden="true"></i>
+                <input class="input-field" id="csName" type="text" placeholder="Dr. Jane Smith" autocomplete="name"><b class="cs-ok"><i class="bi bi-check-lg"></i></b></div>
+            </div>
+            <div class="input-group">
+              <label class="input-label" for="csEmail">Work email</label>
+              <div class="cs-field"><i class="bi bi-envelope" aria-hidden="true"></i>
+                <input class="input-field" id="csEmail" type="email" placeholder="jane@clinic.com" autocomplete="email"><b class="cs-ok"><i class="bi bi-check-lg"></i></b></div>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="csOrg">Clinic / hospital <span class="cs-opt">(optional)</span></label>
+            <div class="cs-field"><i class="bi bi-hospital" aria-hidden="true"></i>
+              <input class="input-field" id="csOrg" type="text" placeholder="City Care Clinic" autocomplete="organization"></div>
+          </div>
+
+          <div class="input-group">
+            <span class="input-label" id="csTopicLabel">What's it about?</span>
+            <div class="cs-chips" role="radiogroup" aria-labelledby="csTopicLabel">
+              <button type="button" class="cs-chip is-on" data-v="Technical support"><i class="bi bi-tools"></i> Technical</button>
+              <button type="button" class="cs-chip" data-v="Product onboarding"><i class="bi bi-rocket-takeoff"></i> Onboarding</button>
+              <button type="button" class="cs-chip" data-v="Enterprise &amp; hospitals"><i class="bi bi-hospital"></i> Enterprise</button>
+              <button type="button" class="cs-chip" data-v="Billing &amp; subscriptions"><i class="bi bi-credit-card"></i> Billing</button>
+              <button type="button" class="cs-chip" data-v="Security &amp; privacy"><i class="bi bi-shield-lock"></i> Security</button>
+              <button type="button" class="cs-chip" data-v="Something else"><i class="bi bi-three-dots"></i> Other</button>
+            </div>
+            <select class="input-field cs-hidden-select" id="csTopic" tabindex="-1" aria-hidden="true">
+              <option>Technical support</option>
+              <option>Product onboarding</option>
+              <option>Enterprise &amp; hospitals</option>
+              <option>Billing &amp; subscriptions</option>
+              <option>Security &amp; privacy</option>
+              <option>Something else</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="csMessage">How can we help?</label>
+            <div class="cs-sugs" id="csSugs" aria-label="Quick suggestions"></div>
+            <textarea class="input-field cs-textarea" id="csMessage" rows="5" maxlength="2000"
+              placeholder="Describe your question or issue. For bugs, tell us which product and what happened."></textarea>
+            <div class="cs-meter"><span id="csMeter"></span></div>
+            <span class="cs-count" id="csCount">0 / 2000</span>
+          </div>
+
+          <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <button type="submit" class="btn btn-accent cs-submit" id="csSendBtn">
+            <span class="cs-btn-label">Send message</span> <i class="bi bi-send cs-plane" aria-hidden="true"></i>
+          </button>
+          <p class="cs-privacy">By sending, you agree to our
+            <a href="#privacy" onclick="navigate('privacy'); return false;">Privacy Policy</a>.
+            Please don't include patient details in this form.</p>
+
+          <div class="cs-done" aria-live="polite">
+            <i class="bi bi-check2" aria-hidden="true"></i>
+            <h3>Message sent!</h3>
+            <p>Thanks for reaching out. We'll reply to your email within 24 hours.</p>
+            <button type="button" class="btn btn-secondary" onclick="csReset()">Send another message</button>
+          </div>
+        </form>
+
+        <aside class="cs-side cs-side-x">
+
+          <div class="cs-card cs-next">
+            <div class="cs-side-head">
+              <span class="cs-fbadge cs-fbadge-sm"><i class="bi bi-signpost-split" aria-hidden="true"></i></span>
+              <h3>What happens next</h3>
+            </div>
+            <ol class="cs-timeline">
+              <li><span class="cs-tl-dot"><i class="bi bi-inbox"></i></span>
+                <div><strong>We get your message</strong><p>It goes straight to our support inbox.</p></div></li>
+              <li><span class="cs-tl-dot"><i class="bi bi-person-check"></i></span>
+                <div><strong>A specialist picks it up</strong><p>Matched to the topic you chose.</p></div></li>
+              <li><span class="cs-tl-dot cs-tl-hot"><i class="bi bi-reply"></i></span>
+                <div><strong>You get a reply by email</strong><p>Usually within 24 hours.</p></div></li>
+            </ol>
+          </div>
+
+          <div class="cs-card cs-direct">
+            <div class="cs-side-head">
+              <span class="cs-fbadge cs-fbadge-sm"><i class="bi bi-envelope-paper" aria-hidden="true"></i></span>
+              <div>
+                <h3>Prefer email?</h3>
+                <p>Write to us directly, any topic.</p>
+              </div>
+            </div>
+            <div class="cs-mailbox">
+              <i class="bi bi-at" aria-hidden="true"></i>
+              <a href="mailto:solutions@arogyalabs.ai">solutions@arogyalabs.ai</a>
+              <button type="button" class="cs-copy" data-copy="solutions@arogyalabs.ai" aria-label="Copy email address">
+                <i class="bi bi-clipboard" aria-hidden="true"></i><span>Copy</span>
+              </button>
+            </div>
+            <div class="cs-covers">
+              <span><i class="bi bi-headset"></i> Support</span>
+              <span><i class="bi bi-briefcase"></i> Partnerships</span>
+              <span><i class="bi bi-receipt"></i> Billing</span>
+              <span><i class="bi bi-stars"></i> Success</span>
+            </div>
+          </div>
+
+          <div class="cs-card cs-security cs-security-x">
+            <div class="cs-side-head">
+              <span class="cs-fbadge cs-fbadge-sm cs-fbadge-alert"><i class="bi bi-shield-exclamation" aria-hidden="true"></i></span>
+              <div>
+                <h3>Report a security issue</h3>
+                <p>Vulnerability or privacy concern? Reports get priority review.</p>
+              </div>
+            </div>
+            <a class="cs-sec-btn" href="mailto:solutions@arogyalabs.ai?subject=Security%20report">
+              <i class="bi bi-envelope" aria-hidden="true"></i> Email security team <i class="bi bi-arrow-right cs-sec-arrow" aria-hidden="true"></i>
+            </a>
+          </div>
+
+        </aside>
 
       </div>
     </section>
-
-
 
     <!-- RESPONSE TIMES -->
     <section class="section bg-secondary-section">
-      <div class="container-sm">
-
+      <div class="container">
         <div class="section-header">
           <div class="section-eyebrow">Support Commitment</div>
-
-          <h2 class="heading-1">
-            Fast, reliable assistance
-          </h2>
+          <h2 class="heading-1">Fast, reliable assistance</h2>
         </div>
-
-        <div class="grid-3">
-
-          <div class="card text-center">
-            <h2 style="color:var(--brand-orange);font-size:2rem;">24h</h2>
-            <h4>Technical Requests</h4>
-            <p>Initial response target for most support tickets.</p>
+        <div class="cs-times">
+          <div class="cs-time">
+            <span class="cs-big">24h</span>
+            <h4>Technical requests</h4>
+            <p>First response target for most support tickets.</p>
           </div>
-
-          <div class="card text-center">
-            <h2 style="color:var(--brand-teal);font-size:2rem;">48h</h2>
-            <h4>Billing Issues</h4>
-            <p>Resolution and investigation response window.</p>
+          <div class="cs-time">
+            <span class="cs-big">48h</span>
+            <h4>Billing issues</h4>
+            <p>Investigation and resolution response window.</p>
           </div>
-
-          <div class="card text-center">
-            <h2 style="color:var(--brand-orange);font-size:2rem;">Priority</h2>
-            <h4>Security Reports</h4>
-            <p>Immediate review and escalation process.</p>
+          <div class="cs-time cs-time-hot">
+            <span class="cs-big">Priority</span>
+            <h4>Security reports</h4>
+            <p>Immediate review and escalation.</p>
           </div>
-
         </div>
-
       </div>
     </section>
 
-
-
-    <!-- CTA -->
-    <section class="cta-section">
-
-      <div class="container-sm">
-
-        <h2 class="heading-1">
-          Building the future of clinical intelligence
-        </h2>
-
-        <p>
-          We're committed to helping healthcare professionals,
-          clinics, hospitals, and enterprises succeed with AI-powered workflows.
-        </p>
-
-        <div class="cta-actions">
-
-          <a href="mailto:solutions@arogyalabs.ai" class="btn btn-accent btn-lg">
-            Contact Support
-          </a>
-
-          <!-- <a
-          href="mailto:business@arogyalabs.ai"
-          class="btn btn-ghost btn-lg"
-        >
-          Talk to Sales
-        </a> -->
-
+    <!-- FAQ -->
+    <section class="section">
+      <div class="container cs-faq-wrap">
+        <div class="section-header">
+          <div class="section-eyebrow">FAQ</div>
+          <h2 class="heading-1">Quick answers</h2>
         </div>
-
+        <div class="cs-faq">
+          <details>
+            <summary>How do I start a free trial?</summary>
+            <p>Click <strong>Start Free Trial</strong> at the top of any page. The 14-day trial needs no credit card.</p>
+          </details>
+          <details>
+            <summary>Which languages does ANVIQ Scribe support?</summary>
+            <p>Scribe supports 10+ Indian languages for ambient documentation. Contact us if you need a specific language.</p>
+          </details>
+          <details>
+            <summary>Can ANVIQ connect to our EHR / HIMS / PACS?</summary>
+            <p>Yes. The Hospital and Network plans include PACS and HIMS integration. Choose "Enterprise &amp; hospitals" in the form and our team will plan it with you.</p>
+          </details>
+          <details>
+            <summary>Is patient data safe?</summary>
+            <p>ANVIQ is built for India's DPDP Act. Patient data belongs to your organisation and is never sold. Read the <a href="#privacy" onclick="navigate('privacy'); return false;">Privacy Policy</a> for details.</p>
+          </details>
+          <details>
+            <summary>How do I change or cancel my plan?</summary>
+            <p>Send us a message with the topic "Billing &amp; subscriptions" and we'll help you upgrade, downgrade or cancel.</p>
+          </details>
+        </div>
       </div>
-
     </section>
 
   </div>

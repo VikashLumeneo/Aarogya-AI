@@ -68,6 +68,44 @@
 - Page behind stops scrolling while the popup is open
 - Files: `css/main.css`, `index.html`, `js/ui.js`
 
+### Follow-up: team section (About page), matched to site style
+- Team cards use the same glass card style as the journey/product cards: rounded glass card,
+  orange top line + orange border + lift on hover, role in a pill tag, dark-teal LinkedIn button
+  that turns orange on hover; photo colour + small zoom on hover; soft fade-in on scroll
+- Every team photo is cropped so the face is the same size and position (per-photo values in `style` on each `<img>`)
+- Files: `css/team.css` (new), `index.html`, `js/ui.js`. Undo: remove the `css/team.css` link
+
+### Follow-up: new Privacy Policy page
+- Teal hero, 4 "at a glance" cards, sticky contents list with the current section highlighted,
+  13 numbered sections, forms table, rights cards, dark teal contact block
+- Content updated for the new website: Early Access / Notify forms, emails via Google Workspace,
+  hosting on Vercel, no tracking cookies, Google Fonts / cdnjs, DPDP Act 2023 rights, grievance contact
+- Files: `index.html` (#page-privacy), `css/privacy.css` (new), `js/ui.js`
+
+### Follow-up: new Terms & Conditions page
+- Same design as the Privacy page (teal hero, at-a-glance cards, sticky contents, 15 numbered sections)
+- Content updated: all 4 products, trials/plans, AI output must be reviewed, medical disclaimer,
+  data ownership + link to Privacy Policy, acceptable use (incl. form spam), Indian law
+- Files: `index.html` (#page-terms), `js/ui.js` (contents list now works on both pages); reuses `css/privacy.css`
+
+### Follow-up: Contact Support page redesign
+- Teal hero, 4 clickable help-topic cards (pre-select the topic in the form), contact form that emails
+  vikash@lumeneo.ai + sends the visitor a confirmation, contact directory, security report card,
+  response-time cards and FAQ accordion
+- New backend endpoint: `POST /api/contact` (`api/contact.js`, form added in `lib/mailer.js`, route in `server.js`)
+- Files: `index.html`, `css/contact.css` (new), `js/ui.js`
+
+### Follow-up: Radiologist "Sample Output" report card
+- Teal header with tags, findings as stat tiles (largest lesion highlighted), organ status list with
+  green "normal" dots, orange action alert with pulsing icon + recommendation pill, soft footer
+- Files: `index.html`, `css/report.css` (new)
+
+### Follow-up: Radiologist page backgrounds + modality cards
+- Rhythm: dark hero → white → soft grey (sample report) → dark teal band (modalities) → white CTA
+- Modalities: glass pill tab switcher, 4 dark-glass cards per row with hover lift + teal/orange top line,
+  white "Available" / mint "New" badges, fade-in when switching tabs
+- File: `css/report.css`
+
 ## Earlier the same day – CSS cleanup
 - Removed unused CSS, merged dead/duplicate rules, moved inline `<style>` blocks to `css/pages.css`
 

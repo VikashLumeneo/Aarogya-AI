@@ -1,0 +1,371 @@
+/* ============================================================
+   RADIOLOGIST "Sample Output" report card (teal theme)
+   ============================================================ */
+.report-wrap.rp{
+  max-width:1000px;
+  margin:0 auto;
+  padding:0;
+  overflow:hidden;
+  border-radius:28px;
+  background:#fff;
+  border:1px solid var(--border-color);
+  box-shadow:0 24px 60px rgba(10,61,58,.12);
+}
+
+/* header */
+.rp-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+  padding:26px 32px;
+  background:
+    radial-gradient(60% 120% at 100% 0%, rgba(45,212,191,.25) 0%, transparent 60%),
+    linear-gradient(150deg, #0A3D3A 0%, #0C4A45 60%, #072B29 100%);
+}
+.rp-brand{ display:flex; align-items:center; gap:14px; }
+.rp-logo{
+  display:grid; place-items:center;
+  width:46px; height:46px;
+  border-radius:14px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.2);
+  color:#7FE0D0;
+  font-size:1.3rem;
+}
+.rp-brand h3{ margin:0; color:#fff; font-size:1.2rem; font-weight:800; }
+.rp-brand span{ color:rgba(255,255,255,.65); font-size:.85rem; }
+.rp-tags{ display:flex; gap:8px; flex-wrap:wrap; }
+.rp-tags span{
+  display:inline-flex; align-items:center; gap:6px;
+  padding:7px 14px;
+  border-radius:999px;
+  color:#fff;
+  font-size:.82rem; font-weight:700;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.18);
+}
+.rp-tags .rp-ai{ background:rgba(45,212,191,.18); border-color:rgba(45,212,191,.4); color:#A7F3D0; }
+
+/* body: two columns + alert */
+.rp-body{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  padding:30px 32px;
+}
+.rp-title{
+  display:flex; align-items:center; gap:8px;
+  margin:0 0 14px;
+  color:var(--accent-text);
+  font-size:.78rem; font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+/* findings as stat tiles */
+.rp-stats{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.rp-stat{
+  padding:14px 16px;
+  border-radius:16px;
+  background:var(--bg-secondary);
+  border:1px solid var(--border-color);
+  transition:transform .25s ease, border-color .25s ease;
+}
+.rp-stat:hover{ transform:translateY(-2px); border-color:rgba(10,61,58,.3); }
+.rp-stat span{ display:block; color:var(--text-secondary); font-size:.8rem; }
+.rp-stat strong{ display:block; margin-top:4px; color:var(--text-primary); font-size:1.2rem; font-weight:900; }
+.rp-stat-hot{ background:#FFF5F1; border-color:#FDDCCF; }
+.rp-stat-hot strong{ color:var(--accent-text); }
+.rp-wide{ grid-column:span 2; }
+
+/* organ status list with green "normal" dots */
+.rp-organs{
+  list-style:none; margin:0; padding:0;
+  border-radius:16px;
+  border:1px solid var(--border-color);
+  overflow:hidden;
+}
+.rp-organs li{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding:11px 16px;
+  font-size:.9rem;
+  border-top:1px solid var(--border-color);
+}
+.rp-organs li:first-child{ border-top:0; }
+.rp-organs li:nth-child(even){ background:var(--bg-secondary); }
+.rp-organs span{ color:var(--text-secondary); }
+.rp-organs b{
+  display:inline-flex; align-items:center; gap:8px;
+  color:var(--brand-dark);
+  font-weight:700;
+}
+.rp-organs b::before{
+  content:"";
+  width:8px; height:8px;
+  border-radius:50%;
+  background:#2DD4BF;
+  box-shadow:0 0 0 3px rgba(45,212,191,.2);
+}
+
+/* action alert */
+.rp-alert{
+  grid-column:span 2;
+  display:flex; gap:16px;
+  padding:20px 22px;
+  border-radius:18px;
+  background:linear-gradient(135deg, #FFF5F1 0%, #FFFFFF 100%);
+  border:1px solid #FDDCCF;
+  border-left:5px solid var(--cta);
+}
+.rp-alert-ico{
+  flex-shrink:0;
+  display:grid; place-items:center;
+  width:42px; height:42px;
+  border-radius:12px;
+  background:var(--cta);
+  color:#fff;
+  font-size:1.1rem;
+  animation:rp-pulse 2.2s ease-out infinite;
+}
+@keyframes rp-pulse{
+  0%  { box-shadow:0 0 0 0 rgba(242,87,43,.45); }
+  100%{ box-shadow:0 0 0 14px rgba(242,87,43,0); }
+}
+.rp-alert-title{ color:var(--accent-text); font-weight:900; margin-bottom:6px; }
+.rp-alert p{ color:var(--text-secondary); line-height:1.7; font-size:.95rem; }
+.rp-alert strong{ color:var(--text-primary); }
+.rp-rec{
+  display:inline-flex; align-items:center; gap:8px;
+  margin-top:12px;
+  padding:7px 14px;
+  border-radius:999px;
+  background:var(--brand-dark);
+  color:#fff;
+  font-size:.82rem; font-weight:800;
+}
+
+/* footer */
+.rp-foot{
+  display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  padding:16px 32px;
+  background:var(--bg-secondary);
+  border-top:1px solid var(--border-color);
+  color:var(--text-muted);
+  font-size:.8rem;
+}
+.rp-foot span{ display:inline-flex; gap:8px; align-items:flex-start; }
+.rp-foot strong{ color:var(--brand-dark); }
+
+@media (max-width:768px){
+  .rp-head, .rp-body, .rp-foot{ padding-left:18px; padding-right:18px; }
+  .rp-body{ grid-template-columns:1fr; }
+  .rp-alert{ grid-column:auto; flex-direction:column; }
+  .report-wrap.rp{ border-radius:20px; }
+}
+
+/* ---------- Radiologist page backgrounds: same rhythm as Scribe / Rx
+   hero (dark teal) → white → soft grey (sample report) → DARK TEAL (modalities) → white CTA ---------- */
+#page-radiology > section.section:not(.bg-secondary-section){ background:#fff; }
+#page-radiology .sample-output-section{ background:var(--bg-secondary); }
+
+/* dark teal band */
+#page-radiology .rad-modalities{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(45% 55% at 100% 0%, rgba(45,212,191,.22) 0%, transparent 60%),
+    radial-gradient(40% 50% at 0% 100%, rgba(242,87,43,.12) 0%, transparent 60%),
+    linear-gradient(160deg, #0A3D3A 0%, #0C4A45 50%, #072B29 100%);
+}
+#page-radiology .rad-modalities .heading-1{ color:#fff; }
+#page-radiology .rad-modalities .section-eyebrow{
+  background:rgba(45,212,191,.14);
+  border:1px solid rgba(45,212,191,.35);
+  color:#A7F3D0;
+}
+
+/* tabs → glass pill switcher */
+#page-radiology .rad-modalities .tab-list{
+  display:flex;
+  width:max-content;
+  max-width:100%;
+  margin:0 auto 40px;
+  padding:6px;
+  gap:6px;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  -webkit-backdrop-filter:blur(12px);
+  backdrop-filter:blur(12px);
+}
+#page-radiology .rad-modalities .tab-btn{
+  display:inline-flex; align-items:center; gap:6px;
+  padding:10px 22px;
+  border:0;
+  border-radius:999px;
+  background:transparent;
+  color:rgba(255,255,255,.75);
+  font-weight:800;
+  font-size:.92rem;
+  text-transform:none;
+  transition:background .25s ease, color .25s ease;
+}
+#page-radiology .rad-modalities .tab-btn::after{ display:none; }
+#page-radiology .rad-modalities .tab-btn:hover{ color:#fff; background:rgba(255,255,255,.08); }
+#page-radiology .rad-modalities .tab-btn.active{
+  background:#fff;
+  color:var(--brand-dark);
+  box-shadow:0 6px 16px rgba(0,0,0,.2);
+}
+#page-radiology .rad-modalities .tab-btn .badge{
+  position:static !important;
+  transform:none !important;
+  top:auto; right:auto;
+  margin:0 0 0 2px !important;
+  padding:2px 8px;
+  border-radius:999px;
+  background:var(--cta);
+  color:#fff;
+  font-size:.62rem;
+  font-weight:800;
+}
+
+/* cards → glass cards, 4 per row */
+#page-radiology .rad-modalities .grid-3{
+  grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));
+  gap:20px;
+}
+#page-radiology .rad-modalities .tab-panel.active{ animation:rad-in .45s ease; }
+@keyframes rad-in{ from{ opacity:0; transform:translateY(12px); } to{ opacity:1; transform:none; } }
+
+#page-radiology .rad-modalities .card{
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  padding:26px 24px;
+  border-radius:22px;
+  background:linear-gradient(160deg, rgba(255,255,255,.14) 0%, rgba(255,255,255,.05) 100%) !important;
+  border:1px solid rgba(255,255,255,.16) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 14px 36px rgba(0,0,0,.18) !important;
+  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
+  opacity:1 !important;
+  transition:transform .3s ease, border-color .3s ease, background .3s ease;
+}
+/* hover: glass shine sweeps across + soft mint glow (no top line) */
+#page-radiology .rad-modalities .card::before{
+  content:"";
+  position:absolute;
+  top:0; bottom:0;
+  left:-70%;
+  width:50%;
+  pointer-events:none;
+  background:linear-gradient(105deg, transparent 0%, rgba(255,255,255,.22) 50%, transparent 100%);
+  transform:skewX(-18deg);
+  transition:left .8s ease;
+}
+#page-radiology .rad-modalities .card:hover{
+  transform:translateY(-6px) !important;
+  border-color:rgba(153,246,228,.55) !important;
+  background:linear-gradient(160deg, rgba(255,255,255,.2) 0%, rgba(255,255,255,.08) 100%) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.25), 0 0 0 1px rgba(45,212,191,.25), 0 18px 44px rgba(45,212,191,.22) !important;
+}
+#page-radiology .rad-modalities .card:hover::before{ left:130%; }
+
+#page-radiology .rad-modalities .card .heading-3{ color:#fff; margin-top:14px; font-size:1.15rem; }
+#page-radiology .rad-modalities .card .body-sm{ color:rgba(255,255,255,.72) !important; line-height:1.65; }
+
+#page-radiology .rad-modalities .card > .badge{
+  align-self:flex-start;
+  padding:4px 12px;
+  border-radius:999px;
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.03em;
+  text-transform:uppercase;
+}
+#page-radiology .rad-modalities .card > .badge--orange{ background:#FFECE8; color:var(--cta); border:1px solid var(--cta); }
+#page-radiology .rad-modalities .card > .badge--green{
+  background:rgba(45,212,191,.18);
+  border:1px solid rgba(45,212,191,.4);
+  color:#A7F3D0;
+}
+
+@media (max-width:768px){
+  #page-radiology .rad-modalities .tab-list{ width:100%; overflow-x:auto; border-radius:18px; }
+  #page-radiology .rad-modalities .tab-btn{ padding:9px 16px; flex:0 0 auto; }
+}
+
+
+/* ---------- Capabilities cards ("The AI second opinion radiologists trust") hover ---------- */
+#page-radiology .rad-caps .card{
+  position:relative;
+  overflow:hidden;
+  border-radius:22px;
+  background:#fff !important;
+  border:1px solid var(--border-color) !important;
+  box-shadow:0 10px 28px rgba(10,61,58,.06) !important;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-color .35s ease;
+}
+/* orange line grows from the left along the top */
+#page-radiology .rad-caps .card::before{
+  content:"";
+  position:absolute;
+  top:0; left:0;
+  height:4px;
+  width:0;
+  background:linear-gradient(90deg, var(--cta), #FF8A5B);
+  transition:width .45s ease;
+}
+/* soft mint wash fades in from the corner */
+#page-radiology .rad-caps .card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:radial-gradient(120% 90% at 0% 0%, rgba(45,212,191,.12) 0%, transparent 55%);
+  opacity:0;
+  transition:opacity .35s ease;
+}
+#page-radiology .rad-caps .card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(242,87,43,.45) !important;
+  box-shadow:0 22px 48px rgba(242,87,43,.14) !important;
+}
+#page-radiology .rad-caps .card:hover::before{ width:100%; }
+#page-radiology .rad-caps .card:hover::after{ opacity:1; }
+#page-radiology .rad-caps .card .heading-3{ position:relative; z-index:1; transition:color .3s ease; }
+#page-radiology .rad-caps .card .body-sm{ position:relative; z-index:1; }
+#page-radiology .rad-caps .card:hover .heading-3{ color:var(--brand-dark); }
+
+/* Capabilities cards: EXACT same look + hover as the Scribe page "journey" cards
+   (glass card, mirror shine sweep, orange top line, lift 6px, soft teal shadow) */
+#page-radiology .rad-caps .card{
+  border-radius:24px;
+  background:var(--mirror-shine) 100% 0 / 300% 100% no-repeat, var(--glass-bg) !important;
+  -webkit-backdrop-filter:var(--glass-blur);
+  backdrop-filter:var(--glass-blur);
+  border:1px solid var(--glass-border) !important;
+  box-shadow:var(--glass-shadow) !important;
+  transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease, background-position .9s ease;
+}
+#page-radiology .rad-caps .card::before{
+  inset:0 auto auto 0;
+  width:100% !important;
+  height:4px;
+  background:var(--cta) !important;
+  opacity:0;
+  transition:opacity .3s ease !important;
+}
+#page-radiology .rad-caps .card::after{ display:none; }
+#page-radiology .rad-caps .card:hover{
+  transform:translateY(-6px);
+  background-position:0% 0, 0 0 !important;
+  border-color:rgba(255,255,255,.95) !important;
+  box-shadow:0 20px 48px rgba(10,61,58,.16), inset 0 1px 0 #fff, inset 0 -1px 0 rgba(255,255,255,.4) !important;
+}
+#page-radiology .rad-caps .card:hover::before{ opacity:1; }
+#page-radiology .rad-caps .card:hover .heading-3{ color:var(--text-primary); }

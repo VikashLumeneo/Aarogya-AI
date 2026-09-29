@@ -187,9 +187,16 @@ const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        observer.unobserve(entry.target);
+        const el = entry.target;
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+        observer.unobserve(el);
+        // after the fade-in, remove the inline styles so CSS hover effects (lift etc.) work again
+        setTimeout(() => {
+          el.style.removeProperty('transform');
+          el.style.removeProperty('transition');
+          el.style.removeProperty('opacity');
+        }, 600);
       }
     });
   },
@@ -197,7 +204,7 @@ const observer = new IntersectionObserver(
 );
 
 document
-  .querySelectorAll('.card, .product-card, .testimonial-card, .pricing-card, .resource-card, .team-card')
+  .querySelectorAll('.card, .product-card, .testimonial-card, .pricing-card, .resource-card')
   .forEach((el) => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
@@ -270,3 +277,174 @@ async function rhNotify(e) {
     }, 2200);
   }
 })();
+
+
+/** Team section: soft fade-in on scroll, one card after another */
+(function () {
+  const cards = document.querySelectorAll('.team-card');
+  if (!cards.length) return;
+
+  cards.forEach((card, i) => card.style.setProperty('--i', i % 4));   // stagger per row
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  cards.forEach((c) => io.observe(c));
+
+})();
+
+
+/** Privacy & Terms pages: smooth-scroll contents links (without changing the page hash) + highlight current section */
+document.querySelectorAll('.pp-toc').forEach((toc) => {
+  const links = [...toc.querySelectorAll('a[href^="#"]')];
+
+  links.forEach((a) => a.addEventListener('click', (e) => {
+    e.preventDefault();                       // keep "#privacy" / "#terms" in the URL so the page router is not triggered
+    const target = document.getElementById(a.getAttribute('href').slice(1));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }));
+
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (!en.isIntersecting) return;
+      links.forEach((l) => l.classList.toggle('is-active', l.getAttribute('href') === '#' + en.target.id));
+    });
+  }, { rootMargin: '-120px 0px -60% 0px' });
+  links.forEach((l) => { const t = document.getElementById(l.getAttribute('href').slice(1)); if (t) spy.observe(t); });
+});
+
+
+/** Contact Support page: topic cards pre-select the form, message counter, send to /api/contact */
+(function () {
+  const form = document.getElementById('csForm');
+  if (!form) return;
+  const topic = document.getElementById('csTopic');
+  const msg = document.getElementById('csMessage');
+  const count = document.getElementById('csCount');
+
+  document.querySelectorAll('.cs-topic').forEach((card) => card.addEventListener('click', () => {
+    const want = card.dataset.topic;
+    [...topic.options].forEach((o) => { if (o.text === want) topic.value = o.value; });
+    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    form.classList.add('is-flash');
+    setTimeout(() => form.classList.remove('is-flash'), 1200);
+    setTimeout(() => document.getElementById('csName').focus({ preventScroll: true }), 500);
+  }));
+
+  const meter = document.getElementById('csMeter');
+  msg.addEventListener('input', () => {
+    count.textContent = `${msg.value.length} / 2000`;
+    if (meter) meter.style.width = Math.min(100, msg.value.length / 20) + '%';
+  });
+
+  // topic chips <-> hidden select (topic cards above also change the select)
+  const chips = [...form.querySelectorAll('.cs-chip')];
+  const syncChips = () => chips.forEach((c) => c.classList.toggle('is-on', c.dataset.v === topic.value));
+  chips.forEach((c) => c.addEventListener('click', () => { topic.value = c.dataset.v; syncChips(); renderSugs(); }));
+
+  // quick suggestions per topic: click to add to the message
+  const SUGS = {
+    'Technical support': ["I can't log in to my account", 'Recording is not starting', 'Report is not generating'],
+    'Product onboarding': ['How do I add my team?', 'Help me set up templates', 'Can we book a training session?'],
+    'Enterprise & hospitals': ['We want to connect our PACS / HIMS', 'Pricing for 50+ doctors', 'Security & compliance review'],
+    'Billing & subscriptions': ['I need an invoice', 'Upgrade my plan', 'Cancel my subscription'],
+    'Security & privacy': ['Report a vulnerability', 'Request deletion of my data', 'Where is my data stored?'],
+    'Something else': ['I have a partnership idea', 'Press / media enquiry', 'Feedback about ANVIQ'],
+  };
+  const sugBox = document.getElementById('csSugs');
+  function renderSugs() {
+    if (!sugBox) return;
+    sugBox.innerHTML = '';
+    (SUGS[topic.value] || []).forEach((t, i) => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'cs-sug'; b.textContent = t;
+      b.style.animationDelay = (i * 60) + 'ms';
+      b.addEventListener('click', () => {
+        msg.value = msg.value.trim() ? msg.value.trim() + '\n' + t : t;
+        msg.dispatchEvent(new Event('input')); msg.focus();
+      });
+      sugBox.appendChild(b);
+    });
+  }
+  renderSugs();
+
+  // live checks + step progress
+  const nameEl = document.getElementById('csName'), emailEl = document.getElementById('csEmail');
+  const steps = form.querySelectorAll('.cs-steps li');
+  function checkProgress() {
+    const nameOk = nameEl.value.trim().length > 1;
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailEl.value.trim());
+    nameEl.parentElement.classList.toggle('is-ok', nameOk);
+    emailEl.parentElement.classList.toggle('is-ok', emailOk);
+    const done = { you: nameOk && emailOk, topic: true, msg: msg.value.trim().length >= 10 };
+    steps.forEach((s) => s.classList.toggle('is-done', !!done[s.dataset.step]));
+  }
+  [nameEl, emailEl, msg].forEach((el) => el.addEventListener('input', checkProgress));
+  checkProgress();
+  topic.addEventListener('change', syncChips);
+  document.querySelectorAll('.cs-topic').forEach((card) => card.addEventListener('click', () => setTimeout(() => { syncChips(); renderSugs(); }, 0)));
+})();
+
+async function csSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const v = (id) => document.getElementById(id).value.trim();
+  const data = {
+    name: v('csName'), email: v('csEmail'), organisation: v('csOrg'),
+    topic: document.getElementById('csTopic').value, message: v('csMessage'),
+    website: form.querySelector('input[name="website"]').value,
+  };
+  if (!data.name) { showToast('⚠️ Please enter your name', 'warning'); return false; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(data.email)) { showToast('⚠️ Please enter a valid work email address', 'warning'); return false; }
+  if (data.message.length < 10) { showToast('⚠️ Please write a short message (at least 10 characters)', 'warning'); return false; }
+
+  const btn = document.getElementById('csSendBtn');
+  const label = btn.innerHTML;
+  btn.style.minWidth = btn.offsetWidth + 'px';
+  btn.disabled = true; btn.innerHTML = 'Sending…';
+  try {
+    await postForm('contact', data);
+    btn.classList.add('is-flying');                   // paper plane flies off
+    await new Promise((r) => setTimeout(r, 650));
+    btn.classList.remove('is-flying');
+    form.style.minHeight = form.offsetHeight + 'px';   // keep the same size so the page doesn't jump
+    form.classList.add('is-sent');
+    showToast("🎉 Message sent! We'll reply within 24 hours.");
+  } catch (err) {
+    showToast('⚠️ ' + err.message, 'warning');
+  } finally {
+    btn.disabled = false; btn.innerHTML = label;
+  }
+  return false;
+}
+
+function csReset() {
+  const form = document.getElementById('csForm');
+  form.reset();
+  document.getElementById('csCount').textContent = '0 / 2000';
+  const m = document.getElementById('csMeter'); if (m) m.style.width = '0';
+  form.querySelectorAll('.cs-chip').forEach((c, i) => c.classList.toggle('is-on', i === 0));
+  form.classList.remove('is-sent');
+  form.style.minHeight = '';
+}
+
+
+/** Contact page: copy email button */
+document.querySelectorAll('.cs-copy').forEach((btn) => btn.addEventListener('click', async () => {
+  const text = btn.dataset.copy;
+  try { await navigator.clipboard.writeText(text); }
+  catch (e) { const t = document.createElement('textarea'); t.value = text; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); }
+  btn.classList.add('is-copied');
+  btn.querySelector('span').textContent = 'Copied!';
+  btn.querySelector('i').className = 'bi bi-check2';
+  setTimeout(() => {
+    btn.classList.remove('is-copied');
+    btn.querySelector('span').textContent = 'Copy';
+    btn.querySelector('i').className = 'bi bi-clipboard';
+  }, 1800);
+}));

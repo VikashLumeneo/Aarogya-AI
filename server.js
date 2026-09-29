@@ -20,6 +20,7 @@ const { smtpConfigured, TO_EMAIL } = require('./lib/mailer');
 const API = {
   '/api/early-access': require('./api/early-access'),
   '/api/notify': require('./api/notify'),
+  '/api/contact': require('./api/contact'),
 };
 
 const ROOT = __dirname;
