@@ -448,3 +448,16 @@ document.querySelectorAll('.cs-copy').forEach((btn) => btn.addEventListener('cli
     btn.querySelector('i').className = 'bi bi-clipboard';
   }, 1800);
 }));
+
+/* Scribe + Rx "How it works" – start animations when the section is visible */
+(function () {
+  var secs = document.querySelectorAll('.sf');
+  if (!secs.length) return;
+  if (!('IntersectionObserver' in window)) { secs.forEach(function (s) { s.classList.add('sf-in'); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('sf-in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.2 });
+  secs.forEach(function (s) { io.observe(s); });
+})();

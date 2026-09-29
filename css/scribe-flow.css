@@ -1,0 +1,225 @@
+/* ============================================================
+   Scribe + Rx "How it works" – glass step cards + live mini visuals
+   Undo: remove the css/scribe-flow.css <link> in index.html
+   ============================================================ */
+
+.sf { padding: 100px 0 110px; }
+
+.sf .anviq-workflow-header { margin-bottom: 44px; }
+
+.sf-sub {
+  margin: 14px auto 0; max-width: 620px;
+  color: rgba(255,255,255,.72); font-size: 1.05rem; line-height: 1.6;
+}
+
+/* ---------- progress line ---------- */
+.sf-track {
+  position: relative; z-index: 2;
+  height: 3px; margin: 0 16.66% 34px;
+  border-radius: 3px;
+  background: rgba(255,255,255,.12);
+}
+.sf-fill {
+  position: absolute; inset: 0 auto 0 0; width: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #3F887E, var(--brand-orange), var(--brand-teal));
+  transition: width 1.6s cubic-bezier(.6,0,.2,1) .2s;
+}
+.sf-dot {
+  position: absolute; top: 50%; left: 0; width: 12px; height: 12px;
+  margin: -6px 0 0 -6px; border-radius: 50%;
+  background: #fff; box-shadow: 0 0 0 5px rgba(45,212,191,.25), 0 0 18px #2DD4BF;
+  opacity: 0;
+}
+.sf.sf-in .sf-fill { width: 100%; }
+.sf.sf-in .sf-dot { animation: sfDot 4.5s ease-in-out 1.8s infinite; }
+@keyframes sfDot {
+  0%   { left: 0;    opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+/* ---------- cards ---------- */
+.sf .anviq-steps { gap: 24px; }
+
+.sf .anviq-step-card {
+  min-height: 0;
+  padding: 28px 28px 32px;
+  border-radius: 22px;
+  background: linear-gradient(160deg, rgba(255,255,255,.10), rgba(255,255,255,.03));
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.14), 0 18px 40px rgba(0,0,0,.18);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  overflow: hidden;
+  opacity: 0; transform: translateY(26px);
+  transition: opacity .6s ease, transform .5s ease, border-color .3s ease, box-shadow .3s ease;
+}
+.sf .anviq-step-card:not(:last-child)::after { display: none; }
+
+/* glass shine on hover */
+.sf .anviq-step-card::after {
+  content: ""; position: absolute; top: 0; left: -80%; width: 50%; height: 100%;
+  background: linear-gradient(105deg, transparent, rgba(255,255,255,.14), transparent);
+  transform: skewX(-18deg); pointer-events: none;
+}
+
+.sf.sf-in .anviq-step-card { opacity: 1; transform: none; }
+.sf.sf-in .anviq-step-card:nth-child(2) { transition-delay: .15s, .15s, 0s, 0s; }
+.sf.sf-in .anviq-step-card:nth-child(3) { transition-delay: .3s, .3s, 0s, 0s; }
+
+.sf .anviq-step-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(45,212,191,.45);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 24px 50px rgba(0,0,0,.25), 0 0 0 1px rgba(45,212,191,.15);
+  transition-delay: 0s;
+}
+.sf .anviq-step-card:hover::after { left: 130%; transition: left .9s ease; }
+
+.sf-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.sf .anviq-step-number {
+  margin: 0; width: 48px; height: 48px; font-size: 1.4rem;
+  box-shadow: 0 0 0 6px rgba(255,255,255,.06);
+}
+.sf-time {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px; border-radius: 100px;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14);
+  color: #fff; font-size: .78rem; font-weight: 700;
+}
+.sf-time i { color: #A7F3D0; }
+
+.sf .anviq-step-card h3 { font-size: 1.45rem; min-height: 0; margin-bottom: 10px; }
+.sf .anviq-step-card p { font-size: .98rem; line-height: 1.75; max-width: none; }
+
+/* ---------- mini visuals ---------- */
+.sf-vis {
+  position: relative; height: 156px; margin-bottom: 22px; padding: 16px 18px;
+  border-radius: 16px;
+  background: rgba(3,30,27,.45);
+  border: 1px solid rgba(255,255,255,.08);
+  display: flex; flex-direction: column; justify-content: center; gap: 10px;
+}
+
+/* 1 – recording waveform */
+.sf-rec {
+  align-self: flex-start; display: inline-flex; align-items: center; gap: 7px;
+  color: #fff; font-size: .72rem; font-weight: 800; letter-spacing: .08em;
+}
+.sf-rec i { width: 8px; height: 8px; border-radius: 50%; background: var(--brand-orange); animation: sfBlink 1.2s infinite; }
+@keyframes sfBlink { 50% { opacity: .25; } }
+.sf-wave { display: flex; align-items: center; gap: 4px; height: 44px; }
+.sf-wave b {
+  flex: 1; height: 30%; border-radius: 3px;
+  background: linear-gradient(180deg, #2DD4BF, #3F887E);
+  animation: sfWave 1.1s ease-in-out infinite;
+}
+.sf-wave b:nth-child(3n)   { animation-delay: -.3s; }
+.sf-wave b:nth-child(3n+1) { animation-delay: -.6s; }
+.sf-wave b:nth-child(4n)   { animation-duration: .9s; }
+.sf-wave b:nth-child(5n)   { animation-duration: 1.35s; }
+@keyframes sfWave { 0%,100% { height: 22%; } 50% { height: 100%; } }
+.sf-lang { color: rgba(255,255,255,.6); font-size: .74rem; }
+
+/* 2 – SOAP note building itself */
+.sf-vis-doc { gap: 9px; }
+.sf-vis-doc:has(em:not(:empty)) em { min-width: 32px; }
+.sf-doc-row { display: flex; align-items: center; gap: 10px; }
+.sf-doc-row em {
+  min-width: 20px; height: 20px; padding: 0 5px; flex: none; border-radius: 6px;
+  display: grid; place-items: center;
+  background: rgba(242,87,43,.18); color: #FFB59C;
+  font-style: normal; font-size: .7rem; font-weight: 800;
+}
+.sf-doc-row span {
+  height: 7px; width: 0; border-radius: 4px; background: rgba(255,255,255,.35);
+}
+.sf-doc-row i { margin-left: auto; color: #2DD4BF; opacity: 0; }
+.sf.sf-in .sf-doc-row span { animation: sfLine 5s ease infinite; }
+.sf.sf-in .sf-doc-row i    { animation: sfTick 5s ease infinite; }
+.sf-doc-row:nth-child(2) span, .sf-doc-row:nth-child(2) i { animation-delay: .35s !important; }
+.sf-doc-row:nth-child(3) span, .sf-doc-row:nth-child(3) i { animation-delay: .7s !important; }
+.sf-doc-row:nth-child(4) span, .sf-doc-row:nth-child(4) i { animation-delay: 1.05s !important; }
+@keyframes sfLine { 0% { width: 0; } 20%, 88% { width: var(--w); } 100% { width: var(--w); opacity: 0; } }
+@keyframes sfTick { 0%, 18% { opacity: 0; transform: scale(.5); } 25%, 88% { opacity: 1; transform: none; } 100% { opacity: 0; } }
+.sf-flag {
+  align-self: flex-start; margin-top: 2px;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px 10px; border-radius: 100px;
+  background: var(--brand-ice); color: var(--accent-text);
+  font-size: .7rem; font-weight: 700;
+}
+
+/* 3 – message delivered */
+.sf-chat { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; }
+.sf-bubble {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 14px; border-radius: 14px 14px 4px 14px;
+  background: #DCF8C6; color: #0A221F;
+  font-size: .8rem; font-weight: 700;
+  box-shadow: 0 6px 16px rgba(0,0,0,.18);
+  transform-origin: bottom right;
+}
+.sf-bubble i { color: #0B8A7D; font-size: 1rem; }
+.sf-ticks { color: rgba(255,255,255,.65); font-size: .7rem; }
+.sf-ticks i { color: #53BDEB; font-size: .9rem; }
+.sf.sf-in .sf-bubble { animation: sfPop 4s ease infinite; }
+.sf.sf-in .sf-ticks  { animation: sfFade 4s ease infinite; }
+@keyframes sfPop  { 0%, 8% { opacity: 0; transform: translateY(14px) scale(.85); } 18%, 90% { opacity: 1; transform: none; } 100% { opacity: 0; } }
+@keyframes sfFade { 0%, 25% { opacity: 0; } 35%, 90% { opacity: 1; } 100% { opacity: 0; } }
+.sf-chan { display: flex; gap: 8px; }
+.sf-chan span {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 10px; border-radius: 100px;
+  background: rgba(255,255,255,.08); color: rgba(255,255,255,.8);
+  font-size: .7rem; font-weight: 700;
+}
+.sf-chan .bi-whatsapp { color: #25D366; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 1100px) {
+  .sf-track { display: none; }
+  .sf .anviq-steps { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; gap: 20px; }
+  .sf .anviq-step-card { padding: 24px; }
+}
+@media (max-width: 768px) {
+  .sf { padding: 70px 0; }
+  .sf .anviq-step-card h3 { font-size: 1.3rem; }
+}
+
+/* Rx step 1 – doctor / patient conversation being captured */
+.sf-vis-talk { gap: 7px; padding-top: 30px; }
+.sf-listen {
+  position: absolute; top: 12px; right: 14px;
+  display: inline-flex; align-items: center; gap: 6px;
+  color: #A7F3D0; font-size: .66rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+}
+.sf-listen i {
+  width: 8px; height: 8px; border-radius: 50%; background: #2DD4BF;
+  box-shadow: 0 0 0 0 rgba(45,212,191,.6); animation: sfPing 1.6s ease-out infinite;
+}
+@keyframes sfPing { 0% { box-shadow: 0 0 0 0 rgba(45,212,191,.6); } 100% { box-shadow: 0 0 0 9px rgba(45,212,191,0); } }
+.sf-msg { display: flex; align-items: flex-end; gap: 7px; opacity: 0; }
+.sf-msg b {
+  width: 24px; height: 24px; flex: none; border-radius: 50%;
+  display: grid; place-items: center; font-size: .62rem; font-weight: 800; color: #fff;
+}
+.sf-msg span { padding: 6px 11px; font-size: .74rem; font-weight: 600; line-height: 1.3; }
+.sf-msg-dr b { background: #3F887E; }
+.sf-msg-dr span { background: rgba(255,255,255,.12); color: #fff; border-radius: 12px 12px 12px 3px; }
+.sf-msg-pt { align-self: flex-end; }
+.sf-msg-pt b { background: var(--brand-orange); }
+.sf-msg-pt span { background: rgba(45,212,191,.18); color: #E9FFFB; border-radius: 12px 12px 3px 12px; }
+.sf-catch {
+  align-self: flex-start; opacity: 0;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px 10px; border-radius: 100px;
+  background: rgba(45,212,191,.16); border: 1px solid rgba(45,212,191,.35);
+  color: #A7F3D0; font-size: .68rem; font-weight: 700;
+}
+.sf.sf-in .sf-msg-dr { animation: sfMsgL 6s ease infinite; }
+.sf.sf-in .sf-msg-pt { animation: sfMsgR 6s ease infinite; }
+.sf.sf-in .sf-catch  { animation: sfCatch 6s ease infinite; }
+@keyframes sfMsgL  { 0%, 4% { opacity: 0; transform: translateX(-12px); } 12%, 88% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }
+@keyframes sfMsgR  { 0%, 24% { opacity: 0; transform: translateX(12px); } 32%, 88% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }
+@keyframes sfCatch { 0%, 46% { opacity: 0; transform: scale(.85); } 54%, 88% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }

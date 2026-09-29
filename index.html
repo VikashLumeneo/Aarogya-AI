@@ -25,6 +25,8 @@
   <link rel="stylesheet" href="css/privacy.css">
   <link rel="stylesheet" href="css/contact.css">
   <link rel="stylesheet" href="css/report.css">
+  <link rel="stylesheet" href="css/scribe-flow.css">
+  <link rel="stylesheet" href="css/cta.css">
 
 </head>
 
@@ -956,92 +958,91 @@
      HOW ANVIQ WORKS
 =================================== -->
 
-    <section class="anviq-workflow-section">
+    <section class="anviq-workflow-section sf" id="scribeFlow">
 
       <div class="container">
 
         <div class="anviq-workflow-header">
-
-          <!-- <div class="anviq-workflow-eyebrow">
-            THE 3-STEP FLOW
-          </div> -->
-
           <h2 class="anviq-workflow-title">
             How ANVIQ Scribe works
           </h2>
-
+          <p class="sf-sub">From conversation to patient's phone, without typing a single line.</p>
         </div>
+
+        <!-- progress line -->
+        <div class="sf-track" aria-hidden="true"><span class="sf-fill"></span><span class="sf-dot"></span></div>
 
         <div class="anviq-steps">
 
           <!-- STEP 1 -->
           <div class="anviq-step-card">
-
-            <div class="anviq-step-number step-blue">
-              1
+            <div class="sf-top">
+              <div class="anviq-step-number step-blue">1</div>
+              <span class="sf-time"><i class="bi bi-mic-fill" aria-hidden="true"></i> Live</span>
             </div>
 
-            <div class="anviq-step-label">
-              RECORD
+            <div class="sf-vis sf-vis-rec" aria-hidden="true">
+              <span class="sf-rec"><i></i> REC 04:12</span>
+              <div class="sf-wave"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div>
+              <span class="sf-lang">हिंदी · English · தமிழ்</span>
             </div>
 
-            <h3>
-              Record the consultation
-            </h3>
-
+            <div class="anviq-step-label">RECORD</div>
+            <h3>Record the consultation</h3>
             <p>
               Open ANVIQ and tap Record. Consult exactly as you normally would.
               ANVIQ listens in the background across 10+ Indian languages.
               No typing, no interruption.
             </p>
-
           </div>
 
           <!-- STEP 2 -->
           <div class="anviq-step-card">
-
-            <div class="anviq-step-number step-orange">
-              2
+            <div class="sf-top">
+              <div class="anviq-step-number step-orange">2</div>
+              <span class="sf-time"><i class="bi bi-stars" aria-hidden="true"></i> Seconds</span>
             </div>
 
-            <div class="anviq-step-label">
-              REVIEW
+            <div class="sf-vis sf-vis-doc" aria-hidden="true">
+              <div class="sf-doc-row"><em>S</em><span style="--w:82%"></span><i class="bi bi-check2"></i></div>
+              <div class="sf-doc-row"><em>O</em><span style="--w:64%"></span><i class="bi bi-check2"></i></div>
+              <div class="sf-doc-row"><em>A</em><span style="--w:74%"></span><i class="bi bi-check2"></i></div>
+              <div class="sf-doc-row"><em>P</em><span style="--w:56%"></span><i class="bi bi-check2"></i></div>
+              <span class="sf-flag"><i class="bi bi-exclamation-triangle-fill"></i> 1 drug interaction flagged</span>
             </div>
 
-            <h3>
-              Review the generated document
-            </h3>
-
+            <div class="anviq-step-label">REVIEW</div>
+            <h3>Review the generated document</h3>
             <p>
               The moment the visit ends, ANVIQ generates the complete SOAP note
               and prescription with drug interactions flagged, referrals,
               investigations, and follow-up instructions. Review and edit
               anything in seconds.
             </p>
-
           </div>
 
           <!-- STEP 3 -->
           <div class="anviq-step-card">
-
-            <div class="anviq-step-number step-green">
-              3
+            <div class="sf-top">
+              <div class="anviq-step-number step-green">3</div>
+              <span class="sf-time"><i class="bi bi-hand-index-thumb-fill" aria-hidden="true"></i> One tap</span>
             </div>
 
-            <div class="anviq-step-label">
-              SEND
+            <div class="sf-vis sf-vis-send" aria-hidden="true">
+              <div class="sf-chat">
+                <span class="sf-bubble"><i class="bi bi-file-earmark-medical-fill"></i> Your visit summary &amp; prescription</span>
+                <span class="sf-ticks">Delivered <i class="bi bi-check2-all"></i></span>
+              </div>
+              <div class="sf-chan"><span><i class="bi bi-whatsapp"></i> WhatsApp</span><span><i class="bi bi-chat-dots-fill"></i> SMS</span></div>
             </div>
 
-            <h3>
-              Send to the patient
-            </h3>
-
+            <div class="anviq-step-label">SEND</div>
+            <h3>Send to the patient</h3>
             <p>
               One tap sends the complete document to the patient via SMS or
               WhatsApp. They have everything they need on their phone before
               they've left the clinic.
             </p>
-
           </div>
 
         </div>
@@ -1626,7 +1627,7 @@
 
       <!-- RIGHT -->
       <div class="hero-visual">
-        <img src="assets/ANVIQ Rx graphic.svg"
+        <img src="assets/ANVIQ Rx graphic teal.svg"
              alt="ANVIQ Rx"
              style="width:100%;height:auto;">
       </div>
@@ -1641,89 +1642,89 @@
      HOW ANVIQ rx WORKS
 =================================== -->
 
-    <section class="anviq-workflow-section">
+    <section class="anviq-workflow-section sf" id="rxFlow">
 
       <div class="container">
 
         <div class="anviq-workflow-header">
-
-          <!-- <div class="anviq-workflow-eyebrow">
-            THE 3-STEP FLOW
-          </div> -->
-
           <h2 class="anviq-workflow-title">
             How ANVIQ Rx works
           </h2>
-
+          <p class="sf-sub">From consultation to a pharmacy-ready prescription on the patient's phone.</p>
         </div>
+
+        <!-- progress line -->
+        <div class="sf-track" aria-hidden="true"><span class="sf-fill"></span><span class="sf-dot"></span></div>
 
         <div class="anviq-steps">
 
           <!-- STEP 1 -->
           <div class="anviq-step-card">
-
-            <div class="anviq-step-number step-blue">
-              1
+            <div class="sf-top">
+              <div class="anviq-step-number step-blue">1</div>
+              <span class="sf-time"><i class="bi bi-mic-fill" aria-hidden="true"></i> Live</span>
             </div>
 
-            <div class="anviq-step-label">
-              CONSULT
+            <div class="sf-vis sf-vis-talk" aria-hidden="true">
+              <span class="sf-listen"><i></i> Listening</span>
+              <div class="sf-msg sf-msg-dr"><b>Dr</b><span>Kab se bukhar hai?</span></div>
+              <div class="sf-msg sf-msg-pt"><span>Teen din se, sar dard bhi</span><b>Pt</b></div>
+              <span class="sf-catch"><i class="bi bi-magic"></i> Fever · 3 days · Headache</span>
             </div>
 
-            <h3>
-              Consult normally
-            </h3>
-
+            <div class="anviq-step-label">CONSULT</div>
+            <h3>Consult normally</h3>
             <p>
               ANVIQ Scribe listens in the background while you see your patient, across 10+ Indian languages. No typing,
               no interruption.
             </p>
-
           </div>
 
           <!-- STEP 2 -->
           <div class="anviq-step-card">
-
-            <div class="anviq-step-number step-orange">
-              2
+            <div class="sf-top">
+              <div class="anviq-step-number step-orange">2</div>
+              <span class="sf-time"><i class="bi bi-stars" aria-hidden="true"></i> Seconds</span>
             </div>
 
-            <div class="anviq-step-label">
-              REVIEW
+            <div class="sf-vis sf-vis-doc" aria-hidden="true">
+              <div class="sf-doc-row"><em>Rx</em><span style="--w:78%"></span><i class="bi bi-check2"></i></div>
+              <div class="sf-doc-row"><em>Rx</em><span style="--w:62%"></span><i class="bi bi-check2"></i></div>
+              <div class="sf-doc-row"><em>Lab</em><span style="--w:54%"></span><i class="bi bi-check2"></i></div>
+              <div class="sf-doc-row"><em>F/U</em><span style="--w:44%"></span><i class="bi bi-check2"></i></div>
+              <span class="sf-flag"><i class="bi bi-exclamation-triangle-fill"></i> 1 drug interaction flagged</span>
             </div>
 
-            <h3>
-              Review the complete document.
-            </h3>
-
+            <div class="anviq-step-label">REVIEW</div>
+            <h3>Review the complete document.</h3>
             <p>
               The moment the recording stops, ANVIQ generates the full patient document, prescriptions, flagged drug
               interactions, referrals, investigations, and follow-up instructions. All sourced from the consultation.
               Review and edit anything in seconds.
             </p>
-
           </div>
 
           <!-- STEP 3 -->
           <div class="anviq-step-card">
-
-            <div class="anviq-step-number step-green">
-              3
+            <div class="sf-top">
+              <div class="anviq-step-number step-green">3</div>
+              <span class="sf-time"><i class="bi bi-hand-index-thumb-fill" aria-hidden="true"></i> One tap</span>
             </div>
 
-            <div class="anviq-step-label">
-              SEND
+            <div class="sf-vis sf-vis-send" aria-hidden="true">
+              <div class="sf-chat">
+                <span class="sf-bubble"><i class="bi bi-capsule"></i> Your prescription, ready for the pharmacy</span>
+                <span class="sf-ticks">Delivered <i class="bi bi-check2-all"></i></span>
+              </div>
+              <div class="sf-chan"><span><i class="bi bi-whatsapp"></i> WhatsApp</span><span><i class="bi bi-chat-dots-fill"></i> SMS</span></div>
             </div>
 
-            <h3>
-              Send to the patient
-            </h3>
-
+            <div class="anviq-step-label">SEND</div>
+            <h3>Send to the patient</h3>
             <p>
               One tap. The complete document is delivered to the patient via SMS or WhatsApp, ready to show at the
               pharmacy, lab, or imaging centre.
             </p>
-
           </div>
 
         </div>

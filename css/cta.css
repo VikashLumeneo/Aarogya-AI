@@ -1,0 +1,118 @@
+/* ============================================================
+   Bottom CTA on every page – dark teal glass panel
+   Undo: remove the css/cta.css <link> in index.html
+   ============================================================ */
+
+.cta-section {
+  background: #fff;
+  border-top: 0;
+  padding: 96px 0 !important;
+}
+.cta-section::before { display: none; }
+
+/* the panel */
+.cta-section > .container {
+  position: relative;
+  width: calc(100% - 48px);
+  max-width: 1152px;
+  padding: 76px 56px 72px;
+  border-radius: 32px;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(45,212,191,.22), transparent 42%),
+    radial-gradient(circle at 92% 110%, rgba(242,87,43,.28), transparent 45%),
+    linear-gradient(135deg, #0A3D3A 0%, #12574F 55%, #0A3D3A 100%);
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 30px 70px rgba(10,61,58,.28), inset 0 1px 0 rgba(255,255,255,.12);
+}
+
+/* faint grid + moving glass sheen */
+.cta-section > .container::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 20%, transparent 75%);
+          mask-image: radial-gradient(ellipse at center, #000 20%, transparent 75%);
+}
+.cta-section > .container::after {
+  content: ""; position: absolute; top: 0; left: -60%; width: 40%; height: 100%; z-index: -1;
+  background: linear-gradient(105deg, transparent, rgba(255,255,255,.08), transparent);
+  transform: skewX(-18deg);
+  animation: ctaSheen 7s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes ctaSheen { 0%, 55% { left: -60%; } 100% { left: 130%; } }
+
+/* text */
+.cta-section h2 {
+  max-width: 880px; margin: 0 auto;
+  font-size: clamp(1.9rem, 3.6vw, 3rem);
+  line-height: 1.18;
+  color: #fff;
+  background: none;
+  -webkit-text-fill-color: #fff;
+  text-shadow: none;
+}
+.cta-section p,
+.cta-section p[style] {
+  color: rgba(255,255,255,.76) !important;
+  max-width: 620px;
+  margin: 18px auto 0 !important;
+}
+.cta-section .section-eyebrow {
+  background: rgba(255,255,255,.10);
+  color: #A7F3D0;
+  border: 1px solid rgba(255,255,255,.18);
+}
+
+/* buttons */
+.cta-section .cta-actions { margin-top: 36px !important; gap: 14px; }
+
+.cta-section .btn-accent {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding-right: 8px;
+  border-radius: 100px;
+  box-shadow: 0 12px 30px rgba(242,87,43,.40);
+}
+.cta-section .btn-accent::after {
+  content: "\2192";
+  position: static; inset: auto; flex: none;
+  width: 34px; height: 34px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: rgba(255,255,255,.22);
+  font-size: 1.05rem; line-height: 1;
+  transition: transform .25s ease, background .25s ease;
+}
+.cta-section .btn-accent:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(242,87,43,.50); }
+.cta-section .btn-accent:hover::after { transform: translateX(3px); background: rgba(255,255,255,.32); }
+
+.cta-section .btn-ghost,
+.cta-section .btn-secondary {
+  border-radius: 100px;
+  background: rgba(255,255,255,.08) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,.30) !important;
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+}
+.cta-section .btn-ghost:hover,
+.cta-section .btn-secondary:hover {
+  background: rgba(255,255,255,.16) !important;
+  border-color: #fff !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .cta-section { padding: 56px 0 !important; }
+  .cta-section > .container,
+  #page-receptionist .cta-section > .container {
+    width: calc(100% - 32px);
+    padding: 52px 22px 48px;
+    border-radius: 24px;
+  }
+  .cta-section .btn-accent { justify-content: center; }
+}
