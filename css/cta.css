@@ -73,7 +73,7 @@
   box-shadow: 0 12px 30px color-mix(in srgb, var(--color-action-primary) 40%, transparent);
 }
 .cta-section .btn-accent::after {
-  content: "\2192";
+  content: "\27A5";
   position: static; inset: auto; flex: none;
   width: 34px; height: 34px; border-radius: 50%;
   display: grid; place-items: center;

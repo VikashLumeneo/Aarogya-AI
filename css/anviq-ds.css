@@ -252,3 +252,39 @@ input[type="checkbox"], input[type="radio"]{ accent-color:var(--color-action-pri
 
 /* toast success stays semantic */
 .toast.success{ border-left-color:var(--sem-success); }
+
+/* Hero ticks — round secondary badge, tick centred */
+.hero-trust-icon{
+  display:inline-grid !important;
+  place-items:center;
+  width:20px !important; height:20px !important;
+  flex:0 0 20px;
+  border-radius:50% !important;
+  font-size:11px !important; font-weight:800; line-height:1 !important;
+  padding:0 !important;
+}
+
+/* Journey section icons — themed: soft primary tile + primary glyph (like DS avatar) */
+.journey-icon{
+  display:inline-block; flex:0 0 50px;
+  width:50px; height:50px;
+  border-radius:var(--radius-sm);
+  background:var(--color-action-primary-soft);
+  position:relative;
+}
+.journey-icon-glyph{
+  position:absolute; inset:0;
+  background:var(--color-action-primary);
+  -webkit-mask-position:center; mask-position:center;
+  -webkit-mask-size:100% 100%; mask-size:100% 100%;
+  -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+}
+
+/* Wordmark logo — "ANV" in Onyx, "IQ" in the page's primary colour
+   (Rose Red on Hero pages, Orange on Scribe, Orchid on Radiologist, Teal on Rx) */
+.brand-wordmark{
+  font-family:var(--font-display);
+  font-size:26px; font-weight:800; line-height:1;
+  letter-spacing:0; color:var(--text-primary);
+}
+.brand-wordmark span{ color:var(--color-action-primary); }
