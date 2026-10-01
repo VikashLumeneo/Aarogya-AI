@@ -1,0 +1,89 @@
+/* ============================================================
+   DESIGN TOKENS & THEMING SYSTEM
+   ============================================================ */
+:root {
+  /* Fonts */
+  --font-display:    'Mulish', sans-serif;
+
+  /* Brand Colors
+     60% white/mint · 30% teal-green · 10% orange */
+  --brand-dark:      #0A3D3A;   /* primary teal-green: hero, headings, dark sections */
+  --navy-700:        #12574F;   /* teal hover / gradients */
+  --brand-orange:    #F2572B;   /* logo, highlights, text on dark teal */
+  --brand-ice:       #FFECE8;   /* light orange tint */
+  --brand-teal:      #0DBFAD;   /* success / health indicators (on dark) */
+  --brand-highlight: #2DD4BF;
+  --success:         #0B8A7D;   /* success text on light backgrounds */
+
+  /* Orange: CTA buttons + accessible text shade */
+  --cta:             #F2572B;   /* button background */
+  --cta-hover:       #D9461C;
+  --accent-text:     #C2410C;   /* small orange text on light backgrounds */
+
+  /* Light Theme Defaults */
+  --bg-primary:      #FFFFFF;
+  --bg-secondary:    #F5F7F8;
+  --bg-tertiary:     #E4F3EE;
+  --bg-card:         #FFFFFF;
+  --bg-nav:          rgba(255, 255, 255, 0.92);
+
+  --text-primary:    #0A221F;
+  --text-secondary:  #4A615C;
+  --text-muted:      #687E79;
+  --text-inverse:    #FFFFFF;
+
+  --border-color:    #D3E7E0;
+  --border-focus:    #0A3D3A;
+
+  /* Buttons */
+  --btn-primary-bg:    var(--cta);
+  --btn-primary-fg:    #FFFFFF;
+  --btn-primary-hover: var(--cta-hover);
+  --btn-secondary-bg:  transparent;
+  --btn-secondary-fg:  #15534A;
+  --btn-secondary-border: #15534A;
+  --btn-accent-fg:     #FFFFFF;
+
+  /* Shadows */
+  --shadow-sm:  0 1px 3px rgba(21,83,74, 0.06), 0 1px 2px rgba(21,83,74, 0.04);
+  --shadow-md:  0 4px 16px rgba(21,83,74, 0.10), 0 2px 6px rgba(21,83,74, 0.06);
+  --shadow-lg:  0 12px 40px rgba(21,83,74, 0.14), 0 4px 12px rgba(21,83,74, 0.08);
+  --shadow-xl:  0 24px 60px rgba(21,83,74, 0.18);
+
+  /* Border Radii */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-xl:   32px;
+  --radius-pill: 100px;
+}
+
+/* Dark Theme Overrides */
+[data-theme="dark"] {
+  --bg-primary:      #09211E;
+  --bg-secondary:    #102E2A;
+  --bg-tertiary:     #163C37;
+  --bg-card:         #122724;
+  --bg-nav:          rgba(9,33,30, 0.94);
+
+  --text-primary:    #E9F7F5;
+  --text-secondary:  #9DC5C0;
+  --text-muted:      #5E8C86;
+  --text-inverse:    #0F2E2A;
+
+  --border-color:    #204843;
+  --border-focus:    #FFB59C;
+
+  --btn-primary-bg:    var(--cta);
+  --btn-primary-fg:    #FFFFFF;
+  --btn-primary-hover: var(--cta-hover);
+  --btn-secondary-bg:  transparent;
+  --btn-secondary-fg:  #E9F7F5;
+  --btn-secondary-border: #3C655F;
+  --btn-accent-fg:     #FFFFFF;
+
+  --shadow-sm:  0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md:  0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg:  0 12px 40px rgba(0, 0, 0, 0.5);
+  --shadow-xl:  0 24px 60px rgba(0, 0, 0, 0.6);
+}

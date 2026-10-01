@@ -139,7 +139,7 @@
 =================================== */
 
       .anviq-workflow-section {
-        background: var(--ds-onyx);
+        background: #15534A;
         position: relative;
         overflow: hidden;
         padding: 100px 0;
@@ -149,8 +149,12 @@
         content: "";
         position: absolute;
         inset: 0;
-        background:radial-gradient(circle at bottom left,
-            rgba(20,19,20,0.12),
+        background:
+          radial-gradient(circle at top right,
+            rgba(21,83,74, .25),
+            transparent 40%),
+          radial-gradient(circle at bottom left,
+            rgba(21,83,74, .12),
             transparent 40%);
         pointer-events: none;
       }
@@ -159,7 +163,8 @@
         content: "";
         position: absolute;
         inset: 0;
-        background:linear-gradient(120deg,
+        background:
+          linear-gradient(120deg,
             transparent 0%,
             rgba(255, 255, 255, .04) 30%,
             transparent 31%);
@@ -232,7 +237,7 @@
       }
 
       .step-blue {
-        background: var(--text-secondary);
+        background: #3F887E;
       }
 
       .step-orange {
@@ -246,7 +251,7 @@
       /* Labels */
 
       .anviq-step-label {
-        color: var(--color-on-dark-accent);
+        color: #A7F3D0;
         font-size: .98rem;
         font-weight: 700;
         letter-spacing: .15em;
@@ -543,16 +548,16 @@
     width:260px;
     max-width:100%;
     background:#fff;
-    border-radius:var(--radius-lg);
+    border-radius:26px;
     padding:8px;
     box-shadow:
-        0 12px 32px rgba(20,19,20,0.16),
-        0 0 0 1px rgba(20,19,20,0.05);
+        0 12px 32px rgba(14,41,37,.16),
+        0 0 0 1px rgba(14,41,37,.05);
 }
 
 .phone-screen{
     background:var(--bg-secondary);
-    border-radius:var(--radius-lg);
+    border-radius:19px;
     overflow:hidden;
     min-height:496px;
     display:flex;
@@ -593,7 +598,7 @@
 .scan-frame{
     border:2px dashed var(--brand-orange);
     border-radius:10px;
-    background:color-mix(in srgb, var(--color-action-primary) 4%, transparent);
+    background:rgba(242,87,43,.04);
 }
 
 .scan-frame--square{
@@ -617,7 +622,7 @@
 }
 
 .aadhaar-mock{
-    background:var(--color-action-primary);
+    background:linear-gradient(120deg,#1EB7A3,#149A88);
     color:#fff;
     padding:10px 12px;
     border-radius:8px;
@@ -714,8 +719,8 @@
     height:40px;
     margin:0 auto 10px;
     border-radius:50%;
-    background:color-mix(in srgb, var(--sem-success) 14%, #fff);
-    color:var(--sem-success);
+    background:#D1FAE5;
+    color:#065F46;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -773,7 +778,12 @@ RECEPTIONIST FREE TRIAL
 =========================================*/
 
 .receptionist-trial{
-     background:var(--ds-onyx);
+     background:linear-gradient(
+    135deg,
+    #15534A 0%,
+    #1E6F64 55%,
+    #15534A 100%
+  );
     padding:42px 24px;
 }
 
@@ -788,12 +798,12 @@ RECEPTIONIST FREE TRIAL
     margin-bottom:12px;
 
     padding:6px 14px;
-    border-radius:var(--radius-btn);
+    border-radius:999px;
 
     background:rgba(255,255,255,.12);
     border:1px solid rgba(255,255,255,.15);
 
-    color:var(--color-on-dark-accent);
+    color:#A7F3D0;
 
     font-size:12px;
     font-weight:700;
@@ -911,8 +921,8 @@ Responsive
 
 .receptionist-benefit-card:hover{
     transform:translateY(-4px) !important;
-    border-color:color-mix(in srgb, var(--color-on-dark-accent) 18%, transparent) !important;
-    box-shadow:0 12px 30px rgba(20,19,20,0.08) !important;
+    border-color:rgba(68,237,214,.18) !important;
+    box-shadow:0 12px 30px rgba(16,41,37,.08) !important;
 }
 
 /* ===========================
@@ -930,7 +940,7 @@ Responsive
 
     border-radius:14px !important;
 
-    background:var(--color-action-primary-soft) !important;
+    background:#FFECE8 !important;
 
     margin-top:2px !important;
 
@@ -991,7 +1001,7 @@ Responsive
    STATS SECTION (Exact Matching Design & Mobile Responsive)
    ============================================================ */
 .stats-section {
-  background:linear-gradient(135deg, #3A1A0A 0%, #5C2800 100%);
+  background: linear-gradient(135deg, #3A1A0A 0%, #5C2800 100%);
   color: #fff;
   padding: 88px 24px;
   position: relative;
@@ -1006,7 +1016,7 @@ Responsive
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background:radial-gradient(circle, color-mix(in srgb, var(--color-action-primary) 18%, transparent) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(242, 87, 43, 0.18) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -1084,7 +1094,7 @@ Responsive
 .integration-pill {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: var(--radius-lg);
+  border-radius: 20px;
   padding: 6px 14px;
   font-size: 13px;
   font-weight: 600;

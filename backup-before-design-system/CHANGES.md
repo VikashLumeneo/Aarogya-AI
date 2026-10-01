@@ -1,34 +1,5 @@
 # ANVIQ website – change log & revert guide
 
-## 1 Oct 2026 – ANVIQ Design System v1 applied to the whole site (LIVE)
-
-**What changed**
-- Colors now come from the design system tokens in `css/variables.css`
-  (Rose Red / Teal / Orange / Orchid / Onyx + success, warning, danger, info)
-- Each product page has its own primary colour; the switch happens in `js/navigation.js`:
-  Scribe = Orange (Product B), Radiologist = Orchid (Product C), Rx = Teal (Product D),
-  Receptionist, Home and every other page = Rose Red (Hero)
-- Font: Manrope everywhere (Mulish/Lato removed)
-- Flat look: glass effect, blur, drop shadows, glow orbs and grid textures removed;
-  hierarchy now comes from 1px borders and spacing
-- Dark teal sections → flat Onyx `#141314`; light sections → white / soft primary tint
-- Radius scale: 10 / 14 / 16, buttons 12, tags 6 (no more pill shapes)
-- Buttons: DS primary / secondary / ghost, brightness hover, no lift
-- Navbar: flat white bar, active link = primary colour, CTA = DS primary button
-- New file `css/anviq-ds.css` (loaded last) holds the site-wide DS rules
-- `css/glass.css` is no longer linked (file kept, not deleted)
-- Not changed: content, pages, forms, backend, images/SVG illustrations (they keep their own colours)
-
-### Follow-up: secondary colour + missed JS colour
-- Secondary accent now used: Red pages (and Orange/Orchid pages) use Teal for section labels,
-  card tags, "Available now" badges and check marks; the Rx page (Teal primary) uses Red for these
-- New tokens in `css/variables.css`: `--color-accent-secondary-soft / -text / -on-dark`
-- `js/pricing-table.js`: Hospital column colour was still hard-coded teal `#22665D` → now Onyx
-
-**Undo**
-- Full undo: copy everything from `backup-before-design-system/` back over `index.html`, `css/`, `js/`
-- Partial undo of the strict layer only: remove the `css/anviq-ds.css` link in `index.html`
-
 ## 28 Sep 2026 – Teal green palette + glassmorphism (LIVE)
 
 **What changed**

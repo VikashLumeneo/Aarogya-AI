@@ -17,16 +17,7 @@ const pages = [
   'contact-support'
 ];
 
-/* ANVIQ Design System — per-product theme (only the primary colour changes) */
-const productTheme = {
-  scribe: 'product-b',     // Orange
-  radiology: 'product-c',  // Orchid
-  rx: 'product-d'          // Teal (secondary flips to Red)
-};
-
 function navigate(page, pushHistory = true) {
-  document.body.setAttribute('data-product', productTheme[page] || 'hero');
-
   closeMobileNav();
 
   // Top banner control - Sirf 'receptionist' page par dikhega

@@ -1,0 +1,254 @@
+/* ============================================================
+   ANVIQ DESIGN SYSTEM v1 — SITE-WIDE LAYER
+   Loaded last. Enforces the DS rules on top of the page CSS:
+   Manrope only · flat surfaces (no glass, no shadows) ·
+   1px hairline borders · DS radius scale · DS buttons & tags ·
+   short functional motion · visible focus.
+   ============================================================ */
+
+/* ---------- Typography ---------- */
+html, body, button, input, select, textarea{ font-family:var(--font-body); }
+body{ color:var(--text-primary); line-height:var(--line-height-body); background:#fff; }
+h1, h2, h3, h4, h5, h6,
+.section-title, .hero h1, .product-hero h1{
+  font-family:var(--font-display);
+  letter-spacing:0 !important;
+  line-height:var(--line-height-heading);
+  font-style:normal;
+}
+em, i:not([class*="bi"]){ font-style:normal; }
+
+/* ---------- Flat system: no glass, no drop shadows ---------- */
+*, *::before, *::after{
+  -webkit-backdrop-filter:none !important;
+  backdrop-filter:none !important;
+  box-shadow:none !important;
+  text-shadow:none !important;
+}
+
+/* Decorative-only layers (glow orbs, grid textures, orbit rings, sparkles) */
+.hero::before, .hero::after,
+.hero-grid-bg,
+.pg-orb, .pg-orb-1, .pg-orb-2, .pg-orb-3,
+.rh-ring, .rh-ring-2, .rh-orbit, .rh-orbit-2,
+[class*="sparkle"], [class*="-glow"], [class*="glow-"]{
+  display:none !important;
+}
+
+/* Gradient text → solid accent (primary on light, tinted primary on Onyx) */
+.gradient-text{
+  background:none !important;
+  -webkit-text-fill-color:currentColor !important;
+  color:var(--color-action-primary) !important;
+}
+.hero .gradient-text, .product-hero .gradient-text, .trust-section-home .gradient-text,
+.trust-strip .gradient-text, .cta-section .gradient-text, .stats-section .gradient-text,
+.anviq-workflow-section .gradient-text, .receptionist-trial .gradient-text{
+  color:var(--color-on-dark-accent) !important;
+}
+
+/* ---------- Buttons (DS: radius 12, 1px border, brightness hover) ---------- */
+.btn{
+  border-radius:var(--radius-btn);
+  border-width:var(--border-w);
+  padding:11px 20px;
+  font-size:.875rem;
+  font-weight:700;
+  transition:filter var(--motion-fast), background-color var(--motion-fast), border-color var(--motion-fast), color var(--motion-fast);
+}
+.btn-lg{ padding:14px 24px; font-size:.9375rem; }
+.btn::after{ display:none; }
+.btn:hover, .btn:active{ transform:none !important; }
+
+.btn-primary, .btn-accent{
+  background:var(--color-action-primary) !important;
+  background-image:none !important;
+  color:var(--color-action-primary-contrast) !important;
+  border-color:var(--color-action-primary) !important;
+}
+.btn-primary:hover, .btn-accent:hover{ filter:brightness(.92); }
+.btn-primary:active, .btn-accent:active{ filter:brightness(.82); }
+
+.btn-secondary{
+  background:transparent;
+  color:var(--text-primary);
+  border-color:var(--border-strong);
+}
+.btn-secondary:hover{
+  background:var(--color-action-primary-soft);
+  border-color:var(--color-action-primary);
+  color:var(--color-action-primary-text);
+}
+/* ghost / outline on dark (onyx) sections */
+.btn-ghost{ background:transparent; color:#fff; border-color:rgba(255,255,255,.28); }
+.btn-ghost:hover{ background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.5); }
+
+.btn:disabled, .btn[disabled], .disabled-btn{ opacity:var(--opacity-disabled); cursor:default; filter:none; }
+
+.pricing-btn, .tab-btn, .mock-btn, .mock-btn-outline, .cs-sec-btn, .pm-btn{
+  border-radius:var(--radius-btn) !important;
+  transform:none !important;
+}
+
+/* ---------- Focus: always visible, primary border/outline ---------- */
+:focus-visible{ outline:2px solid var(--color-action-primary); outline-offset:2px; }
+input:focus, select:focus, textarea:focus{
+  outline:none;
+  border-color:var(--color-action-primary) !important;
+}
+
+/* ---------- Form controls ---------- */
+input[type="text"], input[type="email"], input[type="tel"], input[type="search"],
+input[type="number"], input[type="url"], select, textarea{
+  border-radius:var(--radius-sm);
+  border:var(--border-w) solid var(--border-strong);
+}
+input[type="checkbox"], input[type="radio"]{ accent-color:var(--color-action-primary); }
+
+/* ---------- Cards: white, 1px hairline, radius-md, hover = primary border ---------- */
+.card, .journey-card, .product-card, .pricing-card:not(.featured), .feature-card,
+.team-card, .pp-glance-card, .cs-card{
+  background:#fff;
+  border:var(--border-w) solid var(--border-color);
+  border-radius:var(--radius-md);
+  transition:border-color var(--motion-fast);
+}
+.card:hover, .journey-card:hover, .product-card:hover, .pricing-card:not(.featured):hover,
+.feature-card:hover, .team-card:hover{
+  border-color:var(--color-action-primary);
+  transform:none !important;
+}
+
+/* Light-section tags → DS badges (6px radius, soft tint) */
+.journey-tags span, .tag, .chip, .pill{
+  border-radius:6px !important;
+  font-weight:700;
+}
+.journey-tags span{
+  background:var(--color-action-primary-soft);
+  border:0;
+  color:var(--color-action-primary-text);
+  font-size:.6875rem;
+}
+
+/* Eyebrow / caption labels: DS caption style */
+.section-eyebrow, .hero-eyebrow, .eyebrow, [class$="-eyebrow"]{
+  letter-spacing:var(--letter-spacing-label) !important;
+  border-radius:6px !important;
+}
+
+/* ---------- Dark bands: flat Onyx ---------- */
+.trust-card, .trust-badge, .hero-eyebrow{
+  background:rgba(255,255,255,.06);
+  border:var(--border-w) solid rgba(255,255,255,.14);
+}
+.pricing-card.featured{
+  background:var(--ds-onyx);
+  border:var(--border-w-thick) solid var(--color-action-primary);
+}
+
+/* ---------- Nav dropdown items ---------- */
+.nav-dropdown-item{ border-radius:var(--radius-sm); }
+.nav-dropdown-item:hover{ background:var(--color-action-primary-soft); }
+
+/* ---------- Toast & modal ---------- */
+.modal, .modal-box, .signup-modal, [class*="modal-content"]{
+  border-radius:var(--radius-md) !important;
+  border:var(--border-w) solid var(--border-color);
+}
+.toast{ border-radius:var(--radius-md) !important; }
+
+
+/* ---------- Bottom CTA panel: flat Onyx, radius-lg ---------- */
+.cta-section > .container{
+  background:var(--ds-onyx) !important;
+  border-radius:var(--radius-lg);
+  border:var(--border-w) solid rgba(255,255,255,.08);
+}
+.cta-section > .container::before,
+.cta-section > .container::after{ display:none !important; }
+.cta-section .btn-accent{ border-radius:var(--radius-btn) !important; padding-right:20px; gap:8px; }
+.cta-section .btn-accent::after{
+  display:inline !important; width:auto; height:auto; background:none !important; border-radius:0;
+}
+
+/* ---------- Dark bands ---------- */
+.trust-section-home, .trust-strip, .stats-section{ background:var(--ds-onyx) !important; }
+.trust-section-home::before{ display:none; }
+
+/* ---------- More decorative glows removed ---------- */
+.ph-visual::before, .hero-visual::before, .cta-section::before, .rh-preview::before,
+.anviq-workflow-section::before, .anviq-workflow-section::after{ display:none !important; }
+.anviq-workflow-section{ background:var(--ds-onyx) !important; }
+.product-hero::before{ background:none !important; }
+.ph-visual::after, .trust-strip::before, .stats-section::before,
+#page-radiology .rad-caps .card::after{ display:none !important; }
+
+/* ---------- Plans page: flat Onyx panel + flat cards ---------- */
+#pricing-scribe .pricing-glass-panel{ border-radius:0 0 var(--radius-lg) var(--radius-lg); }
+#pricing-scribe .pricing-glass-panel .pricing-card{
+  background:rgba(255,255,255,.04) !important;
+  border:var(--border-w) solid rgba(255,255,255,.12) !important;
+  transform:none !important;
+}
+#pricing-scribe .pricing-glass-panel .pricing-card:hover,
+#pricing-scribe .pricing-glass-panel .pricing-card.active-card{
+  border-color:var(--color-action-primary) !important;
+}
+#pricing-scribe .pricing-glass-panel .pricing-card.featured{
+  background:rgba(255,255,255,.07) !important;
+  border:var(--border-w-thick) solid var(--color-action-primary) !important;
+}
+#pricing-scribe .pricing-glass-panel .pricing-card::before{ display:none !important; }
+#pricing-scribe .pricing-glass-panel .pricing-btn.white{
+  background:#fff; border-color:#fff; color:var(--ds-onyx);
+}
+#pricing-scribe .pricing-glass-panel .pricing-btn.white:hover{ filter:brightness(.92); background:#fff; }
+
+/* ============================================================
+   SECONDARY ACCENT (Teal with Red/Orange/Orchid · Red with Teal)
+   Primary = actions (buttons, active nav, links, highlight words).
+   Secondary = supporting accents: labels, tags, ticks, live badges.
+   ============================================================ */
+.section-eyebrow{
+  background:var(--color-accent-secondary-soft) !important;
+  color:var(--color-accent-secondary-text) !important;
+  border:0 !important;
+}
+.hero-eyebrow, .trust-eyebrow,
+.hero .section-eyebrow, .product-hero .section-eyebrow, .cta-section .section-eyebrow,
+.trust-section-home .section-eyebrow, .trust-strip .section-eyebrow, .stats-section .section-eyebrow,
+.anviq-workflow-section .section-eyebrow, .receptionist-trial .section-eyebrow,
+.pricing-glass-panel .section-eyebrow, .principles-section .section-eyebrow{
+  background:color-mix(in srgb, var(--color-accent-secondary) 16%, transparent) !important;
+  color:var(--color-accent-secondary-on-dark) !important;
+  border:var(--border-w) solid color-mix(in srgb, var(--color-accent-secondary) 35%, transparent) !important;
+}
+
+/* tags inside cards */
+.journey-tags span{
+  background:var(--color-accent-secondary-soft);
+  color:var(--color-accent-secondary-text);
+}
+
+/* "Available now" style live badges */
+.badge-live{
+  background:var(--color-accent-secondary-soft) !important;
+  color:var(--color-accent-secondary-text) !important;
+  border:0 !important;
+}
+
+/* ticks / check marks */
+.feature-list li::before{ color:var(--color-accent-secondary); }
+.hero-trust-icon, .pricing-check{
+  background:var(--color-accent-secondary) !important;
+  color:#fff !important;
+  border-color:var(--color-accent-secondary) !important;
+}
+#pricing-scribe .pricing-glass-panel .pricing-card li::before{
+  background:var(--color-accent-secondary) !important;
+  color:#fff !important;
+}
+
+/* toast success stays semantic */
+.toast.success{ border-left-color:var(--sem-success); }

@@ -1,89 +1,145 @@
 /* ============================================================
-   DESIGN TOKENS & THEMING SYSTEM
+   ANVIQ DESIGN SYSTEM v1 — TOKENS
+   Source: "ANVIQ Design system_v1.html"
+   Components read semantic tokens only (never raw hex), so the
+   per-product theme (body[data-product]) re-skins every page.
    ============================================================ */
 :root {
-  /* Fonts */
-  --font-display:    'Mulish', sans-serif;
+  /* ---- Core palette ---- */
+  --ds-rose:    #BE404B;   /* Hero primary */
+  --ds-teal:    #24A7B0;   /* shared secondary · Product D primary */
+  --ds-orange:  #ED804C;   /* Product B primary (AI Scribe) */
+  --ds-orchid:  #CC68A9;   /* Product C primary (AI Radiologist) */
+  --ds-onyx:    #141314;   /* text + dark surfaces */
+  --ds-onyx-2:  #2A2829;   /* onyx hover / raised dark */
+  --ds-white:   #FDFDFD;
 
-  /* Brand Colors
-     60% white/mint · 30% teal-green · 10% orange */
-  --brand-dark:      #0A3D3A;   /* primary teal-green: hero, headings, dark sections */
-  --navy-700:        #12574F;   /* teal hover / gradients */
-  --brand-orange:    #F2572B;   /* logo, highlights, text on dark teal */
-  --brand-ice:       #FFECE8;   /* light orange tint */
-  --brand-teal:      #0DBFAD;   /* success / health indicators (on dark) */
-  --brand-highlight: #2DD4BF;
-  --success:         #0B8A7D;   /* success text on light backgrounds */
+  /* ---- Semantic status (never change per product) ---- */
+  --sem-success: #2E7D5B;
+  --sem-warning: #B8862E;
+  --sem-danger:  #C6432F;
+  --sem-info:    #3B6FA3;
 
-  /* Orange: CTA buttons + accessible text shade */
-  --cta:             #F2572B;   /* button background */
-  --cta-hover:       #D9461C;
-  --accent-text:     #C2410C;   /* small orange text on light backgrounds */
+  /* ---- Semantic action tokens (Hero default) ---- */
+  --color-action-primary:          var(--ds-rose);
+  --color-action-primary-contrast: #FFFFFF;
+  --color-accent-secondary:        var(--ds-teal);
+  --color-accent-secondary-soft:   color-mix(in srgb, var(--color-accent-secondary) 14%, #fff);
+  --color-accent-secondary-text:   color-mix(in srgb, var(--color-accent-secondary) 72%, #000); /* AA text on white */
+  --color-accent-secondary-on-dark: color-mix(in srgb, var(--color-accent-secondary) 70%, #fff);
 
-  /* Light Theme Defaults */
-  --bg-primary:      #FFFFFF;
-  --bg-secondary:    #F5F7F8;
-  --bg-tertiary:     #E4F3EE;
-  --bg-card:         #FFFFFF;
-  --bg-nav:          rgba(255, 255, 255, 0.92);
+  /* derived from primary — recomputed automatically per product */
+  --color-action-primary-soft:  color-mix(in srgb, var(--color-action-primary) 12%, #fff);
+  --color-action-primary-hover: color-mix(in srgb, var(--color-action-primary) 88%, #000);
+  --color-action-primary-text:  color-mix(in srgb, var(--color-action-primary) 82%, #000); /* AA text on white */
+  --color-on-dark-accent:       color-mix(in srgb, var(--color-action-primary) 55%, #fff); /* accent text on onyx */
+  --bg-surface-2:               color-mix(in srgb, var(--color-action-primary) 6%, #fff);
 
-  --text-primary:    #0A221F;
-  --text-secondary:  #4A615C;
-  --text-muted:      #687E79;
-  --text-inverse:    #FFFFFF;
+  /* ---- Typography ---- */
+  --font-display: 'Manrope', sans-serif;
+  --font-body:    'Manrope', sans-serif;
+  --heading-weight: 700;
+  --line-height-heading: 1.25;
+  --line-height-body: 1.5;
+  --letter-spacing-label: .04em;
 
-  --border-color:    #D3E7E0;
-  --border-focus:    #0A3D3A;
+  /* ---- Spacing (8px base) ---- */
+  --space-1: 8px; --space-2: 16px; --space-3: 24px; --space-4: 32px; --space-5: 40px;
 
-  /* Buttons */
-  --btn-primary-bg:    var(--cta);
-  --btn-primary-fg:    #FFFFFF;
-  --btn-primary-hover: var(--cta-hover);
-  --btn-secondary-bg:  transparent;
-  --btn-secondary-fg:  #15534A;
-  --btn-secondary-border: #15534A;
-  --btn-accent-fg:     #FFFFFF;
+  /* ---- Radius ---- */
+  --radius-sm:   10px;
+  --radius-md:   14px;
+  --radius-lg:   16px;
+  --radius-xl:   16px;
+  --radius-btn:  12px;
+  --radius-pill: 6px;    /* DS badges/tags are 6px, not pills */
 
-  /* Shadows */
-  --shadow-sm:  0 1px 3px rgba(21,83,74, 0.06), 0 1px 2px rgba(21,83,74, 0.04);
-  --shadow-md:  0 4px 16px rgba(21,83,74, 0.10), 0 2px 6px rgba(21,83,74, 0.06);
-  --shadow-lg:  0 12px 40px rgba(21,83,74, 0.14), 0 4px 12px rgba(21,83,74, 0.08);
-  --shadow-xl:  0 24px 60px rgba(21,83,74, 0.18);
+  /* ---- Borders, opacity, z-index, motion ---- */
+  --border-w: 1px;
+  --border-w-thick: 1.5px;
+  --opacity-disabled: .4;
+  --opacity-muted: .35;
+  --z-sticky: 10; --z-dropdown: 30; --z-modal: 50; --z-toast: 60;
+  --motion-fast: 120ms ease;
+  --motion-base: 150ms ease;
+  --motion-slow: 200ms ease;
 
-  /* Border Radii */
-  --radius-sm:   6px;
-  --radius-md:   12px;
-  --radius-lg:   20px;
-  --radius-xl:   32px;
-  --radius-pill: 100px;
+  /* ---- Surfaces & text ---- */
+  --bg-primary:   #FFFFFF;
+  --bg-secondary: var(--bg-surface-2);
+  --bg-tertiary:  var(--color-action-primary-soft);
+  --bg-card:      #FFFFFF;
+  --bg-nav:       #FFFFFF;
+  --bg-dark:      var(--ds-onyx);
+
+  --text-primary:   #141314;
+  --text-secondary: #726E6A;
+  --text-muted:     #8C8783;
+  --text-inverse:   #FFFFFF;
+
+  --border-color: rgba(20,19,20,.08);
+  --border-strong: rgba(20,19,20,.16);
+  --border-focus: var(--color-action-primary);
+
+  /* ---- Shadows: near-zero by design (hierarchy = borders + spacing) ---- */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-xl: none;
+
+  /* ---- Legacy aliases (old class names keep working) ---- */
+  --brand-dark:      var(--ds-onyx);
+  --navy-700:        var(--ds-onyx-2);
+  --brand-orange:    var(--color-action-primary);
+  --brand-ice:       var(--color-action-primary-soft);
+  --brand-teal:      var(--color-on-dark-accent);
+  --brand-highlight: var(--color-on-dark-accent);
+  --success:         var(--sem-success);
+  --cta:             var(--color-action-primary);
+  --cta-hover:       var(--color-action-primary-hover);
+  --accent-text:     var(--color-action-primary-text);
+
+  --btn-primary-bg:       var(--color-action-primary);
+  --btn-primary-fg:       var(--color-action-primary-contrast);
+  --btn-primary-hover:    var(--color-action-primary-hover);
+  --btn-secondary-bg:     transparent;
+  --btn-secondary-fg:     var(--text-primary);
+  --btn-secondary-border: var(--border-strong);
+  --btn-accent-fg:        #FFFFFF;
 }
 
-/* Dark Theme Overrides */
-[data-theme="dark"] {
-  --bg-primary:      #09211E;
-  --bg-secondary:    #102E2A;
-  --bg-tertiary:     #163C37;
-  --bg-card:         #122724;
-  --bg-nav:          rgba(9,33,30, 0.94);
+/* ============================================================
+   MULTI-PRODUCT THEMING — only the primary changes.
+   Secondary stays Teal, except Product D (Teal primary → Red secondary).
+   ============================================================ */
+body[data-product="hero"]      { --color-action-primary: var(--ds-rose); }
+body[data-product="product-b"] { --color-action-primary: var(--ds-orange); }   /* AI Scribe */
+body[data-product="product-c"] { --color-action-primary: var(--ds-orchid); }   /* AI Radiologist */
+body[data-product="product-d"] { --color-action-primary: var(--ds-teal); --color-accent-secondary: var(--ds-rose); } /* AI Rx */
 
-  --text-primary:    #E9F7F5;
-  --text-secondary:  #9DC5C0;
-  --text-muted:      #5E8C86;
-  --text-inverse:    #0F2E2A;
-
-  --border-color:    #204843;
-  --border-focus:    #FFB59C;
-
-  --btn-primary-bg:    var(--cta);
-  --btn-primary-fg:    #FFFFFF;
-  --btn-primary-hover: var(--cta-hover);
-  --btn-secondary-bg:  transparent;
-  --btn-secondary-fg:  #E9F7F5;
-  --btn-secondary-border: #3C655F;
-  --btn-accent-fg:     #FFFFFF;
-
-  --shadow-sm:  0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-md:  0 4px 16px rgba(0, 0, 0, 0.4);
-  --shadow-lg:  0 12px 40px rgba(0, 0, 0, 0.5);
-  --shadow-xl:  0 24px 60px rgba(0, 0, 0, 0.6);
+/* derived tokens must be re-declared where the primary changes,
+   otherwise they keep the :root (Hero) value */
+body[data-product] {
+  --color-accent-secondary-soft:   color-mix(in srgb, var(--color-accent-secondary) 14%, #fff);
+  --color-accent-secondary-text:   color-mix(in srgb, var(--color-accent-secondary) 72%, #000); /* AA text on white */
+  --color-accent-secondary-on-dark: color-mix(in srgb, var(--color-accent-secondary) 70%, #fff);
+  --color-action-primary-soft:  color-mix(in srgb, var(--color-action-primary) 12%, #fff);
+  --color-action-primary-hover: color-mix(in srgb, var(--color-action-primary) 88%, #000);
+  --color-action-primary-text:  color-mix(in srgb, var(--color-action-primary) 82%, #000);
+  --color-on-dark-accent:       color-mix(in srgb, var(--color-action-primary) 55%, #fff);
+  --bg-surface-2:               color-mix(in srgb, var(--color-action-primary) 6%, #fff);
+  --bg-secondary: var(--bg-surface-2);
+  --bg-tertiary:  var(--color-action-primary-soft);
+  --border-focus: var(--color-action-primary);
+  --brand-orange: var(--color-action-primary);
+  --brand-ice:    var(--color-action-primary-soft);
+  --brand-teal:   var(--color-on-dark-accent);
+  --brand-highlight: var(--color-on-dark-accent);
+  --cta:          var(--color-action-primary);
+  --cta-hover:    var(--color-action-primary-hover);
+  --accent-text:  var(--color-action-primary-text);
+  --btn-primary-bg:    var(--color-action-primary);
+  --btn-primary-hover: var(--color-action-primary-hover);
 }
+
+/* Dark mode is not part of DS v1 — the old [data-theme="dark"] block was removed. */

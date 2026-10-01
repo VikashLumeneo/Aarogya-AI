@@ -30,14 +30,14 @@
   align-items:center;
   gap:8px;
   padding:8px 14px;
-  border-radius:var(--radius-btn);
+  border-radius:999px;
   color:rgba(255,255,255,.88);
   font-size:.82rem;
   font-weight:700;
   background:rgba(255,255,255,.08);
   border:1px solid rgba(255,255,255,.16);
 }
-.pp-meta i{ color:var(--color-on-dark-accent); }
+.pp-meta i{ color:#7FE0D0; }
 
 /* ---------- At a glance (glass cards overlapping the hero) ---------- */
 .pp-glance-wrap{ padding-top:0; padding-bottom:0; }
@@ -51,16 +51,16 @@
 }
 .pp-glance-card{
   padding:24px 22px;
-  border-radius:var(--radius-lg);
+  border-radius:22px;
   background:#fff;
   border:1px solid var(--border-color);
-  box-shadow:0 16px 40px rgba(20,19,20,0.1), inset 0 1px 0 #fff;
+  box-shadow:0 16px 40px rgba(10,61,58,.10), inset 0 1px 0 #fff;
   transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
 }
 .pp-glance-card:hover{
   transform:translateY(-4px);
   border-color:var(--brand-orange);
-  box-shadow:0 16px 44px color-mix(in srgb, var(--color-action-primary) 14%, transparent);
+  box-shadow:0 16px 44px rgba(242,87,43,.14);
 }
 .pp-ico{
   display:grid;
@@ -88,7 +88,7 @@
   position:sticky;
   top:110px;
   padding:20px;
-  border-radius:var(--radius-lg);
+  border-radius:20px;
   background:var(--bg-secondary);
   border:1px solid var(--border-color);
 }
@@ -117,7 +117,7 @@
   background:#fff;
   color:var(--brand-dark);
   border-left-color:var(--cta);
-  box-shadow:0 4px 12px rgba(20,19,20,0.06);
+  box-shadow:0 4px 12px rgba(10,61,58,.06);
 }
 
 /* ---------- Policy blocks ---------- */
@@ -125,10 +125,10 @@
 .pp-block{
   scroll-margin-top:110px;
   padding:30px 32px;
-  border-radius:var(--radius-lg);
+  border-radius:22px;
   background:#fff;
   border:1px solid var(--border-color);
-  box-shadow:0 8px 24px rgba(20,19,20,0.05);
+  box-shadow:0 8px 24px rgba(10,61,58,.05);
 }
 .pp-block h2{
   display:flex;
@@ -146,7 +146,7 @@
   height:30px;
   padding:0 8px;
   border-radius:9px;
-  background:var(--bg-surface-2);
+  background:#E4F3EE;
   color:var(--brand-dark);
   font-size:.78rem;
   font-weight:900;
@@ -166,7 +166,7 @@
   display:grid; place-items:center;
   width:20px; height:20px;
   border-radius:50%;
-  background:var(--bg-surface-2);
+  background:#E4F3EE;
   color:var(--brand-dark);
   font-size:.7rem; font-weight:900;
 }
@@ -205,8 +205,8 @@
   margin-top:14px !important;
   padding:12px 16px;
   border-radius:12px;
-  background:var(--color-action-primary-soft);
-  border:1px solid var(--color-action-primary-soft);
+  background:#FFF5F1;
+  border:1px solid #FDDCCF;
   font-size:.88rem !important;
 }
 .pp-note i{ color:var(--accent-text); margin-top:2px; }
@@ -215,7 +215,7 @@
 .pp-chips span{
   display:inline-flex; align-items:center; gap:8px;
   padding:8px 14px;
-  border-radius:var(--radius-btn);
+  border-radius:999px;
   background:var(--bg-secondary);
   border:1px solid var(--border-color);
   color:var(--brand-dark);
@@ -241,12 +241,12 @@
 
 /* contact block */
 .pp-contact{
-  background:var(--ds-onyx);
+  background:linear-gradient(150deg, #0A3D3A 0%, #0C4A45 60%, #072B29 100%);
   border-color:transparent;
 }
 .pp-contact h2, .pp-contact p{ color:#fff; }
 .pp-contact p{ color:rgba(255,255,255,.75); }
-.pp-contact .pp-num{ background:rgba(255,255,255,.14); color:var(--color-on-dark-accent); }
+.pp-contact .pp-num{ background:rgba(255,255,255,.14); color:#A7F3D0; }
 .pp-contact-grid{
   display:grid;
   grid-template-columns:repeat(3, minmax(0, 1fr));
@@ -264,11 +264,11 @@
   transition:background .2s ease, transform .2s ease;
 }
 .pp-contact-grid a:hover{ background:rgba(255,255,255,.16); transform:translateY(-2px); }
-.pp-contact-grid i{ font-size:1.2rem; color:var(--color-on-dark-accent); }
+.pp-contact-grid i{ font-size:1.2rem; color:#7FE0D0; }
 .pp-contact-grid span{ display:flex; flex-direction:column; font-weight:700; font-size:.92rem; overflow-wrap:anywhere; }
 .pp-contact-grid small{ color:rgba(255,255,255,.6); font-weight:600; font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; }
 .pp-contact .pp-note{ background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.14); color:rgba(255,255,255,.75); }
-.pp-contact .pp-note i{ color:var(--color-on-dark-accent); }
+.pp-contact .pp-note i{ color:#FFB59C; }
 
 /* ---------- Responsive ---------- */
 @media (max-width:1024px){
@@ -282,7 +282,7 @@
   .pp-hero{ padding:120px 0 80px; }
   .pp-glance{ grid-template-columns:1fr; margin-top:-40px; }
   .pp-toc nav{ grid-template-columns:1fr; }
-  .pp-block{ padding:22px 18px; border-radius:var(--radius-lg); }
+  .pp-block{ padding:22px 18px; border-radius:18px; }
   .pp-block h2{ font-size:1.12rem; }
   .pp-tr{ grid-template-columns:1fr; gap:4px; }
   .pp-th{ display:none; }

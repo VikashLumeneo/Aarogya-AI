@@ -16,25 +16,30 @@
   width: calc(100% - 48px);
   max-width: 1152px;
   padding: 76px 56px 72px;
-  border-radius: var(--radius-lg);
+  border-radius: 32px;
   overflow: hidden;
   isolation: isolate;
-  background:linear-gradient(135deg, var(--ds-onyx) 0%, var(--ds-onyx) 55%, var(--ds-onyx) 100%);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(45,212,191,.22), transparent 42%),
+    radial-gradient(circle at 92% 110%, rgba(242,87,43,.28), transparent 45%),
+    linear-gradient(135deg, #0A3D3A 0%, #12574F 55%, #0A3D3A 100%);
   border: 1px solid rgba(255,255,255,.10);
-  box-shadow: 0 30px 70px rgba(20,19,20,0.28), inset 0 1px 0 rgba(255,255,255,.12);
+  box-shadow: 0 30px 70px rgba(10,61,58,.28), inset 0 1px 0 rgba(255,255,255,.12);
 }
 
 /* faint grid + moving glass sheen */
 .cta-section > .container::before {
   content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-  background-image:linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
   background-size: 44px 44px;
   -webkit-mask-image: radial-gradient(ellipse at center, #000 20%, transparent 75%);
           mask-image: radial-gradient(ellipse at center, #000 20%, transparent 75%);
 }
 .cta-section > .container::after {
   content: ""; position: absolute; top: 0; left: -60%; width: 40%; height: 100%; z-index: -1;
-  background:linear-gradient(105deg, transparent, rgba(255,255,255,.08), transparent);
+  background: linear-gradient(105deg, transparent, rgba(255,255,255,.08), transparent);
   transform: skewX(-18deg);
   animation: ctaSheen 7s ease-in-out infinite;
   pointer-events: none;
@@ -59,7 +64,7 @@
 }
 .cta-section .section-eyebrow {
   background: rgba(255,255,255,.10);
-  color: var(--color-on-dark-accent);
+  color: #A7F3D0;
   border: 1px solid rgba(255,255,255,.18);
 }
 
@@ -69,8 +74,8 @@
 .cta-section .btn-accent {
   display: inline-flex; align-items: center; gap: 12px;
   padding-right: 8px;
-  border-radius: var(--radius-btn);
-  box-shadow: 0 12px 30px color-mix(in srgb, var(--color-action-primary) 40%, transparent);
+  border-radius: 100px;
+  box-shadow: 0 12px 30px rgba(242,87,43,.40);
 }
 .cta-section .btn-accent::after {
   content: "\2192";
@@ -81,12 +86,12 @@
   font-size: 1.05rem; line-height: 1;
   transition: transform .25s ease, background .25s ease;
 }
-.cta-section .btn-accent:hover { transform: translateY(-2px); box-shadow: 0 16px 36px color-mix(in srgb, var(--color-action-primary) 50%, transparent); }
+.cta-section .btn-accent:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(242,87,43,.50); }
 .cta-section .btn-accent:hover::after { transform: translateX(3px); background: rgba(255,255,255,.32); }
 
 .cta-section .btn-ghost,
 .cta-section .btn-secondary {
-  border-radius: var(--radius-btn);
+  border-radius: 100px;
   background: rgba(255,255,255,.08) !important;
   color: #fff !important;
   border: 1px solid rgba(255,255,255,.30) !important;
@@ -107,7 +112,7 @@
   #page-receptionist .cta-section > .container {
     width: calc(100% - 32px);
     padding: 52px 22px 48px;
-    border-radius: var(--radius-lg);
+    border-radius: 24px;
   }
   .cta-section .btn-accent { justify-content: center; }
 }
